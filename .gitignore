@@ -1,3 +1,6 @@
 node_modules/
 .DS_Store
 www/
+tools/sesiones/dist/
+tools/sesiones/.cache/
+__pycache__/

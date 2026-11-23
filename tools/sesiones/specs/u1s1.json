@@ -1,0 +1,61 @@
+{
+ "id": "u1s1",
+ "titulo": "El condicional: una promesa",
+ "icono": "🤝",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver cuándo una frase del tipo «si pasa esto, entonces pasa esto otro» es verdadera, y cuándo es falsa.",
+   "escena": {"tipo": "titulo", "icono": "🤝", "texto": "El condicional: una promesa"},
+   "fondo": "liso"
+  },
+  {
+   "voz": "Imagina que una amiga te hace una promesa: si apruebas el examen, te invito a comer.",
+   "escena": {"tipo": "anim", "id": "u1-promesa"}
+  },
+  {
+   "voz": "La frase tiene dos partes. Primero, la condición: que apruebes. Después, lo prometido: que te invite a comer.",
+   "escena": {"tipo": "anim", "id": "u1-partes"}
+  },
+  {
+   "voz": "Primer caso: apruebas, y tu amiga te invita a comer. Cumplió su promesa.",
+   "escena": {"tipo": "anim", "id": "u1-caso1"}
+  },
+  {
+   "voz": "Segundo caso: apruebas, pero tu amiga no te invita. Rompió la promesa. Es el único caso en que la frase es falsa.",
+   "escena": {"tipo": "anim", "id": "u1-caso2"}
+  },
+  {
+   "voz": "¿Y si repruebas? La promesa no decía nada sobre ese caso. Te invite o no te invite, no la rompió.",
+   "escena": {"tipo": "anim", "id": "u1-caso34"}
+  },
+  {
+   "voz": "¿En qué caso tu amiga rompe la promesa?",
+   "elige": {
+    "pregunta": "«Si apruebas, te invito a comer». ¿En qué caso tu amiga rompe la promesa?",
+    "opciones": ["Apruebas y no te invita", "Repruebas y te invita igual", "Repruebas y no te invita"],
+    "bien": "Así es: solo la rompe si apruebas y no te invita.",
+    "mal": "La rompe solo si apruebas y no te invita. Si repruebas, la promesa no dice nada."
+   },
+   "repite": [4, 5]
+  },
+  {
+   "voz": "En resumen: una promesa condicional solo es falsa cuando se cumple la condición y no se cumple lo prometido.",
+   "escena": {"tipo": "anim", "id": "u1-tabla"}
+  },
+  {
+   "voz": "Cuidado con una trampa: si tu amiga te invita a comer, eso no prueba que aprobaste. Pudo invitarte por tu cumpleaños.",
+   "escena": {"tipo": "anim", "id": "u1-trampa"}
+  },
+  {
+   "voz": "Tu amiga te invitó a comer. ¿Qué puedes concluir sobre el examen?",
+   "elige": {
+    "pregunta": "Tu amiga te invitó a comer. Sobre el examen, puedes concluir que…",
+    "opciones": ["No se puede saber si aprobaste", "Aprobaste", "Reprobaste"],
+    "bien": "Así es: pudo invitarte por otro motivo.",
+    "mal": "No se puede saber. Pudo invitarte por otro motivo, como tu cumpleaños."
+   },
+   "repite": [8]
+  }
+ ]
+}
