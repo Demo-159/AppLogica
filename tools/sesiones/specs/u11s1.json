@@ -1,0 +1,209 @@
+{
+ "id": "u11s1",
+ "titulo": "Las partes de un argumento",
+ "icono": "🧱",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a desarmar un argumento en sus partes: razones, conclusión y supuestos escondidos.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🧱",
+    "texto": "Las partes de un argumento"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "Un argumento tiene premisas, que son las razones, y una conclusión, que es lo que se quiere demostrar.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🧱",
+      "t": "Premisas: las razones",
+      "w": "premisas"
+     },
+     {
+      "icono": "🏠",
+      "t": "Conclusión: lo que se quiere demostrar",
+      "w": "conclusión",
+      "c": "#58CC02"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "«Deberíamos llevar paraguas, ya que el pronóstico anuncia lluvia y el cielo está muy nublado». La conclusión es: deberíamos llevar paraguas. Lo demás son las razones.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "☂️",
+      "texto": "Conclusión: llevar paraguas",
+      "w": "la conclusión es",
+      "marca": "bien"
+     },
+     {
+      "icono": "📻",
+      "texto": "Premisa: pronóstico de lluvia",
+      "w": "las razones"
+     },
+     {
+      "icono": "☁️",
+      "texto": "Premisa: muy nublado",
+      "w": "las razones"
+     }
+    ]
+   },
+   "q": [
+    "arg-01"
+   ]
+  },
+  {
+   "voz": "Algunas palabras ayudan. «Puesto que», «ya que» y «porque» suelen introducir premisas. «Por lo tanto», «así que» y «en consecuencia» suelen introducir la conclusión.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🧱",
+      "titulo": "Premisa",
+      "texto": "puesto que · ya que · porque",
+      "w": "introducir premisas"
+     },
+     {
+      "icono": "🏠",
+      "titulo": "Conclusión",
+      "texto": "por lo tanto · así que · en consecuencia",
+      "marca": "bien",
+      "w": "la conclusión"
+     }
+    ]
+   },
+   "q": [
+    "arg-05"
+   ]
+  },
+  {
+   "voz": "Como hoy es feriado, el banco está cerrado. ¿Cuál es la conclusión?",
+   "elige": {
+    "pregunta": "«Como hoy es feriado, el banco está cerrado». ¿Cuál es la conclusión?",
+    "opciones": [
+     "El banco está cerrado",
+     "Hoy es feriado",
+     "Los bancos abren los feriados"
+    ],
+    "bien": "Así es: el feriado es la razón.",
+    "mal": "La conclusión es que el banco está cerrado; que sea feriado es la razón."
+   }
+  },
+  {
+   "voz": "¿Qué expresión suele introducir una premisa?",
+   "elige": {
+    "pregunta": "¿Cuál de estas expresiones suele introducir una PREMISA?",
+    "opciones": [
+     "Ya que",
+     "Por lo tanto",
+     "Así que"
+    ],
+    "bien": "Así es: «ya que» presenta una razón.",
+    "mal": "«Ya que» introduce una premisa; «por lo tanto» y «así que», la conclusión."
+   }
+  },
+  {
+   "voz": "Muchos argumentos tienen premisas escondidas. «Marta es abogada, así que debe tener mucho dinero». Para que funcione, falta suponer que los abogados casi siempre tienen mucho dinero.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "Marta es abogada",
+      "w": "marta es abogada"
+     },
+     "+",
+     {
+      "t": "(los abogados tienen dinero)",
+      "c": "#FFC800",
+      "w": "falta suponer"
+     },
+     "→",
+     {
+      "t": "tiene dinero",
+      "w": "mucho dinero"
+     }
+    ],
+    "titulo": "Supuesto implícito",
+    "tw": "premisas escondidas"
+   },
+   "q": [
+    "arg-02"
+   ]
+  },
+  {
+   "voz": "Es japonés, así que le gusta el sushi. ¿Qué supuesto implícito usa?",
+   "elige": {
+    "pregunta": "«Es japonés, así que le gusta el sushi». ¿Qué supuesto implícito usa?",
+    "opciones": [
+     "Que a casi todos los japoneses les gusta el sushi",
+     "Que el sushi es un plato japonés",
+     "Que le gusta comer"
+    ],
+    "bien": "Así es: sin ese supuesto, el argumento no funciona.",
+    "mal": "Supone que a casi todos los japoneses les gusta el sushi."
+   }
+  },
+  {
+   "voz": "Y al analizar un argumento, aplica el principio de caridad: interprétalo en su versión más fuerte y razonable antes de criticarlo. Lo contrario es construir un hombre de paja.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🤝",
+      "titulo": "Principio de caridad",
+      "texto": "La versión más fuerte",
+      "marca": "bien",
+      "w": "principio de caridad"
+     },
+     {
+      "icono": "🧟",
+      "titulo": "Hombre de paja",
+      "texto": "La versión más débil",
+      "marca": "mal",
+      "w": "hombre de paja"
+     }
+    ]
+   },
+   "q": [
+    "arg-07"
+   ]
+  },
+  {
+   "voz": "En resumen: busca la conclusión, luego las razones, y después los supuestos escondidos. Y critica siempre la mejor versión del argumento.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🏠",
+      "texto": "Conclusión",
+      "w": "la conclusión"
+     },
+     {
+      "icono": "🧱",
+      "texto": "Razones",
+      "w": "las razones"
+     },
+     {
+      "icono": "🔦",
+      "texto": "Supuestos escondidos",
+      "w": "supuestos"
+     },
+     {
+      "icono": "🤝",
+      "texto": "Mejor versión",
+      "w": "mejor versión",
+      "marca": "oro"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

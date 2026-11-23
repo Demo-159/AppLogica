@@ -1,0 +1,308 @@
+{
+ "id": "u5s2",
+ "titulo": "Crecer al doble",
+ "icono": "📈",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver cómo crece algo que se duplica una y otra vez.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "📈",
+    "texto": "Crecer al doble"
+   },
+   "fondo": "oficina"
+  },
+  {
+   "voz": "Al doblar una hoja por la mitad, su grosor se duplica. Una hoja de una décima de milímetro: con un doblez, dos décimas; con dos, cuatro décimas; con tres, ocho décimas.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "0,1"
+     },
+     {
+      "t": "0,2"
+     },
+     {
+      "t": "0,4"
+     },
+     {
+      "t": "0,8"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "×2"
+     },
+     {
+      "t": "×2"
+     },
+     {
+      "t": "×2"
+     }
+    ],
+    "titulo": "Grosor en milímetros",
+    "sub": "Cada doblez duplica",
+    "sw": "se duplica"
+   },
+   "q": [
+    "num-02"
+   ]
+  },
+  {
+   "voz": "Diez dobleces es duplicar diez veces: multiplicar por mil veinticuatro. Una décima de milímetro por mil veinticuatro da unos diez centímetros.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 10,
+    "unidad": "centímetros",
+    "sub": "0,1 mm × 1.024 (10 dobleces)",
+    "icono": "📄"
+   },
+   "q": [
+    "num-02"
+   ]
+  },
+  {
+   "voz": "Eso es el crecimiento exponencial: al principio parece lento, y después se dispara.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "1",
+      "valor": 1,
+      "color": "#1CB0F6",
+      "texto": "1"
+     },
+     {
+      "label": "5",
+      "valor": 32,
+      "color": "#1CB0F6",
+      "texto": "32"
+     },
+     {
+      "label": "10",
+      "valor": 1024,
+      "color": "#FFC800",
+      "texto": "1.024",
+      "w": "se dispara"
+     }
+    ],
+    "max": 1024,
+    "sub": "Duplicar 1, 5 y 10 veces"
+   }
+  },
+  {
+   "voz": "El interés compuesto funciona igual. Mil pesos al diez por ciento anual: el primer año ganas cien, y quedan mil cien.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "$1.000"
+     },
+     {
+      "t": "$1.100",
+      "w": "mil cien",
+      "c": "#58CC02"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "+$100",
+      "w": "ganas cien"
+     }
+    ]
+   },
+   "q": [
+    "num-06"
+   ]
+  },
+  {
+   "voz": "El segundo año ganas el diez por ciento de mil cien: ciento diez. Quedan mil doscientos diez. Los intereses también generan intereses.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "$1.000"
+     },
+     {
+      "t": "$1.100"
+     },
+     {
+      "t": "$1.210",
+      "w": "mil doscientos diez",
+      "c": "#58CC02"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "+$100"
+     },
+     {
+      "t": "+$110",
+      "w": "ciento diez"
+     }
+    ],
+    "sub": "Interés sobre interés",
+    "sw": "también generan"
+   },
+   "q": [
+    "num-06"
+   ]
+  },
+  {
+   "voz": "Cien pesos al cincuenta por ciento anual compuesto. ¿Cuánto hay después de dos años?",
+   "elige": {
+    "pregunta": "$100 al 50% anual de interés compuesto. ¿Cuánto hay tras 2 años?",
+    "opciones": [
+     "$225",
+     "$200",
+     "$150"
+    ],
+    "bien": "Así es: cien, ciento cincuenta, doscientos veinticinco.",
+    "mal": "Hay doscientos veinticinco: el primer año llega a ciento cincuenta, y el segundo gana la mitad de eso, setenta y cinco."
+   }
+  },
+  {
+   "voz": "Un atajo: la regla del setenta y dos. Divide setenta y dos por el porcentaje de crecimiento anual, y obtienes en cuántos años se duplica, aproximadamente.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "72",
+      "c": "#FFC800",
+      "w": "setenta y dos"
+     },
+     "÷",
+     {
+      "t": "% anual",
+      "c": "#1CB0F6",
+      "w": "porcentaje"
+     },
+     "≈",
+     {
+      "t": "años para duplicar",
+      "c": "#58CC02",
+      "w": "cuántos años"
+     }
+    ],
+    "titulo": "Regla del 72",
+    "tw": "regla del setenta y dos"
+   },
+   "q": [
+    "num-07"
+   ]
+  },
+  {
+   "voz": "Al ocho por ciento anual: setenta y dos dividido por ocho, nueve. Se duplica en unos nueve años.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "72",
+      "c": "#FFC800"
+     },
+     "÷",
+     {
+      "t": "8",
+      "c": "#1CB0F6",
+      "w": "dividido por ocho"
+     },
+     "≈",
+     {
+      "t": "9 años",
+      "c": "#58CC02",
+      "w": "unos nueve años"
+     }
+    ]
+   },
+   "q": [
+    "num-07"
+   ]
+  },
+  {
+   "voz": "Según la regla del setenta y dos, ¿cuánto tarda en duplicarse algo que crece un nueve por ciento al año?",
+   "elige": {
+    "pregunta": "Según la regla del 72, ¿en cuánto tiempo se duplica algo que crece 9% al año?",
+    "opciones": [
+     "Unos 8 años",
+     "Unos 9 años",
+     "Unos 18 años"
+    ],
+    "bien": "Así es: setenta y dos dividido por nueve, ocho.",
+    "mal": "Unos ocho años: setenta y dos dividido por nueve."
+   }
+  },
+  {
+   "voz": "Y hacia atrás. Unas bacterias se duplican cada hora, y llenan un frasco a las diez. ¿Cuándo estaba lleno a la mitad? A las nueve: una hora antes. ¿Y un cuarto? A las ocho.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "¼",
+      "w": "a las ocho"
+     },
+     {
+      "t": "½",
+      "w": "a las nueve"
+     },
+     {
+      "t": "lleno",
+      "w": "llenan un frasco a las diez",
+      "c": "#58CC02"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "×2"
+     },
+     {
+      "t": "×2"
+     }
+    ],
+    "sub": "8:00 → 9:00 → 10:00",
+    "sw": "hacia atrás"
+   },
+   "q": [
+    "num-13"
+   ]
+  },
+  {
+   "voz": "Un alga duplica su tamaño cada día, y cubre el estanque el día treinta. ¿Qué día cubría la mitad?",
+   "elige": {
+    "pregunta": "Un alga duplica su tamaño cada día y cubre todo el estanque el día 30. ¿Qué día cubría la mitad?",
+    "opciones": [
+     "El día 29",
+     "El día 15",
+     "El día 28"
+    ],
+    "bien": "Así es: un día antes de cubrirlo todo.",
+    "mal": "El día veintinueve: si se duplica cada día, un día antes cubría la mitad."
+   }
+  },
+  {
+   "voz": "En resumen: lo que se duplica crece lento y luego se dispara. Para el tiempo de duplicación, usa la regla del setenta y dos. Y hacia atrás, cada paso es la mitad.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🚀",
+      "texto": "Lento, y luego se dispara",
+      "w": "se dispara",
+      "marca": "oro"
+     },
+     {
+      "icono": "⏳",
+      "texto": "Regla del 72",
+      "w": "regla del setenta y dos"
+     },
+     {
+      "icono": "⏪",
+      "texto": "Hacia atrás: la mitad",
+      "w": "hacia atrás"
+     }
+    ]
+   }
+  }
+ ]
+}

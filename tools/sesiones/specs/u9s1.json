@@ -1,0 +1,201 @@
+{
+ "id": "u9s1",
+ "titulo": "Atacar a la persona",
+ "icono": "🎯",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a reconocer falacias que desvían la atención del argumento.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🎯",
+    "texto": "Atacar a la persona"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Una falacia es un error de razonamiento que parece convincente. Muchas no discuten la idea: atacan otra cosa.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🎭",
+    "titulo": "Falacia",
+    "texto": "Un error de razonamiento que parece convincente"
+   }
+  },
+  {
+   "voz": "«No le hagas caso a su propuesta: ni siquiera terminó la universidad». Esto ataca a la persona, no a su propuesta. Se llama ad hominem.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "📄",
+      "titulo": "La propuesta",
+      "texto": "Nadie la discute",
+      "w": "su propuesta"
+     },
+     {
+      "icono": "🎯",
+      "titulo": "La persona",
+      "texto": "¡Ataque!",
+      "marca": "mal",
+      "w": "ataca a la persona"
+     }
+    ]
+   },
+   "q": [
+    "fal-01"
+   ]
+  },
+  {
+   "voz": "«¿Cómo me dices que deje de fumar, si tú fumaste veinte años?». Que el otro también lo haya hecho no vuelve falso su consejo. Se llama tu quoque, que significa «tú también».",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "«Tú también lo hiciste»",
+      "c": "#FF4B4B",
+      "w": "tú fumaste"
+     },
+     "≠",
+     {
+      "t": "«Tu consejo es falso»",
+      "w": "no vuelve falso"
+     }
+    ],
+    "titulo": "Tu quoque",
+    "tw": "tu quoque"
+   },
+   "q": [
+    "fal-09"
+   ]
+  },
+  {
+   "voz": "Sus ideas sobre economía no valen nada: es muy antipático. ¿Qué falacia es?",
+   "elige": {
+    "pregunta": "«Sus ideas sobre economía no valen nada: es muy antipático». ¿Qué falacia es?",
+    "opciones": [
+     "Ad hominem",
+     "Hombre de paja",
+     "Tu quoque"
+    ],
+    "bien": "Así es: ataca a la persona, no a sus ideas.",
+    "mal": "Es ad hominem: ataca a la persona, no a sus ideas."
+   }
+  },
+  {
+   "voz": "Otra trampa es deformar lo que el otro dijo. Alguien propone reducir el presupuesto militar un cinco por ciento, y le responden: «¿O sea que quieres dejar al país indefenso?».",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🗣️",
+      "titulo": "Dijo",
+      "texto": "Reducir 5%",
+      "w": "cinco por ciento"
+     },
+     {
+      "icono": "🧟",
+      "titulo": "Le atribuyen",
+      "texto": "Dejar al país indefenso",
+      "marca": "mal",
+      "w": "indefenso"
+     }
+    ]
+   },
+   "q": [
+    "fal-02"
+   ]
+  },
+  {
+   "voz": "Eso es un hombre de paja: se ataca una versión exagerada, más fácil de derribar, en lugar de la propuesta real.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🧟",
+    "titulo": "Hombre de paja",
+    "texto": "Atacar una versión deformada de lo que el otro dijo"
+   },
+   "q": [
+    "fal-02"
+   ]
+  },
+  {
+   "voz": "A dice: deberíamos tener más ciclovías. B responde: ¿o sea que quieres prohibir los autos? ¿Qué hace B?",
+   "elige": {
+    "pregunta": "A: «Deberíamos tener más ciclovías». B: «¿O sea que quieres prohibir los autos?». ¿Qué hace B?",
+    "opciones": [
+     "Hombre de paja",
+     "Ad hominem",
+     "Tu quoque"
+    ],
+    "bien": "Así es: deforma la propuesta para atacarla.",
+    "mal": "Es un hombre de paja: nadie habló de prohibir los autos."
+   }
+  },
+  {
+   "voz": "Y la pista falsa, también llamada arenque rojo. Le preguntan a un candidato por la deuda pública, y responde hablando de cuánto ama a su familia y a su país. Cambia de tema para no responder.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "❓",
+      "t": "Pregunta: la deuda",
+      "w": "la deuda pública"
+     },
+     {
+      "icono": "🐟",
+      "t": "Responde: su familia",
+      "w": "ama a su familia",
+      "c": "#FF4B4B"
+     }
+    ],
+    "sub": "Pista falsa: cambia de tema",
+    "sw": "cambia de tema"
+   },
+   "q": [
+    "fal-13"
+   ]
+  },
+  {
+   "voz": "Le preguntan a una empresa por un derrame de petróleo, y responde hablando de sus donaciones a escuelas. ¿Qué recurso usa?",
+   "elige": {
+    "pregunta": "Le preguntan a una empresa por un derrame de petróleo, y responde hablando de sus donaciones a escuelas. ¿Qué recurso usa?",
+    "opciones": [
+     "Pista falsa",
+     "Hombre de paja",
+     "Ad hominem"
+    ],
+    "bien": "Así es: cambia de tema.",
+    "mal": "Es una pista falsa: cambia de tema para no responder."
+   }
+  },
+  {
+   "voz": "En resumen: ad hominem ataca a la persona. Tu quoque responde «tú también». El hombre de paja deforma la idea. Y la pista falsa cambia de tema.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🎯",
+      "texto": "Ad hominem",
+      "w": "ad hominem"
+     },
+     {
+      "icono": "👉",
+      "texto": "Tu quoque",
+      "w": "tu quoque"
+     },
+     {
+      "icono": "🧟",
+      "texto": "Hombre de paja",
+      "w": "hombre de paja"
+     },
+     {
+      "icono": "🐟",
+      "texto": "Pista falsa",
+      "w": "pista falsa"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

@@ -1,0 +1,251 @@
+{
+ "id": "u7s2",
+ "titulo": "Intuiciones que fallan",
+ "icono": "🎰",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver casos en que la intuición falla con las probabilidades.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🎰",
+    "texto": "Intuiciones que fallan"
+   },
+   "fondo": "casino"
+  },
+  {
+   "voz": "Una moneda salió cara cinco veces seguidas. ¿Ahora toca sello? No. La moneda no tiene memoria: la próxima vez es cincuenta y cincuenta.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "🪙"
+     },
+     {
+      "t": "🪙"
+     },
+     {
+      "t": "🪙"
+     },
+     {
+      "t": "🪙"
+     },
+     {
+      "t": "🪙"
+     },
+     {
+      "t": "?",
+      "w": "la próxima",
+      "c": "#FFC800"
+     }
+    ],
+    "sub": "50% y 50%, como siempre",
+    "sw": "cincuenta y cincuenta"
+   },
+   "q": [
+    "prob-02"
+   ]
+  },
+  {
+   "voz": "Creer que «ya toca» se llama falacia del jugador. Cada lanzamiento es independiente del anterior.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🎰",
+    "titulo": "Falacia del jugador",
+    "texto": "El azar no compensa: no tiene memoria"
+   },
+   "q": [
+    "prob-02"
+   ]
+  },
+  {
+   "voz": "En una ruleta salió rojo ocho veces seguidas. En la próxima, el negro es…",
+   "elige": {
+    "pregunta": "En una ruleta salió rojo 8 veces seguidas. En la próxima jugada, el negro es…",
+    "opciones": [
+     "Igual de probable que antes",
+     "Más probable",
+     "Menos probable"
+    ],
+    "bien": "Así es: la ruleta no tiene memoria.",
+    "mal": "Es igual de probable que antes: cada jugada es independiente."
+   }
+  },
+  {
+   "voz": "Linda estudió filosofía y participó en marchas contra la discriminación. ¿Qué es más probable: que sea cajera de banco, o que sea cajera de banco y feminista?",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🏦",
+      "titulo": "Cajera",
+      "w": "que sea cajera de banco,"
+     },
+     {
+      "icono": "🏦✊",
+      "titulo": "Cajera y feminista",
+      "w": "y feminista"
+     }
+    ]
+   },
+   "q": [
+    "prob-03"
+   ],
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "Lo primero. Todas las cajeras feministas son cajeras, pero no al revés. Que se cumplan dos cosas nunca es más probable que se cumpla una sola. Este error se llama falacia de la conjunción.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "Feministas",
+     "w": "cajeras feministas",
+     "c": "#CE82FF"
+    },
+    "b": {
+     "t": "Cajeras",
+     "w": "cajeras,",
+     "c": "#FFC800"
+    },
+    "sub": "Falacia de la conjunción",
+    "sw": "falacia de la conjunción"
+   },
+   "q": [
+    "prob-03"
+   ]
+  },
+  {
+   "voz": "¿Qué es más probable?",
+   "elige": {
+    "pregunta": "¿Qué es más probable?",
+    "opciones": [
+     "Que mañana llueva",
+     "Que mañana llueva y haga frío",
+     "Las dos son igual de probables"
+    ],
+    "bien": "Así es: dos condiciones juntas nunca son más probables que una sola.",
+    "mal": "Es más probable que llueva: que además haga frío es pedir más."
+   }
+  },
+  {
+   "voz": "Una sorpresa: con solo veintitrés personas en una sala, hay más de un cincuenta por ciento de probabilidad de que dos compartan cumpleaños.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 23,
+    "unidad": "personas",
+    "sub": "Más de 50% de que dos cumplan el mismo día",
+    "icono": "🎂"
+   },
+   "q": [
+    "prob-06"
+   ],
+   "fondo": "casino"
+  },
+  {
+   "voz": "Parece poco, pero lo que importa son los pares de personas. Con veintitrés personas hay doscientos cincuenta y tres pares, y cada par es una oportunidad de coincidir.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 253,
+    "unidad": "pares de personas",
+    "sub": "23 × 22 ÷ 2",
+    "icono": "👥"
+   },
+   "q": [
+    "prob-06"
+   ]
+  },
+  {
+   "voz": "Último: las muestras pequeñas varían más. En un hospital pequeño nacen quince bebés al día; en uno grande, cuarenta y cinco.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🏥",
+      "titulo": "Pequeño",
+      "texto": "15 bebés al día",
+      "w": "hospital pequeño"
+     },
+     {
+      "icono": "🏨",
+      "titulo": "Grande",
+      "texto": "45 bebés al día",
+      "w": "uno grande"
+     }
+    ]
+   },
+   "q": [
+    "prob-12"
+   ]
+  },
+  {
+   "voz": "Con pocos casos, es más fácil que salgan resultados extremos, como más de un sesenta por ciento de niños. Es como lanzar pocas monedas: las rachas raras salen con más facilidad.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "15 bebés",
+      "valor": 90,
+      "color": "#FF4B4B",
+      "texto": "más días extremos",
+      "w": "pocos casos"
+     },
+     {
+      "label": "45 bebés",
+      "valor": 35,
+      "color": "#1CB0F6",
+      "texto": "menos",
+      "w": "resultados extremos"
+     }
+    ],
+    "max": 100
+   },
+   "q": [
+    "prob-12"
+   ]
+  },
+  {
+   "voz": "¿En qué caso es más probable sacar un ochenta por ciento de caras o más?",
+   "elige": {
+    "pregunta": "¿En qué caso es más probable obtener 80% de caras o más?",
+    "opciones": [
+     "Lanzando 5 monedas",
+     "Lanzando 100 monedas",
+     "Es igual"
+    ],
+    "bien": "Así es: con pocas monedas, los extremos son más comunes.",
+    "mal": "Con cinco monedas: las muestras pequeñas dan resultados extremos con más facilidad."
+   }
+  },
+  {
+   "voz": "En resumen: el azar no tiene memoria. Dos condiciones juntas nunca son más probables que una. Las coincidencias son más comunes de lo que parecen. Y las muestras pequeñas varían más.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🎰",
+      "texto": "Sin memoria",
+      "w": "no tiene memoria"
+     },
+     {
+      "icono": "➕",
+      "texto": "Dos juntas ≤ una",
+      "w": "nunca son más probables"
+     },
+     {
+      "icono": "🎂",
+      "texto": "Coincidencias comunes",
+      "w": "coincidencias"
+     },
+     {
+      "icono": "🔬",
+      "texto": "Muestras chicas: extremos",
+      "w": "muestras pequeñas",
+      "marca": "oro"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

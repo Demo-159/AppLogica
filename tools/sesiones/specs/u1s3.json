@@ -1,0 +1,355 @@
+{
+ "id": "u1s3",
+ "titulo": "Dar vuelta un condicional",
+ "icono": "🔄",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver qué pasa cuando se da vuelta o se niega una frase con «si». Algunas versiones dicen lo mismo, y otras no.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔄",
+    "texto": "Dar vuelta un condicional"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Toma esta frase: si llueve, el suelo está mojado. Es verdadera: la lluvia siempre moja el suelo.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     "Si",
+     {
+      "t": "llueve",
+      "c": "#1CB0F6",
+      "w": "llueve"
+     },
+     "→",
+     {
+      "t": "suelo mojado",
+      "c": "#FFC800",
+      "w": "el suelo está mojado"
+     }
+    ],
+    "sub": "Original",
+    "sw": "verdadera"
+   }
+  },
+  {
+   "voz": "Ahora míralo al revés: si el suelo no está mojado, es porque no llovió. Esta versión se llama contrapositiva: se niegan las dos partes y se cambia el orden.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     "Si",
+     {
+      "t": "suelo NO mojado",
+      "c": "#FFC800",
+      "w": "no está mojado"
+     },
+     "→",
+     {
+      "t": "NO llovió",
+      "c": "#1CB0F6",
+      "w": "no llovió"
+     }
+    ],
+    "titulo": "Contrapositiva",
+    "tw": "contrapositiva",
+    "sub": "Se niegan las dos y se cambia el orden",
+    "sw": "se niegan"
+   },
+   "q": [
+    "prop-01"
+   ]
+  },
+  {
+   "voz": "La contrapositiva siempre dice lo mismo que la frase original. Si una es verdadera, la otra también.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🌧️",
+      "titulo": "Original",
+      "texto": "Si llueve → mojado",
+      "marca": "bien",
+      "w": "original"
+     },
+     {
+      "icono": "🔄",
+      "titulo": "Contrapositiva",
+      "texto": "Si NO mojado → NO llovió",
+      "marca": "bien",
+      "w": "contrapositiva"
+     }
+    ]
+   },
+   "q": [
+    "prop-01"
+   ]
+  },
+  {
+   "voz": "Pero hay dos versiones tramposas. La recíproca solo cambia el orden: si el suelo está mojado, llovió. Y no es cierto: alguien pudo regar.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "↩️",
+      "titulo": "Recíproca",
+      "texto": "Si mojado → llovió",
+      "marca": "mal",
+      "w": "recíproca"
+     },
+     {
+      "icono": "🚿",
+      "titulo": "¡Pudo ser un riego!",
+      "w": "regar"
+     }
+    ]
+   },
+   "q": [
+    "prop-01"
+   ]
+  },
+  {
+   "voz": "La inversa solo niega las dos partes: si no llueve, el suelo no está mojado. Tampoco es cierta, por la misma razón: el riego.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🚫",
+      "titulo": "Inversa",
+      "texto": "Si NO llueve → NO mojado",
+      "marca": "mal",
+      "w": "inversa"
+     },
+     {
+      "icono": "🚿",
+      "titulo": "¡El riego otra vez!",
+      "w": "el riego"
+     }
+    ]
+   },
+   "q": [
+    "prop-01"
+   ]
+  },
+  {
+   "voz": "Si es un perro, es un mamífero. ¿Cuál de estas frases dice exactamente lo mismo?",
+   "elige": {
+    "pregunta": "«Si es un perro, es un mamífero». ¿Cuál dice exactamente lo mismo?",
+    "opciones": [
+     "Si no es mamífero, no es un perro",
+     "Si es mamífero, es un perro",
+     "Si no es un perro, no es mamífero"
+    ],
+    "bien": "Así es: esa es la contrapositiva, y dice lo mismo.",
+    "mal": "La que dice lo mismo es la contrapositiva: si no es mamífero, no es un perro."
+   }
+  },
+  {
+   "voz": "Hay otra forma de decir lo mismo. Si pe, entonces cu, equivale a: no pe, o cu. Con la lluvia: o no llueve, o el suelo está mojado.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p → q",
+      "w": "si pe"
+     },
+     "≡",
+     {
+      "t": "¬p ∨ q",
+      "c": "#FFC800",
+      "w": "no pe, o cu"
+     }
+    ],
+    "sub": "«o no llueve, o el suelo está mojado»",
+    "sw": "con la lluvia"
+   },
+   "q": [
+    "prop-12"
+   ]
+  },
+  {
+   "voz": "Calza con la tabla: pe flecha cu es falso solo cuando pe es verdadero y cu falso. Y no pe, o cu, también es falso solo en ese caso.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "p",
+     "q",
+     "p → q",
+     "¬p ∨ q"
+    ],
+    "filas": [
+     {
+      "c": [
+       "V",
+       "V",
+       "V",
+       "V"
+      ]
+     },
+     {
+      "c": [
+       "V",
+       "F",
+       "F",
+       "F"
+      ],
+      "w": "solo en ese caso",
+      "marca": "mal"
+     },
+     {
+      "c": [
+       "F",
+       "V",
+       "V",
+       "V"
+      ]
+     },
+     {
+      "c": [
+       "F",
+       "F",
+       "V",
+       "V"
+      ]
+     }
+    ]
+   },
+   "q": [
+    "prop-12"
+   ]
+  },
+  {
+   "voz": "Si pe, entonces cu, equivale a…",
+   "elige": {
+    "pregunta": "«Si p, entonces q» equivale a…",
+    "opciones": [
+     "no p, o q",
+     "p, o no q",
+     "no p, y q"
+    ],
+    "bien": "Así es: no pe, o cu.",
+    "mal": "Equivale a: no pe, o cu. Las dos son falsas solo cuando pe es verdadero y cu falso."
+   }
+  },
+  {
+   "voz": "Por último, el «si y solo si». Se escribe con una flecha doble, y dice que las dos partes van juntas: son verdaderas las dos, o falsas las dos.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p",
+      "c": "#1CB0F6"
+     },
+     {
+      "t": "↔",
+      "w": "flecha doble"
+     },
+     {
+      "t": "q",
+      "c": "#FFC800"
+     }
+    ],
+    "titulo": "Bicondicional: «si y solo si»",
+    "tw": "si y solo si",
+    "sub": "Las dos verdaderas, o las dos falsas",
+    "sw": "van juntas"
+   },
+   "q": [
+    "prop-08"
+   ]
+  },
+  {
+   "voz": "Por ejemplo: la luz está encendida si y solo si el interruptor está arriba. Si las dos partes tienen el mismo valor, la frase es verdadera. Si tienen valores distintos, es falsa.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "💡",
+     "⬆️",
+     "p ↔ q"
+    ],
+    "filas": [
+     {
+      "c": [
+       "V",
+       "V",
+       "V"
+      ],
+      "w": "mismo valor",
+      "marca": "bien"
+     },
+     {
+      "c": [
+       "V",
+       "F",
+       "F"
+      ],
+      "w": "valores distintos",
+      "marca": "mal"
+     },
+     {
+      "c": [
+       "F",
+       "V",
+       "F"
+      ],
+      "w": "valores distintos",
+      "marca": "mal"
+     },
+     {
+      "c": [
+       "F",
+       "F",
+       "V"
+      ],
+      "w": "mismo valor",
+      "marca": "bien"
+     }
+    ]
+   },
+   "q": [
+    "prop-08"
+   ]
+  },
+  {
+   "voz": "¿Cuándo es verdadero pe, si y solo si, cu?",
+   "elige": {
+    "pregunta": "¿Cuándo es verdadero «p ↔ q»?",
+    "opciones": [
+     "Cuando p y q tienen el mismo valor",
+     "Solo cuando ambos son verdaderos",
+     "Cuando tienen valores distintos"
+    ],
+    "bien": "Así es: las dos verdaderas o las dos falsas.",
+    "mal": "Es verdadero cuando pe y cu tienen el mismo valor: las dos verdaderas, o las dos falsas."
+   }
+  },
+  {
+   "voz": "En resumen: la contrapositiva dice lo mismo; la recíproca y la inversa, no. Si pe entonces cu equivale a no pe o cu. Y el «si y solo si» pide el mismo valor.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "✅",
+      "texto": "Contrapositiva = original",
+      "w": "contrapositiva",
+      "marca": "bien"
+     },
+     {
+      "icono": "❌",
+      "texto": "Recíproca e inversa ≠",
+      "w": "la recíproca",
+      "marca": "mal"
+     },
+     {
+      "icono": "↔",
+      "texto": "Mismo valor",
+      "w": "mismo valor",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -30,6 +30,8 @@ VOICE = "it-IT-GiuseppeMultilingualNeural"
 FILLERS = ("bueno,", "a ver,", "mira,", "mira:", "oye,", "oye:")
 TTS = os.environ.get("EDGE_TTS", "edge-tts")
 
+PREGUNTAS = {q["id"]: q for q in json.load(open(os.path.join(ROOT, "contenido/preguntas.json"), encoding="utf-8"))["preguntas"]}
+
 def escenas_js():
     return "\n".join(open(f, encoding="utf-8").read() for f in sorted(glob.glob(os.path.join(HERE, "escenas", "*.js"))))
 
@@ -45,10 +47,31 @@ def reglas(spec, js):
     for t in textos(spec):
         if t.strip().lower().startswith(FILLERS): err.append(f"muletilla al inicio: {t[:60]}")
         if re.search(r"\bexacto\b", t.lower()): err.append(f"evita 'Exacto' (usa 'Así es'): {t[:60]}")
-    for p in spec["pasos"]:
+    for i, p in enumerate(spec["pasos"]):
         e = p.get("escena") or {}
         if e.get("tipo") == "anim" and f"'{e['id']}'" not in js: err.append(f"falta la escena {e['id']}")
+        # cada parte que aparece "cuando la voz dice su palabra" tiene que estar en la frase de su paso
+        voz = (p.get("voz") or "").lower()
+        for w in palabras_w(e):
+            if w.lower() not in voz: err.append(f"paso {i}: «{w}» no está en la voz: {voz[:70]}")
+        for q in p.get("q", []):
+            if q not in PREGUNTAS: err.append(f"paso {i}: la pregunta {q} no existe en contenido/preguntas.json")
+        el = p.get("elige")
+        if el and len(el["opciones"]) != 3: err.append(f"paso {i}: la pregunta de la sesión debe tener 3 opciones")
+    if not any(p.get("q") for p in spec["pasos"]): err.append("ninguna pregunta de práctica: marca con \"q\" los pasos que enseñan cada una")
     return err
+
+def palabras_w(e):
+    """Las palabras (data-w) de una escena genérica: claves w, tw, sw y fw en cualquier nivel."""
+    out = []
+    if isinstance(e, dict):
+        for k, v in e.items():
+            if k in ("w", "tw", "sw") and isinstance(v, str): out.append(v)
+            elif k == "fw": out += [x for x in v if x]
+            else: out += palabras_w(v)
+    elif isinstance(e, list):
+        for x in e: out += palabras_w(x)
+    return out
 
 def audio(text):
     os.makedirs(CACHE, exist_ok=True)
@@ -58,7 +81,11 @@ def audio(text):
         raw = out + ".raw.mp3"
         cmd = [TTS, "--voice", VOICE, "--rate=+10%", "--pitch=+3Hz", "--text", text, "--write-media", raw]
         if os.environ.get("HTTPS_PROXY"): cmd[1:1] = ["--proxy", os.environ["HTTPS_PROXY"]]
-        subprocess.run(cmd, check=True, capture_output=True)
+        for intento in range(5):   # el servicio de voz a veces falla por un momento: reintentar
+            try: subprocess.run(cmd, check=True, capture_output=True); break
+            except subprocess.CalledProcessError:
+                if intento == 4: raise
+                import time; time.sleep(3 * (intento + 1))
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
                         "silenceremove=start_periods=1:start_threshold=-45dB,highpass=f=90,equalizer=f=3200:t=q:w=1:g=3,"
                         "acompressor=threshold=-18dB:ratio=3,atempo=0.89", "-ac", "1", "-b:a", "48k", out], check=True)
@@ -124,6 +151,8 @@ def build(sid, check):
     err = reglas(spec, js)
     if err: print(f"✗ {sid}:\n  " + "\n  ".join(err)); return False
     aud, txt, dur, malas = {}, {}, {}, []
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(6) as ex: list(ex.map(audio, dict.fromkeys(textos(spec))))
     for t in dict.fromkeys(textos(spec)):
         key = "a" + hashlib.sha1(t.encode()).hexdigest()[:8]
         path = audio(t); aud[key] = b64(path, "audio/mpeg"); txt[key] = t
@@ -154,8 +183,10 @@ def build(sid, check):
                         "@font-face{font-family:'RBEmoji';font-display:block;src:url(%s) format('woff2')}"
                         "@font-face{font-family:'RBSimbolos';font-display:block;src:url(%s) format('woff2')}"
                         "@font-face{font-family:'RBSimbolos2';font-display:block;src:url(%s) format('woff2')}"
+                        "@font-face{font-family:'RBSimbolos3';font-display:block;src:url(%s) format('woff2')}"
                         % (fuente, emoji, b64(os.path.join(ROOT, "tools/fuentes/NotoSansMath-rutab.woff2"), "font/woff2"),
-                           b64(os.path.join(ROOT, "tools/fuentes/NotoSansSymbols2-rutab.woff2"), "font/woff2")), 1)
+                           b64(os.path.join(ROOT, "tools/fuentes/NotoSansSymbols2-rutab.woff2"), "font/woff2"),
+                           b64(os.path.join(ROOT, "tools/fuentes/NotoSans-rutab.woff2"), "font/woff2")), 1)
     html = html.replace("<script>\nconst S=window.SESSION", "<script>window.SESSION=" + json.dumps(S, ensure_ascii=False) + ";</script>\n<script>\nconst S=window.SESSION", 1)
     os.makedirs(DIST, exist_ok=True)
     open(os.path.join(DIST, sid + ".html"), "w", encoding="utf-8").write(html)
@@ -168,5 +199,7 @@ if __name__ == "__main__":
     if "--unidad" in sys.argv:
         n = sys.argv[sys.argv.index("--unidad") + 1]; args = sorted(os.path.basename(f)[:-5] for f in glob.glob(os.path.join(HERE, f"specs/u{n}s*.json")))
         args = [a for a in args if a != n]
+    if "--todas" in sys.argv:
+        args = sorted((os.path.basename(f)[:-5] for f in glob.glob(os.path.join(HERE, "specs/*.json"))), key=lambda s: [int(x) for x in re.findall(r"\d+", s)])
     ok = all([build(s, "--revisar-voz" in sys.argv) for s in args])
     sys.exit(0 if ok else 1)

@@ -1,0 +1,344 @@
+{
+ "id": "u6s1",
+ "titulo": "Series de números",
+ "icono": "🔢",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a descubrir la regla escondida en una serie de números.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔢",
+    "texto": "Series de números"
+   },
+   "fondo": "cosmos"
+  },
+  {
+   "voz": "El primer paso es mirar cuánto cambia de un número al siguiente. Dos, cinco, ocho, once: siempre suma tres. El que sigue es catorce.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "2"
+     },
+     {
+      "t": "5"
+     },
+     {
+      "t": "8"
+     },
+     {
+      "t": "11"
+     },
+     {
+      "t": "14",
+      "w": "catorce",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "+3",
+      "w": "suma tres"
+     },
+     {
+      "t": "+3",
+      "w": "suma tres"
+     },
+     {
+      "t": "+3",
+      "w": "suma tres"
+     },
+     {
+      "t": "+3",
+      "w": "catorce"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "Si no suma lo mismo, prueba si multiplica. Tres, nueve, veintisiete, ochenta y uno: cada uno es el anterior por tres. Sigue doscientos cuarenta y tres.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "3"
+     },
+     {
+      "t": "9"
+     },
+     {
+      "t": "27"
+     },
+     {
+      "t": "81"
+     },
+     {
+      "t": "243",
+      "w": "doscientos cuarenta y tres",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "×3",
+      "w": "por tres"
+     },
+     {
+      "t": "×3",
+      "w": "por tres"
+     },
+     {
+      "t": "×3",
+      "w": "por tres"
+     },
+     {
+      "t": "×3",
+      "w": "por tres"
+     }
+    ]
+   },
+   "q": [
+    "pat-02"
+   ]
+  },
+  {
+   "voz": "También puede dividir. Sesenta y cuatro, treinta y dos, dieciséis, ocho: cada uno es la mitad del anterior. Sigue cuatro.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "64"
+     },
+     {
+      "t": "32"
+     },
+     {
+      "t": "16"
+     },
+     {
+      "t": "8"
+     },
+     {
+      "t": "4",
+      "w": "sigue cuatro",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "÷2",
+      "w": "la mitad"
+     },
+     {
+      "t": "÷2",
+      "w": "la mitad"
+     },
+     {
+      "t": "÷2",
+      "w": "la mitad"
+     },
+     {
+      "t": "÷2",
+      "w": "la mitad"
+     }
+    ]
+   },
+   "q": [
+    "pat-07"
+   ]
+  },
+  {
+   "voz": "¿Qué número sigue? Cinco, diez, veinte, cuarenta…",
+   "elige": {
+    "pregunta": "¿Qué número sigue? 5, 10, 20, 40, …",
+    "opciones": [
+     "80",
+     "60",
+     "45"
+    ],
+    "bien": "Así es: cada uno es el doble del anterior.",
+    "mal": "Sigue ochenta: cada número es el doble del anterior."
+   }
+  },
+  {
+   "voz": "A veces las diferencias crecen. Dos, seis, doce, veinte, treinta: las diferencias son cuatro, seis, ocho, diez. La siguiente es doce, así que sigue cuarenta y dos.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "2"
+     },
+     {
+      "t": "6"
+     },
+     {
+      "t": "12"
+     },
+     {
+      "t": "20"
+     },
+     {
+      "t": "30"
+     },
+     {
+      "t": "42",
+      "w": "cuarenta y dos",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "+4",
+      "w": "cuatro, seis"
+     },
+     {
+      "t": "+6",
+      "w": "cuatro, seis"
+     },
+     {
+      "t": "+8",
+      "w": "ocho, diez"
+     },
+     {
+      "t": "+10",
+      "w": "ocho, diez"
+     },
+     {
+      "t": "+12",
+      "w": "la siguiente es doce"
+     }
+    ]
+   },
+   "q": [
+    "pat-14"
+   ]
+  },
+  {
+   "voz": "Uno, cuatro, nueve, dieciséis, veinticinco: son los cuadrados. Uno por uno, dos por dos, tres por tres. Sigue seis por seis, treinta y seis.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "1",
+      "w": "uno por uno"
+     },
+     {
+      "t": "4",
+      "w": "dos por dos"
+     },
+     {
+      "t": "9",
+      "w": "tres por tres"
+     },
+     {
+      "t": "16"
+     },
+     {
+      "t": "25"
+     },
+     {
+      "t": "36",
+      "w": "treinta y seis",
+      "c": "#FFC800"
+     }
+    ],
+    "sub": "1×1, 2×2, 3×3, 4×4, 5×5, 6×6",
+    "sw": "son los cuadrados"
+   },
+   "q": [
+    "pat-04"
+   ]
+  },
+  {
+   "voz": "¿Qué número sigue? Uno, tres, seis, diez, quince…",
+   "elige": {
+    "pregunta": "¿Qué número sigue? 1, 3, 6, 10, 15, …",
+    "opciones": [
+     "21",
+     "20",
+     "25"
+    ],
+    "bien": "Así es: las diferencias son dos, tres, cuatro, cinco, y ahora seis.",
+    "mal": "Sigue veintiuno: las diferencias crecen de a uno, y ahora toca sumar seis."
+   }
+  },
+  {
+   "voz": "Una serie famosa: uno, uno, dos, tres, cinco, ocho. Cada número es la suma de los dos anteriores: cinco más ocho, trece. Se llama serie de Fibonacci.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "1"
+     },
+     {
+      "t": "1"
+     },
+     {
+      "t": "2"
+     },
+     {
+      "t": "3"
+     },
+     {
+      "t": "5",
+      "w": "cinco más ocho"
+     },
+     {
+      "t": "8",
+      "w": "cinco más ocho"
+     },
+     {
+      "t": "13",
+      "w": "trece",
+      "c": "#FFC800"
+     }
+    ],
+    "titulo": "Fibonacci",
+    "tw": "fibonacci",
+    "sub": "Cada uno = suma de los dos anteriores",
+    "sw": "la suma"
+   },
+   "q": [
+    "pat-01"
+   ]
+  },
+  {
+   "voz": "En la serie dos, dos, cuatro, seis, diez, dieciséis, cada número es la suma de los dos anteriores. ¿Qué sigue?",
+   "elige": {
+    "pregunta": "En la serie 2, 2, 4, 6, 10, 16, … cada número es la suma de los dos anteriores. ¿Qué sigue?",
+    "opciones": [
+     "26",
+     "22",
+     "32"
+    ],
+    "bien": "Así es: diez más dieciséis.",
+    "mal": "Sigue veintiséis: diez más dieciséis."
+   }
+  },
+  {
+   "voz": "En resumen: mira las diferencias. Si no sirven, prueba multiplicar o dividir. Y si nada de eso funciona, busca cuadrados o sumas de los anteriores.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "➕",
+      "texto": "Diferencias",
+      "w": "las diferencias"
+     },
+     {
+      "icono": "✖️",
+      "texto": "Multiplicar o dividir",
+      "w": "multiplicar"
+     },
+     {
+      "icono": "🔍",
+      "texto": "Cuadrados o sumas",
+      "w": "cuadrados",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

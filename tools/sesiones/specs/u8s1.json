@@ -1,0 +1,239 @@
+{
+ "id": "u8s1",
+ "titulo": "Correlación no es causalidad",
+ "icono": "🍦",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver por qué que dos cosas ocurran juntas no significa que una cause la otra.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🍦",
+    "texto": "Correlación no es causalidad"
+   },
+   "fondo": "oficina"
+  },
+  {
+   "voz": "Cuando suben las ventas de helados, también suben los ahogamientos. ¿Los helados causan ahogamientos? No.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🍦",
+      "titulo": "Ventas de helados",
+      "texto": "↑",
+      "w": "ventas de helados"
+     },
+     {
+      "icono": "🏊",
+      "titulo": "Ahogamientos",
+      "texto": "↑",
+      "w": "ahogamientos"
+     }
+    ]
+   },
+   "q": [
+    "est-01"
+   ]
+  },
+  {
+   "voz": "Hay una tercera causa: el calor. En verano se compran más helados, y más gente va a nadar. A eso se le llama variable de confusión.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "☀️",
+      "t": "Calor",
+      "w": "el calor",
+      "c": "#FFC800"
+     },
+     {
+      "icono": "🍦",
+      "t": "Más helados",
+      "w": "más helados"
+     },
+     {
+      "icono": "🏊",
+      "t": "Más gente nadando",
+      "w": "a nadar"
+     }
+    ],
+    "sub": "Variable de confusión",
+    "sw": "variable de confusión"
+   },
+   "q": [
+    "est-01"
+   ]
+  },
+  {
+   "voz": "Los niños con pies más grandes leen mejor. ¿Qué lo explica mejor?",
+   "elige": {
+    "pregunta": "Los niños con pies más grandes leen mejor. ¿Qué lo explica mejor?",
+    "opciones": [
+     "La edad: los mayores tienen pies más grandes y leen mejor",
+     "Los pies grandes ayudan a leer",
+     "Leer hace crecer los pies"
+    ],
+    "bien": "Así es: la edad es la variable de confusión.",
+    "mal": "La explica la edad: los niños mayores tienen pies más grandes y leen mejor."
+   }
+  },
+  {
+   "voz": "A veces la causa va al revés. Las personas que más van al médico tienen más enfermedades. No es que ir al médico enferme: estar enfermo hace ir al médico. Se llama causalidad inversa.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🤒",
+      "t": "Estar enfermo",
+      "w": "estar enfermo",
+      "c": "#FF4B4B"
+     },
+     {
+      "icono": "🩺",
+      "t": "Ir al médico",
+      "w": "hace ir al médico"
+     }
+    ],
+    "sub": "Causalidad inversa",
+    "sw": "causalidad inversa"
+   },
+   "q": [
+    "est-09"
+   ]
+  },
+  {
+   "voz": "Otras veces falta comparar con cuántas veces ocurre algo. La mayoría de los accidentes de tránsito ocurren cerca de casa. Pero es que la mayoría de los viajes ocurren cerca de casa.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Viajes cerca de casa",
+      "valor": 80,
+      "color": "#1CB0F6",
+      "texto": "la mayoría",
+      "w": "la mayoría de los viajes"
+     },
+     {
+      "label": "Accidentes cerca de casa",
+      "valor": 80,
+      "color": "#FF4B4B",
+      "texto": "la mayoría",
+      "w": "la mayoría de los accidentes"
+     }
+    ],
+    "max": 100,
+    "sub": "Más viajes → más accidentes, sin más peligro"
+   },
+   "q": [
+    "est-10"
+   ]
+  },
+  {
+   "voz": "La mayoría de los accidentes ocurren de día. ¿Es más peligroso manejar de día?",
+   "elige": {
+    "pregunta": "La mayoría de los accidentes ocurren de día. ¿Es más peligroso manejar de día?",
+    "opciones": [
+     "No necesariamente: de día se maneja mucho más",
+     "Sí: de día hay más peligro",
+     "Sí: de noche se maneja con más cuidado"
+    ],
+    "bien": "Así es: hay que comparar con cuánto se maneja.",
+    "mal": "No necesariamente: de día se maneja mucho más, así que es esperable que haya más accidentes."
+   }
+  },
+  {
+   "voz": "Y un efecto engañoso: la regresión a la media. Después de un resultado extremo, el siguiente suele ser más normal, solo por azar.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "70"
+     },
+     {
+      "t": "98",
+      "w": "resultado extremo",
+      "c": "#58CC02"
+     },
+     {
+      "t": "74",
+      "w": "más normal",
+      "c": "#1CB0F6"
+     }
+    ],
+    "titulo": "Puntajes",
+    "sub": "Tras lo extremo, vuelve a lo normal",
+    "sw": "regresión a la media"
+   },
+   "q": [
+    "est-02"
+   ]
+  },
+  {
+   "voz": "Un instructor felicita a un piloto tras un aterrizaje excelente, y el siguiente sale peor. Lo regaña tras uno malo, y el siguiente sale mejor. No es por el elogio ni por el regaño: es regresión a la media.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "👏",
+      "titulo": "Tras el elogio",
+      "texto": "Peor: vuelve a lo normal",
+      "w": "felicita"
+     },
+     {
+      "icono": "😠",
+      "titulo": "Tras el regaño",
+      "texto": "Mejor: vuelve a lo normal",
+      "w": "lo regaña"
+     }
+    ]
+   },
+   "q": [
+    "est-02"
+   ]
+  },
+  {
+   "voz": "Un equipo tiene su peor temporada, cambia de entrenador y al año siguiente mejora. ¿Qué otra explicación debes considerar?",
+   "elige": {
+    "pregunta": "Un equipo tiene su peor temporada, cambia de entrenador y al año siguiente mejora. ¿Qué otra explicación debes considerar?",
+    "opciones": [
+     "La regresión a la media",
+     "El efecto placebo",
+     "La causalidad inversa"
+    ],
+    "bien": "Así es: tras un año extremo, lo normal es que mejore.",
+    "mal": "La regresión a la media: tras su peor temporada, lo esperable es que vuelva a lo normal."
+   }
+  },
+  {
+   "voz": "En resumen: antes de ver causa, busca una tercera variable, revisa si la causa va al revés, compara con cuántas veces ocurre, y piensa en la regresión a la media.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "☀️",
+      "texto": "Tercera variable",
+      "w": "tercera variable"
+     },
+     {
+      "icono": "🔄",
+      "texto": "Causa al revés",
+      "w": "al revés"
+     },
+     {
+      "icono": "📊",
+      "texto": "Compara",
+      "w": "compara"
+     },
+     {
+      "icono": "↩️",
+      "texto": "Regresión a la media",
+      "w": "regresión",
+      "marca": "oro"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

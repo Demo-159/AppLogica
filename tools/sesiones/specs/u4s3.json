@@ -1,0 +1,306 @@
+{
+ "id": "u4s3",
+ "titulo": "Contar posibilidades",
+ "icono": "🔢",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a contar posibilidades sin tener que escribirlas todas.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔢",
+    "texto": "Contar posibilidades"
+   },
+   "fondo": "cosmos"
+  },
+  {
+   "voz": "Una variable, pe, puede ser verdadera o falsa: dos casos. Con dos variables, cada caso de pe se combina con los dos de cu: cuatro casos.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "p",
+     "q"
+    ],
+    "filas": [
+     {
+      "c": [
+       "V",
+       "V"
+      ],
+      "w": "cuatro casos"
+     },
+     {
+      "c": [
+       "V",
+       "F"
+      ],
+      "w": "cuatro casos"
+     },
+     {
+      "c": [
+       "F",
+       "V"
+      ],
+      "w": "cuatro casos"
+     },
+     {
+      "c": [
+       "F",
+       "F"
+      ],
+      "w": "cuatro casos"
+     }
+    ],
+    "titulo": "2 variables → 4 filas",
+    "tw": "dos variables"
+   }
+  },
+  {
+   "voz": "Cada variable nueva duplica las filas de la tabla de verdad. Tres variables: ocho filas. Cuatro variables: dieciséis.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "2"
+     },
+     {
+      "t": "4"
+     },
+     {
+      "t": "8",
+      "w": "ocho filas"
+     },
+     {
+      "t": "16",
+      "w": "dieciséis",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "×2",
+      "w": "duplica"
+     },
+     {
+      "t": "×2",
+      "w": "duplica"
+     },
+     {
+      "t": "×2",
+      "w": "cuatro variables"
+     }
+    ],
+    "titulo": "1, 2, 3, 4 variables",
+    "sub": "Filas = 2 × 2 × … (una vez por variable)",
+    "sw": "cada variable nueva"
+   },
+   "q": [
+    "mat-05"
+   ]
+  },
+  {
+   "voz": "¿Cuántas filas tiene la tabla de verdad con tres variables?",
+   "elige": {
+    "pregunta": "¿Cuántas filas tiene la tabla de verdad de una fórmula con 3 variables?",
+    "opciones": [
+     "8",
+     "6",
+     "9"
+    ],
+    "bien": "Así es: dos por dos por dos.",
+    "mal": "Tiene ocho: cada variable duplica las filas, dos por dos por dos."
+   }
+  },
+  {
+   "voz": "Con los subconjuntos pasa lo mismo. Un subconjunto de a, be, ce se arma decidiendo, para cada elemento, si entra o no entra: dos opciones cada uno.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "a",
+      "texto": "¿entra o no?",
+      "w": "a, be"
+     },
+     {
+      "icono": "b",
+      "texto": "¿entra o no?",
+      "w": "be, ce"
+     },
+     {
+      "icono": "c",
+      "texto": "¿entra o no?",
+      "w": "si entra"
+     }
+    ],
+    "sub": "2 opciones por elemento",
+    "sw": "dos opciones"
+   },
+   "q": [
+    "mat-11"
+   ]
+  },
+  {
+   "voz": "Dos por dos por dos: ocho subconjuntos. Eso incluye el conjunto vacío, sin nada, y el conjunto completo.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "texto": "{ }",
+      "w": "vacío",
+      "marca": "oro"
+     },
+     {
+      "texto": "{a}",
+      "w": "ocho"
+     },
+     {
+      "texto": "{b}",
+      "w": "ocho"
+     },
+     {
+      "texto": "{c}",
+      "w": "ocho"
+     },
+     {
+      "texto": "{a, b}",
+      "w": "ocho"
+     },
+     {
+      "texto": "{a, c}",
+      "w": "ocho"
+     },
+     {
+      "texto": "{b, c}",
+      "w": "ocho"
+     },
+     {
+      "texto": "{a, b, c}",
+      "w": "completo",
+      "marca": "oro"
+     }
+    ],
+    "sub": "2 × 2 × 2 = 8",
+    "sw": "dos por dos",
+    "cols": 4
+   },
+   "q": [
+    "mat-11"
+   ]
+  },
+  {
+   "voz": "¿Cuántos subconjuntos tiene el conjunto x, y?",
+   "elige": {
+    "pregunta": "¿Cuántos subconjuntos tiene el conjunto {x, y}?",
+    "opciones": [
+     "4",
+     "2",
+     "3"
+    ],
+    "bien": "Así es: el vacío, equis, i griega, y los dos juntos.",
+    "mal": "Tiene cuatro: dos por dos. Son el vacío, cada uno solo, y los dos juntos."
+   }
+  },
+  {
+   "voz": "Ahora, el principio del palomar. Si hay más palomas que nidos, al menos un nido tiene que tener dos palomas.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "🐦🐦",
+      "w": "dos palomas",
+      "c": "#FFC800"
+     },
+     {
+      "t": "🐦"
+     },
+     {
+      "t": "🐦"
+     }
+    ],
+    "titulo": "4 palomas, 3 nidos",
+    "tw": "más palomas que nidos",
+    "sub": "Algún nido queda con dos",
+    "sw": "al menos un nido"
+   },
+   "q": [
+    "mat-14"
+   ]
+  },
+  {
+   "voz": "Con personas: hay doce meses. Si hay trece personas, al menos dos nacieron el mismo mes, aunque no sepas cuáles.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 13,
+    "unidad": "personas → 12 meses",
+    "sub": "Al menos dos comparten mes",
+    "icono": "📅"
+   },
+   "q": [
+    "mat-14"
+   ]
+  },
+  {
+   "voz": "Ojo: con trece personas no se puede asegurar que dos cumplan años el mismo día. Para eso harían falta trescientas sesenta y siete personas, una más que los días posibles.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "📅",
+      "titulo": "Mismo mes",
+      "texto": "13 personas bastan",
+      "marca": "bien",
+      "w": "con trece"
+     },
+     {
+      "icono": "🎂",
+      "titulo": "Mismo día",
+      "texto": "Harían falta 367",
+      "marca": "mal",
+      "w": "mismo día"
+     }
+    ]
+   },
+   "q": [
+    "mat-14"
+   ]
+  },
+  {
+   "voz": "En un cajón hay calcetines de tres colores. ¿Cuántos debes sacar a ciegas para asegurar dos del mismo color?",
+   "elige": {
+    "pregunta": "En un cajón hay calcetines de 3 colores. ¿Cuántos debes sacar, a ciegas, para asegurar dos del mismo color?",
+    "opciones": [
+     "4",
+     "3",
+     "6"
+    ],
+    "bien": "Así es: con cuatro, algún color se repite.",
+    "mal": "Cuatro: con tres podrías sacar uno de cada color, pero el cuarto repite alguno."
+   }
+  },
+  {
+   "voz": "En resumen: cada opción de sí o no duplica las posibilidades. Y si hay más cosas que cajones, alguno se repite.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "✖️",
+      "texto": "Cada sí/no: ×2",
+      "w": "duplica",
+      "marca": "oro"
+     },
+     {
+      "icono": "🐦",
+      "texto": "Más cosas que cajones",
+      "w": "más cosas",
+      "marca": "bien"
+     },
+     {
+      "icono": "🔁",
+      "texto": "→ alguno se repite",
+      "w": "se repite"
+     }
+    ]
+   }
+  }
+ ]
+}

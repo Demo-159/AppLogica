@@ -1,0 +1,349 @@
+{
+ "id": "u1s2",
+ "titulo": "Y, o, no",
+ "icono": "🔗",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a aprender tres palabras clave de la lógica: y, o, no. Y cómo negar frases que las usan.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔗",
+    "texto": "Y, o, no"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "La palabra «no» da vuelta una frase. Si «llueve» es verdadero, «no llueve» es falso. En lógica se escribe con este símbolo, delante de la letra.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "¬",
+      "c": "#FF4B4B",
+      "w": "este símbolo"
+     },
+     {
+      "t": "p",
+      "c": "#1CB0F6",
+      "w": "delante"
+     }
+    ],
+    "sub": "«no p»",
+    "sw": "delante"
+   }
+  },
+  {
+   "voz": "La palabra «y» une dos frases. «Juan es alto y rubio» solo es verdadera si las dos partes son verdaderas. Se escribe con un ángulo hacia arriba.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "alto",
+     "rubio",
+     "alto ∧ rubio"
+    ],
+    "filas": [
+     {
+      "c": [
+       "V",
+       "V",
+       "V"
+      ],
+      "w": "las dos partes",
+      "marca": "bien"
+     },
+     {
+      "c": [
+       "V",
+       "F",
+       "F"
+      ],
+      "w": "solo es"
+     },
+     {
+      "c": [
+       "F",
+       "V",
+       "F"
+      ],
+      "w": "solo es"
+     },
+     {
+      "c": [
+       "F",
+       "F",
+       "F"
+      ],
+      "w": "solo es"
+     }
+    ],
+    "sub": "∧ = «y»",
+    "sw": "ángulo"
+   }
+  },
+  {
+   "voz": "La palabra «o» es más generosa. «Ana va al cine o al teatro» es verdadera si va a uno, al otro, o a los dos. Solo es falsa si no va a ninguno. Se escribe con un ángulo hacia abajo.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "cine",
+     "teatro",
+     "cine ∨ teatro"
+    ],
+    "filas": [
+     {
+      "c": [
+       "V",
+       "V",
+       "V"
+      ],
+      "w": "o a los dos"
+     },
+     {
+      "c": [
+       "V",
+       "F",
+       "V"
+      ],
+      "w": "a uno"
+     },
+     {
+      "c": [
+       "F",
+       "V",
+       "V"
+      ],
+      "w": "al otro"
+     },
+     {
+      "c": [
+       "F",
+       "F",
+       "F"
+      ],
+      "w": "a ninguno",
+      "marca": "mal"
+     }
+    ],
+    "sub": "∨ = «o»",
+    "sw": "ángulo"
+   }
+  },
+  {
+   "voz": "Con esto se puede deducir. Si sabes que «pe o cu» es verdadero, y que pe es falso, entonces cu tiene que ser verdadero: alguna de las dos debía cumplirse.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "✅",
+      "t": "p ∨ q verdadero",
+      "w": "pe o cu"
+     },
+     {
+      "icono": "❌",
+      "t": "p es falso",
+      "w": "pe es falso"
+     },
+     {
+      "icono": "💡",
+      "t": "q es verdadero",
+      "w": "tiene que ser",
+      "c": "#58CC02"
+     }
+    ]
+   },
+   "q": [
+    "prop-09"
+   ]
+  },
+  {
+   "voz": "Ana va al cine o al teatro, y no fue al cine. ¿Qué puedes concluir?",
+   "elige": {
+    "pregunta": "«Ana va al cine o al teatro». No fue al cine. Entonces…",
+    "opciones": [
+     "Fue al teatro",
+     "No fue al teatro",
+     "No se puede saber"
+    ],
+    "bien": "Así es: si una opción falla, la otra tiene que cumplirse.",
+    "mal": "Fue al teatro: con «o», si una parte es falsa, la otra tiene que ser verdadera."
+   }
+  },
+  {
+   "voz": "Ahora, negar. ¿Cuándo es falso que Juan es alto y rubio? Basta con que falle una parte: que no sea alto, o que no sea rubio.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🙅",
+      "titulo": "No es alto",
+      "texto": "…o no es rubio",
+      "w": "no sea alto"
+     },
+     {
+      "icono": "🙅",
+      "titulo": "No es rubio",
+      "texto": "…o no es alto",
+      "w": "no sea rubio"
+     }
+    ]
+   },
+   "q": [
+    "prop-03"
+   ]
+  },
+  {
+   "voz": "Por eso, la negación de una frase con «y» es una frase con «o», negando cada parte. Esta es una de las leyes de De Morgan.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "¬(p ∧ q)",
+      "w": "la negación"
+     },
+     {
+      "t": "≡",
+      "w": "es una frase"
+     },
+     {
+      "t": "¬p ∨ ¬q",
+      "c": "#FFC800",
+      "w": "negando cada parte"
+     }
+    ],
+    "titulo": "Ley de De Morgan",
+    "tw": "De Morgan",
+    "sub": "Al negar, «y» se vuelve «o»",
+    "sw": "es una frase con «o»"
+   },
+   "q": [
+    "prop-03"
+   ]
+  },
+  {
+   "voz": "Con «o» pasa al revés. ¿Cuándo es falso que Ana va al cine o al teatro? Solo si no va a ninguno: no va al cine, y no va al teatro.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "¬(p ∨ q)",
+      "w": "cuándo es falso"
+     },
+     {
+      "t": "≡",
+      "w": "solo si"
+     },
+     {
+      "t": "¬p ∧ ¬q",
+      "c": "#FFC800",
+      "w": "no va al cine, y"
+     }
+    ],
+    "titulo": "La otra ley de De Morgan",
+    "sub": "Al negar, «o» se vuelve «y»",
+    "sw": "al revés"
+   },
+   "q": [
+    "prop-04"
+   ]
+  },
+  {
+   "voz": "¿Cuál es la negación de: hace frío y llueve?",
+   "elige": {
+    "pregunta": "¿Cuál es la negación de «Hace frío y llueve»?",
+    "opciones": [
+     "No hace frío o no llueve",
+     "No hace frío y no llueve",
+     "Hace calor y está soleado"
+    ],
+    "bien": "Así es: basta que falle una de las dos partes.",
+    "mal": "Es: no hace frío, o no llueve. Al negar un «y», queda un «o» con cada parte negada."
+   }
+  },
+  {
+   "voz": "Una última idea. Algunas frases son verdaderas siempre, pase lo que pase. «Llueve o no llueve» no puede fallar: una de las dos se cumple sí o sí. Eso se llama tautología.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p ∨ ¬p",
+      "c": "#58CC02",
+      "w": "llueve o no llueve"
+     },
+     "=",
+     {
+      "t": "siempre V",
+      "w": "tautología"
+     }
+    ],
+    "titulo": "Tautología",
+    "tw": "tautología",
+    "sub": "Verdadera pase lo que pase",
+    "sw": "pase lo que pase"
+   },
+   "q": [
+    "prop-10"
+   ]
+  },
+  {
+   "voz": "Al revés, «llueve y no llueve» no puede ser verdadera nunca. Eso es una contradicción.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p ∧ ¬p",
+      "c": "#FF4B4B",
+      "w": "llueve y no llueve"
+     },
+     "=",
+     {
+      "t": "siempre F",
+      "w": "contradicción"
+     }
+    ],
+    "titulo": "Contradicción",
+    "tw": "contradicción"
+   },
+   "q": [
+    "prop-10"
+   ]
+  },
+  {
+   "voz": "¿Cuál de estas frases es siempre verdadera?",
+   "elige": {
+    "pregunta": "¿Cuál de estas frases es SIEMPRE verdadera?",
+    "opciones": [
+     "Estudio o no estudio",
+     "Estudio y no estudio",
+     "Estudio o trabajo"
+    ],
+    "bien": "Así es: una de las dos partes se cumple sí o sí. Es una tautología.",
+    "mal": "Es «estudio o no estudio»: una de las dos se cumple sí o sí. Es una tautología."
+   }
+  },
+  {
+   "voz": "En resumen: «y» exige las dos partes, «o» exige al menos una. Al negar, el «y» se vuelve «o», y el «o» se vuelve «y».",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "∧",
+      "texto": "«y»: las dos",
+      "w": "«y» exige"
+     },
+     {
+      "icono": "∨",
+      "texto": "«o»: al menos una",
+      "w": "«o» exige"
+     },
+     {
+      "icono": "🔁",
+      "texto": "Al negar, ∧ ↔ ∨",
+      "w": "al negar",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,171 @@
+{
+ "id": "u6s4",
+ "titulo": "Ciclos: relojes y calendarios",
+ "icono": "🕒",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a resolver problemas con cosas que se repiten en ciclos, como la semana y el reloj.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🕒",
+    "texto": "Ciclos: relojes y calendarios"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "La semana se repite cada siete días. Para saber qué día será dentro de muchos días, quita las semanas completas.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "L"
+     },
+     {
+      "t": "M"
+     },
+     {
+      "t": "M"
+     },
+     {
+      "t": "J"
+     },
+     {
+      "t": "V"
+     },
+     {
+      "t": "S"
+     },
+     {
+      "t": "D"
+     },
+     {
+      "t": "L",
+      "w": "se repite"
+     }
+    ],
+    "sub": "Cada 7 días vuelve el mismo día",
+    "sw": "cada siete días"
+   },
+   "q": [
+    "pat-12"
+   ]
+  },
+  {
+   "voz": "En cien días caben catorce semanas, que son noventa y ocho días, y sobran dos. Si hoy es lunes, en cien días será lunes más dos: miércoles.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "100",
+      "w": "en cien días"
+     },
+     "=",
+     {
+      "t": "14 semanas (98)",
+      "c": "#1CB0F6",
+      "w": "catorce semanas"
+     },
+     "+",
+     {
+      "t": "2",
+      "c": "#FFC800",
+      "w": "sobran dos"
+     },
+     "→",
+     {
+      "t": "miércoles",
+      "c": "#58CC02",
+      "w": "miércoles"
+     }
+    ]
+   },
+   "q": [
+    "pat-12"
+   ]
+  },
+  {
+   "voz": "Hoy es viernes. ¿Qué día será dentro de diez días?",
+   "elige": {
+    "pregunta": "Hoy es viernes. ¿Qué día será dentro de 10 días?",
+    "opciones": [
+     "Lunes",
+     "Domingo",
+     "Martes"
+    ],
+    "bien": "Así es: una semana, y sobran tres días.",
+    "mal": "Será lunes: diez días es una semana y tres días más, y viernes más tres es lunes."
+   }
+  },
+  {
+   "voz": "En un reloj, la vuelta completa tiene trescientos sesenta grados. Hay doce números, así que cada número está a treinta grados del siguiente.",
+   "escena": {
+    "tipo": "anim",
+    "id": "u6-reloj30"
+   },
+   "q": [
+    "pat-11"
+   ]
+  },
+  {
+   "voz": "A las tres y cuarto, el minutero está justo en el tres. Pero el horario no se quedó quieto: avanzó un cuarto del camino entre el tres y el cuatro.",
+   "escena": {
+    "tipo": "anim",
+    "id": "u6-reloj315"
+   },
+   "q": [
+    "pat-11"
+   ]
+  },
+  {
+   "voz": "Un cuarto de treinta grados es siete coma cinco grados. Ese es el ángulo entre las dos agujas.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 7.5,
+    "unidad": "grados",
+    "sub": "¼ de 30° = 7,5°",
+    "icono": "🕒"
+   },
+   "q": [
+    "pat-11"
+   ]
+  },
+  {
+   "voz": "¿Cuántos grados avanza el horario en media hora?",
+   "elige": {
+    "pregunta": "¿Cuántos grados avanza la aguja de las horas en media hora?",
+    "opciones": [
+     "15°",
+     "30°",
+     "6°"
+    ],
+    "bien": "Así es: la mitad de treinta.",
+    "mal": "Avanza quince grados: en una hora avanza treinta, y en media hora, la mitad."
+   }
+  },
+  {
+   "voz": "En resumen: en los ciclos, quita las vueltas completas y mira lo que sobra. Y en el reloj, recuerda que el horario también avanza.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔁",
+      "texto": "Quita las vueltas completas",
+      "w": "vueltas completas"
+     },
+     {
+      "icono": "➕",
+      "texto": "Mira lo que sobra",
+      "w": "lo que sobra",
+      "marca": "oro"
+     },
+     {
+      "icono": "🕒",
+      "texto": "El horario también avanza",
+      "w": "también avanza"
+     }
+    ]
+   }
+  }
+ ]
+}

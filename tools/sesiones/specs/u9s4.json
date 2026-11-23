@@ -1,0 +1,142 @@
+{
+ "id": "u9s4",
+ "titulo": "Círculos y partes",
+ "icono": "⭕",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a reconocer dos falacias más: el razonamiento circular, y confundir las partes con el todo.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "⭕",
+    "texto": "Círculos y partes"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "«Este diario siempre dice la verdad, porque en su editorial afirma que nunca miente». Usa lo que quiere probar como prueba. Es un razonamiento circular, o petición de principio.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "📰",
+      "t": "Dice la verdad",
+      "w": "siempre dice la verdad"
+     },
+     {
+      "icono": "✍️",
+      "t": "Porque lo dice él mismo",
+      "w": "afirma que nunca miente"
+     },
+     {
+      "icono": "📰",
+      "t": "…y dice la verdad",
+      "w": "razonamiento circular",
+      "c": "#FF4B4B"
+     }
+    ],
+    "sub": "Petición de principio",
+    "sw": "petición de principio",
+    "flecha": "↻"
+   },
+   "q": [
+    "fal-08"
+   ]
+  },
+  {
+   "voz": "Esta aplicación es la mejor, porque es superior a todas las demás. ¿Qué falacia es?",
+   "elige": {
+    "pregunta": "«Esta aplicación es la mejor porque es superior a todas las demás». ¿Qué falacia es?",
+    "opciones": [
+     "Petición de principio",
+     "Ad populum",
+     "Hombre de paja"
+    ],
+    "bien": "Así es: la razón dice lo mismo que la conclusión.",
+    "mal": "Es una petición de principio: «superior a todas» es lo mismo que «la mejor»."
+   }
+  },
+  {
+   "voz": "«Cada jugador de este equipo es excelente, así que el equipo será excelente». Lo que vale para las partes no siempre vale para el todo: quizás no juegan bien juntos. Es la falacia de composición.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "⭐ cada parte",
+      "w": "cada jugador"
+     },
+     "→",
+     {
+      "t": "⭐ el todo ✗",
+      "c": "#FF4B4B",
+      "w": "el todo"
+     }
+    ],
+    "titulo": "Falacia de composición",
+    "tw": "falacia de composición"
+   },
+   "q": [
+    "fal-14"
+   ]
+  },
+  {
+   "voz": "Al revés también falla. «Este equipo es el mejor, así que cada jugador es el mejor». Pasar del todo a las partes es la falacia de división.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "⭐ el todo",
+      "w": "este equipo"
+     },
+     "→",
+     {
+      "t": "⭐ cada parte ✗",
+      "c": "#FF4B4B",
+      "w": "cada jugador es el mejor"
+     }
+    ],
+    "titulo": "Falacia de división",
+    "tw": "falacia de división"
+   },
+   "q": [
+    "fal-14"
+   ]
+  },
+  {
+   "voz": "Cada ladrillo es liviano, así que la pared es liviana. ¿Qué falacia es?",
+   "elige": {
+    "pregunta": "«Cada ladrillo es liviano, así que la pared es liviana». ¿Qué falacia es?",
+    "opciones": [
+     "Composición",
+     "División",
+     "Post hoc"
+    ],
+    "bien": "Así es: pasa de las partes al todo.",
+    "mal": "Es la falacia de composición: lo que vale para cada ladrillo no vale para toda la pared."
+   }
+  },
+  {
+   "voz": "En resumen: en la petición de principio, la conclusión se esconde en las razones. Composición pasa de las partes al todo, y división, del todo a las partes.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "↻",
+      "texto": "Petición de principio",
+      "w": "petición de principio"
+     },
+     {
+      "icono": "🧱➡️🏠",
+      "texto": "Composición",
+      "w": "composición"
+     },
+     {
+      "icono": "🏠➡️🧱",
+      "texto": "División",
+      "w": "división"
+     }
+    ]
+   }
+  }
+ ]
+}

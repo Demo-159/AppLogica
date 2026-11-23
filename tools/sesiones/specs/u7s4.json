@@ -1,0 +1,209 @@
+{
+ "id": "u7s4",
+ "titulo": "Decisiones con azar",
+ "icono": "🚪",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a tomar decisiones con azar: un famoso juego de puertas, y cuánto conviene apostar.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🚪",
+    "texto": "Decisiones con azar"
+   },
+   "fondo": "casino"
+  },
+  {
+   "voz": "Tres puertas: detrás de una hay un auto, y detrás de las otras, cabras. Eliges la puerta uno.",
+   "escena": {
+    "tipo": "cartas",
+    "items": [
+     {
+      "t": "1",
+      "w": "eliges",
+      "marca": "si",
+      "nota": "tu puerta"
+     },
+     {
+      "t": "2"
+     },
+     {
+      "t": "3"
+     }
+    ]
+   },
+   "q": [
+    "prob-07"
+   ]
+  },
+  {
+   "voz": "Tu puerta tiene un tercio de probabilidad de tener el auto. Las otras dos, juntas, tienen dos tercios.",
+   "escena": {
+    "tipo": "cartas",
+    "items": [
+     {
+      "t": "⅓",
+      "w": "un tercio",
+      "marca": "si"
+     },
+     {
+      "t": "⅔",
+      "w": "dos tercios",
+      "nota": "2 y 3 juntas"
+     }
+    ]
+   },
+   "q": [
+    "prob-07"
+   ]
+  },
+  {
+   "voz": "El presentador sabe dónde está el auto. Abre una de las otras puertas, siempre una con cabra. Así, esos dos tercios quedan concentrados en la puerta que no abrió.",
+   "escena": {
+    "tipo": "cartas",
+    "items": [
+     {
+      "t": "1",
+      "marca": "si",
+      "nota": "⅓"
+     },
+     {
+      "t": "2",
+      "w": "no abrió",
+      "marca": "si",
+      "nota": "⅔"
+     },
+     {
+      "t": "🐐",
+      "w": "abre una",
+      "marca": "no",
+      "nota": "abierta"
+     }
+    ]
+   },
+   "q": [
+    "prob-07"
+   ]
+  },
+  {
+   "voz": "Por eso conviene cambiar: cambiando, ganas dos de cada tres veces.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Quedarte",
+      "valor": 33,
+      "color": "#1CB0F6",
+      "texto": "1 de 3"
+     },
+     {
+      "label": "Cambiar",
+      "valor": 67,
+      "color": "#58CC02",
+      "texto": "2 de 3",
+      "w": "conviene cambiar"
+     }
+    ],
+    "max": 100
+   },
+   "q": [
+    "prob-07"
+   ]
+  },
+  {
+   "voz": "En este juego, si te quedas con tu puerta, ¿cuántas veces ganas?",
+   "elige": {
+    "pregunta": "En el juego de las tres puertas, si te QUEDAS con tu puerta, ¿cuántas veces ganas?",
+    "opciones": [
+     "Una de cada tres",
+     "Dos de cada tres",
+     "La mitad de las veces"
+    ],
+    "bien": "Así es: tu primera elección tenía un tercio, y eso no cambia.",
+    "mal": "Ganas una de cada tres: tu primera elección tenía un tercio. Cambiando ganas dos de cada tres."
+   }
+  },
+  {
+   "voz": "Ahora, el valor esperado: cuánto ganas o pierdes en promedio por jugada. Se multiplica cada premio por su probabilidad, y se resta lo que cuesta jugar.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "premio × probabilidad",
+      "c": "#58CC02",
+      "w": "cada premio por su probabilidad"
+     },
+     "−",
+     {
+      "t": "costo",
+      "c": "#FF4B4B",
+      "w": "lo que cuesta jugar"
+     }
+    ],
+    "titulo": "Valor esperado",
+    "tw": "valor esperado"
+   }
+  },
+  {
+   "voz": "Un juego cuesta mil pesos. Con probabilidad de un cuarto recibes tres mil. Un cuarto de tres mil son setecientos cincuenta. Menos los mil que pagaste: pierdes doscientos cincuenta por jugada, en promedio.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "¼ × $3.000",
+      "c": "#58CC02",
+      "w": "un cuarto de tres mil"
+     },
+     "−",
+     {
+      "t": "$1.000",
+      "c": "#FF4B4B",
+      "w": "menos los mil"
+     },
+     "=",
+     {
+      "t": "−$250",
+      "c": "#FF4B4B",
+      "w": "pierdes doscientos cincuenta"
+     }
+    ]
+   },
+   "q": [
+    "prob-10"
+   ]
+  },
+  {
+   "voz": "Un juego cuesta cien pesos. Con probabilidad de un medio recibes trescientos. ¿Cuál es el valor esperado por jugada?",
+   "elige": {
+    "pregunta": "Un juego cuesta $100. Con probabilidad 1/2 recibes $300. ¿Valor esperado por jugada?",
+    "opciones": [
+     "Ganas $50",
+     "Pierdes $50",
+     "Ganas $200"
+    ],
+    "bien": "Así es: la mitad de trescientos es ciento cincuenta, menos cien.",
+    "mal": "Ganas cincuenta: la mitad de trescientos son ciento cincuenta, menos los cien que pagas."
+   }
+  },
+  {
+   "voz": "En resumen: cuando alguien que sabe abre una puerta, te da información; aprovéchala. Y antes de jugar, calcula el valor esperado.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🚪",
+      "texto": "Cambia de puerta: ⅔",
+      "w": "aprovéchala",
+      "marca": "bien"
+     },
+     {
+      "icono": "🧮",
+      "texto": "Premio × probabilidad − costo",
+      "w": "valor esperado",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "id": "u10s4",
+ "titulo": "Cómo protegerse",
+ "icono": "🛡️",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver por qué cuesta ver nuestros propios sesgos, y qué ayuda de verdad a reducirlos.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🛡️",
+    "texto": "Cómo protegerse de los sesgos"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "Casi todos creemos ser menos sesgados que el promedio. Vemos los sesgos en los demás, pero no en nosotros. Se llama punto ciego del sesgo.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "👀",
+      "titulo": "En los demás",
+      "texto": "Los vemos",
+      "w": "en los demás"
+     },
+     {
+      "icono": "🙈",
+      "titulo": "En mí",
+      "texto": "No los veo",
+      "marca": "mal",
+      "w": "no en nosotros"
+     }
+    ]
+   },
+   "q": [
+    "ses-14"
+   ]
+  },
+  {
+   "voz": "Ves claramente los sesgos de tus amigos, pero crees que tú no tienes. ¿Cómo se llama esto?",
+   "elige": {
+    "pregunta": "Ves claramente los sesgos de tus amigos, pero crees que tú no tienes. ¿Cómo se llama?",
+    "opciones": [
+     "Punto ciego del sesgo",
+     "Efecto de encuadre",
+     "Anclaje"
+    ],
+    "bien": "Así es: es el punto ciego del sesgo.",
+    "mal": "Se llama punto ciego del sesgo: vemos los sesgos en otros, pero no en nosotros."
+   }
+  },
+  {
+   "voz": "La buena noticia: hay estrategias que ayudan. Una de las más estudiadas es pensar en lo contrario: antes de decidir, busca activamente razones por las que podrías estar equivocado.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🔄",
+    "titulo": "Piensa en lo contrario",
+    "texto": "Busca razones por las que podrías estar equivocado"
+   },
+   "q": [
+    "ses-13"
+   ]
+  },
+  {
+   "voz": "Otras ayudas: hacer la cuenta despacio cuando la respuesta parece demasiado fácil, pedir opinión a quien piensa distinto, y pensar en frecuencias en vez de porcentajes.",
+   "escena": {
+    "tipo": "lista",
+    "items": [
+     {
+      "icono": "🐢",
+      "texto": "Haz la cuenta despacio",
+      "w": "la cuenta despacio"
+     },
+     {
+      "icono": "🗣️",
+      "texto": "Pide opinión a quien piensa distinto",
+      "w": "piensa distinto"
+     },
+     {
+      "icono": "👥",
+      "texto": "Piensa en frecuencias",
+      "w": "frecuencias"
+     }
+    ]
+   },
+   "q": [
+    "ses-13"
+   ]
+  },
+  {
+   "voz": "¿Qué estrategia reduce mejor el exceso de confianza?",
+   "elige": {
+    "pregunta": "¿Qué estrategia reduce mejor el exceso de confianza en tus juicios?",
+    "opciones": [
+     "Buscar razones por las que podrías estar equivocado",
+     "Confiar en tu primera impresión",
+     "Preguntar solo a quienes piensan como tú"
+    ],
+    "bien": "Así es: pensar en lo contrario.",
+    "mal": "Buscar activamente razones por las que podrías estar equivocado."
+   }
+  },
+  {
+   "voz": "En resumen: todos tenemos sesgos, también tú. Piensa en lo contrario, haz las cuentas con calma, y escucha a quien piensa distinto.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🙈",
+      "texto": "Todos tenemos sesgos",
+      "w": "todos tenemos sesgos",
+      "marca": "mal"
+     },
+     {
+      "icono": "🔄",
+      "texto": "Piensa en lo contrario",
+      "w": "lo contrario",
+      "marca": "oro"
+     },
+     {
+      "icono": "🗣️",
+      "texto": "Escucha otras ideas",
+      "w": "escucha",
+      "marca": "bien"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "id": "u9s3",
+ "titulo": "Apelaciones engañosas",
+ "icono": "📣",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a reconocer falacias que se apoyan en algo que no prueba nada: la popularidad, la fama, la ignorancia o lo natural.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "📣",
+    "texto": "Apelaciones engañosas"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "«Millones de personas usan este suplemento, así que tiene que funcionar». Que algo sea popular no lo hace verdadero. Es la apelación a la mayoría, o ad populum.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "👥👥👥 popular",
+      "w": "millones de personas"
+     },
+     "≠",
+     {
+      "t": "✅ verdadero",
+      "c": "#58CC02",
+      "w": "no lo hace verdadero"
+     }
+    ],
+    "titulo": "Ad populum",
+    "tw": "ad populum"
+   },
+   "q": [
+    "fal-05"
+   ]
+  },
+  {
+   "voz": "«Un actor famoso asegura que esta dieta cura la diabetes». Ser famoso no lo hace experto en medicina. Es apelar a una falsa autoridad.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🎬",
+      "titulo": "Actor famoso",
+      "texto": "No es experto en medicina",
+      "marca": "mal",
+      "w": "actor famoso"
+     },
+     {
+      "icono": "🩺",
+      "titulo": "Experto",
+      "texto": "En su propia área",
+      "marca": "bien",
+      "w": "experto"
+     }
+    ]
+   },
+   "q": [
+    "fal-06"
+   ]
+  },
+  {
+   "voz": "Pero citar a expertos no siempre es falacia. Si la gran mayoría de los climatólogos, con muchas líneas de evidencia, concluye algo sobre el clima, es razonable confiar: es una apelación legítima al consenso experto.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🌡️",
+      "texto": "Expertos en el tema",
+      "w": "climatólogos",
+      "marca": "bien"
+     },
+     {
+      "icono": "📚",
+      "texto": "Muchas evidencias",
+      "w": "líneas de evidencia",
+      "marca": "bien"
+     },
+     {
+      "icono": "🤝",
+      "texto": "Consenso legítimo",
+      "w": "consenso experto",
+      "marca": "oro"
+     }
+    ]
+   },
+   "q": [
+    "fal-15"
+   ]
+  },
+  {
+   "voz": "Mi dentista dice que use hilo dental, y se basa en estudios. ¿Es una falacia?",
+   "elige": {
+    "pregunta": "«Mi dentista dice que use hilo dental, basándose en estudios». ¿Hay una falacia?",
+    "opciones": [
+     "No: es un experto en su área",
+     "Sí: falsa autoridad",
+     "Sí: ad populum"
+    ],
+    "bien": "Así es: es un experto hablando de su área, con evidencia.",
+    "mal": "No es falacia: es un experto en su propia área, apoyado en evidencia."
+   }
+  },
+  {
+   "voz": "«Nadie ha demostrado que los fantasmas no existan, así que existen». No haber probado que algo es falso no lo vuelve verdadero. Es la apelación a la ignorancia.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "No se probó que sea falso",
+      "w": "nadie ha demostrado"
+     },
+     "≠",
+     {
+      "t": "Es verdadero",
+      "c": "#FF4B4B",
+      "w": "no lo vuelve verdadero"
+     }
+    ],
+    "titulo": "Apelación a la ignorancia",
+    "tw": "apelación a la ignorancia"
+   },
+   "q": [
+    "fal-10"
+   ]
+  },
+  {
+   "voz": "«Este remedio es cien por ciento natural, así que no puede hacer daño». Lo natural no siempre es seguro: hay venenos naturales, como algunos hongos. Es la apelación a la naturaleza.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🌿",
+      "titulo": "«Natural»",
+      "w": "cien por ciento natural"
+     },
+     {
+      "icono": "🍄",
+      "titulo": "Hongos venenosos",
+      "texto": "¡También naturales!",
+      "marca": "mal",
+      "w": "venenos naturales"
+     }
+    ]
+   },
+   "q": [
+    "fal-12"
+   ]
+  },
+  {
+   "voz": "Nadie ha probado que este amuleto no funcione, así que funciona. ¿Qué falacia es?",
+   "elige": {
+    "pregunta": "«Nadie ha probado que este amuleto no funcione, así que funciona». ¿Qué falacia es?",
+    "opciones": [
+     "Apelación a la ignorancia",
+     "Apelación a la naturaleza",
+     "Ad populum"
+    ],
+    "bien": "Así es: la falta de prueba no prueba nada.",
+    "mal": "Es apelación a la ignorancia: que no se haya probado que es falso no lo hace verdadero."
+   }
+  },
+  {
+   "voz": "Es una hierba natural, así que es segura. ¿Qué falacia es?",
+   "elige": {
+    "pregunta": "«Es una hierba natural, así que es segura». ¿Qué falacia es?",
+    "opciones": [
+     "Apelación a la naturaleza",
+     "Apelación a la ignorancia",
+     "Falsa autoridad"
+    ],
+    "bien": "Así es: natural no significa seguro.",
+    "mal": "Es apelación a la naturaleza: natural no significa seguro."
+   }
+  },
+  {
+   "voz": "En resumen: lo popular, lo dicho por un famoso, lo no refutado y lo natural no son pruebas. Pero el consenso de expertos en su área, con evidencia, sí es una buena razón.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "👥",
+      "texto": "Popular ≠ verdadero",
+      "w": "lo popular",
+      "marca": "mal"
+     },
+     {
+      "icono": "🎬",
+      "texto": "Famoso ≠ experto",
+      "w": "famoso",
+      "marca": "mal"
+     },
+     {
+      "icono": "❓",
+      "texto": "No refutado ≠ verdadero",
+      "w": "no refutado",
+      "marca": "mal"
+     },
+     {
+      "icono": "🌿",
+      "texto": "Natural ≠ seguro",
+      "w": "lo natural",
+      "marca": "mal"
+     },
+     {
+      "icono": "🤝",
+      "texto": "Consenso experto: sí",
+      "w": "consenso",
+      "marca": "bien"
+     }
+    ],
+    "cols": 3
+   }
+  }
+ ]
+}

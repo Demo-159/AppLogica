@@ -1,0 +1,265 @@
+{
+ "id": "u4s4",
+ "titulo": "Cómo se demuestra",
+ "icono": "🧠",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a conocer tres formas de demostrar algo en matemática.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🧠",
+    "texto": "Cómo se demuestra"
+   },
+   "fondo": "cosmos"
+  },
+  {
+   "voz": "Probar con ejemplos no basta. Que algo se cumpla para dos, cuatro y seis no asegura que se cumpla siempre. Hace falta una demostración.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🔢",
+      "titulo": "Ejemplos",
+      "texto": "No bastan",
+      "marca": "mal",
+      "w": "ejemplos no basta"
+     },
+     {
+      "icono": "📜",
+      "titulo": "Demostración",
+      "texto": "Vale siempre",
+      "marca": "bien",
+      "w": "demostración"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "Primera forma: por contradicción. Supones lo contrario de lo que quieres probar, y muestras que lleva a algo imposible.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🙃",
+      "t": "Supón lo contrario",
+      "w": "supones lo contrario"
+     },
+     {
+      "icono": "➡️",
+      "t": "Razona",
+      "w": "muestras"
+     },
+     {
+      "icono": "💥",
+      "t": "Algo imposible",
+      "w": "imposible",
+      "c": "#FF4B4B"
+     }
+    ],
+    "sub": "Entonces lo contrario era falso",
+    "sw": "por contradicción"
+   },
+   "q": [
+    "mat-07"
+   ]
+  },
+  {
+   "voz": "Para probar que raíz de dos es irracional, se supone al principio que es racional, o sea, una fracción. Esa suposición termina en una contradicción, así que era falsa.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "√2",
+      "t": "Supón: √2 es racional",
+      "w": "es racional"
+     },
+     {
+      "icono": "💥",
+      "t": "Contradicción",
+      "w": "contradicción",
+      "c": "#FF4B4B"
+     },
+     {
+      "icono": "✅",
+      "t": "√2 es irracional",
+      "w": "era falsa",
+      "c": "#58CC02"
+     }
+    ]
+   },
+   "q": [
+    "mat-07"
+   ]
+  },
+  {
+   "voz": "Para demostrar por contradicción que no hay un número primo mayor que todos, ¿qué supones al principio?",
+   "elige": {
+    "pregunta": "Para demostrar por contradicción que «no hay un primo mayor que todos», ¿qué supones al principio?",
+    "opciones": [
+     "Que sí hay un primo mayor que todos",
+     "Que no hay ningún primo",
+     "Que todos los números son primos"
+    ],
+    "bien": "Así es: se supone lo contrario de lo que se quiere probar.",
+    "mal": "Se supone lo contrario: que sí hay un primo mayor que todos."
+   }
+  },
+  {
+   "voz": "Segunda forma: la inducción. Es como una fila de fichas de dominó. Primero pruebas que cae la primera.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "🟧",
+      "w": "cae la primera",
+      "c": "#FFC800"
+     },
+     {
+      "t": "🟦"
+     },
+     {
+      "t": "🟦"
+     },
+     {
+      "t": "🟦"
+     },
+     {
+      "t": "…"
+     }
+    ],
+    "titulo": "P(1)",
+    "sub": "Cae la primera ficha",
+    "sw": "pruebas"
+   },
+   "q": [
+    "mat-08"
+   ]
+  },
+  {
+   "voz": "Después pruebas que, si cae una cualquiera, cae la siguiente. Con esas dos cosas, caen todas: el resultado vale para todo ene, desde uno.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "P(1)",
+      "c": "#FFC800",
+      "w": "dos cosas"
+     },
+     "+",
+     {
+      "t": "P(n) → P(n+1)",
+      "c": "#1CB0F6",
+      "w": "cae la siguiente"
+     },
+     "⇒",
+     {
+      "t": "P(n) para todo n ≥ 1",
+      "c": "#58CC02",
+      "w": "caen todas"
+     }
+    ]
+   },
+   "q": [
+    "mat-08"
+   ]
+  },
+  {
+   "voz": "Pruebas pe de uno, y que pe de ene implica pe de ene más uno. ¿Qué se concluye?",
+   "elige": {
+    "pregunta": "Pruebas P(1), y que P(n) implica P(n+1) para todo n. ¿Qué se concluye?",
+    "opciones": [
+     "P(n) vale para todo n ≥ 1",
+     "Solo P(1) y P(2)",
+     "Nada: falta probar P(2)"
+    ],
+    "bien": "Así es: caen todas las fichas.",
+    "mal": "Se concluye que vale para todo ene desde uno: cae la primera, y cada una tumba a la siguiente."
+   }
+  },
+  {
+   "voz": "Tercera forma: probar la contrapositiva. Recuerda que «si pe, entonces cu» dice lo mismo que «si no cu, entonces no pe».",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p → q",
+      "w": "si pe"
+     },
+     "≡",
+     {
+      "t": "¬q → ¬p",
+      "c": "#FFC800",
+      "w": "si no cu"
+     }
+    ],
+    "titulo": "Contrapositiva",
+    "tw": "contrapositiva"
+   },
+   "q": [
+    "mat-12"
+   ]
+  },
+  {
+   "voz": "Para probar «si ene al cuadrado es par, ene es par», es más fácil probar: «si ene es impar, ene al cuadrado es impar». Y eso se ve directo: impar por impar da impar.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🧱",
+      "titulo": "n² par → n par",
+      "texto": "Difícil directo",
+      "w": "para probar"
+     },
+     {
+      "icono": "✅",
+      "titulo": "n impar → n² impar",
+      "texto": "Impar × impar = impar",
+      "marca": "bien",
+      "w": "más fácil"
+     }
+    ]
+   },
+   "q": [
+    "mat-12"
+   ]
+  },
+  {
+   "voz": "Para probar: si ene al cuadrado es impar, ene es impar, ¿qué contrapositiva conviene probar?",
+   "elige": {
+    "pregunta": "Para probar «si n² es impar, entonces n es impar», ¿qué contrapositiva conviene probar?",
+    "opciones": [
+     "Si n es par, n² es par",
+     "Si n es impar, n² es impar",
+     "Si n² es par, n es par"
+    ],
+    "bien": "Así es: se niegan las dos partes y se cambia el orden.",
+    "mal": "Es «si ene es par, ene al cuadrado es par»: se niegan las dos partes y se cambia el orden."
+   }
+  },
+  {
+   "voz": "En resumen: por contradicción supones lo contrario. Por inducción pruebas la primera ficha y el paso a la siguiente. Y a veces conviene probar la contrapositiva.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "💥",
+      "texto": "Contradicción",
+      "w": "contradicción"
+     },
+     {
+      "icono": "🟦",
+      "texto": "Inducción",
+      "w": "inducción"
+     },
+     {
+      "icono": "🔄",
+      "texto": "Contrapositiva",
+      "w": "contrapositiva",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

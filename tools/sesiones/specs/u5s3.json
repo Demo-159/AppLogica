@@ -1,0 +1,277 @@
+{
+ "id": "u5s3",
+ "titulo": "Promedios y proporciones",
+ "icono": "⚖️",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a calcular promedios y proporciones sin caer en las trampas más comunes.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "⚖️",
+    "texto": "Promedios y proporciones"
+   },
+   "fondo": "oficina"
+  },
+  {
+   "voz": "Un auto va de A a B a sesenta kilómetros por hora, y vuelve a cuarenta. ¿El promedio es cincuenta? No, porque pasa más tiempo yendo lento.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🚗",
+      "titulo": "Ida: 60 km/h",
+      "w": "a sesenta"
+     },
+     {
+      "icono": "🐢",
+      "titulo": "Vuelta: 40 km/h",
+      "texto": "Más tiempo lento",
+      "marca": "mal",
+      "w": "vuelve a cuarenta"
+     }
+    ]
+   },
+   "q": [
+    "num-05"
+   ]
+  },
+  {
+   "voz": "Imagina que el tramo mide ciento veinte kilómetros. A sesenta tarda dos horas; a cuarenta, tres. En total: doscientos cuarenta kilómetros en cinco horas. Cuarenta y ocho kilómetros por hora.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "⏱️",
+      "texto": "Ida: 2 h",
+      "w": "dos horas"
+     },
+     {
+      "icono": "⏱️",
+      "texto": "Vuelta: 3 h",
+      "w": "tres"
+     },
+     {
+      "icono": "🧮",
+      "texto": "240 km ÷ 5 h = 48 km/h",
+      "w": "cuarenta y ocho",
+      "marca": "oro"
+     }
+    ]
+   },
+   "q": [
+    "num-05"
+   ]
+  },
+  {
+   "voz": "Vas al trabajo a treinta kilómetros por hora y vuelves a sesenta, por el mismo camino. ¿Cuál es tu velocidad media?",
+   "elige": {
+    "pregunta": "Vas al trabajo a 30 km/h y vuelves a 60 km/h por el mismo camino. ¿Velocidad media?",
+    "opciones": [
+     "40 km/h",
+     "45 km/h",
+     "50 km/h"
+    ],
+    "bien": "Así es: con sesenta kilómetros, tardas dos horas en ir y una en volver: ciento veinte kilómetros en tres horas.",
+    "mal": "Es cuarenta: si el camino mide sesenta kilómetros, son ciento veinte kilómetros en tres horas."
+   }
+  },
+  {
+   "voz": "Más trabajadores, menos tiempo. Tres personas construyen un muro en seis días: son dieciocho días de trabajo de una persona. Con seis personas, dieciocho dividido por seis: tres días.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "3 👷 × 6 días",
+      "w": "tres personas"
+     },
+     "=",
+     {
+      "t": "18",
+      "c": "#FFC800",
+      "w": "dieciocho días"
+     },
+     "→",
+     {
+      "t": "18 ÷ 6 👷 = 3 días",
+      "c": "#58CC02",
+      "w": "tres días"
+     }
+    ]
+   },
+   "q": [
+    "num-08"
+   ]
+  },
+  {
+   "voz": "Cuatro pintores pintan una casa en seis días. ¿Cuánto tardan ocho pintores al mismo ritmo?",
+   "elige": {
+    "pregunta": "4 pintores pintan una casa en 6 días. ¿Cuánto tardan 8 pintores al mismo ritmo?",
+    "opciones": [
+     "3 días",
+     "12 días",
+     "6 días"
+    ],
+    "bien": "Así es: el doble de pintores, la mitad del tiempo.",
+    "mal": "Tardan tres días: el doble de pintores hace el trabajo en la mitad del tiempo."
+   }
+  },
+  {
+   "voz": "El promedio también engaña. Nueve personas ganan ochocientos mil pesos, y una gana cincuenta millones. El promedio da más de cinco millones, pero nadie del grupo típico gana eso.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "9 personas",
+      "valor": 0.8,
+      "color": "#1CB0F6",
+      "texto": "$0,8 M",
+      "w": "nueve personas"
+     },
+     {
+      "label": "1 persona",
+      "valor": 50,
+      "color": "#FF4B4B",
+      "texto": "$50 M",
+      "w": "cincuenta millones"
+     },
+     {
+      "label": "Promedio",
+      "valor": 5.72,
+      "color": "#FFC800",
+      "texto": "$5,7 M",
+      "w": "el promedio"
+     }
+    ],
+    "max": 50
+   },
+   "q": [
+    "num-09"
+   ]
+  },
+  {
+   "voz": "La mediana es el valor del medio al ordenar los datos. Aquí es ochocientos mil. Cuando hay valores extremos, la mediana representa mejor lo típico.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "0,8"
+     },
+     {
+      "t": "0,8"
+     },
+     {
+      "t": "0,8"
+     },
+     {
+      "t": "0,8"
+     },
+     {
+      "t": "0,8",
+      "w": "el valor del medio",
+      "c": "#58CC02"
+     },
+     {
+      "t": "0,8"
+     },
+     {
+      "t": "0,8"
+     },
+     {
+      "t": "0,8"
+     },
+     {
+      "t": "0,8"
+     },
+     {
+      "t": "50",
+      "c": "#FF4B4B"
+     }
+    ],
+    "titulo": "Ingresos (millones), ordenados",
+    "sub": "Mediana: 0,8 millones",
+    "sw": "la mediana es"
+   },
+   "q": [
+    "num-09"
+   ]
+  },
+  {
+   "voz": "Sueldos: uno, uno, uno, uno, y veinte millones. ¿Qué representa mejor lo típico?",
+   "elige": {
+    "pregunta": "Sueldos: 1, 1, 1, 1 y 20 millones. ¿Qué representa mejor el sueldo típico?",
+    "opciones": [
+     "La mediana: 1 millón",
+     "La media: 4,8 millones",
+     "El máximo: 20 millones"
+    ],
+    "bien": "Así es: el valor extremo infla el promedio.",
+    "mal": "La mediana: un millón. El sueldo de veinte millones infla el promedio."
+   }
+  },
+  {
+   "voz": "Un último cálculo: el promedio esperado. Si respondes al azar una pregunta de cuatro opciones, aciertas una de cada cuatro veces. En veinte preguntas, aciertas en promedio cinco.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "20 preguntas",
+      "w": "veinte preguntas"
+     },
+     "×",
+     {
+      "t": "¼",
+      "c": "#FFC800",
+      "w": "una de cada cuatro"
+     },
+     "=",
+     {
+      "t": "5 aciertos",
+      "c": "#58CC02",
+      "w": "en promedio cinco"
+     }
+    ]
+   },
+   "q": [
+    "num-12"
+   ]
+  },
+  {
+   "voz": "Una prueba tiene treinta preguntas de tres opciones. Respondiendo al azar, ¿cuántas aciertas en promedio?",
+   "elige": {
+    "pregunta": "Una prueba tiene 30 preguntas de 3 opciones. Respondiendo al azar, ¿cuántas aciertas en promedio?",
+    "opciones": [
+     "10",
+     "15",
+     "3"
+    ],
+    "bien": "Así es: un tercio de treinta.",
+    "mal": "Diez: aciertas una de cada tres, y un tercio de treinta es diez."
+   }
+  },
+  {
+   "voz": "En resumen: para velocidades, usa distancia total y tiempo total. Con valores extremos, usa la mediana. Y para el azar, multiplica por la probabilidad.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🚗",
+      "texto": "Distancia ÷ tiempo total",
+      "w": "distancia total"
+     },
+     {
+      "icono": "📊",
+      "texto": "Extremos: mediana",
+      "w": "la mediana",
+      "marca": "oro"
+     },
+     {
+      "icono": "🎲",
+      "texto": "Azar: × probabilidad",
+      "w": "multiplica"
+     }
+    ]
+   }
+  }
+ ]
+}

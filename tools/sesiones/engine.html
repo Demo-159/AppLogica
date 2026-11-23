@@ -4,7 +4,7 @@
 <style>/*FUENTE*/</style>
 <style>
 /* Reproductor genérico de sesiones con tutor. Lee window.SESSION (pasos, escenas, fondos, audio, práctica). */
-:root{--bg:#131F24;--card:#1E2B32;--line:#37464F;--ink:#F1F7FB;--muted:#9AB0BC;--green:#58CC02;--greend:#46A302;--blue:#1CB0F6;--blued:#1899D6;--red:#FF4B4B;--gold:#FFC800;--orange:#FF9600;--ui:"Nunito","RBEmoji","RBSimbolos","RBSimbolos2",system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{--bg:#131F24;--card:#1E2B32;--line:#37464F;--ink:#F1F7FB;--muted:#9AB0BC;--green:#58CC02;--greend:#46A302;--blue:#1CB0F6;--blued:#1899D6;--red:#FF4B4B;--gold:#FFC800;--orange:#FF9600;--ui:"Nunito","RBEmoji","RBSimbolos","RBSimbolos2","RBSimbolos3",system-ui,-apple-system,"Segoe UI",sans-serif}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;overflow:hidden}
 body{background:var(--bg);color:var(--ink);font-family:var(--ui);display:flex;justify-content:center}
@@ -139,6 +139,38 @@ body{background:var(--bg);color:var(--ink);font-family:var(--ui);display:flex;ju
 .frena{animation:frena 2.6s cubic-bezier(.1,.6,.3,1) both}@keyframes frena{from{transform:translateX(-90px)}to{transform:translateX(150px)}}
 .rew{transform-box:fill-box;transform-origin:center}.rew.on{animation:rew 1.1s both}@keyframes rew{0%{opacity:0;transform:scale(.6)}30%{opacity:1;transform:scale(1.1)}100%{opacity:0;transform:scale(1)}}
 .onda{transform-box:fill-box;transform-origin:center;animation:onda 1.6s ease-out infinite}@keyframes onda{from{transform:scale(.7);opacity:.9}to{transform:scale(2.3);opacity:0}}
+/* ---------- escenas genéricas de lógica (fichas, frase, tabla, venn, cadena, cartas, serie) ---------- */
+.fichas{width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:10px}
+.ficha{background:rgba(30,43,50,.95);border:2px solid var(--line);border-radius:16px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:900;font-size:15px;line-height:1.25}
+.ficha i{font-style:normal;font-size:34px;line-height:1}.ficha.bien{border-color:var(--green)}.ficha.mal{border-color:var(--red)}.ficha.oro{border-color:var(--gold)}
+.ficha.bien span{color:#9be15d}.ficha.mal span{color:#ff8a8a}
+.frase{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;font-weight:900;font-size:22px;line-height:1.3}
+.frase .pt{padding:6px 12px;border-radius:14px}.frase .pt.c{background:var(--c);color:#0E171C}.frase .pt.n{color:var(--c,var(--ink))}
+.tv{border-collapse:separate;border-spacing:0 6px;width:100%;font-weight:900;font-size:18px}
+.tv th{color:var(--muted);font-size:14px;padding:2px 6px}.tv td{background:rgba(30,43,50,.95);padding:9px 6px;text-align:center}
+.tv td:first-child{border-radius:12px 0 0 12px}.tv td:last-child{border-radius:0 12px 12px 0}
+.tv tr.mal td{background:#4a1d20}.tv tr.bien td{background:#1f3d14}.tv tr.oro td{background:#4a3a08}
+.tv .V{color:#7ee03a}.tv .F{color:#ff6b6b}
+.cadena{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;width:100%}
+.cadena .es{background:rgba(30,43,50,.95);border:2px solid var(--c,var(--line));border-radius:16px;padding:10px 12px;font-weight:900;font-size:16px;max-width:150px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.cadena.col{flex-direction:column;flex-wrap:nowrap;gap:2px}.cadena.col .es{max-width:none;width:86%;flex-direction:row;justify-content:center;gap:10px}.cadena.col .fl{font-size:20px;line-height:1}
+.cadena .es i{font-style:normal;font-size:30px}.cadena .fl{font-size:24px;font-weight:900;color:var(--muted)}.cadena .fl.rota{color:var(--red)}
+.cartas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.carta{width:70px;height:98px;border-radius:12px;background:#F1F7FB;color:#131F24;display:grid;place-items:center;font-size:34px;font-weight:900;box-shadow:0 5px 0 #9AB0BC;position:relative}
+.carta.si{outline:4px solid var(--green);outline-offset:3px}.carta.no{opacity:.45}
+.carta small{position:absolute;bottom:-26px;left:-10px;right:-10px;font-size:13px;color:var(--ink);text-align:center}
+.serie{display:flex;flex-wrap:wrap;gap:6px 4px;justify-content:center;align-items:flex-start}
+.serie .nu{display:flex;flex-direction:column;align-items:center;gap:4px}
+.serie .nu b{min-width:48px;padding:8px 6px;border-radius:14px;background:rgba(30,43,50,.95);border:2px solid var(--c,var(--line));font-size:24px;color:var(--c,var(--ink))}
+.serie .sa{align-self:center;display:flex;flex-direction:column;align-items:center;font-weight:900;color:var(--gold);font-size:14px;margin-top:-6px}
+.serie .sa:before{content:"→";color:var(--muted);font-size:18px}
+.vn text{font-family:var(--ui)}
+.fichas>[data-w],.lista>[data-w],.vs>[data-w]{animation:none}
+.rotar{animation:rotar 60s linear infinite}@keyframes rotar{to{transform:rotate(360deg)}}
+.rotar2{animation:rotar 6s linear infinite}
+.burbuja{animation:burbuja linear infinite}@keyframes burbuja{from{transform:translateY(0);opacity:.9}to{transform:translateY(-140px);opacity:0}}
+.flota2{animation:flota2 5s ease-in-out infinite alternate}@keyframes flota2{to{transform:translateY(-10px)}}
+.cursor{animation:blink 1s steps(2) infinite}
 button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.car,.nube,.gota,.gira,.dash,.dashv{animation:none!important}}
 </style></head><body>
@@ -204,6 +236,31 @@ const BG={
   return `${cielo('#3A6A8E','#9CC3D6','#CFE2E8')}${nubes(31,'#fff',.55)}${edificios(33,640,'#5E6F86',.1,'#FFF1C2')}${edificios(37,690,'#46566C',.14,'#FFF1C2')}<rect y="680" width="400" height="12" fill="#8C9AA3"/><rect y="692" width="400" height="168" fill="#33414A"/>${z}<rect x="330" y="560" width="6" height="132" fill="#26323A"/><rect x="320" y="530" width="26" height="62" rx="6" fill="#1A2329"/><circle class="tl r" cx="333" cy="543" r="7" fill="#FF4B4B"/><circle class="tl y" cx="333" cy="561" r="7" fill="#FFC800"/><circle class="tl g" cx="333" cy="579" r="7" fill="#58CC02"/><g transform="translate(78,790)">${auto('#1CB0F6')}<rect x="0" y="-18" width="5" height="6" rx="2" fill="#FF4B4B" class="blink"/></g><text x="370" y="684" font-size="40" text-anchor="middle" class="camina">🚶</text>`},
  hospital:()=>{let w='';for(let r=0;r<6;r++)for(let c=0;c<7;c++)w+=`<rect x="${82+c*36}" y="${470+r*34}" width="20" height="18" rx="2" fill="#9FC7D6" opacity="${.6+((r*7+c)%3)*.15}"/>`;
   return `${cielo('#1F4C57','#6FA8A5','#A8CFC6')}${nubes(41,'#fff',.4)}${edificios(43,650,'#3C6670',.08)}<rect x="60" y="440" width="280" height="252" fill="#E8EEF0"/><rect x="60" y="430" width="280" height="16" fill="#C9D4D8"/>${w}<rect x="170" y="630" width="60" height="62" fill="#5B8FA3"/><rect x="176" y="372" width="48" height="48" rx="8" fill="#fff"/><rect x="194" y="380" width="12" height="32" fill="#FF4B4B"/><rect x="184" y="390" width="32" height="12" fill="#FF4B4B"/>${calle(700)}<g transform="translate(250,785)"><rect x="0" y="-40" width="96" height="38" rx="6" fill="#F4F6F7"/><rect x="0" y="-22" width="96" height="6" fill="#FF4B4B"/><path d="M70 -40 H92 L100 -20 V-2 H70Z" fill="#E1E7EA"/><rect x="76" y="-34" width="14" height="12" fill="#9FD3F0"/><rect x="30" y="-50" width="16" height="10" rx="3" fill="#1CB0F6" class="blink"/><circle cx="20" cy="-2" r="8" fill="#111"/><circle cx="80" cy="-2" r="8" fill="#111"/></g>${trafico(700,['#FFC800'])}`},
+ // ---- fondos de estudio (Razona) ----
+ aula:()=>{const r=rnd(71);let es='';const fx=['p → q','¬(p ∧ q)','∀x','A ∩ B','2ⁿ','∴','≡'];for(let i=0;i<7;i++)es+=`<text x="${(60+r()*200).toFixed(0)}" y="${(300+r()*180).toFixed(0)}" font-size="${(14+r()*8).toFixed(0)}" fill="#E8F2E8" opacity="${(.10+r()*.12).toFixed(2)}" font-family="Nunito" font-weight="800" transform="rotate(${(-6+r()*12).toFixed(1)})">${fx[i%fx.length]}</text>`;
+  let pu='';for(let i=0;i<4;i++){const x=20+i*100;pu+=`<rect x="${x}" y="760" width="80" height="14" rx="3" fill="#7A5134"/><rect x="${x+8}" y="774" width="6" height="86" fill="#5B3B26"/><rect x="${x+66}" y="774" width="6" height="86" fill="#5B3B26"/>`}
+  return `${cielo('#2E4B5E','#28404F','#1E303B')}<rect x="24" y="250" width="352" height="266" rx="10" fill="#6B4A2E"/><rect x="34" y="260" width="332" height="246" rx="6" fill="#244A3A"/>${es}<rect x="34" y="500" width="332" height="10" fill="#5B3B26"/><rect x="250" y="494" width="30" height="7" rx="2" fill="#F1F7FB"/>
+  <circle cx="200" cy="150" r="46" fill="#F1F7FB" stroke="#9AB0BC" stroke-width="6"/>${[0,1,2,3,4,5,6,7,8,9,10,11].map(k=>`<rect x="198" y="110" width="4" height="9" fill="#37464F" transform="rotate(${k*30} 200 150)"/>`).join('')}<g class="rotar" style="transform-origin:200px 150px"><rect x="198" y="114" width="4" height="38" rx="2" fill="#FF4B4B"/></g><rect x="197" y="124" width="6" height="28" rx="3" fill="#131F24" transform="rotate(-60 200 150)"/><circle cx="200" cy="150" r="5" fill="#131F24"/>
+  <rect y="700" width="400" height="160" fill="#4A3424"/><rect y="700" width="400" height="8" fill="#3A281B"/>${pu}`},
+ biblioteca:()=>{const r=rnd(83);let li='';const cols=['#C0392B','#2E86C1','#D4AC0D','#27AE60','#8E44AD','#E67E22','#16A085','#B03A2E'];
+  for(let f=0;f<5;f++){const y=200+f*110;let x=20;li+=`<rect x="10" y="${y+92}" width="380" height="12" fill="#4A2F1C"/>`;while(x<380){const w=10+r()*16,hh=60+r()*30;li+=`<rect x="${x.toFixed(0)}" y="${(y+92-hh).toFixed(0)}" width="${w.toFixed(0)}" height="${hh.toFixed(0)}" rx="2" fill="${cols[(r()*cols.length)|0]}" opacity=".8"/>`;x+=w+2}}
+  let pol='';for(let i=0;i<22;i++)pol+=`<circle cx="${(r()*400).toFixed(0)}" cy="${(150+r()*550).toFixed(0)}" r="${(1+r()*1.5).toFixed(1)}" fill="#FFE7A0" class="tw" style="animation-delay:-${(r()*3).toFixed(1)}s"/>`;
+  return `${cielo('#3B2A1E','#2C1F16','#1E1510')}<rect x="0" y="180" width="400" height="560" fill="#2A1C12"/>${li}<circle cx="320" cy="120" r="120" fill="#FFD27A" opacity=".10"/><path d="M300 0 V70 M280 70 h40 l-8 24 h-24z" stroke="#1A120C" stroke-width="4" fill="#C9A24A"/>${pol}<rect y="740" width="400" height="120" fill="#3A281B"/>`},
+ lab:()=>{const r=rnd(91);let bu='';const fr=(x,y,c)=>`<path d="M${x-10} ${y-90} h20 v34 l28 48 a8 8 0 0 1 -7 12 h-62 a8 8 0 0 1 -7 -12 l28 -48z" fill="#CFE8F0" opacity=".25" stroke="#CFE8F0" stroke-width="2"/><path d="M${x-30} ${y-20} l12 -20 h36 l12 20 a6 6 0 0 1 -5 8 h-50 a6 6 0 0 1 -5 -8z" fill="${c}" opacity=".85"/>`;
+  [[90,'#58CC02'],[200,'#1CB0F6'],[310,'#CE82FF']].forEach(([x,c],k)=>{for(let i=0;i<5;i++){const d=2.5+r()*2;bu+=`<circle cx="${(x-10+r()*20).toFixed(0)}" cy="640" r="${(2+r()*3).toFixed(1)}" fill="${c}" class="burbuja" style="animation-duration:${d.toFixed(1)}s;animation-delay:-${(r()*d).toFixed(1)}s"/>`}});
+  return `${cielo('#123B45','#0F2F38','#0A2229')}<g opacity=".25">${[0,1,2,3,4,5,6,7].map(i=>`<line x1="${i*57}" y1="0" x2="${i*57}" y2="860" stroke="#2C6A78"/>`).join('')}${[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14].map(i=>`<line x1="0" y1="${i*60}" x2="400" y2="${i*60}" stroke="#2C6A78"/>`).join('')}</g>
+  <rect y="680" width="400" height="16" fill="#9AB0BC"/><rect y="696" width="400" height="164" fill="#25424B"/>${fr(90,680,'#58CC02')}${fr(200,680,'#1CB0F6')}${fr(310,680,'#CE82FF')}${bu}`},
+ cosmos:()=>{const c='k'+(++gid);return `${cielo('#05091A','#0F1838','#1A2450')}${estrellas(77,110,860)}<circle cx="300" cy="180" r="46" fill="#CE82FF" opacity=".85"/><ellipse cx="300" cy="180" rx="78" ry="16" fill="none" stroke="#F1D2FF" stroke-width="4" opacity=".6" transform="rotate(-18 300 180)"/>
+  <circle cx="80" cy="560" r="22" fill="#1CB0F6" opacity=".8"/><g class="rotar" style="transform-origin:200px 1000px"><circle cx="200" cy="560" r="6" fill="#FFC800"/><circle cx="560" cy="1000" r="5" fill="#FF9600"/></g><circle cx="200" cy="1120" r="380" fill="#1B2A4A"/><circle cx="200" cy="1120" r="392" fill="none" stroke="#7CC8FF" stroke-width="10" opacity=".18"/>`},
+ casino:()=>{const r=rnd(97);let fi='';for(let i=0;i<8;i++){const x=40+r()*320,y=600+r()*200,c=['#FF4B4B','#1CB0F6','#FFC800','#F1F7FB'][i%4];fi+=`<ellipse cx="${x.toFixed(0)}" cy="${(y+5).toFixed(0)}" rx="18" ry="7" fill="#0b2a18"/><ellipse cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="18" ry="7" fill="${c}"/><ellipse cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="10" ry="3.5" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 3"/>`}
+  const dado=(x,y,a,n)=>`<g transform="translate(${x},${y}) rotate(${a})"><rect x="-22" y="-22" width="44" height="44" rx="9" fill="#F1F7FB"/>${(n==5?[[-11,-11],[11,-11],[0,0],[-11,11],[11,11]]:[[-11,-11],[0,0],[11,11]]).map(([a,b])=>`<circle cx="${a}" cy="${b}" r="4" fill="#131F24"/>`).join('')}</g>`;
+  return `${cielo('#1A0F24','#2A1838','#120A1A')}${[60,200,340].map(x=>`<circle cx="${x}" cy="120" r="70" fill="#FFD27A" opacity=".08" class="tw"/><rect x="${x-3}" y="0" width="6" height="90" fill="#0E0814"/><path d="M${x-26} 90 h52 l-10 22 h-32z" fill="#C9A24A"/>`).join('')}
+  <ellipse cx="200" cy="900" rx="330" ry="360" fill="#0F5A32"/><ellipse cx="200" cy="900" rx="330" ry="360" fill="none" stroke="#6B3E1E" stroke-width="22"/>${fi}${dado(120,700,-14,5)}${dado(270,740,18,3)}<g transform="translate(200,640) rotate(8)"><rect x="-26" y="-36" width="52" height="72" rx="7" fill="#F1F7FB"/><text x="0" y="10" font-size="30" text-anchor="middle" fill="#FF4B4B" font-family="Nunito" font-weight="900">A</text></g>`},
+ oficina:()=>{const r=rnd(103);let br='';for(let i=0;i<6;i++){const hh=30+r()*90;br+=`<rect x="${72+i*22}" y="${(420-hh).toFixed(0)}" width="14" height="${hh.toFixed(0)}" rx="2" fill="#1CB0F6" opacity=".85"/>`}
+  let ln='M232 400';for(let i=1;i<7;i++)ln+=` L${232+i*18} ${(400-i*8-r()*40).toFixed(0)}`;
+  return `${cielo('#1D2B3A','#172330','#101922')}<rect x="0" y="560" width="400" height="300" fill="#2B2420"/><rect x="0" y="560" width="400" height="10" fill="#3B302A"/>
+  <rect x="50" y="260" width="300" height="200" rx="12" fill="#0B1218" stroke="#37464F" stroke-width="6"/>${br}<path d="${ln}" fill="none" stroke="#FFC800" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="66" y1="422" x2="334" y2="422" stroke="#37464F" stroke-width="2"/><rect x="236" y="428" width="9" height="14" fill="#58CC02" class="cursor"/>
+  <rect x="185" y="460" width="30" height="60" fill="#37464F"/><rect x="140" y="520" width="120" height="10" rx="4" fill="#37464F"/><g class="flota2"><circle cx="60" cy="140" r="26" fill="#FF9600" opacity=".25"/><circle cx="340" cy="110" r="18" fill="#CE82FF" opacity=".25"/></g>`},
  liso:()=>`${cielo('#1B2C35','#14222A','#0E171C')}${estrellas(61,26,860).replace(/fill="#fff"/g,'fill="#3A4C56"')}`,
  mundo:()=>{const c='c'+(++gid),k=`<path d="M30 20 q40 -30 80 -6 q24 34 -10 56 q-46 12 -70 -50Z M160 4 q46 -14 70 24 q10 46 -34 66 q-36 -12 -36 -90Z M290 40 q36 -24 58 12 q-12 34 -58 -12Z" fill="#46A86E"/>`;
   return `${cielo('#05091A','#121C40','#1C2A55')}${estrellas(52,90,620)}<defs><clipPath id="${c}"><circle cx="200" cy="1080" r="420"/></clipPath></defs><circle cx="200" cy="1080" r="432" fill="none" stroke="#7CC8FF" stroke-width="16" opacity=".22"/><circle cx="200" cy="1080" r="420" fill="#1E64A8"/><g clip-path="url(#${c})"><g class="gira"><g transform="translate(0,690)">${k}</g><g transform="translate(400,690)">${k}</g></g><circle cx="200" cy="1080" r="420" fill="none" stroke="#fff" stroke-width="60" opacity=".06"/></g>`},
@@ -223,15 +280,41 @@ const ESC={
  titulo:e=>`<div class="titulo">${capSes.length?`<div class="kick">UNIDAD ${capSes[0]} · SESIÓN ${capSes[1]}</div>`:''}<div class="ic">${e.icono||'📘'}</div><h1>${e.texto}</h1></div>`,
  tarjeta:e=>`<div class="card"><div class="ic">${e.icono||'💡'}</div><div><b>${e.titulo}</b>${e.texto?`<span>${e.texto}</span>`:''}</div></div>`,
  cifra:e=>`<div class="cifra">${e.icono?`<div class="ic">${e.icono}</div>`:''}<div class="n" data-to="${e.valor}" data-pre="${e.prefijo||''}">${e.prefijo||''}0</div><div class="u">${e.unidad||''}</div>${e.sub?`<div class="s">${e.sub}</div>`:''}</div>`,
- barras:e=>`<div class="barras">${e.items.map(i=>`<div class="barra"><div class="l">${i.label}</div><div class="t"><i data-ancho="${i.valor/(e.max||100)*100}" style="background:${i.color||'var(--blue)'}"></i></div><div class="v">${i.texto||i.valor+(e.unidad||'')}</div></div>`).join('')}</div>${e.sub?`<div class="sub">${e.sub}</div>`:''}`,
+ barras:e=>`<div class="barras">${e.items.map(i=>`<div class="barra"${W(i.w)}><div class="l">${i.label}</div><div class="t"><i data-ancho="${i.valor/(e.max||100)*100}" style="background:${i.color||'var(--blue)'}"></i></div><div class="v">${i.texto||i.valor+(e.unidad||'')}</div></div>`).join('')}</div>${e.sub?`<div class="sub">${e.sub}</div>`:''}`,
  iconos:e=>`<div class="iconos" style="--s:${e.n<=12?52:e.n<=40?32:24}px">${Array.from({length:e.n},(_,i)=>`<span class="${i<(e.marcar??e.n)?'on':''}" style="animation-delay:${Math.min(i*25,1200)}ms">${i<(e.marcar??e.n)?(e.icono):(e.icono2||e.icono)}</span>`).join('')}</div>${e.sub?`<div class="sub">${e.sub}</div>`:''}`,
- lista:e=>`<div class="lista">${e.items.map((i,k)=>`<div style="animation-delay:${k*380}ms"><i>${i.icono}</i>${i.texto}</div>`).join('')}</div>`,
- vs:e=>`<div class="vs">${e.items.map((i,k)=>`<div class="${i.marca==='bien'?'si':i.marca==='mal'?'no':''}" style="animation-delay:${k*320}ms"><div class="ic">${i.icono}</div><b>${i.titulo}</b>${i.texto?`<span>${i.texto}</span>`:''}</div>`).join('')}</div>`,
+ lista:e=>`${e.titulo?`<div class="sub"${W(e.tw)}>${e.titulo}</div>`:''}<div class="lista">${e.items.map((i,k)=>`<div style="animation-delay:${k*380}ms"${W(i.w)}><i>${i.icono}</i>${i.texto}</div>`).join('')}</div>`,
+ vs:e=>`<div class="vs">${e.items.map((i,k)=>`<div class="${i.marca==='bien'?'si':i.marca==='mal'?'no':''}" style="animation-delay:${k*320}ms"${W(i.w)}><div class="ic">${i.icono}</div><b>${i.titulo}</b>${i.texto?`<span>${i.texto}</span>`:''}</div>`).join('')}</div>`,
  imagen:e=>`<img class="img" src="${S.imagenes[e.src]||e.src}" alt="">${e.sub?`<div class="sub">${e.sub}</div>`:''}`,
  peaton:e=>peatonSVG(e.velocidad||30,!e.quieto),
+ fichas:e=>`${e.titulo?`<div class="cap big"${W(e.tw)}>${e.titulo}</div>`:''}<div class="fichas"${e.cols?` style="grid-template-columns:repeat(${e.cols},1fr)"`:''}>${e.items.map(i=>`<div class="ficha ${i.marca||''}"${W(i.w)}>${i.icono?`<i>${i.icono}</i>`:''}<span>${i.texto}</span></div>`).join('')}</div>${e.sub?`<div class="sub"${W(e.sw)}>${e.sub}</div>`:''}`,
+ frase:e=>`${e.titulo?`<div class="sub"${W(e.tw)}>${e.titulo}</div>`:''}<div class="frase">${e.partes.map(p=>typeof p==='string'?`<span class="pt n">${p}</span>`:`<span class="pt ${p.c?'c':'n'}" style="--c:${p.c||p.color||'var(--ink)'}"${W(p.w)}>${p.t}</span>`).join('')}</div>${e.sub?`<div class="sub"${W(e.sw)}>${e.sub}</div>`:''}`,
+ tabla:e=>`${e.titulo?`<div class="sub"${W(e.tw)}>${e.titulo}</div>`:''}<table class="tv"><tr>${e.cols.map(c=>`<th>${c}</th>`).join('')}</tr>${e.filas.map(f=>`<tr class="${f.marca||''}"${W(f.w)}>${f.c.map(x=>`<td class="${x==='V'||x==='F'?x:''}">${x}</td>`).join('')}</tr>`).join('')}</table>${e.sub?`<div class="sub"${W(e.sw)}>${e.sub}</div>`:''}`,
+ cadena:e=>`<div class="cadena${e.items.length>2?' col':''}">${e.items.map((i,k)=>`${k?`<span class="fl${(e.rota||[]).includes(k)?' rota':''}"${W((e.fw||[])[k])}>${(e.rota||[]).includes(k)?'✕':(e.flecha||(e.items.length>2?'↓':'→'))}</span>`:''}<div class="es" style="${i.c?'--c:'+i.c:''}"${W(i.w)}>${i.icono?`<i>${i.icono}</i>`:''}${i.t}</div>`).join('')}</div>${e.sub?`<div class="sub"${W(e.sw)}>${e.sub}</div>`:''}`,
+ cartas:e=>`${e.titulo?`<div class="sub"${W(e.tw)}>${e.titulo}</div>`:''}<div class="cartas" style="margin-bottom:22px">${e.items.map(i=>`<div class="carta ${i.marca||''}"${W(i.w)}>${i.t}${i.nota?`<small>${i.nota}</small>`:''}</div>`).join('')}</div>${e.sub?`<div class="sub"${W(e.sw)}>${e.sub}</div>`:''}`,
+ serie:e=>`${e.titulo?`<div class="sub"${W(e.tw)}>${e.titulo}</div>`:''}<div class="serie">${e.items.map((i,k)=>{i=typeof i==='object'?i:{t:i};const s=(e.saltos||[])[k-1];return `${k?`<div class="sa"${W(s&&s.w)}>${s?s.t||s:''}</div>`:''}<div class="nu"${W(i.w)}><b style="${i.c?'--c:'+i.c:''}">${i.t}</b></div>`}).join('')}</div>${e.sub?`<div class="sub"${W(e.sw)}>${e.sub}</div>`:''}`,
+ venn:e=>vennSVG(e),
  anim:e=>`<div class="anim">${(ESCENAS[e.id]||(()=>'Falta la escena '+e.id))()}</div>`,
 };
 const BARE={titulo:1,anim:1};
+function W(w){return w?` data-w="${String(w).replace(/"/g,'&quot;')}"`:''}
+// Diagrama de Venn: rel "cruce" (se intersectan), "dentro" (a dentro de b), "aparte" (sin nada en común) o "tres".
+// sombras: [{r:"ab"|"a"|"b"|"c"|"abc"|"fuera"..., c:color, w}] (r: las letras de las zonas incluidas; "a-b" = a sin b)
+// puntos: [{x,y,t,w,s}] marcas o números sobre el diagrama (coordenadas en 360×230)
+function vennSVG(e){const id='v'+(++gid),rel=e.rel||'cruce';
+ const C=rel==='anidado'?{a:[180,150,40],b:[180,132,72],c:[180,115,106]}:rel==='dentroAparte'?{a:[112,128,44],b:[112,115,86],c:[282,115,62]}:rel==='dentro'?{a:[180,128,52],b:[180,115,100]}:rel==='aparte'?{a:[92,115,70],b:[268,115,70]}:rel==='tres'?{a:[140,92,64],b:[220,92,64],c:[180,160,64]}:{a:[138,115,82],b:[222,115,82]};
+ const col={a:(e.a&&e.a.c)||'#1CB0F6',b:(e.b&&e.b.c)||'#FFC800',c:(e.c&&e.c.c)||'#CE82FF'};
+ const circ=(k,extra='')=>`<circle cx="${C[k][0]}" cy="${C[k][1]}" r="${C[k][2]}"${extra}/>`;
+ let defs='',zonas='';
+ (e.sombras||[]).forEach((s,i)=>{const [inc,exc='']=s.r.split('-'),m=id+'m'+i;
+  defs+=`<mask id="${m}"><rect x="-10" y="-10" width="380" height="250" fill="${inc==='fuera'?'#fff':'#000'}"/>${inc==='fuera'?Object.keys(C).map(k=>circ(k,' fill="#000"')).join(''):''}${exc.split('').map(k=>C[k]?circ(k,' fill="#000"'):'').join('')}</mask>`;
+  let shape=`<rect x="0" y="0" width="360" height="230" fill="${s.c||'#FF9600'}" opacity="${s.o||(inc==='fuera'?.28:.55)}" mask="url(#${m})"/>`;
+  if(inc!=='fuera')inc.split('').forEach((k,j)=>{const cp=id+'c'+i+'_'+j;defs+=`<clipPath id="${cp}">${circ(k)}</clipPath>`;shape=`<g clip-path="url(#${cp})">${shape}</g>`});
+  if(inc!=='fuera')defs=defs.replace(`<mask id="${m}"><rect x="-10" y="-10" width="380" height="250" fill="#000"/>`,`<mask id="${m}"><rect x="-10" y="-10" width="380" height="250" fill="#fff"/>`);
+  zonas+=`<g${W(s.w)}>${shape}</g>`});
+ const lab=k=>{const o=e[k];if(!o)return '';const [x,y,r]=C[k];const ly=rel==='anidado'?y-r+18:rel==='dentroAparte'?(k==='b'?y-r+20:k==='a'?y+6:y):rel==='dentro'?(k==='b'?y-r+22:y+8):rel==='tres'?(k==='c'?y+r-16:y-r+18):y-r+20,lx=rel==='cruce'?(k==='a'?x-r*.42:x+r*.42):rel==='tres'&&k!=='c'?(k==='a'?x-r*.35:x+r*.35):x;
+  return `<g${W(o.w)}>${circ(k,` fill="${col[k]}" fill-opacity=".14" stroke="${col[k]}" stroke-width="3.5"`)}<text x="${lx}" y="${ly}" text-anchor="middle" font-size="${o.s||17}" font-weight="900" fill="${col[k]}" paint-order="stroke" stroke="#0E171C" stroke-width="3">${o.t}</text></g>`};
+ const pts=(e.puntos||[]).map(p=>`<text x="${p.x}" y="${p.y}" text-anchor="middle" dominant-baseline="central" font-size="${p.s||20}" font-weight="900" fill="${p.c||'#F1F7FB'}" paint-order="stroke" stroke="#0E171C" stroke-width="3"${W(p.w)}>${p.t}</text>`).join('');
+ return `${e.titulo?`<div class="sub"${W(e.tw)}>${e.titulo}</div>`:''}<svg class="vn" viewBox="0 0 360 230"><defs>${defs}</defs>${zonas}${Object.keys(C).map(lab).join('')}${pts}</svg>${e.sub?`<div class="sub"${W(e.sw)}>${e.sub}</div>`:''}`}
 let cur=null;
 async function swap(html,bare){const w=document.createElement('div');w.className='panel enter'+(bare?' bare':'');w.innerHTML=html;
  if(cur){const old=cur;old.classList.add('leave');await sleep(220);old.remove()}
@@ -298,7 +381,8 @@ async function desliza(p){const d=p.desliza;let v=d.desde;await ponerEscena(null
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a}
 // ---------- final: la práctica es una lección aparte de la app ----------
 // En la demo web abre index.html#practica=<id>; en Android, interceptar esa URL.
-async function fin(){await ponerEscena(null);const w=await swap(`<div style="font-size:76px;animation:pop .6s">🏆</div><h2 style="margin:0">¡Sesión completa!</h2><div class="sub">Ahora practica lo que acabas de aprender</div>`);
+async function fin(){try{const k='razona-progreso',P=JSON.parse(localStorage.getItem(k)||'{}');(P.vistas=P.vistas||{})[S.id]=1;localStorage.setItem(k,JSON.stringify(P))}catch(_){}
+ await ponerEscena(null);const w=await swap(`<div style="font-size:76px;animation:pop .6s">🏆</div><h2 style="margin:0">¡Sesión completa!</h2><div class="sub">Ahora practica lo que acabas de aprender</div>`);
  w.style.position='relative';sfx('fin');burst(w,['🎉','⭐','✨','💡']);
  foot.innerHTML=`<button class="btn g" onclick="location.replace('index.html#practica=${S.id}')">Practicar lo aprendido</button><button class="btn" style="background:none;box-shadow:none;border:2px solid var(--line);color:var(--muted)" onclick="location.replace('index.html')">Volver a la ruta</button>`}
 // ---------- bucle principal ----------

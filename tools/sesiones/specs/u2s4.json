@@ -1,0 +1,263 @@
+{
+ "id": "u2s4",
+ "titulo": "Poner a prueba una regla",
+ "icono": "🃏",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a aprender a revisar si una regla se cumple, buscando justo los casos que podrían romperla.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🃏",
+    "texto": "Poner a prueba una regla"
+   },
+   "fondo": "casino"
+  },
+  {
+   "voz": "Regla de un bar: si alguien bebe alcohol, debe ser mayor de dieciocho. ¿Qué caso la rompería? Alguien que bebe alcohol y es menor.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     "Si",
+     {
+      "t": "bebe alcohol",
+      "c": "#1CB0F6",
+      "w": "bebe alcohol"
+     },
+     "→",
+     {
+      "t": "mayor de 18",
+      "c": "#FFC800",
+      "w": "mayor de dieciocho"
+     }
+    ],
+    "sub": "La rompe: bebe alcohol y es menor",
+    "sw": "la rompería"
+   },
+   "q": [
+    "cond-06"
+   ]
+  },
+  {
+   "voz": "Hay cuatro personas: una bebe cerveza, otra bebe jugo, otra tiene veinticinco años y otra tiene dieciséis. ¿A quién revisas?",
+   "escena": {
+    "tipo": "cartas",
+    "items": [
+     {
+      "t": "🍺",
+      "w": "cerveza",
+      "nota": "cerveza"
+     },
+     {
+      "t": "🧃",
+      "w": "jugo",
+      "nota": "jugo"
+     },
+     {
+      "t": "25",
+      "w": "veinticinco",
+      "nota": "25 años"
+     },
+     {
+      "t": "16",
+      "w": "dieciséis",
+      "nota": "16 años"
+     }
+    ]
+   },
+   "q": [
+    "cond-06"
+   ]
+  },
+  {
+   "voz": "A quien bebe cerveza, para ver su edad. Y a quien tiene dieciséis, para ver qué bebe. El del jugo y el de veinticinco no pueden romper la regla.",
+   "escena": {
+    "tipo": "cartas",
+    "items": [
+     {
+      "t": "🍺",
+      "w": "cerveza",
+      "marca": "si",
+      "nota": "revisar"
+     },
+     {
+      "t": "🧃",
+      "w": "jugo",
+      "marca": "no"
+     },
+     {
+      "t": "25",
+      "w": "veinticinco",
+      "marca": "no"
+     },
+     {
+      "t": "16",
+      "w": "dieciséis",
+      "marca": "si",
+      "nota": "revisar"
+     }
+    ]
+   },
+   "q": [
+    "cond-06"
+   ]
+  },
+  {
+   "voz": "En general, para revisar «si pe, entonces cu», mira los casos con pe y los casos sin cu. Son los únicos donde puede esconderse un pe sin cu.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔍",
+      "texto": "Casos con p",
+      "w": "casos con pe",
+      "marca": "bien"
+     },
+     {
+      "icono": "🔍",
+      "texto": "Casos sin q",
+      "w": "casos sin cu",
+      "marca": "bien"
+     },
+     {
+      "icono": "💥",
+      "texto": "Ahí se esconde «p sin q»",
+      "w": "esconderse",
+      "marca": "oro"
+     }
+    ]
+   },
+   "q": [
+    "cond-05",
+    "cond-06"
+   ]
+  },
+  {
+   "voz": "Ahora con cartas. Cada carta tiene una letra en una cara y un número en la otra. Ves una A, una ka, un cuatro y un siete. Regla: si hay una vocal, al otro lado hay un número par.",
+   "escena": {
+    "tipo": "cartas",
+    "items": [
+     {
+      "t": "A",
+      "w": "una a,"
+     },
+     {
+      "t": "K",
+      "w": "una ka"
+     },
+     {
+      "t": "4",
+      "w": "un cuatro"
+     },
+     {
+      "t": "7",
+      "w": "un siete"
+     }
+    ],
+    "sub": "Si vocal → número par",
+    "sw": "regla"
+   }
+  },
+  {
+   "voz": "La A tiene vocal: hay que darla vuelta. El siete no es par: si detrás hay una vocal, la regla se rompe. La ka no tiene vocal, así que no importa.",
+   "escena": {
+    "tipo": "cartas",
+    "items": [
+     {
+      "t": "A",
+      "w": "la a tiene vocal",
+      "marca": "si",
+      "nota": "vocal"
+     },
+     {
+      "t": "K",
+      "w": "la ka",
+      "marca": "no"
+     },
+     {
+      "t": "4"
+     },
+     {
+      "t": "7",
+      "w": "el siete",
+      "marca": "si",
+      "nota": "no es par"
+     }
+    ]
+   },
+   "q": [
+    "cond-05"
+   ]
+  },
+  {
+   "voz": "¿Y el cuatro? Es la trampa. Detrás puede haber cualquier letra: la regla no dice que los pares tengan vocal. Darlo vuelta no sirve.",
+   "escena": {
+    "tipo": "cartas",
+    "items": [
+     {
+      "t": "A",
+      "marca": "si"
+     },
+     {
+      "t": "K",
+      "marca": "no"
+     },
+     {
+      "t": "4",
+      "w": "el cuatro",
+      "marca": "no",
+      "nota": "trampa"
+     },
+     {
+      "t": "7",
+      "marca": "si"
+     }
+    ],
+    "sub": "Solo A y 7",
+    "sw": "no sirve"
+   },
+   "q": [
+    "cond-05"
+   ]
+  },
+  {
+   "voz": "Regla: si una caja dice frágil, va con burbujas. ¿Cuáles cajas revisas?",
+   "elige": {
+    "pregunta": "Regla: «Si una caja dice FRÁGIL, va con burbujas». Ves: una caja FRÁGIL, una sin etiqueta, una con burbujas y una sin burbujas. ¿Cuáles revisas?",
+    "opciones": [
+     "La FRÁGIL y la sin burbujas",
+     "La FRÁGIL y la con burbujas",
+     "Solo la FRÁGIL"
+    ],
+    "bien": "Así es: el caso con pe y el caso sin cu.",
+    "mal": "Revisas la FRÁGIL y la sin burbujas: son las únicas que pueden romper la regla."
+   }
+  },
+  {
+   "voz": "En resumen: para poner a prueba una regla, busca los casos que podrían romperla. Los que la confirman no prueban nada.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔍",
+      "texto": "Casos con p",
+      "w": "casos",
+      "marca": "bien"
+     },
+     {
+      "icono": "🔍",
+      "texto": "Casos sin q",
+      "w": "romperla",
+      "marca": "bien"
+     },
+     {
+      "icono": "🙈",
+      "texto": "Confirmar no basta",
+      "w": "no prueban nada",
+      "marca": "mal"
+     }
+    ]
+   }
+  }
+ ]
+}

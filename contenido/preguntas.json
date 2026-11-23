@@ -1,0 +1,2197 @@
+{
+ "unidades": [
+  {
+   "n": 1,
+   "id": "prop",
+   "titulo": "Lógica proposicional",
+   "etapa": "Fundamentos de lógica",
+   "resumen": "Conectores, condicionales, negaciones y equivalencias."
+  },
+  {
+   "n": 2,
+   "id": "cond",
+   "titulo": "Razonamiento condicional",
+   "etapa": "Fundamentos de lógica",
+   "resumen": "Modus ponens, modus tollens y las falacias formales más comunes."
+  },
+  {
+   "n": 3,
+   "id": "silo",
+   "titulo": "Silogismos y deducción",
+   "etapa": "Fundamentos de lógica",
+   "resumen": "Todos, algunos, ninguno: cuándo una conclusión se sigue de verdad."
+  },
+  {
+   "n": 4,
+   "id": "mat",
+   "titulo": "Lógica matemática y conjuntos",
+   "etapa": "Matemática y patrones",
+   "resumen": "Cuantificadores, conjuntos, tablas de verdad y métodos de demostración."
+  },
+  {
+   "n": 5,
+   "id": "num",
+   "titulo": "Razonamiento numérico",
+   "etapa": "Matemática y patrones",
+   "resumen": "Porcentajes, proporciones, promedios y crecimiento exponencial."
+  },
+  {
+   "n": 6,
+   "id": "pat",
+   "titulo": "Patrones y razonamiento abstracto",
+   "etapa": "Matemática y patrones",
+   "resumen": "Series, analogías, códigos y problemas de estructura."
+  },
+  {
+   "n": 7,
+   "id": "prob",
+   "titulo": "Probabilidad y Bayes",
+   "etapa": "Incertidumbre y evidencia",
+   "resumen": "Tasas base, probabilidad condicional y las trampas de la intuición."
+  },
+  {
+   "n": 8,
+   "id": "est",
+   "titulo": "Estadística y causalidad",
+   "etapa": "Incertidumbre y evidencia",
+   "resumen": "Correlación, confusores, sesgos de muestra y cómo leer evidencia."
+  },
+  {
+   "n": 9,
+   "id": "fal",
+   "titulo": "Falacias informales",
+   "etapa": "Pensamiento crítico",
+   "resumen": "Reconoce los trucos retóricos que se hacen pasar por argumentos."
+  },
+  {
+   "n": 10,
+   "id": "ses",
+   "titulo": "Sesgos y pensamiento reflexivo",
+   "etapa": "Pensamiento crítico",
+   "resumen": "Detecta cuándo tu intuición te engaña y aprende a frenarla."
+  },
+  {
+   "n": 11,
+   "id": "arg",
+   "titulo": "Análisis de argumentos",
+   "etapa": "Pensamiento crítico",
+   "resumen": "Premisas, supuestos, fortalecer, debilitar y evaluar fuentes."
+  }
+ ],
+ "preguntas": [
+  {
+   "id": "prop-01",
+   "u": 1,
+   "s": "",
+   "d": 1,
+   "q": "“Si llueve, el suelo está mojado.” ¿Cuál es su contrapositiva?",
+   "o": [
+    "Si el suelo no está mojado, no llueve.",
+    "Si el suelo está mojado, llueve.",
+    "Si no llueve, el suelo no está mojado.",
+    "Llueve y el suelo no está mojado."
+   ],
+   "e": "La contrapositiva de p → q es ¬q → ¬p, y es equivalente al original. “Si está mojado, llueve” es la recíproca y “si no llueve, no está mojado” es la inversa; ninguna de las dos es equivalente (el suelo podría mojarse por un riego)."
+  },
+  {
+   "id": "prop-02",
+   "u": 1,
+   "s": "",
+   "d": 2,
+   "q": "¿Cuál es la negación de “Si estudio, apruebo”?",
+   "o": [
+    "Estudio y no apruebo.",
+    "Si no estudio, no apruebo.",
+    "Si estudio, no apruebo.",
+    "No estudio y no apruebo."
+   ],
+   "e": "p → q solo es falso cuando p es verdadero y q es falso. Por eso ¬(p → q) ≡ p ∧ ¬q: “estudio y no apruebo”. La negación de un condicional no es otro condicional."
+  },
+  {
+   "id": "prop-03",
+   "u": 1,
+   "s": "",
+   "d": 1,
+   "q": "¿Cuál es la negación de “Juan es alto y rubio”?",
+   "o": [
+    "Juan no es alto o no es rubio.",
+    "Juan no es alto y no es rubio.",
+    "Juan es bajo y moreno.",
+    "Juan es alto pero no rubio."
+   ],
+   "e": "Ley de De Morgan: ¬(p ∧ q) ≡ ¬p ∨ ¬q. Basta que falle una de las dos características para que la afirmación sea falsa."
+  },
+  {
+   "id": "prop-04",
+   "u": 1,
+   "s": "",
+   "d": 1,
+   "q": "¿Cuál es la negación de “Ana va al cine o al teatro”?",
+   "o": [
+    "Ana no va al cine y no va al teatro.",
+    "Ana no va al cine o no va al teatro.",
+    "Ana va al cine y al teatro.",
+    "Ana va solo al teatro."
+   ],
+   "e": "Ley de De Morgan: ¬(p ∨ q) ≡ ¬p ∧ ¬q. Para que “va a uno u otro” sea falso, no debe ir a ninguno."
+  },
+  {
+   "id": "prop-05",
+   "u": 1,
+   "s": "",
+   "d": 1,
+   "q": "¿En qué caso es FALSO el condicional p → q?",
+   "o": [
+    "Cuando p es verdadero y q es falso.",
+    "Cuando p es falso y q es verdadero.",
+    "Cuando p y q son falsos.",
+    "Cuando p y q son verdaderos."
+   ],
+   "e": "Un condicional es una promesa: “si p, entonces q”. Solo se rompe cuando se cumple p y no se cumple q. Si p es falso, el condicional es verdadero sin importar q."
+  },
+  {
+   "id": "prop-06",
+   "u": 1,
+   "s": "",
+   "d": 2,
+   "q": "“Puedes entrar solo si tienes entrada.” ¿Qué afirmación es equivalente?",
+   "o": [
+    "Si entras, entonces tienes entrada.",
+    "Si tienes entrada, entonces entras.",
+    "Si no entras, no tienes entrada.",
+    "Tener entrada garantiza que entres."
+   ],
+   "e": "“p solo si q” se traduce como p → q. Tener entrada es condición necesaria, no suficiente: quien entró tiene entrada, pero tener entrada no garantiza entrar."
+  },
+  {
+   "id": "prop-07",
+   "u": 1,
+   "s": "",
+   "d": 2,
+   "q": "“Ser mayor de 18 años es condición necesaria para votar.” ¿Qué se deduce?",
+   "o": [
+    "Si alguien vota, es mayor de 18.",
+    "Si alguien es mayor de 18, vota.",
+    "Si alguien no vota, es menor de 18.",
+    "Todos los mayores de 18 pueden votar."
+   ],
+   "e": "“q es necesaria para p” significa p → q: votar → mayor de 18. Una condición necesaria debe cumplirse, pero no basta por sí sola."
+  },
+  {
+   "id": "prop-08",
+   "u": 1,
+   "s": "",
+   "d": 1,
+   "q": "¿Cuándo es verdadero el bicondicional p ↔ q?",
+   "o": [
+    "Cuando p y q tienen el mismo valor de verdad.",
+    "Solo cuando ambos son verdaderos.",
+    "Cuando al menos uno es verdadero.",
+    "Cuando tienen valores distintos."
+   ],
+   "e": "p ↔ q (“si y solo si”) afirma que p y q van juntos: es verdadero si ambos son verdaderos o ambos son falsos."
+  },
+  {
+   "id": "prop-09",
+   "u": 1,
+   "s": "",
+   "d": 1,
+   "q": "Sabemos que “p ∨ q” es verdadero y que p es falso. ¿Qué podemos concluir?",
+   "o": [
+    "q es verdadero.",
+    "q es falso.",
+    "Nada sobre q.",
+    "p ∨ q es una contradicción."
+   ],
+   "e": "Es el silogismo disyuntivo: si al menos una es verdadera y descartamos una, la otra debe serlo. “Está en la cocina o en el living; no está en la cocina; está en el living.”"
+  },
+  {
+   "id": "prop-10",
+   "u": 1,
+   "s": "",
+   "d": 2,
+   "q": "¿Cuál de estas fórmulas es una tautología (siempre verdadera)?",
+   "o": [
+    "p ∨ ¬p",
+    "p ∧ ¬p",
+    "p → ¬p",
+    "¬p"
+   ],
+   "e": "p ∨ ¬p («llueve o no llueve») es verdadera pase lo que pase: es una tautología. p ∧ ¬p es una contradicción (siempre falsa), y p → ¬p y ¬p son falsas cuando p es verdadero."
+  },
+  {
+   "id": "prop-11",
+   "u": 1,
+   "s": "",
+   "d": 2,
+   "q": "“A menos que estudies, reprobarás.” ¿Qué afirmación es equivalente?",
+   "o": [
+    "Si no estudias, reprobarás.",
+    "Si estudias, aprobarás.",
+    "Si repruebas, es porque no estudiaste y nada más.",
+    "Estudiar garantiza aprobar."
+   ],
+   "e": "“A menos que p, q” equivale a “si no p, entonces q”. Ojo: no dice que estudiar garantice aprobar; eso sería añadir información."
+  },
+  {
+   "id": "prop-12",
+   "u": 1,
+   "s": "",
+   "d": 2,
+   "q": "¿A cuál de estas fórmulas equivale p → q?",
+   "o": [
+    "¬p ∨ q",
+    "p ∨ ¬q",
+    "¬p ∧ q",
+    "q → p"
+   ],
+   "e": "p → q es falso solo si p es verdadero y q falso, exactamente igual que ¬p ∨ q. Esta equivalencia permite transformar condicionales en disyunciones."
+  },
+  {
+   "id": "prop-13",
+   "u": 1,
+   "s": "",
+   "d": 3,
+   "q": "En una isla, los caballeros siempre dicen la verdad y los bribones siempre mienten. A dice: “B y yo somos bribones”. ¿Qué son A y B?",
+   "o": [
+    "A es bribón y B es caballero.",
+    "Ambos son bribones.",
+    "A es caballero y B es bribón.",
+    "Ambos son caballeros."
+   ],
+   "e": "Si A fuera caballero, diría la verdad y sería bribón: contradicción. Entonces A es bribón y su frase es falsa, así que NO son ambos bribones: B es caballero."
+  },
+  {
+   "id": "prop-14",
+   "u": 1,
+   "s": "",
+   "d": 3,
+   "q": "Si “p → q” es verdadero y “q → r” es falso, ¿qué sabemos con certeza?",
+   "o": [
+    "q es verdadero y r es falso; p puede ser cualquiera.",
+    "p es falso.",
+    "p es verdadero y r es falso.",
+    "q es falso."
+   ],
+   "e": "Un condicional solo es falso con antecedente verdadero y consecuente falso, así que q es verdadero y r es falso. Con q verdadero, p → q es verdadero sea cual sea p, por lo que no sabemos nada de p."
+  },
+  {
+   "id": "cond-01",
+   "u": 2,
+   "s": "",
+   "d": 1,
+   "q": "“Si el motor se recalienta, se enciende la luz roja. El motor se recalentó.” ¿Qué se concluye?",
+   "o": [
+    "La luz roja se encendió.",
+    "La luz roja no se encendió.",
+    "El motor no se recalentó.",
+    "No se puede concluir nada."
+   ],
+   "e": "Modus ponens: de p → q y p se sigue q. Es la forma de deducción más básica y siempre es válida."
+  },
+  {
+   "id": "cond-02",
+   "u": 2,
+   "s": "",
+   "d": 1,
+   "q": "“Si es un perro, es un mamífero. Rex no es un mamífero.” ¿Qué se concluye?",
+   "o": [
+    "Rex no es un perro.",
+    "Rex es un perro.",
+    "Rex es un gato.",
+    "No se puede concluir nada."
+   ],
+   "e": "Modus tollens: de p → q y ¬q se sigue ¬p. Si fuera perro, sería mamífero; como no lo es, no puede ser perro."
+  },
+  {
+   "id": "cond-03",
+   "u": 2,
+   "s": "",
+   "d": 1,
+   "q": "“Si hay fuego, hay humo. Hay humo. Por lo tanto, hay fuego.” ¿Es válido este razonamiento?",
+   "o": [
+    "No: es la falacia de afirmar el consecuente.",
+    "Sí: es modus ponens.",
+    "Sí: es modus tollens.",
+    "No: es la falacia de negar el antecedente."
+   ],
+   "e": "De p → q y q no se sigue p. El humo podría venir de otra fuente (una máquina de humo, vapor). El razonamiento puede acertar a veces, pero no es válido."
+  },
+  {
+   "id": "cond-04",
+   "u": 2,
+   "s": "",
+   "d": 2,
+   "q": "“Si estudias medicina, sabes biología. No estudias medicina. Por lo tanto, no sabes biología.” ¿Qué error hay?",
+   "o": [
+    "Negar el antecedente.",
+    "Afirmar el consecuente.",
+    "Ninguno: es válido.",
+    "Ad hominem."
+   ],
+   "e": "De p → q y ¬p no se sigue ¬q. Se puede saber biología por muchos otros caminos (ser biólogo, profesor, autodidacta)."
+  },
+  {
+   "id": "cond-05",
+   "u": 2,
+   "s": "",
+   "d": 3,
+   "q": "Cada carta tiene una letra en una cara y un número en la otra. Ves: A, K, 4, 7. Regla: “Si una carta tiene vocal, la otra cara tiene un número par”. ¿Qué cartas debes dar vuelta, como mínimo, para comprobar la regla?",
+   "o": [
+    "A y 7",
+    "A y 4",
+    "Solo A",
+    "A, 4 y 7"
+   ],
+   "e": "Tarea de selección de Wason. Debes revisar p (la A) y ¬q (el 7, impar): si el 7 tuviera vocal detrás, la regla sería falsa. El 4 no sirve: la regla no dice nada sobre lo que hay detrás de los pares. Menos del 10% de las personas acierta al primer intento."
+  },
+  {
+   "id": "cond-06",
+   "u": 2,
+   "s": "",
+   "d": 2,
+   "q": "En un bar rige la regla “Si alguien bebe alcohol, debe ser mayor de 18”. ¿A quiénes debes revisar? (1) bebe cerveza, (2) bebe jugo, (3) tiene 25 años, (4) tiene 16 años.",
+   "o": [
+    "A quien bebe cerveza y a quien tiene 16.",
+    "A quien bebe cerveza y a quien tiene 25.",
+    "Solo a quien bebe cerveza.",
+    "A todos."
+   ],
+   "e": "Es la misma estructura lógica que la tarea de Wason con letras, pero en contexto social casi todos aciertan. Revisa p (bebe alcohol) y ¬q (menor de 18). Reconocer la estructura te permite transferirla a problemas abstractos."
+  },
+  {
+   "id": "cond-07",
+   "u": 2,
+   "s": "",
+   "d": 1,
+   "q": "Si A → B y B → C, ¿qué se puede concluir?",
+   "o": [
+    "A → C",
+    "C → A",
+    "B → A",
+    "A ∧ C"
+   ],
+   "e": "Silogismo hipotético (transitividad): las implicaciones se encadenan. Si A, entonces B; y si B, entonces C; por lo tanto, si A, entonces C."
+  },
+  {
+   "id": "cond-08",
+   "u": 2,
+   "s": "",
+   "d": 1,
+   "q": "“Si llueve, llevo paraguas. Hoy llevo paraguas.” ¿Qué sabemos sobre si llueve?",
+   "o": [
+    "No podemos saberlo.",
+    "Llueve.",
+    "No llueve.",
+    "Va a llover."
+   ],
+   "e": "Concluir que llueve sería afirmar el consecuente. Podrías llevar paraguas por el sol o porque lo olvidaste en la mochila."
+  },
+  {
+   "id": "cond-09",
+   "u": 2,
+   "s": "",
+   "d": 2,
+   "q": "“Si apruebo, viajo. Si repruebo, trabajo. Aprobaré o reprobaré.” ¿Qué se concluye?",
+   "o": [
+    "Viajaré o trabajaré.",
+    "Viajaré y trabajaré.",
+    "Viajaré.",
+    "No se puede concluir nada."
+   ],
+   "e": "Dilema constructivo: de (p → q), (r → s) y (p ∨ r) se sigue (q ∨ s)."
+  },
+  {
+   "id": "cond-10",
+   "u": 2,
+   "s": "",
+   "d": 2,
+   "q": "“Todo el que aprobó el examen estudió. Pedro estudió.” ¿Aprobó Pedro?",
+   "o": [
+    "No se puede saber.",
+    "Sí.",
+    "No.",
+    "Sí, si estudió lo suficiente."
+   ],
+   "e": "La premisa dice aprobar → estudió, no al revés. Que Pedro estudiara es compatible con aprobar y con reprobar (afirmar el consecuente)."
+  },
+  {
+   "id": "cond-11",
+   "u": 2,
+   "s": "",
+   "d": 2,
+   "q": "“Si algo es una planta, necesita agua. Las rosas necesitan agua. Por lo tanto, las rosas son plantas.” ¿Cómo evalúas el argumento?",
+   "o": [
+    "Inválido, aunque la conclusión sea verdadera.",
+    "Válido, porque la conclusión es verdadera.",
+    "Válido y sólido.",
+    "Inválido porque una premisa es falsa."
+   ],
+   "e": "Afirma el consecuente: los animales también necesitan agua. La conclusión es verdadera por otras razones, pero no se sigue de las premisas. Que una conclusión nos parezca creíble no hace válido el argumento (sesgo de creencia)."
+  },
+  {
+   "id": "cond-12",
+   "u": 2,
+   "s": "",
+   "d": 2,
+   "q": "¿Qué significa que un argumento sea VÁLIDO?",
+   "o": [
+    "Que es imposible que las premisas sean verdaderas y la conclusión falsa.",
+    "Que sus premisas son verdaderas.",
+    "Que su conclusión es verdadera.",
+    "Que lo acepta la mayoría de los expertos."
+   ],
+   "e": "La validez depende solo de la forma. Un argumento válido puede tener premisas falsas (“todos los peces vuelan; Nemo es un pez; Nemo vuela”). Si además las premisas son verdaderas, el argumento es sólido."
+  },
+  {
+   "id": "cond-13",
+   "u": 2,
+   "s": "",
+   "d": 3,
+   "q": "“Si el sospechoso estuvo en la escena, hay huellas. Si hay huellas, el laboratorio las detecta. El laboratorio no detectó huellas.” ¿Qué se concluye?",
+   "o": [
+    "El sospechoso no estuvo en la escena.",
+    "El sospechoso estuvo en la escena.",
+    "Hay huellas, pero no se detectaron.",
+    "No se puede concluir nada."
+   ],
+   "e": "Se encadenan: escena → huellas → detección. Por modus tollens, si no hubo detección no hubo huellas, y si no hubo huellas el sospechoso no estuvo. (En la vida real conviene revisar si las premisas son verdaderas: ¿siempre deja huellas?)"
+  },
+  {
+   "id": "silo-01",
+   "u": 3,
+   "s": "",
+   "d": 1,
+   "q": "“Todos los A son B. Todos los B son C.” ¿Qué se sigue necesariamente?",
+   "o": [
+    "Todos los A son C.",
+    "Todos los C son A.",
+    "Algunos C no son A.",
+    "Ningún A es C."
+   ],
+   "e": "Si A está dentro de B y B dentro de C, entonces A está dentro de C. No sabemos si C es más grande que A, así que no podemos afirmar nada de “todos los C”."
+  },
+  {
+   "id": "silo-02",
+   "u": 3,
+   "s": "",
+   "d": 2,
+   "q": "“Algunos médicos son músicos. Algunos músicos son zurdos.” ¿Se sigue que algunos médicos son zurdos?",
+   "o": [
+    "No necesariamente.",
+    "Sí, necesariamente.",
+    "No, ningún médico es zurdo.",
+    "Sí, todos los médicos son zurdos."
+   ],
+   "e": "Los músicos que son médicos y los músicos que son zurdos podrían ser grupos totalmente distintos. Con dos premisas particulares (“algunos”) no se puede concluir nada."
+  },
+  {
+   "id": "silo-03",
+   "u": 3,
+   "s": "",
+   "d": 1,
+   "q": "“Ningún pez es mamífero. Todos los tiburones son peces.” ¿Qué se sigue?",
+   "o": [
+    "Ningún tiburón es mamífero.",
+    "Algunos tiburones son mamíferos.",
+    "Ningún mamífero es pez, salvo los tiburones.",
+    "No se puede concluir nada."
+   ],
+   "e": "Los tiburones están dentro del conjunto de los peces, que no se cruza con el de los mamíferos. Por lo tanto ningún tiburón es mamífero."
+  },
+  {
+   "id": "silo-04",
+   "u": 3,
+   "s": "",
+   "d": 2,
+   "q": "“Todos los gatos son animales. Algunos animales son negros.” ¿Se sigue que algunos gatos son negros?",
+   "o": [
+    "No se sigue de las premisas.",
+    "Sí, se sigue.",
+    "No, ningún gato es negro.",
+    "Sí, todos los gatos son negros."
+   ],
+   "e": "Los animales negros podrían ser solo cuervos y panteras. Sabemos que existen gatos negros, pero ese conocimiento no viene de estas premisas: es el sesgo de creencia en acción."
+  },
+  {
+   "id": "silo-05",
+   "u": 3,
+   "s": "",
+   "d": 2,
+   "q": "“Todo lo que tiene motor necesita mantención. Las bicicletas necesitan mantención. Por lo tanto, las bicicletas tienen motor.” ¿Es válido?",
+   "o": [
+    "No: el término medio no conecta las premisas.",
+    "Sí: es un silogismo correcto.",
+    "Sí, porque algunas bicicletas tienen motor.",
+    "No, porque la primera premisa es falsa."
+   ],
+   "e": "Que todo lo que tiene motor necesite mantención no significa que todo lo que necesita mantención tenga motor. Es la falacia del término medio no distribuido."
+  },
+  {
+   "id": "silo-06",
+   "u": 3,
+   "s": "",
+   "d": 2,
+   "q": "“Todos los mamíferos pueden volar. Las ballenas son mamíferos. Por lo tanto, las ballenas pueden volar.” ¿Cómo lo evalúas?",
+   "o": [
+    "Válido, pero no sólido.",
+    "Inválido.",
+    "Válido y sólido.",
+    "Inválido porque la conclusión es falsa."
+   ],
+   "e": "La forma es perfecta: si las premisas fueran verdaderas, la conclusión también lo sería. Pero la primera premisa es falsa, así que el argumento no es sólido. Separar forma y contenido es una habilidad clave."
+  },
+  {
+   "id": "silo-07",
+   "u": 3,
+   "s": "",
+   "d": 1,
+   "q": "Si “Ningún reptil es mamífero” es verdadero, ¿qué otra afirmación también lo es?",
+   "o": [
+    "Ningún mamífero es reptil.",
+    "Todos los mamíferos son reptiles.",
+    "Algunos mamíferos son reptiles.",
+    "Algunos reptiles son mamíferos."
+   ],
+   "e": "Las proposiciones “ningún A es B” se pueden invertir sin perder validez: si dos conjuntos no se cruzan, da igual cuál nombres primero."
+  },
+  {
+   "id": "silo-08",
+   "u": 3,
+   "s": "",
+   "d": 1,
+   "q": "Si “Todos los cuadrados son rectángulos” es verdadero, ¿“Todos los rectángulos son cuadrados” también lo es?",
+   "o": [
+    "No necesariamente.",
+    "Sí, siempre.",
+    "Sí, por la conversión.",
+    "Solo en geometría euclidiana."
+   ],
+   "e": "“Todos los A son B” no se puede invertir. De hecho, aquí es falso: un rectángulo de 2 × 5 no es un cuadrado."
+  },
+  {
+   "id": "silo-09",
+   "u": 3,
+   "s": "",
+   "d": 3,
+   "q": "“Algunos estudiantes no son puntuales. Todos los delegados son puntuales.” ¿Qué se sigue?",
+   "o": [
+    "Algunos estudiantes no son delegados.",
+    "Ningún estudiante es delegado.",
+    "Algunos delegados no son estudiantes.",
+    "No se sigue nada."
+   ],
+   "e": "Toma a un estudiante impuntual: no puede ser delegado, porque todos los delegados son puntuales. Así que existe al menos un estudiante que no es delegado. No sabemos nada del resto."
+  },
+  {
+   "id": "silo-10",
+   "u": 3,
+   "s": "",
+   "d": 1,
+   "q": "“Todos los médicos son profesionales. Ningún profesional de esta lista llega tarde.” Si Laura es médica de la lista, ¿qué se sigue?",
+   "o": [
+    "Laura no llega tarde.",
+    "Laura llega tarde a veces.",
+    "No se puede saber.",
+    "Laura no es profesional."
+   ],
+   "e": "Laura es médica → es profesional → no llega tarde. Encadenar afirmaciones universales da conclusiones seguras."
+  },
+  {
+   "id": "silo-11",
+   "u": 3,
+   "s": "",
+   "d": 2,
+   "q": "Ana es más alta que Beto. Beto es más alto que Carla. Dani es más baja que Carla. ¿Quién es la segunda persona más baja?",
+   "o": [
+    "Carla",
+    "Beto",
+    "Dani",
+    "Ana"
+   ],
+   "e": "Ordena: Ana > Beto > Carla > Dani. La más baja es Dani y la segunda más baja es Carla. Escribir el orden en una línea evita errores de memoria."
+  },
+  {
+   "id": "silo-12",
+   "u": 3,
+   "s": "",
+   "d": 3,
+   "q": "Si “Algunos estudiantes son deportistas” es verdadero, ¿qué sabemos de “Algunos estudiantes NO son deportistas”?",
+   "o": [
+    "Que podría ser verdadero o falso.",
+    "Que es verdadero.",
+    "Que es falso.",
+    "Que es una contradicción."
+   ],
+   "e": "En lógica, “algunos” significa “al menos uno”, y es compatible con “todos”. Que algunos sean deportistas no nos dice si el resto lo es o no."
+  },
+  {
+   "id": "silo-13",
+   "u": 3,
+   "s": "",
+   "d": 2,
+   "q": "“Todos los metales conducen electricidad. Ningún plástico conduce electricidad.” ¿Qué se sigue?",
+   "o": [
+    "Ningún plástico es metal.",
+    "Algunos plásticos son metales.",
+    "Todos los conductores son metales.",
+    "No se sigue nada."
+   ],
+   "e": "Si algo fuera plástico y metal a la vez, conduciría y no conduciría electricidad: contradicción. Por lo tanto los conjuntos no se cruzan. (Con estas premisas simplificadas; en la realidad hay plásticos conductores, lo que haría falsa la segunda premisa.)"
+  },
+  {
+   "id": "mat-01",
+   "u": 4,
+   "s": "",
+   "d": 1,
+   "q": "¿Cuál es la negación de “Todos los cisnes son blancos”?",
+   "o": [
+    "Existe al menos un cisne que no es blanco.",
+    "Ningún cisne es blanco.",
+    "Todos los cisnes son negros.",
+    "Algunos cisnes son blancos."
+   ],
+   "e": "¬∀x P(x) ≡ ∃x ¬P(x). Para refutar una afirmación universal basta un contraejemplo; no hace falta que todos sean de otro color."
+  },
+  {
+   "id": "mat-02",
+   "u": 4,
+   "s": "",
+   "d": 2,
+   "q": "¿Cuál es la negación de “Existe un número primo que es par”?",
+   "o": [
+    "Ningún número primo es par.",
+    "Existe un número primo que es impar.",
+    "Todos los números pares son primos.",
+    "Algunos números primos no son pares."
+   ],
+   "e": "¬∃x P(x) ≡ ∀x ¬P(x): “todo primo es no-par”, es decir, ningún primo es par. (La afirmación original es verdadera, porque 2 es primo y par, así que su negación es falsa.)"
+  },
+  {
+   "id": "mat-03",
+   "u": 4,
+   "s": "",
+   "d": 1,
+   "q": "Si A = {1, 2, 3, 4} y B = {3, 4, 5}, ¿cuánto es A ∩ B?",
+   "o": [
+    "{3, 4}",
+    "{1, 2, 3, 4, 5}",
+    "{1, 2}",
+    "{5}"
+   ],
+   "e": "La intersección contiene los elementos que están en ambos conjuntos a la vez: 3 y 4. {1, 2, 3, 4, 5} sería la unión."
+  },
+  {
+   "id": "mat-04",
+   "u": 4,
+   "s": "",
+   "d": 2,
+   "q": "En un curso de 30 alumnos, 18 juegan fútbol, 15 juegan básquetbol y 8 juegan ambos. ¿Cuántos no juegan ninguno?",
+   "o": [
+    "5",
+    "0",
+    "3",
+    "13"
+   ],
+   "e": "Inclusión-exclusión: |F ∪ B| = 18 + 15 − 8 = 25. Si sumas 18 + 15 cuentas dos veces a los 8 que juegan ambos. 30 − 25 = 5."
+  },
+  {
+   "id": "mat-05",
+   "u": 4,
+   "s": "",
+   "d": 1,
+   "q": "¿Cuántas filas tiene la tabla de verdad de una fórmula con 4 variables?",
+   "o": [
+    "16",
+    "8",
+    "4",
+    "32"
+   ],
+   "e": "Cada variable puede ser V o F, así que hay 2 × 2 × 2 × 2 = 2⁴ = 16 combinaciones."
+  },
+  {
+   "id": "mat-06",
+   "u": 4,
+   "s": "",
+   "d": 1,
+   "q": "¿Cuál es un contraejemplo de “Todo número primo es impar”?",
+   "o": [
+    "2",
+    "9",
+    "1",
+    "15"
+   ],
+   "e": "2 es primo (solo es divisible por 1 y por sí mismo) y es par. 9 y 15 son impares, pero no son primos, y 1 no es primo por definición."
+  },
+  {
+   "id": "mat-07",
+   "u": 4,
+   "s": "",
+   "d": 2,
+   "q": "Para demostrar por contradicción que √2 es irracional, ¿qué se supone al principio?",
+   "o": [
+    "Que √2 es racional.",
+    "Que √2 es irracional.",
+    "Que √2 es entero.",
+    "Que 2 es un cuadrado perfecto."
+   ],
+   "e": "En una demostración por contradicción se supone lo contrario de lo que se quiere probar y se deduce un absurdo. Aquí, suponer √2 = a/b en su forma irreducible lleva a que a y b son ambos pares."
+  },
+  {
+   "id": "mat-08",
+   "u": 4,
+   "s": "",
+   "d": 2,
+   "q": "Se demuestra que P(1) es verdadero y que, para todo n, P(n) implica P(n+1). ¿Qué se concluye?",
+   "o": [
+    "P(n) es verdadero para todo n ≥ 1.",
+    "Solo P(1) y P(2) son verdaderos.",
+    "P(n) es verdadero para algunos n.",
+    "Nada, falta probar P(2)."
+   ],
+   "e": "Es el principio de inducción matemática, como una fila de dominós: el primero cae, y cada uno hace caer al siguiente."
+  },
+  {
+   "id": "mat-09",
+   "u": 4,
+   "s": "",
+   "d": 3,
+   "q": "En los números naturales, ¿cuál fórmula dice “existe un número mayor que todos los números”?",
+   "o": [
+    "∃y ∀x (y > x)",
+    "∀x ∃y (y > x)",
+    "∀x ∀y (y > x)",
+    "∃x ∃y (y > x)"
+   ],
+   "e": "∃y ∀x: hay un mismo y que supera a todos los x (es falso: no existe un natural máximo). ∀x ∃y: para cada x hay algún y mayor (es verdadero: x + 1). El orden de los cuantificadores cambia el significado."
+  },
+  {
+   "id": "mat-10",
+   "u": 4,
+   "s": "",
+   "d": 3,
+   "q": "En una sala no hay ningún unicornio. En la lógica clásica, ¿qué valor tiene “Todos los unicornios de esta sala son azules”?",
+   "o": [
+    "Verdadero (vacuamente).",
+    "Falso.",
+    "Indeterminado.",
+    "Contradictorio."
+   ],
+   "e": "“Para todo x, si x es unicornio de la sala, x es azul”: como el antecedente nunca se cumple, el condicional es verdadero en cada caso. Se llama verdad vacua."
+  },
+  {
+   "id": "mat-11",
+   "u": 4,
+   "s": "",
+   "d": 2,
+   "q": "¿Cuántos subconjuntos tiene el conjunto {a, b, c}?",
+   "o": [
+    "8",
+    "6",
+    "3",
+    "9"
+   ],
+   "e": "Cada elemento puede estar o no estar: 2³ = 8. Incluye el conjunto vacío y el propio {a, b, c}."
+  },
+  {
+   "id": "mat-12",
+   "u": 4,
+   "s": "",
+   "d": 3,
+   "q": "Quieres probar “si n² es par, entonces n es par”. ¿Cuál es la estrategia más simple?",
+   "o": [
+    "Probar la contrapositiva: si n es impar, n² es impar.",
+    "Probar la recíproca: si n es par, n² es par.",
+    "Probar algunos casos: 2, 4, 6…",
+    "Probar que n² es siempre par."
+   ],
+   "e": "Si n = 2k + 1, entonces n² = 4k² + 4k + 1 es impar. La contrapositiva es equivalente al enunciado y es fácil de probar. Probar casos no demuestra nada, y la recíproca es otra afirmación distinta."
+  },
+  {
+   "id": "mat-13",
+   "u": 4,
+   "s": "",
+   "d": 1,
+   "q": "Si A ⊆ B y B ⊆ A, ¿qué se concluye?",
+   "o": [
+    "A = B",
+    "A ∩ B = ∅",
+    "A ⊂ B estrictamente",
+    "B está vacío"
+   ],
+   "e": "Si cada elemento de A está en B y cada elemento de B está en A, tienen exactamente los mismos elementos. Es la forma estándar de demostrar que dos conjuntos son iguales."
+  },
+  {
+   "id": "mat-14",
+   "u": 4,
+   "s": "",
+   "d": 2,
+   "q": "En un grupo de 13 personas, ¿qué podemos asegurar?",
+   "o": [
+    "Al menos dos nacieron el mismo mes.",
+    "Al menos dos cumplen años el mismo día.",
+    "Alguien nació en enero.",
+    "Nada en particular."
+   ],
+   "e": "Principio del palomar: si repartes 13 personas en 12 meses, al menos un mes tiene dos personas. Es un argumento de existencia sin necesidad de saber quiénes son."
+  },
+  {
+   "id": "num-01",
+   "u": 5,
+   "s": "",
+   "d": 1,
+   "q": "Un producto sube 20% y después baja 20%. Respecto del precio original, ¿cómo queda?",
+   "o": [
+    "4% más barato",
+    "Igual",
+    "4% más caro",
+    "2% más barato"
+   ],
+   "e": "1,20 × 0,80 = 0,96. El descuento de 20% se aplica sobre un precio ya aumentado, así que se pierde más de lo que se ganó."
+  },
+  {
+   "id": "num-02",
+   "u": 5,
+   "s": "",
+   "d": 2,
+   "q": "Una hoja de 0,1 mm de grosor se dobla por la mitad 10 veces (en teoría). ¿Qué grosor alcanza aproximadamente?",
+   "o": [
+    "10 cm",
+    "1 mm",
+    "1 cm",
+    "10 metros"
+   ],
+   "e": "Cada doblez duplica el grosor: 0,1 mm × 2¹⁰ = 0,1 × 1.024 ≈ 102 mm ≈ 10 cm. Con 42 dobleces llegaría a la Luna: la intuición falla con el crecimiento exponencial."
+  },
+  {
+   "id": "num-03",
+   "u": 5,
+   "s": "",
+   "d": 2,
+   "q": "La tasa de desempleo pasa de 10% a 12%. ¿Qué descripción es correcta?",
+   "o": [
+    "Subió 2 puntos porcentuales, un 20% relativo.",
+    "Subió 2%.",
+    "Subió 12%.",
+    "Subió 20 puntos porcentuales."
+   ],
+   "e": "La diferencia absoluta es de 2 puntos porcentuales (12 − 10). El cambio relativo es 2/10 = 20%. Los medios a veces eligen la cifra que suena más impactante."
+  },
+  {
+   "id": "num-04",
+   "u": 5,
+   "s": "",
+   "d": 3,
+   "q": "Un medicamento reduce el riesgo de un infarto de 2 de cada 1.000 personas a 1 de cada 1.000. Se anuncia: “¡reduce el riesgo un 50%!”. ¿Cuál es la reducción absoluta del riesgo?",
+   "o": [
+    "0,1 puntos porcentuales (1 de cada 1.000)",
+    "50%",
+    "1%",
+    "2%"
+   ],
+   "e": "La reducción relativa es 50%, pero la absoluta es de 0,2% a 0,1%: hay que tratar a 1.000 personas para evitar un infarto. Pide siempre las cifras absolutas."
+  },
+  {
+   "id": "num-05",
+   "u": 5,
+   "s": "",
+   "d": 3,
+   "q": "Un auto va de A a B a 60 km/h y vuelve por el mismo camino a 40 km/h. ¿Cuál fue su velocidad media en todo el viaje?",
+   "o": [
+    "48 km/h",
+    "50 km/h",
+    "45 km/h",
+    "52 km/h"
+   ],
+   "e": "Si cada tramo mide 120 km: ida 2 h, vuelta 3 h. Total 240 km en 5 h = 48 km/h. Pasa más tiempo a velocidad baja, por eso la media es menor que 50."
+  },
+  {
+   "id": "num-06",
+   "u": 5,
+   "s": "",
+   "d": 1,
+   "q": "Inviertes $1.000 al 10% anual de interés compuesto. ¿Cuánto tienes después de 2 años?",
+   "o": [
+    "$1.210",
+    "$1.200",
+    "$1.100",
+    "$1.020"
+   ],
+   "e": "Año 1: 1.000 × 1,1 = 1.100. Año 2: 1.100 × 1,1 = 1.210. El interés del segundo año se calcula sobre el interés ya ganado."
+  },
+  {
+   "id": "num-07",
+   "u": 5,
+   "s": "",
+   "d": 2,
+   "q": "Según la regla del 72, ¿en cuánto tiempo se duplica algo que crece un 6% anual?",
+   "o": [
+    "Unos 12 años",
+    "Unos 6 años",
+    "Unos 17 años",
+    "Unos 36 años"
+   ],
+   "e": "72 / 6 = 12 años. Es una aproximación muy útil para estimar mentalmente el crecimiento compuesto (de inversiones, deudas, poblaciones o inflación)."
+  },
+  {
+   "id": "num-08",
+   "u": 5,
+   "s": "",
+   "d": 1,
+   "q": "3 personas construyen un muro en 6 días. ¿Cuánto tardarían 6 personas trabajando al mismo ritmo?",
+   "o": [
+    "3 días",
+    "12 días",
+    "6 días",
+    "2 días"
+   ],
+   "e": "Proporción inversa: el trabajo total es 3 × 6 = 18 días-persona. Con 6 personas: 18 / 6 = 3 días."
+  },
+  {
+   "id": "num-09",
+   "u": 5,
+   "s": "",
+   "d": 2,
+   "q": "En un barrio, 9 personas ganan $800.000 al mes y una gana $50.000.000. ¿Qué medida representa mejor el ingreso típico?",
+   "o": [
+    "La mediana",
+    "La media aritmética",
+    "El máximo",
+    "La suma"
+   ],
+   "e": "La media es (9 × 0,8 + 50) / 10 ≈ $5,7 millones, que no describe a nadie. La mediana ($800.000) no se ve afectada por los valores extremos."
+  },
+  {
+   "id": "num-10",
+   "u": 5,
+   "s": "",
+   "d": 1,
+   "q": "Una oferta dice “lleve 3, pague 2”. ¿A qué descuento equivale por unidad?",
+   "o": [
+    "≈ 33%",
+    "50%",
+    "66%",
+    "25%"
+   ],
+   "e": "Pagas 2 de 3 unidades: ahorras 1/3 ≈ 33,3%. Útil para comparar con ofertas tipo “segunda unidad al 50%”, que equivalen a un 25%."
+  },
+  {
+   "id": "num-11",
+   "u": 5,
+   "s": "",
+   "d": 2,
+   "q": "Tras un descuento del 25% pagas $600. ¿Cuál era el precio original?",
+   "o": [
+    "$800",
+    "$750",
+    "$825",
+    "$900"
+   ],
+   "e": "Pagaste el 75% del precio: 600 / 0,75 = 800. El error típico es sumar el 25% de 600 ($750), pero el descuento se calculó sobre el precio original, no sobre el final."
+  },
+  {
+   "id": "num-12",
+   "u": 5,
+   "s": "",
+   "d": 3,
+   "q": "Una prueba tiene 20 preguntas de 4 opciones. Si alguien responde todas al azar, ¿cuántas acertará en promedio?",
+   "o": [
+    "5",
+    "4",
+    "10",
+    "2"
+   ],
+   "e": "Valor esperado: 20 × 1/4 = 5. Por eso muchas pruebas descuentan puntos por respuesta errónea: para que adivinar no compense."
+  },
+  {
+   "id": "num-13",
+   "u": 5,
+   "s": "",
+   "d": 2,
+   "q": "Una población de bacterias se duplica cada hora. Si a las 10:00 llena el frasco, ¿a qué hora llenaba un cuarto del frasco?",
+   "o": [
+    "8:00",
+    "7:30",
+    "5:00",
+    "9:00"
+   ],
+   "e": "Retrocede: a las 9:00 llenaba la mitad y a las 8:00 un cuarto. En el crecimiento exponencial, casi todo ocurre al final."
+  },
+  {
+   "id": "pat-01",
+   "u": 6,
+   "s": "",
+   "d": 1,
+   "q": "¿Qué número sigue? 1, 1, 2, 3, 5, 8, …",
+   "o": [
+    "13",
+    "11",
+    "12",
+    "16"
+   ],
+   "e": "Sucesión de Fibonacci: cada término es la suma de los dos anteriores (5 + 8 = 13)."
+  },
+  {
+   "id": "pat-02",
+   "u": 6,
+   "s": "",
+   "d": 1,
+   "q": "¿Qué número sigue? 3, 9, 27, 81, …",
+   "o": [
+    "243",
+    "162",
+    "108",
+    "324"
+   ],
+   "e": "Cada término se multiplica por 3: 81 × 3 = 243. Si las diferencias crecen mucho, prueba con cocientes."
+  },
+  {
+   "id": "pat-03",
+   "u": 6,
+   "s": "",
+   "d": 1,
+   "q": "¿Qué número sigue? 2, 3, 5, 7, 11, …",
+   "o": [
+    "13",
+    "12",
+    "15",
+    "17"
+   ],
+   "e": "Son los números primos. 12 y 15 no son primos, y 17 viene después del 13."
+  },
+  {
+   "id": "pat-04",
+   "u": 6,
+   "s": "",
+   "d": 1,
+   "q": "¿Qué número sigue? 1, 4, 9, 16, 25, …",
+   "o": [
+    "36",
+    "30",
+    "35",
+    "49"
+   ],
+   "e": "Son los cuadrados perfectos (1², 2², 3²…). También se ve en las diferencias: 3, 5, 7, 9, 11 (los impares)."
+  },
+  {
+   "id": "pat-05",
+   "u": 6,
+   "s": "",
+   "d": 1,
+   "q": "Libro es a leer como cuchillo es a…",
+   "o": [
+    "Cortar",
+    "Cocina",
+    "Metal",
+    "Tenedor"
+   ],
+   "e": "La relación es objeto → su función. Cocina es un lugar, metal un material y tenedor un objeto relacionado, pero ninguno es su función."
+  },
+  {
+   "id": "pat-06",
+   "u": 6,
+   "s": "",
+   "d": 2,
+   "q": "¿Qué letra sigue? A, C, F, J, …",
+   "o": [
+    "O",
+    "N",
+    "M",
+    "P"
+   ],
+   "e": "Los saltos crecen: +2, +3, +4, +5. A(1), C(3), F(6), J(10) → 10 + 5 = 15 → O (en el alfabeto sin Ñ)."
+  },
+  {
+   "id": "pat-07",
+   "u": 6,
+   "s": "",
+   "d": 1,
+   "q": "¿Qué número sigue? 64, 32, 16, 8, …",
+   "o": [
+    "4",
+    "6",
+    "2",
+    "0"
+   ],
+   "e": "Cada término es la mitad del anterior (se divide por 2): 8 / 2 = 4. Es una progresión geométrica de razón 1/2."
+  },
+  {
+   "id": "pat-08",
+   "u": 6,
+   "s": "",
+   "d": 2,
+   "q": "¿Qué número sigue? 1, 2, 6, 24, 120, …",
+   "o": [
+    "720",
+    "240",
+    "600",
+    "144"
+   ],
+   "e": "Son factoriales: se multiplica por 2, 3, 4, 5 y luego por 6. 120 × 6 = 720."
+  },
+  {
+   "id": "pat-09",
+   "u": 6,
+   "s": "",
+   "d": 2,
+   "q": "Si ROMA se codifica como SPNB, ¿cómo se codifica LUNA?",
+   "o": [
+    "MVOB",
+    "KTMZ",
+    "MVNB",
+    "LVOB"
+   ],
+   "e": "Cada letra se reemplaza por la siguiente del alfabeto: R→S, O→P, M→N, A→B. Entonces L→M, U→V, N→O, A→B."
+  },
+  {
+   "id": "pat-10",
+   "u": 6,
+   "s": "",
+   "d": 2,
+   "q": "¿Qué número sigue? 5, 10, 8, 16, 14, …",
+   "o": [
+    "28",
+    "12",
+    "18",
+    "30"
+   ],
+   "e": "Serie alternada: ×2, −2, ×2, −2, ×2. 14 × 2 = 28."
+  },
+  {
+   "id": "pat-11",
+   "u": 6,
+   "s": "",
+   "d": 3,
+   "q": "¿Qué ángulo forman las agujas de un reloj a las 3:15?",
+   "o": [
+    "7,5°",
+    "0°",
+    "15°",
+    "90°"
+   ],
+   "e": "El minutero está en el 3 (90°). El horario avanzó un cuarto de hora: 30° × 1/4 = 7,5° más allá del 3, así que está en 97,5°. La diferencia es 7,5°."
+  },
+  {
+   "id": "pat-12",
+   "u": 6,
+   "s": "",
+   "d": 2,
+   "q": "Hoy es lunes. ¿Qué día de la semana será dentro de 100 días?",
+   "o": [
+    "Miércoles",
+    "Martes",
+    "Jueves",
+    "Lunes"
+   ],
+   "e": "100 = 14 × 7 + 2. Cada 7 días vuelve a ser lunes, así que solo cuenta el resto: lunes + 2 días = miércoles."
+  },
+  {
+   "id": "pat-13",
+   "u": 6,
+   "s": "",
+   "d": 2,
+   "q": "Fila 1: 2, 4, 8. Fila 2: 3, 6, 12. Fila 3: 5, 10, ?",
+   "o": [
+    "20",
+    "15",
+    "25",
+    "18"
+   ],
+   "e": "En cada fila, cada número es el doble del anterior. 10 × 2 = 20. Busca la regla que funciona en TODAS las filas, no solo en una."
+  },
+  {
+   "id": "pat-14",
+   "u": 6,
+   "s": "",
+   "d": 3,
+   "q": "¿Qué número sigue? 2, 6, 12, 20, 30, …",
+   "o": [
+    "42",
+    "40",
+    "36",
+    "44"
+   ],
+   "e": "Las diferencias son 4, 6, 8, 10, así que la siguiente es 12: 30 + 12 = 42. También es n × (n + 1): 1×2, 2×3, 3×4… 6×7 = 42."
+  },
+  {
+   "id": "prob-01",
+   "u": 7,
+   "s": "",
+   "d": 3,
+   "q": "El 1% de las mujeres de cierta edad tiene cáncer de mama. Una mamografía detecta el 90% de los casos, pero da positivo en el 9% de las mujeres sanas. Una mujer da positivo. ¿Cuál es la probabilidad aproximada de que tenga cáncer?",
+   "o": [
+    "≈ 9%",
+    "≈ 90%",
+    "≈ 81%",
+    "≈ 50%"
+   ],
+   "e": "En frecuencias naturales, de 1.000 mujeres: 10 tienen cáncer y 9 dan positivo; de 990 sanas, unas 89 dan positivo. Hay 98 positivos y solo 9 enfermas: 9/98 ≈ 9%. En los estudios de Gigerenzer, la mayoría de los médicos respondió entre 50% y 90%."
+  },
+  {
+   "id": "prob-02",
+   "u": 7,
+   "s": "",
+   "d": 1,
+   "q": "Una moneda justa salió cara 5 veces seguidas. ¿Cuál es la probabilidad de cara en el próximo lanzamiento?",
+   "o": [
+    "50%",
+    "Menos de 50%: ya “toca” sello",
+    "Más de 50%: está en racha",
+    "3%"
+   ],
+   "e": "La moneda no tiene memoria: cada lanzamiento es independiente. Creer que “toca” sello es la falacia del jugador; creer en la racha es la de la mano caliente."
+  },
+  {
+   "id": "prob-03",
+   "u": 7,
+   "s": "",
+   "d": 2,
+   "q": "Linda tiene 31 años, es soltera y brillante. Estudió filosofía y participó en marchas contra la discriminación. ¿Qué es más probable?",
+   "o": [
+    "Linda es cajera de banco.",
+    "Linda es cajera de banco y feminista activa.",
+    "Las dos son igual de probables.",
+    "No se puede comparar."
+   ],
+   "e": "Falacia de la conjunción (Tversky y Kahneman, 1983): P(A y B) nunca supera a P(A). Todas las cajeras feministas son cajeras. La descripción “representativa” nos engaña."
+  },
+  {
+   "id": "prob-04",
+   "u": 7,
+   "s": "",
+   "d": 1,
+   "q": "Lanzas dos dados. ¿Cuál es la probabilidad de que sumen 7?",
+   "o": [
+    "1/6",
+    "1/12",
+    "1/36",
+    "7/36"
+   ],
+   "e": "Hay 36 resultados igual de probables y 6 suman 7: (1,6), (2,5), (3,4), (4,3), (5,2) y (6,1). 6/36 = 1/6. El 7 es la suma más probable."
+  },
+  {
+   "id": "prob-05",
+   "u": 7,
+   "s": "",
+   "d": 2,
+   "q": "Lanzas una moneda dos veces. ¿Cuál es la probabilidad de obtener AL MENOS una cara?",
+   "o": [
+    "3/4",
+    "1/2",
+    "1/4",
+    "2/3"
+   ],
+   "e": "Es más fácil calcular el complemento: P(ninguna cara) = 1/2 × 1/2 = 1/4. Entonces P(al menos una) = 1 − 1/4 = 3/4."
+  },
+  {
+   "id": "prob-06",
+   "u": 7,
+   "s": "",
+   "d": 3,
+   "q": "¿Cuántas personas debe haber en una sala para que la probabilidad de que dos compartan cumpleaños supere el 50%?",
+   "o": [
+    "23",
+    "183",
+    "365",
+    "60"
+   ],
+   "e": "La paradoja del cumpleaños: con 23 personas hay 253 parejas posibles, y la probabilidad ya pasa de 50%. Con 60 personas supera el 99%. Subestimamos cuántas combinaciones hay."
+  },
+  {
+   "id": "prob-07",
+   "u": 7,
+   "s": "",
+   "d": 3,
+   "q": "Hay 3 puertas: tras una hay un auto y tras las otras, cabras. Eliges la puerta 1. El presentador, que sabe dónde está el auto, abre la puerta 3 y muestra una cabra. ¿Te conviene cambiar a la puerta 2?",
+   "o": [
+    "Sí: cambiar gana con probabilidad 2/3.",
+    "Da igual: es 50% y 50%.",
+    "No: quedarse gana con 2/3.",
+    "Depende de la suerte."
+   ],
+   "e": "Problema de Monty Hall. Tu primera elección acierta con probabilidad 1/3. En el 2/3 restante el auto está en otra puerta, y el presentador te muestra cuál NO es. Cambiar gana siempre que tu elección inicial fue mala, es decir, 2 de cada 3 veces."
+  },
+  {
+   "id": "prob-08",
+   "u": 7,
+   "s": "",
+   "d": 3,
+   "q": "En una ciudad, el 85% de los taxis son verdes y el 15% azules. Un testigo, que acierta el 80% de las veces, dice que el taxi del accidente era azul. ¿Cuál es la probabilidad de que lo fuera?",
+   "o": [
+    "≈ 41%",
+    "80%",
+    "15%",
+    "≈ 68%"
+   ],
+   "e": "Azul y bien identificado: 0,15 × 0,8 = 0,12. Verde identificado como azul: 0,85 × 0,2 = 0,17. P(azul | dice azul) = 0,12 / 0,29 ≈ 41%. La tasa base pesa tanto como el testimonio."
+  },
+  {
+   "id": "prob-09",
+   "u": 7,
+   "s": "",
+   "d": 1,
+   "q": "Lanzas una moneda y un dado. ¿Cuál es la probabilidad de sacar cara Y un 6?",
+   "o": [
+    "1/12",
+    "1/8",
+    "2/3",
+    "1/6"
+   ],
+   "e": "Para eventos independientes, P(A y B) = P(A) × P(B) = 1/2 × 1/6 = 1/12."
+  },
+  {
+   "id": "prob-10",
+   "u": 7,
+   "s": "",
+   "d": 2,
+   "q": "Un juego cuesta $1.000. Con probabilidad 1/4 recibes $3.000 y si no, nada. ¿Cuál es el valor esperado por jugada?",
+   "o": [
+    "Pierdes $250",
+    "Ganas $750",
+    "Ganas $2.000",
+    "Quedas igual"
+   ],
+   "e": "Valor esperado = 1/4 × 3.000 − 1.000 = 750 − 1.000 = −250. Si juegas muchas veces, pierdes en promedio $250 por jugada. Así funcionan casinos y loterías."
+  },
+  {
+   "id": "prob-11",
+   "u": 7,
+   "s": "",
+   "d": 3,
+   "q": "De todas las familias con exactamente dos hijos y al menos una hija, ¿qué fracción tiene dos hijas?",
+   "o": [
+    "1/3",
+    "1/2",
+    "1/4",
+    "2/3"
+   ],
+   "e": "Los casos igual de probables son HH, HM, MH y MM. La condición “al menos una hija” descarta HH y deja HM, MH y MM. Solo uno de los tres casos es MM: 1/3."
+  },
+  {
+   "id": "prob-12",
+   "u": 7,
+   "s": "",
+   "d": 3,
+   "q": "En un hospital grande nacen 45 bebés al día y en uno pequeño, 15. ¿Cuál registrará más días en que más del 60% de los nacidos son niños?",
+   "o": [
+    "El hospital pequeño",
+    "El hospital grande",
+    "Ambos por igual",
+    "Depende de la región"
+   ],
+   "e": "Las muestras pequeñas varían más (ley de los grandes números). Con 15 nacimientos es mucho más fácil alejarse del 50% que con 45. La mayoría responde “igual” (Kahneman y Tversky, 1972)."
+  },
+  {
+   "id": "prob-13",
+   "u": 7,
+   "s": "",
+   "d": 2,
+   "q": "El 90% de los conductores ebrios que causan un accidente dan positivo en el control. ¿Significa eso que el 90% de quienes dan positivo causaron un accidente?",
+   "o": [
+    "No: P(positivo | causa) no es P(causa | positivo).",
+    "Sí, son la misma probabilidad.",
+    "Sí, si el test es preciso.",
+    "No, sería el 10%."
+   ],
+   "e": "Confundir P(A|B) con P(B|A) es la “falacia del fiscal”. Para invertir la probabilidad hace falta la tasa base: cuántos conductores dan positivo en total."
+  },
+  {
+   "id": "est-01",
+   "u": 8,
+   "s": "",
+   "d": 1,
+   "q": "Cuando aumenta la venta de helados también aumentan los ahogamientos. ¿Cuál es la explicación más probable?",
+   "o": [
+    "Una variable de confusión: el calor del verano.",
+    "Los helados causan ahogamientos.",
+    "Los ahogamientos aumentan la venta de helados.",
+    "Es pura coincidencia."
+   ],
+   "e": "El calor hace que se consuman más helados y que más gente nade. Ambas variables se mueven juntas sin que una cause la otra."
+  },
+  {
+   "id": "est-02",
+   "u": 8,
+   "s": "",
+   "d": 2,
+   "q": "Un instructor nota que, tras felicitar a un piloto por un aterrizaje excelente, el siguiente suele ser peor, y que tras regañarlo por uno malo, el siguiente suele ser mejor. ¿Qué explica mejor esto?",
+   "o": [
+    "La regresión a la media.",
+    "Los regaños funcionan mejor que los elogios.",
+    "Los elogios desconcentran.",
+    "El efecto placebo."
+   ],
+   "e": "Un resultado extremo se debe en parte al azar, así que el siguiente tiende a acercarse al promedio, hagas lo que hagas. Kahneman contó este caso real de instructores de vuelo."
+  },
+  {
+   "id": "est-03",
+   "u": 8,
+   "s": "",
+   "d": 2,
+   "q": "En la Segunda Guerra Mundial se estudiaron los aviones que volvían con agujeros de bala, sobre todo en alas y fuselaje. ¿Dónde convenía reforzarlos?",
+   "o": [
+    "En las zonas SIN agujeros, como los motores.",
+    "En las alas y el fuselaje.",
+    "En todas partes por igual.",
+    "En ningún lugar."
+   ],
+   "e": "Sesgo de supervivencia (Abraham Wald): solo se veían los aviones que regresaron. Los impactados en el motor no volvían, así que esas zonas eran las críticas."
+  },
+  {
+   "id": "est-04",
+   "u": 8,
+   "s": "",
+   "d": 1,
+   "q": "Una revista de viajes encuesta a sus lectores y concluye: “El 80% de los chilenos viaja al extranjero cada año”. ¿Cuál es el principal problema?",
+   "o": [
+    "Sesgo de selección: sus lectores no representan a la población.",
+    "La muestra es demasiado grande.",
+    "Debería usar la mediana.",
+    "Ninguno."
+   ],
+   "e": "Quienes leen una revista de viajes viajan más que el promedio. Una muestra útil debe parecerse a la población sobre la que se quiere concluir."
+  },
+  {
+   "id": "est-05",
+   "u": 8,
+   "s": "",
+   "d": 2,
+   "q": "¿Por qué en un buen experimento se asigna a los participantes AL AZAR a los grupos de tratamiento y de control?",
+   "o": [
+    "Para que los grupos sean comparables en todo salvo el tratamiento.",
+    "Para ahorrar dinero.",
+    "Para que el estudio sea más rápido.",
+    "Para que los participantes no se aburran."
+   ],
+   "e": "La aleatorización reparte por igual las variables de confusión, incluso las que no conocemos. Así, una diferencia en los resultados se puede atribuir al tratamiento."
+  },
+  {
+   "id": "est-06",
+   "u": 8,
+   "s": "",
+   "d": 2,
+   "q": "¿Qué evita un estudio “doble ciego”?",
+   "o": [
+    "Que las expectativas de pacientes e investigadores influyan en los resultados.",
+    "Que los pacientes vean los medicamentos.",
+    "Que se publiquen los resultados.",
+    "Que haya grupo de control."
+   ],
+   "e": "Ni el participante ni quien mide saben quién recibe el tratamiento. Así se evitan el efecto placebo y el sesgo del observador."
+  },
+  {
+   "id": "est-07",
+   "u": 8,
+   "s": "",
+   "d": 3,
+   "q": "Un tratamiento A tiene mejores resultados que B tanto en hombres como en mujeres, pero peores resultados al juntar a todos. ¿Es posible?",
+   "o": [
+    "Sí, es la paradoja de Simpson.",
+    "No, es matemáticamente imposible.",
+    "Solo si hay un error en los datos.",
+    "Solo con muestras pequeñas."
+   ],
+   "e": "Puede ocurrir si los grupos tienen tamaños muy distintos en cada tratamiento (por ejemplo, si A se dio sobre todo a casos graves). Al agregar datos hay que revisar cómo se reparten los subgrupos."
+  },
+  {
+   "id": "est-08",
+   "u": 8,
+   "s": "",
+   "d": 3,
+   "q": "Un estudio informa p = 0,03. ¿Qué significa?",
+   "o": [
+    "Si no hubiera efecto real, resultados así de extremos aparecerían el 3% de las veces.",
+    "Hay un 97% de probabilidad de que la hipótesis sea cierta.",
+    "Hay un 3% de probabilidad de que el resultado sea falso.",
+    "El efecto es grande."
+   ],
+   "e": "El valor p se calcula suponiendo que la hipótesis nula es cierta. No dice cuán probable es la hipótesis ni cuán grande es el efecto. Es uno de los conceptos más malinterpretados en la ciencia."
+  },
+  {
+   "id": "est-09",
+   "u": 8,
+   "s": "",
+   "d": 2,
+   "q": "Las personas que más van al médico tienen más enfermedades. ¿Concluyes que ir al médico enferma?",
+   "o": [
+    "No: probablemente es causalidad inversa.",
+    "Sí, es una correlación clara.",
+    "Sí, por los contagios en las salas de espera.",
+    "No se puede decir nada."
+   ],
+   "e": "Es más probable que la enfermedad cause las visitas al médico y no al revés. Pregúntate siempre en qué dirección va la flecha causal."
+  },
+  {
+   "id": "est-10",
+   "u": 8,
+   "s": "",
+   "d": 2,
+   "q": "“La mayoría de los accidentes de tránsito ocurren cerca de casa.” ¿Significa que es más peligroso manejar cerca de casa?",
+   "o": [
+    "No: la mayoría de los trayectos ocurren cerca de casa.",
+    "Sí: nos relajamos al llegar.",
+    "Sí: las calles del barrio son peores.",
+    "No: es un mito."
+   ],
+   "e": "Falta la tasa de exposición. Si el 70% de los kilómetros se manejan cerca de casa, es esperable que allí ocurran más accidentes aunque el riesgo por kilómetro sea igual."
+  },
+  {
+   "id": "est-11",
+   "u": 8,
+   "s": "",
+   "d": 1,
+   "q": "“Mi abuelo fumó toda su vida y vivió hasta los 95.” ¿Qué dice esto sobre los efectos del tabaco?",
+   "o": [
+    "Muy poco: un caso no refuta un efecto medido en millones de personas.",
+    "Que el tabaco no es dañino.",
+    "Que el tabaco alarga la vida.",
+    "Que los estudios están equivocados."
+   ],
+   "e": "Los efectos de salud son probabilísticos: aumentan el riesgo, no lo garantizan. Una anécdota es una muestra de tamaño 1, y además recordamos más los casos llamativos."
+  },
+  {
+   "id": "est-12",
+   "u": 8,
+   "s": "",
+   "d": 2,
+   "q": "¿Qué tipo de evidencia es, en general, la más fuerte para saber si un tratamiento funciona?",
+   "o": [
+    "Una revisión sistemática de ensayos aleatorizados.",
+    "Un estudio observacional grande.",
+    "La opinión de un experto.",
+    "Testimonios de pacientes."
+   ],
+   "e": "Las revisiones sistemáticas y los metaanálisis combinan varios ensayos aleatorizados y reducen el efecto del azar y de los sesgos de un solo estudio. Los testimonios están en lo más bajo de la jerarquía."
+  },
+  {
+   "id": "est-13",
+   "u": 8,
+   "s": "",
+   "d": 1,
+   "q": "Un gráfico de barras muestra ventas de 98 y 100, pero el eje vertical empieza en 97. ¿Qué efecto tiene?",
+   "o": [
+    "Exagera visualmente una diferencia pequeña.",
+    "Muestra los datos de forma más precisa.",
+    "Ninguno.",
+    "Oculta la diferencia."
+   ],
+   "e": "Con el eje truncado, una barra parece el triple de alta que la otra, aunque la diferencia real es de 2%. Revisa siempre dónde empiezan los ejes."
+  },
+  {
+   "id": "est-14",
+   "u": 8,
+   "s": "",
+   "d": 2,
+   "q": "Dos estudios encuentran el mismo efecto: uno con 12 personas y otro con 12.000. ¿Cuál es la diferencia principal?",
+   "o": [
+    "El de 12 personas es mucho menos confiable y su estimación es más incierta.",
+    "Ninguna, el efecto es el mismo.",
+    "El pequeño es mejor porque es más detallado.",
+    "El grande siempre está sesgado."
+   ],
+   "e": "Las muestras pequeñas tienen intervalos de confianza amplios y producen efectos extremos por azar con más frecuencia. Además, muchos resultados de estudios pequeños no se replican."
+  },
+  {
+   "id": "fal-01",
+   "u": 9,
+   "s": "",
+   "d": 1,
+   "q": "“No le hagas caso a su propuesta sobre el transporte: ni siquiera terminó la universidad.” ¿Qué falacia es?",
+   "o": [
+    "Ad hominem",
+    "Hombre de paja",
+    "Falso dilema",
+    "Ad populum"
+   ],
+   "e": "Ataca a la persona en vez de evaluar la propuesta. Una idea es buena o mala por sus razones, no por quién la dice."
+  },
+  {
+   "id": "fal-02",
+   "u": 9,
+   "s": "",
+   "d": 1,
+   "q": "A: “Deberíamos reducir el presupuesto militar un 5%.” B: “¿O sea que quieres dejar al país indefenso?” ¿Qué hace B?",
+   "o": [
+    "Hombre de paja",
+    "Ad hominem",
+    "Pendiente resbaladiza",
+    "Apelación a la autoridad"
+   ],
+   "e": "B deforma la postura de A, exagerándola, para refutar con facilidad algo que A nunca dijo."
+  },
+  {
+   "id": "fal-03",
+   "u": 9,
+   "s": "",
+   "d": 1,
+   "q": "“O apoyas esta ley tal como está, o estás a favor de la delincuencia.” ¿Qué falacia es?",
+   "o": [
+    "Falso dilema",
+    "Petición de principio",
+    "Post hoc",
+    "Generalización apresurada"
+   ],
+   "e": "Presenta solo dos opciones cuando hay muchas otras (apoyar otra ley, modificarla, otras estrategias contra la delincuencia)."
+  },
+  {
+   "id": "fal-04",
+   "u": 9,
+   "s": "",
+   "d": 1,
+   "q": "“Si permitimos celulares en clase, luego nadie estudiará, todos reprobarán y nadie conseguirá trabajo.” ¿Qué falacia es?",
+   "o": [
+    "Pendiente resbaladiza",
+    "Hombre de paja",
+    "Tu quoque",
+    "Apelación a la ignorancia"
+   ],
+   "e": "Encadena consecuencias cada vez más graves sin justificar por qué cada paso llevaría al siguiente."
+  },
+  {
+   "id": "fal-05",
+   "u": 9,
+   "s": "",
+   "d": 1,
+   "q": "“Millones de personas usan este suplemento, así que tiene que funcionar.” ¿Qué falacia es?",
+   "o": [
+    "Ad populum (apelación a la mayoría)",
+    "Ad hominem",
+    "Falsa causa",
+    "Falso dilema"
+   ],
+   "e": "La popularidad no es evidencia de eficacia. Durante siglos, millones creyeron en la sangría como tratamiento médico."
+  },
+  {
+   "id": "fal-06",
+   "u": 9,
+   "s": "",
+   "d": 2,
+   "q": "“Un actor famoso asegura que esta dieta cura la diabetes, así que debe ser cierto.” ¿Qué falacia es?",
+   "o": [
+    "Apelación a una falsa autoridad",
+    "Apelación legítima a expertos",
+    "Hombre de paja",
+    "Pendiente resbaladiza"
+   ],
+   "e": "Ser famoso o experto en actuación no te da autoridad en endocrinología. La autoridad solo es relevante dentro de su área de experiencia y si se apoya en evidencia."
+  },
+  {
+   "id": "fal-07",
+   "u": 9,
+   "s": "",
+   "d": 1,
+   "q": "“Desde que uso esta pulsera magnética, gano más partidos. ¡Funciona!” ¿Qué falacia es?",
+   "o": [
+    "Post hoc ergo propter hoc",
+    "Ad populum",
+    "Petición de principio",
+    "Tu quoque"
+   ],
+   "e": "“Después de esto, luego a causa de esto.” Que algo ocurra después no prueba que lo causara: tal vez entrenaste más, cambiaron los rivales o es azar."
+  },
+  {
+   "id": "fal-08",
+   "u": 9,
+   "s": "",
+   "d": 2,
+   "q": "“Este diario siempre dice la verdad, porque en su editorial afirma que nunca miente.” ¿Qué falacia es?",
+   "o": [
+    "Petición de principio (razonamiento circular)",
+    "Ad hominem",
+    "Falso dilema",
+    "Generalización apresurada"
+   ],
+   "e": "La conclusión (el diario es veraz) se usa como premisa (lo que dice el diario es cierto). El argumento da vueltas en círculo."
+  },
+  {
+   "id": "fal-09",
+   "u": 9,
+   "s": "",
+   "d": 1,
+   "q": "“¿Cómo me dices que deje de fumar si tú fumaste veinte años?” ¿Qué falacia es?",
+   "o": [
+    "Tu quoque (“tú también”)",
+    "Hombre de paja",
+    "Apelación a la naturaleza",
+    "Falso dilema"
+   ],
+   "e": "La hipocresía de quien da el consejo no cambia si el consejo es bueno. Fumar es dañino lo diga quien lo diga."
+  },
+  {
+   "id": "fal-10",
+   "u": 9,
+   "s": "",
+   "d": 2,
+   "q": "“Nadie ha demostrado que los fantasmas no existan, así que existen.” ¿Qué falacia es?",
+   "o": [
+    "Apelación a la ignorancia",
+    "Petición de principio",
+    "Ad populum",
+    "Pendiente resbaladiza"
+   ],
+   "e": "La falta de pruebas en contra no es una prueba a favor. Quien afirma la existencia de algo tiene la carga de la prueba."
+  },
+  {
+   "id": "fal-11",
+   "u": 9,
+   "s": "",
+   "d": 1,
+   "q": "“Conocí a dos turistas groseros de ese país; allí todos son maleducados.” ¿Qué falacia es?",
+   "o": [
+    "Generalización apresurada",
+    "Ad hominem",
+    "Falso dilema",
+    "Post hoc"
+   ],
+   "e": "Saca una conclusión sobre millones de personas a partir de una muestra minúscula y no representativa."
+  },
+  {
+   "id": "fal-12",
+   "u": 9,
+   "s": "",
+   "d": 2,
+   "q": "“Este remedio es 100% natural, así que no puede hacer daño.” ¿Qué falacia es?",
+   "o": [
+    "Apelación a la naturaleza",
+    "Apelación a la ignorancia",
+    "Hombre de paja",
+    "Tu quoque"
+   ],
+   "e": "Natural no significa seguro ni eficaz: la cicuta y el arsénico son naturales, y muchos medicamentos que salvan vidas son sintéticos."
+  },
+  {
+   "id": "fal-13",
+   "u": 9,
+   "s": "",
+   "d": 2,
+   "q": "Le preguntan a un candidato por el aumento de la deuda pública y responde hablando de lo mucho que ama a su familia y a su país. ¿Qué recurso usa?",
+   "o": [
+    "Pista falsa (arenque rojo)",
+    "Falso dilema",
+    "Petición de principio",
+    "Generalización apresurada"
+   ],
+   "e": "Desvía la atención hacia un tema emocional e irrelevante para no responder la pregunta."
+  },
+  {
+   "id": "fal-14",
+   "u": 9,
+   "s": "",
+   "d": 2,
+   "q": "“Cada jugador de este equipo es excelente, así que el equipo será excelente.” ¿Qué falacia es?",
+   "o": [
+    "Falacia de composición",
+    "Falacia de división",
+    "Ad populum",
+    "Post hoc"
+   ],
+   "e": "Lo que vale para las partes no siempre vale para el todo: un equipo de estrellas puede jugar mal en conjunto. La inversa (del todo a las partes) es la falacia de división."
+  },
+  {
+   "id": "fal-15",
+   "u": 9,
+   "s": "",
+   "d": 3,
+   "q": "“La gran mayoría de los climatólogos, basándose en múltiples líneas de evidencia, concluye que el calentamiento global actual se debe principalmente a la actividad humana.” ¿Hay una falacia?",
+   "o": [
+    "No: es una apelación legítima al consenso experto.",
+    "Sí: ad populum.",
+    "Sí: falsa autoridad.",
+    "Sí: petición de principio."
+   ],
+   "e": "Apelar a expertos EN SU ÁREA, cuyo consenso se basa en evidencia revisable, es razonable. Pensar críticamente no es desconfiar de todo, sino saber en quién y por qué confiar."
+  },
+  {
+   "id": "ses-01",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "Un bate y una pelota cuestan $1.100 en total. El bate cuesta $1.000 más que la pelota. ¿Cuánto cuesta la pelota?",
+   "o": [
+    "$50",
+    "$100",
+    "$110",
+    "$10"
+   ],
+   "e": "La intuición dice $100, pero entonces el bate costaría $1.100 y el total sería $1.200. Si la pelota cuesta x: x + (x + 1.000) = 1.100 → x = 50. Es parte del Test de Reflexión Cognitiva (Frederick, 2005)."
+  },
+  {
+   "id": "ses-02",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "Si 5 máquinas fabrican 5 piezas en 5 minutos, ¿cuánto tardan 100 máquinas en fabricar 100 piezas?",
+   "o": [
+    "5 minutos",
+    "100 minutos",
+    "20 minutos",
+    "1 minuto"
+   ],
+   "e": "Cada máquina hace 1 pieza en 5 minutos. 100 máquinas hacen 100 piezas en esos mismos 5 minutos. El patrón “5-5-5 → 100-100-100” engaña a la intuición."
+  },
+  {
+   "id": "ses-03",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "En un lago, una mancha de nenúfares duplica su tamaño cada día. Si tarda 48 días en cubrir todo el lago, ¿cuántos días tarda en cubrir la mitad?",
+   "o": [
+    "47 días",
+    "24 días",
+    "36 días",
+    "12 días"
+   ],
+   "e": "Si se duplica cada día, el día antes de cubrirlo entero cubría la mitad. La respuesta intuitiva (24) supone crecimiento lineal."
+  },
+  {
+   "id": "ses-04",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "A un grupo le preguntan si Gandhi murió antes o después de los 140 años, y luego que estime su edad al morir. Sus estimaciones resultan más altas que las de un grupo al que le preguntaron por 9 años. ¿Qué sesgo es?",
+   "o": [
+    "Anclaje",
+    "Disponibilidad",
+    "Costo hundido",
+    "Sesgo retrospectivo"
+   ],
+   "e": "Un número inicial, aunque sea absurdo, “ancla” las estimaciones posteriores. Por eso los precios de lista inflados funcionan en las negociaciones."
+  },
+  {
+   "id": "ses-05",
+   "u": 10,
+   "s": "",
+   "d": 1,
+   "q": "Sofía cree que un político es corrupto, así que solo lee noticias que lo critican y descarta las demás como “propaganda”. ¿Qué sesgo muestra?",
+   "o": [
+    "Sesgo de confirmación",
+    "Anclaje",
+    "Efecto de encuadre",
+    "Error fundamental de atribución"
+   ],
+   "e": "Buscamos, recordamos e interpretamos la información de modo que confirme lo que ya creemos. Antídoto: buscar activamente la mejor evidencia contra tu postura."
+  },
+  {
+   "id": "ses-06",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "A unos pacientes les dicen que una cirugía tiene “90% de supervivencia” y a otros “10% de mortalidad”. Los primeros la aceptan mucho más. ¿Qué sesgo es?",
+   "o": [
+    "Efecto de encuadre",
+    "Sesgo de confirmación",
+    "Falacia del jugador",
+    "Anclaje"
+   ],
+   "e": "Las dos frases dan exactamente la misma información, pero el marco positivo o negativo cambia la decisión. Reformular en ambos sentidos ayuda a decidir mejor."
+  },
+  {
+   "id": "ses-07",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "Pagaste $8.000 por una entrada al cine. A los 20 minutos la película te aburre profundamente. ¿Cuál es el razonamiento más racional?",
+   "o": [
+    "Decidir solo según lo que disfrutarás de ahora en adelante.",
+    "Quedarte para no perder los $8.000.",
+    "Quedarte hasta la mitad y decidir.",
+    "Pedir el reembolso siempre."
+   ],
+   "e": "Los $8.000 ya se gastaron, te quedes o no (costo hundido). La pregunta relevante es: ¿qué uso de las próximas 1,5 horas me conviene más?"
+  },
+  {
+   "id": "ses-08",
+   "u": 10,
+   "s": "",
+   "d": 1,
+   "q": "Tras ver varias noticias de accidentes aéreos, Marcos decide viajar 800 km en auto porque “es más seguro”. ¿Qué sesgo influye?",
+   "o": [
+    "Heurística de disponibilidad",
+    "Efecto de encuadre",
+    "Sesgo de supervivencia",
+    "Costo hundido"
+   ],
+   "e": "Juzgamos la probabilidad por lo fácil que es recordar ejemplos. Los accidentes aéreos son muy visibles, pero por kilómetro recorrido el auto es mucho más peligroso."
+  },
+  {
+   "id": "ses-09",
+   "u": 10,
+   "s": "",
+   "d": 1,
+   "q": "Después de una elección, muchas personas dicen “era obvio que ganaría”, aunque antes estaban indecisas. ¿Qué sesgo es?",
+   "o": [
+    "Sesgo retrospectivo",
+    "Anclaje",
+    "Sesgo de confirmación",
+    "Falacia de la conjunción"
+   ],
+   "e": "Una vez que conocemos el resultado, reescribimos nuestra memoria y lo vemos como predecible. Anotar predicciones antes de los hechos ayuda a calibrarse."
+  },
+  {
+   "id": "ses-10",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "Un conductor te adelanta bruscamente y piensas “¡qué persona más agresiva!”, sin considerar que podría ir a una emergencia. ¿Qué sesgo es?",
+   "o": [
+    "Error fundamental de atribución",
+    "Sesgo retrospectivo",
+    "Heurística de disponibilidad",
+    "Efecto de encuadre"
+   ],
+   "e": "Tendemos a explicar la conducta ajena por su carácter e ignorar la situación, mientras que nuestra propia conducta la explicamos por las circunstancias."
+  },
+  {
+   "id": "ses-11",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "Juan es el 15.º más alto y también el 15.º más bajo de su curso. ¿Cuántos alumnos hay?",
+   "o": [
+    "29",
+    "30",
+    "31",
+    "15"
+   ],
+   "e": "Hay 14 alumnos más altos que Juan y 14 más bajos: 14 + 14 + 1 = 29. La respuesta rápida (30) cuenta a Juan dos veces."
+  },
+  {
+   "id": "ses-12",
+   "u": 10,
+   "s": "",
+   "d": 1,
+   "q": "Un granjero tenía 15 ovejas y se le murieron todas menos 8. ¿Cuántas le quedan?",
+   "o": [
+    "8",
+    "7",
+    "15",
+    "0"
+   ],
+   "e": "“Todas menos 8” significa que sobrevivieron 8. La tendencia a restar automáticamente (15 − 8 = 7) muestra cómo una lectura rápida nos hace fallar."
+  },
+  {
+   "id": "ses-13",
+   "u": 10,
+   "s": "",
+   "d": 2,
+   "q": "Según la investigación, ¿qué estrategia reduce mejor el exceso de confianza en tus juicios?",
+   "o": [
+    "Pensar activamente en razones por las que podrías estar equivocado.",
+    "Confiar en tu primera impresión.",
+    "Repetirte la respuesta varias veces.",
+    "Pedir opinión solo a quienes piensan como tú."
+   ],
+   "e": "“Considerar lo contrario” obliga a buscar evidencia que normalmente ignoraríamos. Es una de las técnicas de reducción de sesgos con mejor respaldo empírico."
+  },
+  {
+   "id": "ses-14",
+   "u": 10,
+   "s": "",
+   "d": 3,
+   "q": "La mayoría de las personas cree ser menos sesgada que el promedio. ¿Cómo se llama este fenómeno?",
+   "o": [
+    "Punto ciego del sesgo",
+    "Efecto de encuadre",
+    "Sesgo de supervivencia",
+    "Ilusión de control"
+   ],
+   "e": "Vemos con facilidad los sesgos de los demás, pero no los nuestros. Conocer los sesgos no basta: hacen falta práctica y hábitos como la retroalimentación y pedir críticas."
+  },
+  {
+   "id": "arg-01",
+   "u": 11,
+   "s": "",
+   "d": 1,
+   "q": "“Deberíamos llevar paraguas, ya que el pronóstico anuncia lluvia y el cielo está muy nublado.” ¿Cuál es la conclusión?",
+   "o": [
+    "Deberíamos llevar paraguas.",
+    "El pronóstico anuncia lluvia.",
+    "El cielo está muy nublado.",
+    "Va a llover."
+   ],
+   "e": "“Ya que” introduce las premisas (el pronóstico y el cielo). La conclusión es lo que se intenta justificar: llevar paraguas."
+  },
+  {
+   "id": "arg-02",
+   "u": 11,
+   "s": "",
+   "d": 2,
+   "q": "“Marta es abogada, así que debe tener mucho dinero.” ¿Qué supuesto implícito necesita este argumento?",
+   "o": [
+    "Que los abogados (casi siempre) tienen mucho dinero.",
+    "Que Marta trabaja mucho.",
+    "Que el dinero importa.",
+    "Que Marta estudió en la universidad."
+   ],
+   "e": "Para pasar de “es abogada” a “tiene dinero” se necesita un puente no declarado. Hacer explícitos los supuestos permite ver si son razonables."
+  },
+  {
+   "id": "arg-03",
+   "u": 11,
+   "s": "",
+   "d": 2,
+   "q": "“Las ventas subieron 15% después de la campaña publicitaria, así que la campaña funcionó.” ¿Qué dato DEBILITA más esta conclusión?",
+   "o": [
+    "En las ciudades sin campaña las ventas también subieron 15%.",
+    "La campaña fue muy cara.",
+    "A la gente le gustaron los anuncios.",
+    "La campaña ganó un premio."
+   ],
+   "e": "Si las ventas subieron igual sin la campaña, la causa probablemente es otra (temporada, economía). Ese dato funciona como un grupo de control."
+  },
+  {
+   "id": "arg-04",
+   "u": 11,
+   "s": "",
+   "d": 2,
+   "q": "“Los estudiantes que desayunan rinden más en las pruebas; por lo tanto, desayunar mejora el rendimiento.” ¿Qué dato lo FORTALECE más?",
+   "o": [
+    "En un experimento, a estudiantes elegidos al azar se les dio desayuno y rindieron más que el grupo control.",
+    "Los estudiantes que desayunan suelen tener familias con más recursos.",
+    "El desayuno es la comida más importante del día.",
+    "Muchos nutricionistas recomiendan desayunar."
+   ],
+   "e": "La aleatorización descarta explicaciones alternativas, como el nivel socioeconómico. De hecho, la segunda opción DEBILITA el argumento al sugerir un confusor."
+  },
+  {
+   "id": "arg-05",
+   "u": 11,
+   "s": "",
+   "d": 1,
+   "q": "¿Cuál de estas expresiones suele introducir una PREMISA?",
+   "o": [
+    "Puesto que",
+    "Por lo tanto",
+    "En consecuencia",
+    "Así que"
+   ],
+   "e": "“Puesto que”, “porque” y “dado que” presentan razones. “Por lo tanto”, “en consecuencia” y “así que” anuncian conclusiones."
+  },
+  {
+   "id": "arg-06",
+   "u": 11,
+   "s": "",
+   "d": 2,
+   "q": "“Todos los cuervos observados hasta hoy son negros. Por lo tanto, el próximo cuervo que veamos será negro.” ¿Qué tipo de razonamiento es?",
+   "o": [
+    "Inductivo",
+    "Deductivo",
+    "Circular",
+    "Por contradicción"
+   ],
+   "e": "Generaliza a partir de casos observados: la conclusión es probable, pero no segura. En un razonamiento deductivo válido, la conclusión se sigue con certeza."
+  },
+  {
+   "id": "arg-07",
+   "u": 11,
+   "s": "",
+   "d": 2,
+   "q": "¿Qué propone el “principio de caridad” al analizar un argumento?",
+   "o": [
+    "Interpretarlo en su versión más fuerte y razonable.",
+    "Aceptarlo para no ofender.",
+    "Buscar su punto más débil.",
+    "Ignorar sus errores menores."
+   ],
+   "e": "Si refutas la versión más débil, no has ganado nada (sería un hombre de paja). Evaluar la mejor versión del argumento contrario es más honesto y más útil."
+  },
+  {
+   "id": "arg-08",
+   "u": 11,
+   "s": "",
+   "d": 2,
+   "q": "Quieres saber si una vacuna es segura. ¿Qué fuente es, en general, la más confiable?",
+   "o": [
+    "Una revisión sistemática publicada en una revista científica con revisión por pares.",
+    "Un video viral de un médico.",
+    "El testimonio de un conocido.",
+    "Una página web que vende tratamientos alternativos."
+   ],
+   "e": "Al evaluar una fuente pregúntate: ¿quién lo dice?, ¿con qué evidencia?, ¿tiene conflictos de interés?, ¿pasó por la revisión de otros expertos?"
+  },
+  {
+   "id": "arg-09",
+   "u": 11,
+   "s": "",
+   "d": 1,
+   "q": "Pedro afirma que tiene un dragón invisible en el garaje y te pide que demuestres que no existe. ¿Quién tiene la carga de la prueba?",
+   "o": [
+    "Pedro, porque es quien afirma.",
+    "Tú, porque dudas.",
+    "Nadie.",
+    "Ambos por igual."
+   ],
+   "e": "La carga de la prueba recae en quien hace la afirmación. Exigir al otro que pruebe un negativo es una forma de apelación a la ignorancia."
+  },
+  {
+   "id": "arg-10",
+   "u": 11,
+   "s": "",
+   "d": 2,
+   "q": "Dos explicaciones dan cuenta igual de bien de un fenómeno; una requiere 2 supuestos y otra 7. ¿Qué recomienda la navaja de Occam?",
+   "o": [
+    "Preferir provisionalmente la de menos supuestos.",
+    "Preferir la de más supuestos porque es más completa.",
+    "Rechazar ambas.",
+    "Elegir la más interesante."
+   ],
+   "e": "No es una ley que garantice la verdad, sino un criterio práctico: cada supuesto extra es otra oportunidad de error. Solo se aplica si ambas explican igual de bien."
+  },
+  {
+   "id": "arg-11",
+   "u": 11,
+   "s": "",
+   "d": 3,
+   "q": "¿Cuál de estas afirmaciones es falsable (se podría demostrar falsa con una observación)?",
+   "o": [
+    "“Todos los metales se dilatan al calentarse.”",
+    "“Existen fuerzas que nunca pueden detectarse.”",
+    "“Todo pasa por algo.”",
+    "“El universo tiene un propósito que no podemos conocer.”"
+   ],
+   "e": "Basta encontrar un metal que no se dilate para refutarla. Según Popper, una afirmación que ninguna observación podría contradecir no es una hipótesis científica."
+  },
+  {
+   "id": "arg-12",
+   "u": 11,
+   "s": "",
+   "d": 3,
+   "q": "“Toda ley tiene un legislador. La gravedad es una ley. Por lo tanto, la gravedad tiene un legislador.” ¿Cuál es el problema?",
+   "o": [
+    "Usa “ley” con dos significados distintos (equívoco).",
+    "Es una pendiente resbaladiza.",
+    "Es una generalización apresurada.",
+    "Ninguno: es válido."
+   ],
+   "e": "“Ley” jurídica (una norma creada por alguien) y “ley” natural (una regularidad descrita) son conceptos diferentes. El argumento parece válido solo porque usa la misma palabra."
+  },
+  {
+   "id": "arg-13",
+   "u": 11,
+   "s": "",
+   "d": 3,
+   "q": "“El 80% de los accidentes de tránsito involucra a conductores sobrios; por lo tanto, manejar sobrio es más peligroso.” ¿Qué dato necesitas para evaluarlo?",
+   "o": [
+    "Qué porcentaje de los conductores en la vía están sobrios.",
+    "Cuántos accidentes hay al año.",
+    "La edad de los conductores.",
+    "El tipo de vehículo."
+   ],
+   "e": "Si el 98% de los conductores está sobrio, que protagonicen “solo” el 80% de los accidentes significa que los ebrios (2%) causan el 20%: un riesgo muchísimo mayor. Sin la tasa base, el dato engaña."
+  },
+  {
+   "id": "arg-14",
+   "u": 11,
+   "s": "",
+   "d": 2,
+   "q": "“Un país es como una familia: si una familia no debe gastar más de lo que gana, el Estado tampoco.” ¿Cómo se evalúa mejor una analogía así?",
+   "o": [
+    "Viendo si las semejanzas relevantes superan a las diferencias relevantes.",
+    "Aceptándola si es fácil de entender.",
+    "Rechazándola, porque toda analogía es una falacia.",
+    "Viendo si la usa un experto."
+   ],
+   "e": "Una analogía es tan buena como la semejanza en lo que importa. Aquí hay diferencias relevantes: un Estado emite moneda, cobra impuestos y no tiene “jubilación”. Eso no la hace falsa, pero obliga a justificarla."
+  }
+ ]
+}

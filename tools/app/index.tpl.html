@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Razona</title>
+<style>
+/*FUENTE*/
+:root{--bg:#131F24;--card:#1E2B32;--line:#37464F;--ink:#F1F7FB;--muted:#9AB0BC;--green:#58CC02;--greend:#46A302;--blue:#1CB0F6;--blued:#1899D6;--red:#FF4B4B;--redd:#C81E1E;--gold:#FFC800;--orange:#FF9600;--ui:"Nunito","RBEmoji","RBSimbolos","RBSimbolos2","RBSimbolos3",system-ui,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--ui);display:flex;justify-content:center}
+.app{width:100%;max-width:460px;height:100dvh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.view{display:none;flex-direction:column;flex:1;min-height:0}.view.on{display:flex}
+#v-map{position:relative} /* la ventana de la parada y el botón flotante quedan sobre la barra de pestañas */
+.tabs{display:flex;border-top:2px solid var(--line);background:var(--bg);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}.tabs[hidden]{display:none}
+.tab{flex:1;background:none;border:0;color:var(--muted);font-family:var(--ui);font-weight:900;font-size:11.5px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0;border-radius:14px;position:relative;cursor:pointer}
+.tab .i{font-size:23px;line-height:1}.tab.on{color:var(--blue);background:#17303D}
+.tab .badge{position:absolute;top:1px;left:54%;background:var(--orange);color:#fff;border-radius:9px;font-size:10.5px;padding:1px 6px;min-width:18px}.tab .badge[hidden]{display:none}
+.panel{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.panel h3{margin:0;font-size:18px}.panel .muted{font-size:14px;line-height:1.35}
+.cifra{font-size:44px;font-weight:900;color:var(--gold);line-height:1}
+.fila{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:800}
+.mini{font-family:var(--ui);font-weight:900;font-size:13px;border:2px solid var(--line);background:none;color:var(--ink);border-radius:10px;padding:6px 10px;cursor:pointer}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stats div{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px}.stats b{display:block;font-size:26px;color:var(--gold)}.stats span{font-size:13px;font-weight:800;color:var(--muted)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:2px solid var(--line)}
+.chip{display:flex;align-items:center;gap:6px;font-weight:900;font-size:16px}
+.x{background:none;border:0;color:var(--muted);font-size:24px;cursor:pointer;padding:0 4px;font-family:var(--ui)}
+.scroll{flex:1;overflow-y:auto;position:relative}
+#map{display:block;width:100%}
+.node{cursor:pointer}.node:focus{outline:none}
+@keyframes pulse{0%{r:42;opacity:.6}100%{r:58;opacity:0}}.pulse{animation:pulse 1.4s infinite}
+@keyframes bob{50%{transform:translateY(-4px)}}.bob{animation:bob 1.6s ease-in-out infinite}
+.capbar{position:sticky;top:0;z-index:3;margin:10px 12px 0;border-radius:18px;padding:10px 14px;color:#fff;display:flex;align-items:center;gap:12px;box-shadow:0 6px 0 rgba(0,0,0,.25);transition:background .3s}
+.capbar .t{flex:1;min-width:0}.capbar small{display:block;font-size:12px;font-weight:900;letter-spacing:1.2px;opacity:.85}.capbar b{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.capbar .av{font-weight:900;font-size:13px;background:rgba(0,0,0,.22);border-radius:10px;padding:4px 9px;white-space:nowrap}
+@keyframes flota{50%{transform:translateY(-5px)}}.flota{animation:flota 1.4s ease-in-out infinite}
+.pop .tira{height:8px;border-radius:8px 8px 0 0;margin:-14px -14px 12px}.pop .cap{font-size:12px;font-weight:900;letter-spacing:1px;color:var(--muted)}
+.pchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.pchips span{background:#26363F;border-radius:10px;padding:4px 9px;font-size:12.5px;font-weight:900;color:var(--ink)}
+.lechero{border-radius:18px;padding:16px;color:#fff}.lechero small{font-size:12px;font-weight:900;letter-spacing:1.2px;opacity:.85}.lechero b{display:block;font-size:22px;margin-top:2px}
+.opt{display:flex;align-items:center;gap:12px}.opt .le{flex:none;width:30px;height:30px;border-radius:9px;border:2px solid var(--line);display:grid;place-items:center;font-size:14px;font-weight:900;color:var(--muted)}
+.opt.sel .le{border-color:var(--blue);color:var(--blue)}.opt.good .le{border-color:var(--green);color:var(--green)}.opt.bad .le{border-color:var(--red);color:var(--red)}
+@keyframes subir{from{transform:translateY(30px);opacity:.3}}.foot.ok,.foot.ko{animation:subir .25s ease-out}
+.hero{border-radius:20px;padding:18px;color:#fff;display:flex;flex-direction:column;gap:6px}.hero .cifra{color:#fff}.hero .muted{color:rgba(255,255,255,.85)}
+.anillo{display:flex;align-items:center;gap:16px}.anillo svg{flex:none}
+.seguir{position:absolute;right:14px;bottom:16px;z-index:3;max-width:70%;border:0;border-radius:16px;padding:11px 14px;font-family:var(--ui);font-weight:900;font-size:14px;color:#fff;background:var(--blue);box-shadow:0 5px 0 var(--blued);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aviso{background:#3A2A0A;border:2px solid var(--orange);border-radius:14px;padding:10px 12px;color:#FFD9A0;font-weight:800;font-size:14px;line-height:1.4;margin-top:8px}
+.pop{position:absolute;left:16px;right:16px;bottom:20px;background:var(--card);border:2px solid var(--line);border-radius:20px;padding:14px;z-index:4;transform:translateY(20px);opacity:0;pointer-events:none;transition:.2s}
+.pop.on{transform:none;opacity:1;pointer-events:auto}
+.pop .head{display:flex;gap:12px;align-items:center}
+.pop .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:28px;flex:none}
+.pop b{font-size:19px;display:block}.pop span{color:var(--muted);font-weight:800;font-size:14px}
+.btn{display:block;width:100%;border:0;border-radius:16px;padding:14px;margin-top:12px;font-family:var(--ui);font-weight:900;font-size:16px;letter-spacing:.5px;color:#fff;background:var(--blue);box-shadow:0 5px 0 var(--blued);cursor:pointer;text-transform:uppercase}
+.btn.g{background:var(--green);box-shadow:0 5px 0 var(--greend)}.btn.o{background:var(--orange);box-shadow:0 5px 0 #CC7800}.btn.r{background:var(--red);box-shadow:0 5px 0 var(--redd)}
+.btn.y{background:var(--gold);color:#3a2a00;box-shadow:0 5px 0 #C99E00}
+.btn[hidden]{display:none}
+.btn:disabled{background:var(--line);box-shadow:0 5px 0 #2a363d;color:var(--muted);cursor:default}
+.bar{flex:1;height:14px;border-radius:9px;background:var(--line);overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:9px;transition:width .4s}
+.qwrap{flex:1;display:flex;flex-direction:column;gap:10px;padding:16px;overflow-y:auto}
+.tag{font-weight:900;font-size:13px;letter-spacing:1px}
+.q{font-weight:900;font-size:20px;line-height:1.3;margin:2px 0 6px}
+.opt{font-family:var(--ui);font-weight:800;font-size:16px;text-align:left;padding:14px;border-radius:16px;border:2px solid var(--line);border-bottom-width:5px;background:var(--card);color:var(--ink);cursor:pointer}
+.opt.sel{border-color:var(--blue);color:var(--blue)}.opt.good{border-color:var(--green);color:var(--green)}.opt.bad{border-color:var(--red);color:var(--red)}
+.foot{padding:12px 16px 18px;border-top:2px solid var(--line)}
+/* bienvenida (solo la primera vez) */
+#intro{position:fixed;inset:0;z-index:60;background:var(--bg);display:none;flex-direction:column}#intro.on{display:flex}
+#intro .skip{align-self:flex-end;margin:16px 18px 0;background:none;border:0;color:var(--muted);font-family:var(--ui);font-weight:900;font-size:14px;letter-spacing:.5px;cursor:pointer}
+#intro .art{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}#intro .art svg{max-height:100%;width:auto}
+#intro h2{margin:8px 24px 6px;font-size:24px;text-align:center}#intro p{margin:0 28px;text-align:center;color:var(--muted);font-weight:700;font-size:16px;line-height:1.35}
+#intro .dots{display:flex;justify-content:center;gap:8px;margin:22px 0 4px}#intro .dots i{width:9px;height:9px;border-radius:9px;background:var(--line);transition:width .2s}#intro .dots i.on{background:var(--blue);width:22px}
+#intro .foot{border:0}
+.aviso{display:flex;gap:10px;align-items:center;background:#2a2410;border:2px solid #5c4a10;border-radius:16px;padding:10px 12px;font-weight:800;font-size:14px;color:#FFD970}
+#tipRacha{position:fixed;z-index:55;top:58px;right:12px;background:#fff;color:#131F24;border-radius:14px;padding:10px 14px;font-weight:800;font-size:14px;width:190px;box-shadow:0 6px 20px rgba(0,0,0,.5);display:none}
+#tipRacha.on{display:block}#tipRacha:before{content:"";position:absolute;top:-8px;right:22px;border:8px solid transparent;border-top:0;border-bottom-color:#fff}
+#racha{cursor:pointer}
+.chip.logo{gap:9px;font-size:21px}
+.pill{display:flex;align-items:center;gap:6px;background:#3a2a10;border:2px solid var(--orange);color:var(--orange);border-radius:999px;padding:3px 12px 3px 9px;font-weight:900;font-size:17px}
+
+.qrow{display:flex;gap:10px}.qrow .btn{flex:1}#qprev{flex:0 0 auto;width:56px;padding:8px 0;font-size:26px;line-height:1;background:none;border:2px solid var(--line);box-shadow:none;color:var(--muted)}
+.foot.ok{background:#203A12;border-color:#203A12}.foot.ko{background:#3D1A1C;border-color:#3D1A1C}
+.fbt{font-weight:900;font-size:19px}.fbx{font-weight:800;font-size:14px;margin-top:4px;color:var(--ink);opacity:.9}
+.timer{font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums}
+.dbl{display:inline-block;background:var(--gold);color:#3a2a00;border-radius:8px;padding:2px 8px;font-size:12px;font-weight:900;margin-left:6px}
+.center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:6px}
+.big{font-size:64px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin:14px 0}
+.facts div{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px}
+.facts b{display:block;font-size:26px;color:var(--gold)}.facts span{font-size:13px;font-weight:800;color:var(--muted)}
+.score{font-size:56px;font-weight:900}
+.chbar{display:flex;align-items:center;gap:10px;width:100%;font-weight:800;font-size:14px;margin:4px 0}
+.chbar span{width:120px;text-align:left;color:var(--muted)}.chbar .bar{height:12px}
+.miss{width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:10px 12px;margin-top:8px;font-size:14px;font-weight:800}
+.miss b{display:block;color:var(--ink);margin-bottom:4px}.miss .ok{color:var(--green)}.miss small{color:var(--muted)}
+.muted{color:var(--muted);font-weight:800}
+.pend{background:#2A1E0A;border:2px solid var(--orange);color:var(--orange);border-radius:12px;padding:4px 10px;font-family:var(--ui);cursor:pointer}.pend.cero{border-color:var(--line);color:var(--muted);background:none}
+.cita{background:var(--card);border:2px solid var(--line);border-left:6px solid var(--cc,var(--blue));border-radius:14px;padding:12px 14px;font-weight:800;font-size:16px;line-height:1.45}
+.cita small{display:inline-block;color:var(--muted);font-size:12px;margin-top:8px;background:#26363F;border-radius:8px;padding:2px 8px}.cita img{display:block;max-height:120px;max-width:70%;margin:0 auto 8px;border-radius:10px;background:#fff;padding:6px}
+.lecintro{color:var(--muted);font-weight:800;font-size:14px;line-height:1.4}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style></head><body>
+<div class="app">
+
+<!-- MAP -->
+<section class="view on" id="v-map">
+ <div class="top"><div class="chip logo"><svg width="32" height="32" viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><rect width="512" height="512" rx="112" fill="url(#lg)"/><path d="M150 360 L256 150 L362 360" fill="none" stroke="#fff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/><circle cx="256" cy="150" r="30" fill="#fff"/><circle cx="150" cy="360" r="30" fill="#fff"/><circle cx="362" cy="360" r="30" fill="#fff"/><path d="M196 290 H316" stroke="#fff" stroke-width="32" stroke-linecap="round" opacity=".85"/></svg>Razona</div><div class="pill" id="racha" role="button" aria-label="Racha de días"></div></div>
+ <div class="scroll" id="scroll"><div class="capbar" id="capbar"><div class="t"><small id="cbn"></small><b id="cbt"></b></div><span class="av" id="cba"></span></div><svg id="map" xmlns="http://www.w3.org/2000/svg" style="margin-top:-66px"></svg></div>
+ <button class="seguir" id="seguir" hidden></button>
+ <div class="pop" id="pop"><div class="tira" id="ptira"></div><div class="head"><div class="ic" id="pi"></div><div style="min-width:0"><span class="cap" id="pcap"></span><b id="pt"></b></div></div><div id="ps" class="muted" style="font-size:14px;margin-top:6px"></div><button class="btn" id="pb"></button><button class="btn g" id="pb2" hidden></button></div>
+</section>
+
+<!-- QUIZ (repaso / prueba de capítulo / simulacro) -->
+<div id="intro"></div><div id="tipRacha"></div>
+<section class="view" id="v-quiz">
+ <div class="top"><button class="x" id="qx" aria-label="Salir">✕</button><div class="bar"><i id="qbar"></i></div><div class="timer" id="qtime"></div></div>
+ <div class="qwrap" id="qbody"></div>
+ <div class="foot" id="qfoot"><div id="qfb"></div><div class="qrow"><button class="btn" id="qprev" aria-label="Pregunta anterior"><svg width="22" height="22" viewBox="0 0 24 24" style="display:block;margin:auto"><path d="M15 4 L7 12 L15 20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="btn g" id="qbtn" disabled>Comprobar</button></div></div>
+</section>
+
+<!-- INTRO / RESULT screens -->
+<section class="view" id="v-info"><div class="qwrap" id="ibody"></div><div class="foot" id="ifoot"></div></section>
+
+<!-- PESTAÑAS -->
+<section class="view" id="v-repaso"><div class="top"><div class="chip">🔋 Repaso</div></div><div class="qwrap" id="rbody"></div></section>
+<section class="view" id="v-examen"><div class="top"><div class="chip">🏆 Examen</div></div><div class="qwrap" id="ebody"></div></section>
+<section class="view" id="v-progreso"><div class="top"><div class="chip">📊 Progreso</div></div><div class="qwrap" id="gbody"></div></section>
+
+<nav class="tabs" id="tabs" aria-label="Secciones">
+ <button class="tab on" data-t="map"><span class="i">🗺️</span>Ruta</button>
+ <button class="tab" data-t="repaso"><span class="i">🔋</span>Repaso<span class="badge" id="tbadge" hidden></span></button>
+ <button class="tab" data-t="examen"><span class="i">🏆</span>Examen</button>
+ <button class="tab" data-t="progreso"><span class="i">📊</span>Progreso</button>
+</nav>
+</div>
+
+<script>
+const BANK=__BANK__;
+const $=id=>document.getElementById(id);
+const TABS=['map','repaso','examen','progreso'];let TAB='map';
+const show=v=>{document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));document.getElementById('tabs').hidden=!TABS.includes(v);document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.t===v))};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+
+/* ---------- PROGRESO (en el teléfono) ---------- */
+const PK='razona-progreso';let PR={hechas:{},srs:{},dias:[],tutorFallos:{}};
+try{PR=Object.assign(PR,JSON.parse(localStorage.getItem(PK)||'{}'))}catch(e){}
+const guardar=()=>{try{localStorage.setItem(PK,JSON.stringify(PR))}catch(e){}};
+/* Repetición espaciada (cajas de Leitner): cada pregunta respondida tiene una caja 0–5 y una fecha en que vuelve.
+   Acertar la sube de caja (vuelve en 1, 3, 7, 14 o 30 días); fallar la baja a la caja 0 (vuelve hoy mismo). */
+const INTERVALO=[0,1,3,7,14,30];
+const enDias=n=>{const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)};
+function registrar(q,ok){const r=PR.srs[q.id]||{b:0};r.b=ok?Math.min((r.b||0)+1,5):0;r.d=enDias(INTERVALO[r.b]);PR.srs[q.id]=r}
+const qPorId={};BANK.Q.forEach(q=>qPorId[q.id]=q);
+// lo pendiente de hoy: primero lo fallado (caja 0), luego lo que está por olvidarse (más atrasado primero)
+function pendientes(cap){const h=hoy();return Object.entries(PR.srs).filter(([id,r])=>r.d<=h&&qPorId[id]&&estudiada(qPorId[id].s)&&(!cap||capDe(qPorId[id].s)===cap))
+ .sort((a,b)=>a[1].b-b[1].b||(a[1].d<b[1].d?-1:1)).map(([id])=>qPorId[id])}
+function migrar(){
+ // errores en las preguntas de una sesión con tutor: sus preguntas de práctica entran al repaso de hoy
+ Object.keys(PR.tutorFallos||{}).forEach(sid=>{BANK.Q.filter(q=>q.s===sid).forEach(q=>{const r=PR.srs[q.id];if(!r||r.b>0)PR.srs[q.id]={b:0,d:hoy()}})});
+ PR.tutorFallos={};guardar()}
+const hoy=()=>new Date().toISOString().slice(0,10);
+function estudiado(){if(!PR.dias.includes(hoy())){PR.dias.push(hoy());PR.dias=PR.dias.slice(-400)}guardar();racha()}
+function racha(){let n=0,d=new Date();const set=new Set(PR.dias);if(!set.has(hoy()))d.setDate(d.getDate()-1);
+ while(set.has(d.toISOString().slice(0,10))){n++;d.setDate(d.getDate()-1)}$('racha').innerHTML='<svg width="16" height="20" viewBox="0 0 16 20" aria-hidden="true"><path d="M8 0 C9 5 15 7 15 13 A7 7 0 0 1 1 13 C1 9 4 8 4 4 C6 6 7 7 8 0Z" fill="#FF9600"/><path d="M8 9 C9 12 11 12 11 15 A3 3 0 0 1 5 15 C5 13 7 12 8 9Z" fill="#FFC800"/></svg>'+n}
+// una parada está "estudiada" cuando se vio su sesión con tutor: recién entonces sus preguntas se pueden preguntar
+// (regla: nada se pregunta sin haberse enseñado antes)
+const estudiada=sid=>!!(PR.vistas&&PR.vistas[sid]||PR.hechas[sid]);
+
+/* ---------- MAPA: las 11 unidades ---------- */
+// la mascota (la ampolleta de las sesiones con tutor) avanza por el camino
+const AMPOLLETA=`<ellipse cx="30" cy="64" rx="20" ry="4" fill="#000" opacity=".35"/><circle cx="30" cy="24" r="21" fill="#FFC800"/><circle cx="23" cy="17" r="7" fill="#FFF6C7" opacity=".6"/><rect x="20" y="42" width="20" height="7" rx="3" fill="#9AB0BC"/><rect x="21" y="49" width="18" height="6" rx="3" fill="#7D93A0"/><rect x="24" y="55" width="12" height="5" rx="2.5" fill="#5E7380"/><circle cx="23" cy="22" r="3.2" fill="#2B2000"/><circle cx="37" cy="22" r="3.2" fill="#2B2000"/><circle cx="24" cy="21" r="1" fill="#fff"/><circle cx="38" cy="21" r="1" fill="#fff"/><path d="M24 30 Q30 35 36 30" stroke="#8A3B00" stroke-width="2.5" fill="none" stroke-linecap="round"/>`;
+let STOPS=[];
+function armarParadas(){STOPS=[];let sig=false;
+ BANK.C.forEach(c=>{STOPS.push({sign:1,ch:c.et,t:c.t});
+  c.ses.forEach(x=>{const done=!!PR.hechas[x.id];let s=done?'done':'ses';if(!done&&!sig){s='next';sig=true}
+   STOPS.push({n:x.t,ic:x.ic,s,sid:x.id,m:x.m,cap:c.n})});
+  const np=pendientes(c.n).length;STOPS.push({n:'Repaso de la '+c.et.toLowerCase()+(np?' ('+np+')':''),ic:'🔋',s:'review',cap:c.n},{n:'Prueba de la '+c.et.toLowerCase(),ic:'🏁',s:'test',cap:c.n})});
+ STOPS.push({sign:1,ch:'Examen final',t:'Simulacro de examen'},{n:'Simulacro de examen',ic:'🏆',s:'exam'})}
+const NS='http://www.w3.org/2000/svg',svg=$('map');
+const W=400,GAP=260;
+const COL={ses:['#1CB0F6','#1899D6'],done:['#58CC02','#46A302'],review:['#FF9600','#CC7800'],next:['#1CB0F6','#1899D6'],test:['#FFC800','#C99E00'],exam:['#CE82FF','#A568CC']};
+const el=(tag,at,parent=svg)=>{const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);parent.appendChild(e);return e};
+// un color por unidad
+// sin verde: el verde queda solo para las paradas hechas
+const CC=['#1CB0F6','#CE82FF','#FF9600','#FF4B4B','#14B8A6','#E5A800','#7C83FD','#00A9C2','#EC6FA8','#B45309','#5B8DEF','#F97316'];
+const colorCap=n=>CC[(n-1)%CC.length];
+const oscuro=(h,k=.78)=>'#'+h.slice(1).match(/../g).map(x=>Math.round(parseInt(x,16)*k).toString(16).padStart(2,'0')).join('');
+const avanceCap=n=>{const c=BANK.C.find(c=>c.n===n);return [c.ses.filter(x=>PR.hechas[x.id]).length,c.ses.length]};
+// parte un nombre en hasta 2 líneas sin cortar palabras
+function lineas(t,max=22){const w=t.split(' '),L=[''];w.forEach(x=>{const k=L.length-1;if((L[k]+' '+x).trim().length>max&&L[k])L.push(x);else L[k]=(L[k]+' '+x).trim()});if(L.length>2){L[1]=L.slice(1).join(' ');if(L[1].length>max)L[1]=L[1].slice(0,max-1)+'…';L.length=2}return L}
+let CARTELES=[];
+function dibujarMapa(){armarParadas();svg.innerHTML='';let y=110,cap=null;const pts=[];CARTELES=[];
+ STOPS.forEach(s=>{if(s.sign){s.y=y+10;y+=220;return}s.x=W/2+Math.sin(pts.length*0.9)*80;s.y=y;pts.push(s);y+=GAP});
+ svg.setAttribute('viewBox',`0 0 ${W} ${y+40}`);
+ const camino=lst=>{let d=`M ${lst[0].x} ${lst[0].y-160}`,prev={x:lst[0].x,y:lst[0].y-160};lst.forEach(p=>{const my=(prev.y+p.y)/2;d+=` C ${prev.x} ${my}, ${p.x} ${my}, ${p.x} ${p.y}`;prev=p});return d};
+ const d=camino(pts)+` L ${pts[pts.length-1].x} ${pts[pts.length-1].y+40}`;
+ el('path',{d,fill:'none',stroke:'#22323A','stroke-width':42,'stroke-linecap':'round'});
+ const ni=pts.findIndex(p=>p.s==='next');
+ if(ni!==0)el('path',{d:camino(pts.slice(0,ni<0?pts.length:ni+1)),fill:'none',stroke:'#2F5A2A','stroke-width':42,'stroke-linecap':'round'});
+ el('path',{d,fill:'none',stroke:'#4A5D68','stroke-width':3,'stroke-dasharray':'12 16','stroke-linecap':'round'});
+ // carteles de capítulo con su avance
+ let ci=0;STOPS.forEach(s=>{if(!s.sign)return;const c=BANK.C[ci],col=c?colorCap(c.n):'#CE82FF';ci++;const g=el('g',{transform:`translate(${W/2},${s.y})`});
+  el('rect',{x:-160,y:-34,width:320,height:78,rx:20,fill:oscuro(col,.7)},g);el('rect',{x:-160,y:-40,width:320,height:78,rx:20,fill:col},g);
+  el('text',{x:-140,y:-14,'font-size':12.5,'font-weight':900,fill:'#fff',opacity:.85,'letter-spacing':1.2},g).textContent=s.ch.toUpperCase();
+  const t=lineas(s.t,30);t.forEach((l,k)=>{el('text',{x:-140,y:6+k*17,'font-size':t.length>1?14.5:16.5,'font-weight':900,fill:'#fff'},g).textContent=l});
+  if(c){const [h,n]=avanceCap(c.n);el('text',{x:140,y:-14,'font-size':13,'font-weight':900,fill:'#fff','text-anchor':'end'},g).textContent=h+'/'+n;
+   el('rect',{x:-140,y:t.length>1?30:24,width:280,height:6,rx:3,fill:'rgba(0,0,0,.25)'},g);el('rect',{x:-140,y:t.length>1?30:24,width:280*h/n,height:6,rx:3,fill:'#fff'},g);
+   CARTELES.push({y:s.y,c})}});
+ pts.forEach(p=>{const g=el('g',{class:'node',transform:`translate(${p.x},${p.y})`,tabindex:0,role:'button','aria-label':p.n});
+  const col=p.cap&&(p.s==='ses'||p.s==='next')?colorCap(p.cap):COL[p.s][0],cd=oscuro(col),r=p.s==='next'?40:34;
+  if(p.s==='next')el('circle',{class:'pulse',r:46,fill:'none',stroke:col,'stroke-width':4},g);
+  el('ellipse',{cx:0,cy:8,rx:r,ry:r-2,fill:p.s==='done'?COL.done[1]:cd},g);el('circle',{r,fill:p.s==='done'?COL.done[0]:col},g);
+  el('circle',{cx:-r*.35,cy:-r*.4,r:r*.28,fill:'#fff',opacity:.18},g);
+  el('text',{y:p.s==='done'?12:10,'font-size':p.s==='done'?30:(p.s==='next'?32:28),'font-weight':900,fill:'#fff','text-anchor':'middle'},g).textContent=p.s==='done'?'✓':p.ic;
+  const L=lineas(p.n),wd=Math.max(...L.map(l=>l.length))*7.3+22,y0=r+12;
+  el('rect',{x:-wd/2,y:y0,width:wd,height:L.length*17+10,rx:11,fill:'#131F24',opacity:.9},g);
+  L.forEach((l,k)=>el('text',{y:y0+18+k*17,'font-size':13.5,'font-weight':900,fill:'#F1F7FB','text-anchor':'middle'},g).textContent=l);
+  g.onclick=()=>pop(p);g.onkeydown=e=>{if(e.key==='Enter')pop(p)}});
+ const nx=pts[ni];
+ if(nx){// globo "EMPEZAR" y el auto sobre el camino
+  const col=colorCap(nx.cap),gb=el('g',{class:'flota'},el('g',{transform:`translate(${nx.x},${nx.y-74})`}));
+  // "EMPEZAR" solo en la primera parada de cada capítulo; en las demás, "CONTINUAR"
+  const txt=pts.find(p=>p.cap===nx.cap)===nx?'EMPEZAR':'CONTINUAR',bw=txt.length*12+28;
+  el('rect',{x:-bw/2,y:-20,width:bw,height:36,rx:12,fill:'#fff'},gb);el('path',{d:'M-8 15 L0 25 L8 15Z',fill:'#fff'},gb);
+  el('text',{y:4,'font-size':15,'font-weight':900,fill:col,'text-anchor':'middle','letter-spacing':1},gb).textContent=txt;
+  gb.style.cursor='pointer';gb.onclick=()=>pop(nx);
+  // el auto va sobre el camino, antes de la parada y girado según la curva
+  const pv=ni>0?pts[ni-1]:null,objY=nx.y-126;let cx=nx.x,cy=objY,ang=0;
+  if(pv){const my=(pv.y+nx.y)/2,bz=t=>{const u=1-t;return[u*u*u*pv.x+3*u*u*t*pv.x+3*u*t*t*nx.x+t*t*t*nx.x,u*u*u*pv.y+3*u*u*t*my+3*u*t*t*my+t*t*t*nx.y]};
+   let lo=0,hi=1;for(let k=0;k<30;k++){const m=(lo+hi)/2;if(bz(m)[1]<objY)lo=m;else hi=m}
+   const t=(lo+hi)/2,[a,b]=bz(Math.max(0,t-.01)),[c,e]=bz(Math.min(1,t+.01));[cx,cy]=bz(t);ang=Math.atan2(e-b,c-a)*180/Math.PI-90}
+  el('g',{class:'bob'},el('g',{transform:`translate(${cx-27},${cy-36}) scale(.9)`})).innerHTML=AMPOLLETA}
+ franja();return nx}
+// franja fija: muestra la unidad que se está viendo al bajar por el mapa
+function franja(){const sc=$('scroll'),k=sc.clientWidth/W,yv=(sc.scrollTop+90)/k;let c=CARTELES[0];CARTELES.forEach(x=>{if(x.y-60<=yv)c=x});
+ const cb=$('capbar');if(!c||yv>CARTELES[CARTELES.length-1].y+((STOPS.length)*GAP)){cb.style.visibility='hidden';return}
+ // si el cartel de la unidad todavía se ve en pantalla, la franja no hace falta
+ if(c.y*k-sc.scrollTop>-20){cb.style.visibility='hidden';return}
+ cb.style.visibility='';const col=colorCap(c.c.n),[h,n]=avanceCap(c.c.n);cb.style.background=col;$('cbn').textContent=c.c.et.toUpperCase();$('cbt').textContent=c.c.t;$('cba').textContent=h+'/'+n}
+$('scroll').addEventListener('scroll',()=>requestAnimationFrame(franja),{passive:true});
+let SIG=null; // la siguiente parada en el orden de la ruta (la primera sin hacer)
+function irAlSiguiente(nx,suave){SIG=nx;requestAnimationFrame(()=>{const sc=$('scroll');if(nx)sc.scrollTo({top:nx.y*(sc.clientWidth/W)-sc.clientHeight/2,behavior:suave?'smooth':'auto'});franja();seguir()})}
+function seguir(){const b=$('seguir'),sc=$('scroll');if(!SIG||$('pop').classList.contains('on')){b.hidden=true;return}const k=sc.clientWidth/W,y=SIG.y*k-sc.scrollTop;
+ b.hidden=y>40&&y<sc.clientHeight-60;b.textContent=(y<=40?'↑ ':'↓ ')+'Seguir en: '+SIG.n;b.style.background=colorCap(SIG.cap);b.style.boxShadow='0 5px 0 '+oscuro(colorCap(SIG.cap))}
+new MutationObserver(()=>seguir()).observe(document.getElementById('pop'),{attributes:true,attributeFilter:['class']});
+$('seguir').onclick=()=>{irAlSiguiente(SIG,true);setTimeout(()=>pop(SIG),450)};
+$('scroll').addEventListener('scroll',()=>requestAnimationFrame(seguir),{passive:true});
+function chips(){} // el contador de pendientes va en el globito de la pestaña Repaso
+function verMapa(){TAB='map';const nx=dibujarMapa();chips();show('map');irAlSiguiente(nx)}
+// vuelve a la pestaña desde la que se empezó (al terminar o salir de una práctica, prueba o simulacro)
+function volver(){irTab(TAB)}
+const preguntasDe=sid=>BANK.Q.filter(q=>q.s===sid);
+const poolEstudiado=cap=>BANK.Q.filter(q=>estudiada(q.s)&&(!cap||capDe(q.s)===cap));
+const capDe=sid=>{for(const c of BANK.C)if(c.ses.some(x=>x.id===sid))return c.n};
+const etDe=n=>BANK.C.find(c=>c.n===n).et;
+function aviso(t){show('info');$('ibody').innerHTML=`<div class="center"><div class="big">🎧</div><div class="muted" style="font-size:16px">${t}</div></div>`;
+ $('ifoot').innerHTML='<button class="btn g" id="back">Volver</button>';$('back').onclick=volver}
+function pop(p,adelantar){
+ const ni=STOPS.findIndex(s=>s.s==='next'),idx=STOPS.indexOf(p);
+ if(p.sid&&p.s!=='done'&&ni>=0&&idx>ni&&!adelantar)return popAdelanto(p,STOPS[ni]);
+ const P=$('pop'),col=p.cap&&p.sid?colorCap(p.cap):COL[p.s][0];$('pi').textContent=p.s==='done'?'✓':p.ic;$('pi').style.background=p.s==='done'?COL.done[0]:col;$('pt').textContent=p.n;
+ $('ptira').style.background=col;$('pcap').textContent=p.cap?etDe(p.cap).toUpperCase():'EXAMEN FINAL';
+ const prac=()=>practiceSession(p),tut=()=>{location.href=p.sid+'.html'};
+ let ch=[];if(p.sid){const nq=preguntasDe(p.sid).length;
+  ch=['🎧 Sesión con tutor · '+p.m+' min','✏️ '+nq+(nq==1?' pregunta':' preguntas')];if(PR.hechas[p.sid])ch.push('✓ Hecha')}
+ // "Practicar" solo aparece cuando la sesión ya se vio: nada se pregunta sin haberse enseñado antes
+ const base=estudiada(p.sid)?['','Sesión con tutor','',tut,'Practicar',prac]:['','Sesión con tutor','',tut];
+ const m={done:['','Repetir la sesión','',tut,'Practicar',prac],ses:base,next:base,
+  review:[(pendientes(p.cap).length?pendientes(p.cap).length+' por repasar hoy · ':'')+'lo fallado y lo que está por olvidarse','Recargar','o',()=>repaso(p.cap)],
+  test:['10 preguntas de lo que estudiaste en la unidad','Hacer la prueba','y',()=>prueba(p)],
+  exam:['35 preguntas · 45 minutos · apruebas con 30','Ver simulacros','',()=>irTab('examen')]}[p.s];
+ $('ps').innerHTML=ch.length?`<div class="pchips">${ch.map(x=>`<span>${x}</span>`).join('')}</div>`:m[0];
+ const b=$('pb');b.textContent=m[1];b.className='btn '+m[2];b.style.background=b.style.boxShadow='';$('pb2').style.cssText='';$('pb2').className='btn g';P.classList.add('on');
+ b.onclick=()=>{P.classList.remove('on');m[3]&&m[3]()}
+ const b2=$('pb2');b2.hidden=!m[4];if(m[4]){b2.textContent=m[4];b2.onclick=()=>{P.classList.remove('on');m[5]()}}}
+// parada más adelante que la que toca: se puede hacer, pero se recomienda seguir el orden de la ruta
+function popAdelanto(p,sig){const P=$('pop'),col=colorCap(p.cap);$('pi').textContent=p.ic;$('pi').style.background=col;$('pt').textContent=p.n;
+ $('ptira').style.background=col;$('pcap').textContent=etDe(p.cap).toUpperCase();
+ $('ps').innerHTML=`<div class="aviso">⏩ Te estás adelantando. Lo recomendado es seguir el orden de la ruta: la siguiente es <b>“${sig.n}”</b>${sig.cap!==p.cap?' ('+etDe(sig.cap).toLowerCase()+')':''}.</div>`;
+ const b=$('pb');b.textContent='Ir a la siguiente';b.className='btn';b.style.background=colorCap(sig.cap);b.style.boxShadow='0 5px 0 '+oscuro(colorCap(sig.cap));P.classList.add('on');
+ b.onclick=()=>{P.classList.remove('on');b.style.background=b.style.boxShadow='';irAlSiguiente(sig,true);setTimeout(()=>pop(sig),450)};
+ const b2=$('pb2');b2.hidden=false;b2.textContent='Adelantarme igual';b2.className='btn';b2.style.cssText='background:none;box-shadow:none;border:2px solid var(--line);color:var(--muted)';
+ b2.onclick=()=>{b.style.background=b.style.boxShadow='';b2.style.cssText='';b2.className='btn g';pop(p,true)}}
+$('scroll').addEventListener('click',e=>{if(!e.target.closest('.node')&&!e.target.closest('.flota'))$('pop').classList.remove('on')});
+/* ---------- SONIDOS (Web Audio, volumen bajo; mismas notas que las sesiones con tutor) ---------- */
+let AC=null;
+document.addEventListener('pointerdown',()=>{if(!AC)try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}},{once:true});
+function sfx(kind){if(!AC)return;if(AC.state==='suspended')AC.resume();const t=AC.currentTime;
+ const notes=kind==='bien'?[[784,0],[1175,.1]]:kind==='fin'?[[523,0],[659,.12],[784,.24],[1047,.36]]:[[247,0],[196,.13]];
+ notes.forEach(([hz,d])=>{const o=AC.createOscillator(),e=AC.createGain();o.type=kind==='mal'?'triangle':'sine';o.frequency.value=hz;o.connect(e);e.connect(AC.destination);const st=t+d;
+  e.gain.setValueAtTime(0,st);e.gain.linearRampToValueAtTime(kind==='mal'?.22:.32,st+.015);e.gain.exponentialRampToValueAtTime(.0001,st+(kind==='fin'?.45:.32));o.start(st);o.stop(st+.5);
+  if(kind!=='mal'){const o2=AC.createOscillator();o2.type='triangle';o2.frequency.value=hz*2;const e2=AC.createGain();o2.connect(e2);e2.connect(AC.destination);e2.gain.setValueAtTime(0,st);e2.gain.linearRampToValueAtTime(.06,st+.015);e2.gain.exponentialRampToValueAtTime(.0001,st+.25);o2.start(st);o2.stop(st+.3)}})}
+/* ---------- QUESTION ENGINE ---------- */
+let RUN=null,TICK=null;
+function pick(n,pool){n=Math.min(n,pool.length);
+ // repartidas entre unidades, para que el examen cubra todo lo estudiado
+ const by={};pool.forEach(q=>{const c=capDe(q.s);(by[c]=by[c]||[]).push(q)});const keys=Object.keys(by);let out=[],i=0;
+ const sh={};keys.forEach(k=>sh[k]=shuffle(by[k]));
+ while(out.length<n){const k=keys[i++%keys.length];if(sh[k].length)out.push(sh[k].pop())}return shuffle(out)}
+function repaso(cap){const pend=pendientes(cap),pool=poolEstudiado(cap);
+ if(!pend.length&&!pool.length)return aviso(cap?'Primero haz alguna sesión con tutor de la '+etDe(cap).toLowerCase()+': así el repaso tiene qué preguntarte.':'Todavía no hay nada que repasar: haz alguna sesión con tutor y practica.');
+ // primero lo pendiente de hoy (hasta 10); si no hay nada pendiente, unas preguntas ya estudiadas para no oxidarse
+ const qs=pend.length?pend.slice(0,10):shuffle(pool).slice(0,5);
+ RUN={mode:'practice',repaso:1,tag:'<span class="tag" style="color:var(--orange)">🔋 REPASO'+(cap?' · '+etDe(cap).toUpperCase():'')+'</span>',fin:['🔋','¡Batería llena!'],qs,i:0,ans:[],extra:pend.length?'':'No tenías nada pendiente hoy: repasaste preguntas ya estudiadas.'};$('qtime').textContent='';renderQ()}
+// práctica de una parada: solo preguntas de lo que esa parada terminó de enseñar
+function practiceSession(p){if(!estudiada(p.sid))return aviso('Primero haz la sesión con tutor: ahí se enseña lo que se pregunta en esta práctica.');const qs=shuffle(preguntasDe(p.sid)).slice(0,8);
+ if(!qs.length){PR.hechas[p.sid]=1;estudiado();return aviso('Esta parada no tiene preguntas de práctica todavía. Quedó marcada como hecha.')}
+ RUN={mode:'practice',sid:p.sid,tag:'<span class="tag" style="color:var(--blue)">✏️ PRÁCTICA · '+p.n.toUpperCase()+'</span>',fin:['✏️','¡Práctica completa!'],qs,i:0,ans:[]};$('qtime').textContent='';renderQ()}
+function prueba(p){const pool=poolEstudiado(p.cap);if(pool.length<5)return aviso('Para la prueba de la '+etDe(p.cap).toLowerCase()+' necesitas hacer más sesiones con tutor de esa unidad.');
+ exam({qs:pick(10,pool),mins:0,pass:.8,title:p.n})}
+// Simulacro: 35 preguntas en 45 minutos, apruebas con 30. Regla: nada se pregunta sin haberse enseñado antes,
+// así que el simulacro sale de las sesiones ya vistas; el "completo" se habilita al terminar toda la ruta.
+const SIM={n:35,mins:45,pasa:30};
+const todoVisto=()=>BANK.C.every(c=>c.ses.every(x=>estudiada(x.id)));
+function examIntro(modo='estudiado'){const pool=modo==='todo'?(todoVisto()?BANK.Q:[]):poolEstudiado();show('info');const ok=pool.length>=SIM.n;
+ $('ibody').innerHTML=`<div class="center"><div class="big">🏆</div><div class="q">${modo==='todo'?'Simulacro completo':'Simulacro de lo estudiado'}</div><div class="muted">Preguntas de todas las unidades, mezcladas</div>
+ <div class="facts"><div><b>${SIM.n}</b><span>preguntas</span></div><div><b>${SIM.mins}:00</b><span>minutos</span></div><div><b>${SIM.pasa}</b><span>correctas para aprobar</span></div><div><b>${pool.length}</b><span>preguntas disponibles</span></div></div>
+ <div class="muted" style="font-size:13px">${modo==='todo'?(ok?'Salen al azar de las '+pool.length+' preguntas de la app, repartidas entre todas las unidades.':'Se habilita cuando terminas todas las sesiones con tutor de la ruta.'):ok?'Pregunta solo lo que ya estudiaste ('+pool.length+' preguntas disponibles).':'Necesitas al menos '+SIM.n+' preguntas de sesiones ya vistas; llevas '+pool.length+'.'} No verás si acertaste hasta el final.</div></div>`;
+ $('ifoot').innerHTML=(ok?'<button class="btn" id="go">Comenzar</button>':'')+'<button class="btn" style="background:none;box-shadow:none;border:2px solid var(--line);color:var(--muted)" id="back">Volver</button>';
+ if(ok)$('go').onclick=()=>exam({qs:pick(SIM.n,pool),mins:SIM.mins,passPts:SIM.pasa,title:modo==='todo'?'Simulacro completo':'Simulacro de lo estudiado',modo});$('back').onclick=volver}
+function exam(o){const qs=o.qs;
+ RUN={mode:'exam',o,qs,i:0,ans:[]};
+ clearInterval(TICK);$('qtime').textContent='';
+ if(o.mins){RUN.end=Date.now()+o.mins*60000;const t=()=>{const s=Math.max(0,(RUN.end-Date.now())/1000|0);$('qtime').textContent=`⏱ ${s/60|0}:${String(s%60).padStart(2,'0')}`;if(s<=0){clearInterval(TICK);finish()}};t();TICK=setInterval(t,1000)}
+ renderQ()}
+function renderQ(){show('quiz');const R=RUN,q=R.qs[R.i];
+ $('qbar').style.width=(R.i/R.qs.length*100)+'%';
+ // orden nuevo en cada ronda (antes se guardaba en la pregunta y se repetía siempre igual)
+ R.ord=R.ord||[];if(!R.ord[R.i])R.ord[R.i]=shuffle([...q.o.keys()]);const ord=R.ord[R.i],K=q.k||1;
+ const tag=R.tag||(R.mode==='practice'?'<span class="tag" style="color:var(--orange)">🔋 REPASO</span>':
+  `<span class="tag" style="color:var(--muted)">PREGUNTA ${R.i+1} DE ${R.qs.length}</span>`);
+ $('qbody').innerHTML=`<div>${tag}${K>1?`<span class="dbl" style="background:var(--blue);color:#fff">MARCA ${K}</span>`:''}</div><div class="q">${q.q}</div>`+ord.map((k,j)=>`<button class="opt" data-k="${k}"><span class="le">${'ABCDEF'[j]}</span><span>${q.o[k]}</span></button>`).join('');
+ const F=$('qfoot');F.className='foot';$('qfb').innerHTML='';const b=$('qbtn');
+ b.textContent=R.mode==='practice'?'Comprobar':(R.i===R.qs.length-1?'Terminar':'Siguiente');b.className='btn g';b.disabled=true;let sel=null;const picks=new Set();
+ // en el examen se puede volver a una pregunta anterior y cambiar la respuesta, como en el examen real
+ const pv=$('qprev'),ex=R.mode==='exam';pv.style.display=ex&&R.i>0?'':'none';pv.onclick=()=>{R.i--;renderQ()};
+ const prev=ex&&R.ans[R.i];if(prev){if(K>1)(prev.picks||[]).forEach(k=>picks.add(k));else sel=prev.sel;
+  $('qbody').querySelectorAll('.opt').forEach(o=>{const k=+o.dataset.k;if(K>1?picks.has(k):k===sel)o.classList.add('sel')});b.disabled=false}
+ $('qbody').querySelectorAll('.opt').forEach(o=>o.onclick=()=>{const k=+o.dataset.k;if(K>1){if(picks.has(k)){picks.delete(k);o.classList.remove('sel')}else if(picks.size<K){picks.add(k);o.classList.add('sel')}b.disabled=picks.size!==K}else{$('qbody').querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));o.classList.add('sel');sel=k;b.disabled=false}});
+ b.onclick=()=>{const ok=K>1?[...picks].every(k=>k<K):sel===0;R.ans[R.i]={ok,sel,picks:[...picks]};if(R.mode==='practice'){R.primera=R.primera||{};if(!(q.id in R.primera)){R.primera[q.id]=ok;registrar(q,ok);guardar()}/* solo cuenta el primer intento: si la falló, queda para el repaso de hoy aunque luego la acierte en la ronda */if(!ok)R.qs.push(q)}
+  if(R.mode==='practice'){sfx(ok?'bien':'mal');$('qbody').querySelectorAll('.opt').forEach(o=>{o.onclick=null;const k=+o.dataset.k;if(k<K)o.classList.add('good');else if(k===sel||picks.has(k))o.classList.add('bad')});
+   F.className='foot '+(ok?'ok':'ko');$('qfb').innerHTML=`<div class="fbt" style="color:${ok?'var(--green)':'var(--red)'}">${ok?'¡Bien hecho!':(K>1?'Las correctas quedaron en verde ↑':'Respuesta correcta: '+q.o[0])}</div>${ok?'':'<div class="fbx" style="opacity:.8">↻ Volverá al final de esta ronda</div>'}<div class="fbx">${q.e}</div>`;
+   b.textContent='Continuar';b.className='btn '+(ok?'g':'r');b.onclick=next}
+  else next()}}
+function next(){RUN.i++;if(RUN.i<RUN.qs.length)renderQ();else finish()}
+function finish(){clearInterval(TICK);const R=RUN;show('info');
+ if(R.mode==='practice'){const P=R.primera||{},tot=Object.keys(P).length,c=Object.values(P).filter(Boolean).length,rep=R.qs.length-tot;
+  if(R.sid){PR.hechas[R.sid]=1}estudiado();sfx('fin');const [ic,tt]=R.fin||['🔋','¡Batería llena!'];$('ibody').innerHTML=`<div class="center"><div class="big">${ic}</div><div class="q">${tt}</div><div class="muted">${c} de ${tot} correctas a la primera</div>${tot-c?`<div class="muted" style="margin-top:6px">${tot-c==1?'Repetiste 1 pregunta hasta acertarla; volverá en tu repaso de hoy.':'Repetiste '+(tot-c)+' preguntas hasta acertarlas; volverán en tu repaso de hoy.'}</div>`:''}${R.extra?`<div class="muted" style="margin-top:6px">${R.extra}</div>`:''}</div>`;
+  $('ifoot').innerHTML='<button class="btn g" id="back">Volver</button>';$('back').onclick=volver;return}
+ let pts=0,max=0;const per={};
+ R.qs.forEach((q,i)=>{const v=1;max+=v;const ok=R.ans[i]&&R.ans[i].ok;if(ok)pts+=v;const ch=etDe(capDe(q.s));(per[ch]=per[ch]||[0,0]);per[ch][1]++;if(ok)per[ch][0]++});
+ const pass=R.o.passPts?pts>=R.o.passPts:pts/max>=R.o.pass;
+ const miss=R.qs.map((q,i)=>[q,i]).filter(([q,i])=>!(R.ans[i]&&R.ans[i].ok));
+ $('ibody').innerHTML=`<div class="center" style="justify-content:flex-start;padding-top:10px"><div class="big">${pass?'🎉':'📚'}</div>
+  <div class="score" style="color:${pass?'var(--green)':'var(--red)'}">${pts}/${max}</div>
+  <div class="q">${pass?'Aprobado':'Reprobado'}</div><div class="muted">${R.o.passPts?'Necesitas '+R.o.passPts+' correctas para aprobar':'Necesitas el 80% para aprobar'}</div>
+  <div style="width:100%;margin-top:14px">${Object.entries(per).sort().map(([ch,[a,n]])=>`<div class="chbar"><span>${ch}</span><div class="bar"><i style="width:${a/n*100}%;background:${a/n>=.87?'var(--green)':a/n>=.6?'var(--gold)':'var(--red)'}"></i></div><b>${a}/${n}</b></div>`).join('')}</div>
+  ${miss.length?`<div style="width:100%;text-align:left;margin-top:16px;font-weight:900">Revisa lo que fallaste</div>`+miss.map(([q,i])=>`<div class="miss"><b>${q.q}</b><span class="ok">✓ ${q.o[0]}</span><br><small>${q.e}</small></div>`).join(''):''}</div>`;
+ R.qs.forEach((q,i)=>{if(R.ans[i])registrar(q,R.ans[i].ok)});if(R.o.modo){(PR.examenes=PR.examenes||[]).push({f:hoy(),p:pts,m:max,ok:pass,modo:R.o.modo});PR.examenes=PR.examenes.slice(-30)}guardar();
+ $('ifoot').innerHTML=(miss.length?'<div class="muted" style="text-align:center;margin-bottom:4px">🔋 Lo que fallaste quedó en tu repaso de hoy</div>':'')+'<button class="btn g" id="back">Volver</button>';
+ estudiado();$('back').onclick=volver}
+$('qx').onclick=()=>{clearInterval(TICK);volver()};
+// Botón atrás de Android (lo llama la app): true si cerró algo dentro de la página
+window.atras=()=>{if($('intro').classList.contains('on')){cerrarIntro();return true}if($('pop').classList.contains('on')){$('pop').classList.remove('on');return true}if(!TABS.some(t=>$('v-'+t).classList.contains('on'))){clearInterval(TICK);volver();return true}if(!$('v-map').classList.contains('on')){verMapa();return true}return false};
+// al terminar una sesión con tutor se vuelve con #practica=<id>
+/* ---------- PESTAÑAS: Repaso, Examen, Progreso ---------- */
+function irTab(t){TAB=t;chips();if(t==='map')return verMapa();({repaso:pintarRepaso,examen:pintarExamen,progreso:pintarProgreso})[t]();show(t);document.querySelector('#v-'+t+' .qwrap').scrollTop=0}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>irTab(b.dataset.t));
+const chipsMapa=chips;chips=function(){chipsMapa();const n=pendientes().length,bd=$('tbadge');bd.hidden=!n;bd.textContent=n>99?'99+':n};
+function pintarRepaso(){const n=pendientes().length,cap=BANK.C.map(c=>[c,pendientes(c.n).length]).filter(([,k])=>k);
+ const prox=Object.values(PR.srs).filter(r=>r.d>hoy()).map(r=>r.d).sort()[0];
+ $('rbody').innerHTML=`<div class="aviso"><svg width="26" height="26" viewBox="0 0 24 24" style="flex:0 0 auto"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" fill="none" stroke="#FFD970" stroke-width="2.6" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" fill="none" stroke="#FFD970" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Aquí vuelven las preguntas que fallaste, hasta que las domines.</div><div class="hero" style="background:linear-gradient(135deg,#FF9600,#E8590C)"><div class="cifra">${n}</div><h3>${n==1?'pregunta por repasar hoy':'preguntas por repasar hoy'}</h3>
+  <div class="muted">${n?'Primero lo que fallaste y después lo que está por olvidarse.':prox?'Nada pendiente hoy. Lo próximo vuelve el '+prox.split('-').reverse().join('/')+'.':'Cuando practiques, aquí aparecerá lo que debes reforzar.'}</div>
+  <button class="btn" style="background:#fff;color:#C2410C;box-shadow:0 5px 0 rgba(0,0,0,.2)" id="rgo">${n?'Repasar ahora':'Repaso libre de lo estudiado'}</button></div>
+  ${cap.length?`<div class="panel"><h3>Por unidad</h3>${cap.map(([c,k])=>`<div class="fila"><span>${c.et} · ${c.t.length>26?c.t.slice(0,25)+'…':c.t}</span><button class="mini" data-c="${c.n}">🔋 ${k}</button></div>`).join('')}</div>`:''}
+  <div class="panel"><h3>Cómo funciona</h3><div class="muted">Si fallas, la pregunta vuelve al final de la ronda y queda para el repaso de hoy. Cada vez que aciertas, vuelve más tarde: en 1, 3, 7, 14 y 30 días. Si la fallas, vuelve a empezar.</div></div>`;
+ $('rgo').onclick=()=>repaso();$('rbody').querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>repaso(+b.dataset.c))}
+function pintarExamen(){const est=poolEstudiado().length,H=(PR.examenes||[]).slice(-5).reverse(),todo=todoVisto();
+ $('ebody').innerHTML=`<div class="hero" style="background:linear-gradient(135deg,#8B5CF6,#1CB0F6)"><h3 style="margin:0;font-size:20px">🏆 Simulacro de lo estudiado</h3><div class="muted">${SIM.n} preguntas al azar de las unidades que ya estudiaste, en ${SIM.mins} minutos. Apruebas con ${SIM.pasa}. (${est} preguntas disponibles${est<SIM.n?'; necesitas '+SIM.n:''}).</div><button class="btn" style="background:#fff;color:#5B21B6;box-shadow:0 5px 0 rgba(0,0,0,.2)" id="eest" ${est<SIM.n?'disabled':''}>Hacer simulacro</button></div>
+  <div class="panel"><h3>🎓 Simulacro completo</h3><div class="muted">${todo?'De las '+BANK.Q.length+' preguntas de la app, repartidas entre todas las unidades.':'Se habilita cuando terminas todas las sesiones con tutor: aquí nunca se pregunta algo que no se haya enseñado.'}</div><button class="btn g" id="eall" ${todo?'':'disabled'}>Hacer simulacro completo</button></div>
+  ${H.length?`<div class="panel"><h3>Tus últimos resultados</h3>${H.map(e=>`<div class="fila"><span>${e.f.split('-').reverse().join('/')} · ${e.modo==='todo'?'completo':'estudiado'}</span><b style="color:${e.ok?'var(--green)':'var(--red)'}">${e.p}/${e.m} ${e.ok?'Aprobado':'Reprobado'}</b></div>`).join('')}</div>`:''}`;
+ $('eall').onclick=()=>examIntro('todo');$('eest').onclick=()=>examIntro('estudiado')}
+function pintarProgreso(){const tot=BANK.C.reduce((a,c)=>a+c.ses.length,0),hechas=Object.keys(PR.hechas).length,S=Object.values(PR.srs),dom=S.filter(r=>r.b>=4).length;
+ const ap=(PR.examenes||[]).filter(e=>e.ok).length;
+ const pc=Math.round(hechas/tot*100),R2=46,Cc=2*Math.PI*R2;
+ $('gbody').innerHTML=`<div class="hero anillo" style="background:linear-gradient(135deg,#58CC02,#14B8A6)"><svg width="110" height="110" viewBox="0 0 110 110"><circle cx="55" cy="55" r="${R2}" fill="none" stroke="rgba(0,0,0,.2)" stroke-width="12"/><circle cx="55" cy="55" r="${R2}" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-dasharray="${Cc*pc/100} ${Cc}" transform="rotate(-90 55 55)"/><text x="55" y="62" text-anchor="middle" font-size="24" font-weight="900" fill="#fff">${pc}%</text></svg><div><div style="font-size:20px;font-weight:900">Tu avance en la ruta</div><div class="muted">${hechas} de ${tot} paradas hechas</div></div></div><div class="stats"><div><b>${$('racha').textContent.replace('🔥 ','')}</b><span>🔥 días de racha</span></div><div><b>${hechas}/${tot}</b><span>paradas hechas</span></div>
+  <div><b>${S.length}</b><span>preguntas respondidas de ${BANK.Q.length}</span></div><div><b>${dom}</b><span>preguntas dominadas (aciertos repetidos)</span></div>
+  <div><b>${pendientes().length}</b><span>por repasar hoy</span></div><div><b>${ap}/${(PR.examenes||[]).length}</b><span>simulacros aprobados</span></div></div>
+  <div class="panel"><h3>Avance por unidad</h3>${BANK.C.map(c=>{const h=c.ses.filter(x=>PR.hechas[x.id]).length;return `<div class="chbar"><span>${c.et}</span><div class="bar"><i style="width:${h/c.ses.length*100}%;background:${colorCap(c.n)}"></i></div><b>${h}/${c.ses.length}</b></div>`}).join('')}</div>`;}
+
+/* ---------- BIENVENIDA: 3 pantallas con dibujos, solo la primera vez ---------- */
+const INTRO=[
+ ['Sigue la ruta','Avanza parada por parada: una sesión con tutor y luego practicas lo aprendido.',`<svg width="240" height="290" viewBox="0 0 240 290"><path d="M120 0 C120 50 60 50 60 80 C60 130 180 130 180 170 C180 210 100 210 100 290" fill="none" stroke="#22323A" stroke-width="34" stroke-linecap="round"/><path d="M120 0 C120 50 60 50 60 80 C60 110 120 125 150 140" fill="none" stroke="#2F5A2A" stroke-width="34" stroke-linecap="round"/><circle cx="60" cy="80" r="26" fill="#58CC02"/><path d="M48 80 l9 9 l16 -18" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="180" cy="170" r="34" fill="none" stroke="#1CB0F6" stroke-width="4" opacity=".5"/><circle cx="180" cy="170" r="28" fill="#1CB0F6"/><circle cx="100" cy="270" r="24" fill="#37464F"/><g transform="translate(128 104) scale(.75)">${AMPOLLETA}</g></svg>`],
+ ['Lo que fallas, vuelve','La pregunta vuelve más adelante, hasta que la domines.',`<svg width="260" height="250" viewBox="0 0 260 250"><rect x="20" y="10" width="220" height="62" rx="16" fill="#3a1d1f" stroke="#FF4B4B" stroke-width="3"/><circle cx="52" cy="41" r="16" fill="#FF4B4B"/><path d="M45 34 l14 14 M59 34 l-14 14" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><rect x="80" y="30" width="130" height="9" rx="4" fill="#7a4a4d"/><rect x="80" y="46" width="90" height="9" rx="4" fill="#7a4a4d"/><path d="M130 80 v22 M130 170 v22" stroke="#37464F" stroke-width="4" stroke-dasharray="5 5"/><g font-weight="900" font-size="15" text-anchor="middle" font-family="Nunito,sans-serif"><rect x="14" y="108" width="68" height="54" rx="12" fill="#1b2a31" stroke="#FF9600" stroke-width="3"/><text x="48" y="132" fill="#FF9600">1</text><text x="48" y="151" fill="#a9bcc6" font-size="12">día</text><rect x="96" y="108" width="68" height="54" rx="12" fill="#1b2a31" stroke="#FF9600" stroke-width="3"/><text x="130" y="132" fill="#FF9600">3</text><text x="130" y="151" fill="#a9bcc6" font-size="12">días</text><rect x="178" y="108" width="68" height="54" rx="12" fill="#1b2a31" stroke="#FF9600" stroke-width="3"/><text x="212" y="132" fill="#FF9600">7</text><text x="212" y="151" fill="#a9bcc6" font-size="12">días</text><text x="140" y="228" fill="#9be15d" font-size="16">Dominada</text></g><path d="M82 135 h14 M164 135 h14" stroke="#FF9600" stroke-width="3"/><rect x="20" y="198" width="220" height="48" rx="16" fill="none" stroke="#58CC02" stroke-width="3"/><circle cx="52" cy="222" r="14" fill="#58CC02"/><path d="M45 222 l5 5 l10 -11" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`],
+ ['Ponte a prueba','Cuando quieras, haz un simulacro con todo lo que estudiaste.',`<svg width="250" height="260" viewBox="0 0 250 260"><path d="M90 40 h70 v40 a35 35 0 0 1 -70 0 z" fill="#FFC800"/><path d="M90 50 h-22 a18 18 0 0 0 22 30 M160 50 h22 a18 18 0 0 1 -22 30" fill="none" stroke="#FFC800" stroke-width="7"/><rect x="117" y="112" width="16" height="22" fill="#E5A800"/><rect x="95" y="134" width="60" height="14" rx="5" fill="#E5A800"/><g font-weight="900" text-anchor="middle" font-family="Nunito,sans-serif"><rect x="8" y="175" width="72" height="70" rx="14" fill="#1b2a31"/><text x="44" y="210" font-size="24" fill="#fff">35</text><text x="44" y="232" font-size="11" fill="#a9bcc6">preguntas</text><rect x="89" y="175" width="72" height="70" rx="14" fill="#1b2a31"/><text x="125" y="210" font-size="24" fill="#fff">45</text><text x="125" y="232" font-size="11" fill="#a9bcc6">minutos</text><rect x="170" y="175" width="72" height="70" rx="14" fill="#1b2a31"/><text x="206" y="210" font-size="22" fill="#fff">30/35</text><text x="206" y="232" font-size="11" fill="#a9bcc6">para aprobar</text></g></svg>`]];
+const IK='razona-intro';
+function introVisto(){try{return localStorage.getItem(IK)==='1'}catch(e){return true}}
+function cerrarIntro(){try{localStorage.setItem(IK,'1')}catch(e){}$('intro').classList.remove('on')}
+function intro(i=0){const [t,x,art]=INTRO[i],last=i===INTRO.length-1,I=$('intro');
+ I.innerHTML=`<button class="skip" id="iskip">SALTAR</button><div class="art">${art}</div><h2>${t}</h2><p>${x}</p><div class="dots">${INTRO.map((_,k)=>`<i class="${k===i?'on':''}"></i>`).join('')}</div><div class="foot"><button class="btn g" id="inext">${last?'Empezar':'Siguiente'}</button></div>`;
+ I.classList.add('on');$('iskip').onclick=cerrarIntro;$('inext').onclick=()=>last?cerrarIntro():intro(i+1)}
+// al tocar la racha, un globo explica qué es
+$('racha').onclick=e=>{e.stopPropagation();const T=$('tipRacha'),n=+($('racha').textContent.replace(/\D/g,'')||0);
+ T.innerHTML=n?`🔥 <b>${n==1?'1 día seguido':n+' días seguidos'}</b> estudiando. Vuelve mañana para no perderla.`:'🔥 Aquí se cuentan los <b>días seguidos</b> que estudias. Estudia hoy para empezar tu racha.';
+ T.classList.toggle('on');clearTimeout(T._t);T._t=setTimeout(()=>T.classList.remove('on'),5000)};
+document.addEventListener('click',()=>$('tipRacha').classList.remove('on'));
+// en el mapa la pantalla puede apagarse (la sesión con tutor la mantiene encendida mientras dura)
+try{window.RazonaAndroid&&RazonaAndroid.encendida(false)}catch(e){}
+migrar();racha();verMapa();if(!introVisto())intro();
+(()=>{const m=location.hash.match(/practica=(\w+)/);if(!m)return;history.replaceState(null,'',location.pathname);const p=STOPS.find(s=>s.sid===m[1]);if(p){migrar();if(estudiada(p.sid))estudiado();practiceSession(p)}})();
+</script></body></html>

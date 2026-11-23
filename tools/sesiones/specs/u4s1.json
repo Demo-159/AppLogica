@@ -1,0 +1,268 @@
+{
+ "id": "u4s1",
+ "titulo": "Todos y existe",
+ "icono": "∀",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a trabajar con dos palabras poderosas: «todos» y «existe». Y vas a aprender a negarlas.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "∀",
+    "texto": "Todos y existe"
+   },
+   "fondo": "cosmos"
+  },
+  {
+   "voz": "En matemática, «para todo» se escribe con una A dada vuelta. Y «existe», con una E al revés.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "∀",
+      "texto": "para todo",
+      "w": "para todo",
+      "marca": "oro"
+     },
+     {
+      "icono": "∃",
+      "texto": "existe",
+      "w": "existe»,",
+      "marca": "oro"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "¿Cómo se niega «todos los cisnes son blancos»? No hace falta que ninguno sea blanco. Basta con que exista un cisne que no sea blanco.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "🦢"
+     },
+     {
+      "t": "🦢"
+     },
+     {
+      "t": "🦢"
+     },
+     {
+      "t": "🦢"
+     },
+     {
+      "t": "🖤",
+      "w": "exista un cisne",
+      "c": "#FF4B4B"
+     }
+    ],
+    "sub": "Basta uno que no sea blanco",
+    "sw": "basta con que"
+   },
+   "q": [
+    "mat-01"
+   ]
+  },
+  {
+   "voz": "Negar un «todos» da un «existe», con la parte negada. Y negar un «existe» da un «ninguno»: la negación de «existe un primo par» es «ningún primo es par».",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "¬ todos",
+      "w": "negar un «todos»"
+     },
+     "→",
+     {
+      "t": "existe uno que no",
+      "c": "#FFC800",
+      "w": "da un «existe»"
+     },
+     {
+      "t": "¬ existe",
+      "w": "negar un «existe»"
+     },
+     "→",
+     {
+      "t": "ninguno",
+      "c": "#FFC800",
+      "w": "da un «ninguno»"
+     }
+    ]
+   },
+   "q": [
+    "mat-01",
+    "mat-02"
+   ]
+  },
+  {
+   "voz": "¿Cuál es la negación de: todos los alumnos aprobaron?",
+   "elige": {
+    "pregunta": "¿Cuál es la negación de «Todos los alumnos aprobaron»?",
+    "opciones": [
+     "Al menos un alumno no aprobó",
+     "Ningún alumno aprobó",
+     "Todos reprobaron"
+    ],
+    "bien": "Así es: basta uno que no aprobó.",
+    "mal": "Es: al menos un alumno no aprobó. Para negar un «todos», basta un caso."
+   }
+  },
+  {
+   "voz": "Esto da una herramienta: el contraejemplo. Para mostrar que una frase con «todos» es falsa, basta un solo caso que no la cumpla.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🎯",
+    "titulo": "Contraejemplo",
+    "texto": "Un solo caso derriba un «todos»"
+   },
+   "q": [
+    "mat-06"
+   ]
+  },
+  {
+   "voz": "«Todo número primo es impar». ¿Es verdad? El dos es primo, porque solo se divide por uno y por sí mismo. Y es par. Un solo contraejemplo basta para derribarla.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "2",
+      "w": "el dos es primo",
+      "c": "#FF4B4B"
+     },
+     {
+      "t": "3"
+     },
+     {
+      "t": "5"
+     },
+     {
+      "t": "7"
+     },
+     {
+      "t": "11"
+     }
+    ],
+    "titulo": "Números primos",
+    "sub": "¡El 2 es primo y par!",
+    "sw": "y es par"
+   },
+   "q": [
+    "mat-06"
+   ]
+  },
+  {
+   "voz": "¿Cuál es un contraejemplo de: todos los números pares son mayores que tres?",
+   "elige": {
+    "pregunta": "¿Cuál es un contraejemplo de «Todos los números pares son mayores que 3»?",
+    "opciones": [
+     "2",
+     "8",
+     "5"
+    ],
+    "bien": "Así es: dos es par y no es mayor que tres.",
+    "mal": "El contraejemplo es dos: es par, y no es mayor que tres."
+   }
+  },
+  {
+   "voz": "Un caso raro: «todos los unicornios de esta sala son azules». En la sala no hay unicornios. En lógica, la frase es verdadera: no hay ningún unicornio que la contradiga. Se dice que es verdadera de forma vacía.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🦄",
+      "texto": "Ningún unicornio en la sala",
+      "w": "no hay unicornios"
+     },
+     {
+      "icono": "🔍",
+      "texto": "Nadie la contradice",
+      "w": "ningún unicornio que la contradiga"
+     },
+     {
+      "icono": "✅",
+      "texto": "Verdadera de forma vacía",
+      "w": "forma vacía",
+      "marca": "bien"
+     }
+    ]
+   },
+   "q": [
+    "mat-10"
+   ]
+  },
+  {
+   "voz": "El orden de estas palabras importa. «Para todo número, existe uno mayor» es cierto: a cada número le puedes sumar uno.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "∀x ∃y (y > x)",
+      "c": "#58CC02",
+      "w": "para todo número"
+     }
+    ],
+    "sub": "A cada número, uno mayor: 5 → 6, 100 → 101",
+    "sw": "sumar uno"
+   },
+   "q": [
+    "mat-09"
+   ]
+  },
+  {
+   "voz": "En cambio, «existe un número mayor que todos» dice algo muy distinto: que hay un número gigante, más grande que cualquier otro. En los naturales, eso es falso. Cuando el «existe» va primero, ese número es uno solo para todos.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "∃y ∀x (y > x)",
+      "c": "#FF4B4B",
+      "w": "existe un número mayor que todos"
+     }
+    ],
+    "sub": "Un solo número, mayor que todos: no existe",
+    "sw": "uno solo para todos"
+   },
+   "q": [
+    "mat-09"
+   ]
+  },
+  {
+   "voz": "¿Qué dice: existe y, para todo x, y mayor que x?",
+   "elige": {
+    "pregunta": "¿Qué dice «∃y ∀x (y > x)»?",
+    "opciones": [
+     "Que hay un número mayor que todos",
+     "Que para cada número hay uno mayor",
+     "Que todos los números son iguales"
+    ],
+    "bien": "Así es: el «existe» va primero, así que es un solo número.",
+    "mal": "Dice que hay un número mayor que todos: como el «existe» va primero, es uno solo para todos."
+   }
+  },
+  {
+   "voz": "En resumen: para negar un «todos» basta un caso, que es el contraejemplo. Negar un «existe» da un «ninguno». Y el orden de los símbolos cambia el significado.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "∀",
+      "texto": "¬ todos = existe uno que no",
+      "w": "basta un caso"
+     },
+     {
+      "icono": "∃",
+      "texto": "¬ existe = ninguno",
+      "w": "ninguno"
+     },
+     {
+      "icono": "🔀",
+      "texto": "El orden importa",
+      "w": "el orden",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,167 @@
+{
+ "id": "u10s2",
+ "titulo": "Atajos mentales",
+ "icono": "🧲",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a conocer tres atajos mentales que distorsionan nuestros juicios: el anclaje, el encuadre y la disponibilidad.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🧲",
+    "texto": "Atajos mentales"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "El anclaje: un número que vemos primero arrastra nuestras estimaciones, aunque no tenga nada que ver.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "⚓",
+    "titulo": "Anclaje",
+    "texto": "El primer número que ves arrastra tu estimación"
+   },
+   "q": [
+    "ses-04"
+   ]
+  },
+  {
+   "voz": "A un grupo le preguntan si Gandhi murió antes o después de los ciento cuarenta años. A otro, si fue antes o después de los nueve. Luego todos estiman su edad al morir. El primer grupo estima edades más altas.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Ancla: 140",
+      "valor": 67,
+      "color": "#FFC800",
+      "texto": "más alta",
+      "w": "ciento cuarenta"
+     },
+     {
+      "label": "Ancla: 9",
+      "valor": 50,
+      "color": "#1CB0F6",
+      "texto": "más baja",
+      "w": "de los nueve"
+     }
+    ],
+    "max": 80,
+    "sub": "Edad estimada de Gandhi al morir"
+   },
+   "q": [
+    "ses-04"
+   ]
+  },
+  {
+   "voz": "Una tienda muestra: antes noventa mil, ahora cincuenta mil. ¿Qué hace el precio de antes?",
+   "elige": {
+    "pregunta": "Una tienda muestra «Antes $90.000, ahora $50.000». El precio de «antes» funciona como…",
+    "opciones": [
+     "Un ancla",
+     "Un encuadre de supervivencia",
+     "Una heurística de disponibilidad"
+    ],
+    "bien": "Así es: hace que cincuenta mil parezca poco.",
+    "mal": "Funciona como un ancla: hace que cincuenta mil parezca barato."
+   }
+  },
+  {
+   "voz": "El efecto de encuadre: la misma información, dicha de otra forma, cambia la decisión. «Noventa por ciento de supervivencia» suena mejor que «diez por ciento de mortalidad», y es lo mismo.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "😊",
+      "titulo": "90% sobrevive",
+      "texto": "Se acepta más",
+      "marca": "bien",
+      "w": "noventa por ciento"
+     },
+     {
+      "icono": "😟",
+      "titulo": "10% muere",
+      "texto": "Se acepta menos",
+      "marca": "mal",
+      "w": "diez por ciento"
+     }
+    ]
+   },
+   "q": [
+    "ses-06"
+   ]
+  },
+  {
+   "voz": "Este yogur es noventa y cinco por ciento libre de grasa, o tiene cinco por ciento de grasa. Que el primero se venda más es…",
+   "elige": {
+    "pregunta": "«95% libre de grasa» se vende más que «5% de grasa», aunque es lo mismo. ¿Qué sesgo es?",
+    "opciones": [
+     "Efecto de encuadre",
+     "Anclaje",
+     "Sesgo de confirmación"
+    ],
+    "bien": "Así es: la misma información, dicha distinto.",
+    "mal": "Es el efecto de encuadre: la misma información, dicha de otra forma."
+   }
+  },
+  {
+   "voz": "La heurística de disponibilidad: juzgamos qué tan probable es algo por lo fácil que es recordarlo. Los accidentes aéreos salen en las noticias, así que parecen frecuentes. Pero viajar en auto es mucho más riesgoso por kilómetro.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "✈️",
+      "titulo": "Avión",
+      "texto": "Sale en las noticias",
+      "w": "accidentes aéreos"
+     },
+     {
+      "icono": "🚗",
+      "titulo": "Auto",
+      "texto": "Mucho más riesgoso por km",
+      "marca": "mal",
+      "w": "viajar en auto"
+     }
+    ]
+   },
+   "q": [
+    "ses-08"
+   ]
+  },
+  {
+   "voz": "Después de ver noticias de tiburones, alguien cree que es más peligroso nadar en el mar que manejar. ¿Qué sesgo es?",
+   "elige": {
+    "pregunta": "Tras ver noticias de tiburones, alguien cree que nadar en el mar es más peligroso que manejar. ¿Qué sesgo es?",
+    "opciones": [
+     "Heurística de disponibilidad",
+     "Anclaje",
+     "Efecto de encuadre"
+    ],
+    "bien": "Así es: lo recuerda fácil porque salió en las noticias.",
+    "mal": "Es la heurística de disponibilidad: lo que sale en las noticias parece más frecuente."
+   }
+  },
+  {
+   "voz": "En resumen: el anclaje arrastra las estimaciones. El encuadre cambia decisiones con las mismas cifras. Y la disponibilidad confunde lo fácil de recordar con lo frecuente.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "⚓",
+      "texto": "Anclaje",
+      "w": "anclaje"
+     },
+     {
+      "icono": "🖼️",
+      "texto": "Encuadre",
+      "w": "encuadre"
+     },
+     {
+      "icono": "📺",
+      "texto": "Disponibilidad",
+      "w": "disponibilidad"
+     }
+    ]
+   }
+  }
+ ]
+}

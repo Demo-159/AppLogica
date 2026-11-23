@@ -1,0 +1,190 @@
+{
+ "id": "u8s2",
+ "titulo": "Muestras que engañan",
+ "icono": "✈️",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver cómo la forma de elegir los datos puede engañar.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "✈️",
+    "texto": "Muestras que engañan"
+   },
+   "fondo": "oficina"
+  },
+  {
+   "voz": "En la Segunda Guerra Mundial se estudiaron los aviones que volvían con agujeros de bala. Los agujeros estaban sobre todo en las alas y el fuselaje.",
+   "escena": {
+    "tipo": "anim",
+    "id": "u8-avion"
+   },
+   "q": [
+    "est-03"
+   ]
+  },
+  {
+   "voz": "La clave es que solo se veían los aviones que volvían. Los que recibían balas en los motores no volvían. Por eso había que reforzar las zonas sin agujeros.",
+   "escena": {
+    "tipo": "anim",
+    "id": "u8-avion2"
+   },
+   "q": [
+    "est-03"
+   ]
+  },
+  {
+   "voz": "Este error se llama sesgo de supervivencia: sacar conclusiones solo con los casos que pasaron un filtro.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🛬",
+    "titulo": "Sesgo de supervivencia",
+    "texto": "Solo vemos a los que pasaron el filtro"
+   },
+   "q": [
+    "est-03"
+   ]
+  },
+  {
+   "voz": "Muchos famosos dejaron la universidad y se hicieron millonarios. ¿Qué falta mirar?",
+   "elige": {
+    "pregunta": "Muchos famosos dejaron la universidad y se hicieron millonarios. ¿Qué falta mirar?",
+    "opciones": [
+     "Los que la dejaron y no se hicieron millonarios",
+     "Cuántos años tienen los famosos",
+     "En qué universidad estudiaron"
+    ],
+    "bien": "Así es: los que no triunfaron no salen en las noticias.",
+    "mal": "Faltan los que la dejaron y no se hicieron millonarios: es sesgo de supervivencia."
+   }
+  },
+  {
+   "voz": "Una revista de viajes encuesta a sus lectores, y concluye que el ochenta por ciento de los chilenos viaja al extranjero cada año. Pero sus lectores son gente que viaja: no representan a todos. Es un sesgo de selección.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "Lectores",
+     "w": "sus lectores",
+     "c": "#FFC800"
+    },
+    "b": {
+     "t": "Todos los chilenos",
+     "w": "no representan a todos",
+     "c": "#1CB0F6"
+    },
+    "sub": "Sesgo de selección",
+    "sw": "sesgo de selección"
+   },
+   "q": [
+    "est-04"
+   ]
+  },
+  {
+   "voz": "Una encuesta solo pregunta a quienes entran a un gimnasio, y concluye que la mayoría hace ejercicio. ¿Cuál es el problema?",
+   "elige": {
+    "pregunta": "Una encuesta solo pregunta a quienes entran a un gimnasio, y concluye que la mayoría de la gente hace ejercicio. ¿Problema?",
+    "opciones": [
+     "Sesgo de selección",
+     "La muestra es demasiado grande",
+     "Ninguno"
+    ],
+    "bien": "Así es: los del gimnasio no representan a todos.",
+    "mal": "Es sesgo de selección: quienes entran a un gimnasio no representan a toda la gente."
+   }
+  },
+  {
+   "voz": "El tamaño también importa. Un estudio con doce personas puede dar un resultado por pura suerte. Con doce mil, el azar pesa mucho menos y la estimación es más precisa.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🧍",
+      "titulo": "12 personas",
+      "texto": "Muy incierto",
+      "marca": "mal",
+      "w": "doce personas"
+     },
+     {
+      "icono": "👥",
+      "titulo": "12.000 personas",
+      "texto": "Mucho más confiable",
+      "marca": "bien",
+      "w": "doce mil"
+     }
+    ]
+   },
+   "q": [
+    "est-14"
+   ]
+  },
+  {
+   "voz": "Y un caso no es una muestra. «Mi abuelo fumó toda su vida y vivió hasta los noventa y cinco». Eso dice muy poco: el daño del tabaco se midió en millones de personas, y un caso aislado no lo refuta.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "👴",
+      "titulo": "1 caso",
+      "texto": "Dice muy poco",
+      "marca": "mal",
+      "w": "mi abuelo"
+     },
+     {
+      "icono": "📊",
+      "titulo": "Millones de personas",
+      "texto": "El efecto se mide aquí",
+      "marca": "bien",
+      "w": "millones de personas"
+     }
+    ]
+   },
+   "q": [
+    "est-11"
+   ]
+  },
+  {
+   "voz": "Mi tía nunca usó cinturón de seguridad y nunca le pasó nada. ¿Qué dice eso sobre el cinturón?",
+   "elige": {
+    "pregunta": "«Mi tía nunca usó cinturón de seguridad y nunca le pasó nada». ¿Qué dice eso sobre el cinturón?",
+    "opciones": [
+     "Muy poco: es un solo caso",
+     "Que el cinturón no sirve",
+     "Que los estudios se equivocan"
+    ],
+    "bien": "Así es: un caso no refuta lo medido en millones.",
+    "mal": "Dice muy poco: es un solo caso, y el efecto del cinturón se midió en muchísimas personas."
+   }
+  },
+  {
+   "voz": "En resumen: pregúntate quiénes quedaron fuera de los datos, si la muestra representa a todos, si es grande, y desconfía de los casos aislados.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🛬",
+      "texto": "¿Quién quedó fuera?",
+      "w": "quedaron fuera"
+     },
+     {
+      "icono": "🎯",
+      "texto": "¿Representa a todos?",
+      "w": "representa"
+     },
+     {
+      "icono": "🔢",
+      "texto": "¿Es grande?",
+      "w": "es grande"
+     },
+     {
+      "icono": "👴",
+      "texto": "Un caso no basta",
+      "w": "casos aislados",
+      "marca": "mal"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

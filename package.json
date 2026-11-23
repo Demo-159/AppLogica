@@ -1,14 +1,14 @@
 {
   "name": "razona",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "App para entrenar lógica, razonamiento matemático y pensamiento crítico.",
   "scripts": {
-    "test": "node tests/validar.mjs",
-    "start": "python3 -m http.server 8080",
-    "build:web": "node scripts/copiar-web.mjs",
+    "test": "python3 tools/app/build.py --validar",
+    "sesiones": "python3 tools/sesiones/build.py --todas",
+    "build:web": "python3 tools/app/build.py",
     "android:sync": "npm run build:web && npx cap sync android",
-    "android:apk": "npm run android:sync && cd android && ./gradlew assembleDebug"
+    "android:apk": "npm run android:sync && cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
     "@capacitor/android": "^8.6.2",

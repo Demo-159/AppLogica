@@ -1,0 +1,239 @@
+{
+ "id": "u2s2",
+ "titulo": "Dos trampas",
+ "icono": "🪤",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a reconocer dos trampas: razonamientos que parecen correctos, pero no lo son.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🪤",
+    "texto": "Dos trampas"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Regla: si hay fuego, hay humo. Ves humo. ¿Hay fuego? Parece que sí, pero no es seguro: el humo puede venir de una máquina de humo, o de vapor.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🔥",
+      "titulo": "Fuego → humo",
+      "texto": "Regla verdadera",
+      "marca": "bien",
+      "w": "si hay fuego"
+     },
+     {
+      "icono": "💨",
+      "titulo": "Ves humo",
+      "texto": "¿Hay fuego? No es seguro",
+      "marca": "mal",
+      "w": "ves humo"
+     }
+    ]
+   },
+   "q": [
+    "cond-03"
+   ]
+  },
+  {
+   "voz": "Este error se llama afirmar el consecuente. El consecuente es la segunda parte de la regla. Que se cumpla no prueba que se cumplió la primera.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p → q",
+      "w": "la segunda parte"
+     },
+     {
+      "t": "q",
+      "c": "#FFC800",
+      "w": "que se cumpla"
+     },
+     "∴",
+     {
+      "t": "p ✗",
+      "c": "#FF4B4B",
+      "w": "no prueba"
+     }
+    ],
+    "titulo": "Afirmar el consecuente",
+    "tw": "afirmar el consecuente"
+   },
+   "q": [
+    "cond-03"
+   ]
+  },
+  {
+   "voz": "Pasa lo mismo con: si llueve, llevo paraguas. Hoy llevo paraguas. ¿Llueve? No se puede saber: quizás lo llevo por el sol.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🌧️",
+      "texto": "Si llueve → paraguas",
+      "w": "si llueve"
+     },
+     {
+      "icono": "☂️",
+      "texto": "Llevo paraguas",
+      "w": "hoy llevo"
+     },
+     {
+      "icono": "☀️",
+      "texto": "¿Y si es por el sol?",
+      "w": "por el sol",
+      "marca": "oro"
+     }
+    ]
+   },
+   "q": [
+    "cond-08"
+   ]
+  },
+  {
+   "voz": "Y con: todos los que aprobaron estudiaron. Pedro estudió. ¿Aprobó? Tampoco se puede saber: muchos estudian y aun así reprueban.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "Aprobaron",
+     "w": "todos los que aprobaron",
+     "c": "#58CC02"
+    },
+    "b": {
+     "t": "Estudiaron",
+     "w": "estudiaron.",
+     "c": "#1CB0F6"
+    },
+    "puntos": [
+     {
+      "x": 180,
+      "y": 175,
+      "t": "¿Pedro?",
+      "w": "pedro estudió",
+      "s": 15,
+      "c": "#FFC800"
+     }
+    ]
+   },
+   "q": [
+    "cond-10"
+   ]
+  },
+  {
+   "voz": "Si una fruta es una frutilla, es roja. Esta fruta es roja. ¿Es una frutilla?",
+   "elige": {
+    "pregunta": "«Si una fruta es una frutilla, es roja». Esta fruta es roja. ¿Es una frutilla?",
+    "opciones": [
+     "No se puede saber",
+     "Sí",
+     "No"
+    ],
+    "bien": "Así es: también hay manzanas y cerezas rojas.",
+    "mal": "No se puede saber: hay muchas frutas rojas. Sería afirmar el consecuente."
+   }
+  },
+  {
+   "voz": "La segunda trampa va al revés. Regla: si estudias medicina, sabes biología. No estudias medicina. ¿Entonces no sabes biología? No se sigue: un biólogo sabe biología sin estudiar medicina.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🩺",
+      "titulo": "Medicina → biología",
+      "texto": "Regla verdadera",
+      "marca": "bien",
+      "w": "si estudias medicina"
+     },
+     {
+      "icono": "🧬",
+      "titulo": "No estudia medicina",
+      "texto": "¿No sabe biología? No se sigue",
+      "marca": "mal",
+      "w": "no estudias medicina"
+     }
+    ]
+   },
+   "q": [
+    "cond-04"
+   ]
+  },
+  {
+   "voz": "Este error se llama negar el antecedente. El antecedente es la primera parte. Que no se cumpla no dice nada de la segunda.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p → q",
+      "w": "la primera parte"
+     },
+     {
+      "t": "¬p",
+      "c": "#FF4B4B",
+      "w": "que no se cumpla"
+     },
+     "∴",
+     {
+      "t": "¬q ✗",
+      "c": "#FF4B4B",
+      "w": "no dice nada"
+     }
+    ],
+    "titulo": "Negar el antecedente",
+    "tw": "negar el antecedente"
+   },
+   "q": [
+    "cond-04"
+   ]
+  },
+  {
+   "voz": "Si es un auto, tiene ruedas. Esto no es un auto. Por lo tanto, no tiene ruedas. ¿Qué error hay?",
+   "elige": {
+    "pregunta": "«Si es un auto, tiene ruedas. Esto no es un auto. Por lo tanto, no tiene ruedas». ¿Qué error hay?",
+    "opciones": [
+     "Negar el antecedente",
+     "Afirmar el consecuente",
+     "Ninguno: es válido"
+    ],
+    "bien": "Así es: una bicicleta no es un auto y tiene ruedas.",
+    "mal": "Es negar el antecedente: que no sea un auto no dice nada de las ruedas."
+   }
+  },
+  {
+   "voz": "En resumen: hay dos formas válidas, modus ponens y modus tollens, y dos trampas: afirmar el consecuente y negar el antecedente.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "✅",
+      "texto": "Modus ponens",
+      "w": "modus ponens",
+      "marca": "bien"
+     },
+     {
+      "icono": "✅",
+      "texto": "Modus tollens",
+      "w": "modus tollens",
+      "marca": "bien"
+     },
+     {
+      "icono": "❌",
+      "texto": "Afirmar el consecuente",
+      "w": "afirmar el consecuente",
+      "marca": "mal"
+     },
+     {
+      "icono": "❌",
+      "texto": "Negar el antecedente",
+      "w": "negar el antecedente",
+      "marca": "mal"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

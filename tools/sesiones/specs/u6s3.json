@@ -1,0 +1,278 @@
+{
+ "id": "u6s3",
+ "titulo": "Letras, códigos y analogías",
+ "icono": "🔤",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a encontrar patrones en letras, códigos y analogías.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔤",
+    "texto": "Letras, códigos y analogías"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "Las letras también forman series. Usa su posición en el alfabeto: A es uno, B es dos, C es tres.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "A=1",
+      "w": "a es uno"
+     },
+     {
+      "t": "B=2",
+      "w": "b es dos"
+     },
+     {
+      "t": "C=3",
+      "w": "c es tres"
+     },
+     {
+      "t": "D=4"
+     },
+     {
+      "t": "E=5"
+     },
+     {
+      "t": "…"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "Por ejemplo: a, ce, efe, jota. Los saltos son de dos, tres y cuatro letras. Ahora toca saltar cinco desde la jota: ka, ele, eme, ene, o. Sigue la o.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "A"
+     },
+     {
+      "t": "C"
+     },
+     {
+      "t": "F"
+     },
+     {
+      "t": "J"
+     },
+     {
+      "t": "O",
+      "w": "sigue la o",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "+2",
+      "w": "dos, tres"
+     },
+     {
+      "t": "+3",
+      "w": "tres y cuatro"
+     },
+     {
+      "t": "+4",
+      "w": "cuatro letras"
+     },
+     {
+      "t": "+5",
+      "w": "saltar cinco"
+     }
+    ]
+   },
+   "q": [
+    "pat-06"
+   ]
+  },
+  {
+   "voz": "¿Qué letra sigue? Be, de, efe, hache…",
+   "elige": {
+    "pregunta": "¿Qué letra sigue? B, D, F, H, …",
+    "opciones": [
+     "J",
+     "I",
+     "K"
+    ],
+    "bien": "Así es: salta de a dos letras.",
+    "mal": "Sigue la jota: salta de a dos letras."
+   }
+  },
+  {
+   "voz": "Un código simple mueve cada letra. Roma se escribe ese, pe, ene, be: cada letra avanza una posición. La erre pasa a ese, la o pasa a pe, y así con todas.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "R",
+     "O",
+     "M",
+     "A"
+    ],
+    "filas": [
+     {
+      "c": [
+       "S",
+       "P",
+       "N",
+       "B"
+      ],
+      "w": "cada letra avanza",
+      "marca": "bien"
+     }
+    ],
+    "titulo": "ROMA → SPNB (+1)",
+    "tw": "roma se escribe"
+   },
+   "q": [
+    "pat-09"
+   ]
+  },
+  {
+   "voz": "Con la misma regla, luna se escribe eme, uve, o, be. Hay que aplicar la regla a cada letra, sin saltarse ninguna.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "L",
+     "U",
+     "N",
+     "A"
+    ],
+    "filas": [
+     {
+      "c": [
+       "M",
+       "V",
+       "O",
+       "B"
+      ],
+      "w": "luna se escribe",
+      "marca": "bien"
+     }
+    ],
+    "titulo": "LUNA → MVOB (+1)",
+    "tw": "misma regla",
+    "sub": "Ninguna letra se salta",
+    "sw": "sin saltarse"
+   },
+   "q": [
+    "pat-09"
+   ]
+  },
+  {
+   "voz": "Si gato se codifica como hache, be, u, pe, ¿cómo se codifica sol?",
+   "elige": {
+    "pregunta": "Si GATO se codifica como HBUP, ¿cómo se codifica SOL?",
+    "opciones": [
+     "TPM",
+     "RNK",
+     "TPL"
+    ],
+    "bien": "Así es: cada letra avanza una posición.",
+    "mal": "Es te, pe, eme: cada letra avanza una posición, también la ele, que pasa a eme."
+   }
+  },
+  {
+   "voz": "Las analogías buscan la misma relación. Libro es a leer, como cuchillo es a… Un libro sirve para leer. Un cuchillo sirve para cortar.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "📖 Libro",
+      "w": "libro es a leer"
+     },
+     "→",
+     {
+      "t": "leer",
+      "c": "#1CB0F6",
+      "w": "sirve para leer"
+     },
+     "::",
+     {
+      "t": "🔪 Cuchillo",
+      "w": "como cuchillo"
+     },
+     "→",
+     {
+      "t": "cortar",
+      "c": "#58CC02",
+      "w": "sirve para cortar"
+     }
+    ],
+    "sub": "Relación: «sirve para»",
+    "sw": "la misma relación"
+   },
+   "q": [
+    "pat-05"
+   ]
+  },
+  {
+   "voz": "Fíjate en la relación, no en que las palabras se parezcan. Tenedor y cocina tienen que ver con el cuchillo, pero no son para qué sirve.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🍴",
+      "texto": "Tenedor: se parece",
+      "w": "tenedor",
+      "marca": "mal"
+     },
+     {
+      "icono": "🍳",
+      "texto": "Cocina: lugar",
+      "w": "cocina",
+      "marca": "mal"
+     },
+     {
+      "icono": "✂️",
+      "texto": "Cortar: para qué sirve",
+      "w": "para qué sirve",
+      "marca": "bien"
+     }
+    ]
+   },
+   "q": [
+    "pat-05"
+   ]
+  },
+  {
+   "voz": "Pincel es a pintar, como tijera es a…",
+   "elige": {
+    "pregunta": "Pincel es a pintar como tijera es a…",
+    "opciones": [
+     "Cortar",
+     "Papel",
+     "Metal"
+    ],
+    "bien": "Así es: la relación es «sirve para».",
+    "mal": "Es cortar: la relación es para qué sirve cada cosa."
+   }
+  },
+  {
+   "voz": "En resumen: para letras, usa su posición en el alfabeto. En códigos, aplica la regla a cada letra. Y en analogías, busca la misma relación.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔤",
+      "texto": "Letras → números",
+      "w": "posición"
+     },
+     {
+      "icono": "🔐",
+      "texto": "Regla a cada letra",
+      "w": "cada letra"
+     },
+     {
+      "icono": "🔗",
+      "texto": "Misma relación",
+      "w": "misma relación",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

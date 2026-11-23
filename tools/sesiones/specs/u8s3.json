@@ -1,0 +1,239 @@
+{
+ "id": "u8s3",
+ "titulo": "Experimentos y evidencia",
+ "icono": "🔬",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver cómo se averigua si un tratamiento funciona de verdad.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔬",
+    "texto": "Experimentos y evidencia"
+   },
+   "fondo": "lab"
+  },
+  {
+   "voz": "Para saber si un tratamiento funciona, se comparan dos grupos: uno lo recibe, y el otro no. Ese segundo grupo se llama grupo de control.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "💊",
+      "titulo": "Tratamiento",
+      "texto": "Recibe el remedio",
+      "w": "uno lo recibe"
+     },
+     {
+      "icono": "⚪",
+      "titulo": "Grupo de control",
+      "texto": "No lo recibe",
+      "w": "grupo de control"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "Los participantes se reparten al azar. Así, los dos grupos quedan parecidos en todo, en edad, salud y hábitos, salvo en el tratamiento.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🎲",
+      "t": "Reparto al azar",
+      "w": "al azar",
+      "c": "#FFC800"
+     },
+     {
+      "icono": "⚖️",
+      "t": "Grupos parecidos en todo",
+      "w": "parecidos en todo"
+     },
+     {
+      "icono": "💊",
+      "t": "Solo cambia el tratamiento",
+      "w": "salvo en el tratamiento",
+      "c": "#58CC02"
+     }
+    ]
+   },
+   "q": [
+    "est-05"
+   ]
+  },
+  {
+   "voz": "¿Para qué se asigna al azar quién recibe el tratamiento?",
+   "elige": {
+    "pregunta": "¿Para qué se asigna AL AZAR quién recibe el tratamiento?",
+    "opciones": [
+     "Para que los grupos sean comparables",
+     "Para ahorrar dinero",
+     "Para que el estudio sea más rápido"
+    ],
+    "bien": "Así es: así la única diferencia es el tratamiento.",
+    "mal": "Para que los grupos sean comparables en todo, salvo en el tratamiento."
+   }
+  },
+  {
+   "voz": "Además, las expectativas influyen. Si alguien sabe que toma el remedio, puede sentirse mejor solo por creerlo. En un estudio doble ciego, ni los pacientes ni los investigadores saben quién recibe qué.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🙈",
+      "texto": "Pacientes: no saben",
+      "w": "ni los pacientes"
+     },
+     {
+      "icono": "🙈",
+      "texto": "Investigadores: no saben",
+      "w": "ni los investigadores"
+     },
+     {
+      "icono": "🎯",
+      "texto": "Sin expectativas en juego",
+      "w": "doble ciego",
+      "marca": "oro"
+     }
+    ]
+   },
+   "q": [
+    "est-06"
+   ]
+  },
+  {
+   "voz": "No toda la evidencia vale lo mismo. Abajo están los testimonios y las opiniones. Más arriba, los estudios observacionales. Después, los ensayos aleatorizados. Y en la cima, las revisiones sistemáticas, que juntan muchos ensayos.",
+   "escena": {
+    "tipo": "lista",
+    "items": [
+     {
+      "icono": "🏆",
+      "texto": "Revisiones sistemáticas de ensayos",
+      "w": "en la cima"
+     },
+     {
+      "icono": "🎲",
+      "texto": "Ensayos aleatorizados",
+      "w": "ensayos aleatorizados"
+     },
+     {
+      "icono": "👀",
+      "texto": "Estudios observacionales",
+      "w": "estudios observacionales"
+     },
+     {
+      "icono": "💬",
+      "texto": "Testimonios y opiniones",
+      "w": "testimonios"
+     }
+    ],
+    "titulo": "De más fuerte a más débil",
+    "tw": "no toda la evidencia"
+   },
+   "q": [
+    "est-12"
+   ]
+  },
+  {
+   "voz": "¿Qué tipo de evidencia es, en general, la más fuerte?",
+   "elige": {
+    "pregunta": "En general, ¿qué evidencia es más fuerte para saber si un tratamiento funciona?",
+    "opciones": [
+     "Una revisión de varios ensayos aleatorizados",
+     "El testimonio de un paciente",
+     "La opinión de un famoso"
+    ],
+    "bien": "Así es: está en la cima.",
+    "mal": "La más fuerte es una revisión de varios ensayos aleatorizados."
+   }
+  },
+  {
+   "voz": "Los estudios informan un valor pe. Un pe de cero coma cero tres significa: si no hubiera ningún efecto real, resultados así de extremos saldrían solo el tres por ciento de las veces.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p = 0,03",
+      "c": "#FFC800",
+      "w": "cero coma cero tres"
+     },
+     "→",
+     {
+      "t": "Sin efecto real, algo así saldría el 3% de las veces",
+      "w": "si no hubiera"
+     }
+    ]
+   },
+   "q": [
+    "est-08"
+   ]
+  },
+  {
+   "voz": "Ojo: no significa que la hipótesis tenga un noventa y siete por ciento de probabilidad de ser cierta. Tampoco dice si el efecto es grande.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "❌",
+      "texto": "No: 97% de ser cierta",
+      "w": "noventa y siete",
+      "marca": "mal"
+     },
+     {
+      "icono": "❌",
+      "texto": "No: efecto grande",
+      "w": "efecto es grande",
+      "marca": "mal"
+     }
+    ]
+   },
+   "q": [
+    "est-08"
+   ]
+  },
+  {
+   "voz": "Un estudio informa pe igual a cero coma cero uno. ¿Qué significa?",
+   "elige": {
+    "pregunta": "Un estudio informa p = 0,01. ¿Qué significa?",
+    "opciones": [
+     "Sin efecto real, algo así saldría el 1% de las veces",
+     "Hay 99% de probabilidad de que sea cierto",
+     "El efecto es muy grande"
+    ],
+    "bien": "Así es: habla de qué tan raro sería el resultado sin efecto.",
+    "mal": "Significa que, sin efecto real, algo así de extremo saldría solo el uno por ciento de las veces."
+   }
+  },
+  {
+   "voz": "En resumen: grupo de control, reparto al azar y doble ciego. Las revisiones sistemáticas valen más que los testimonios. Y un valor pe no es la probabilidad de que algo sea cierto.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🎲",
+      "texto": "Azar y control",
+      "w": "grupo de control"
+     },
+     {
+      "icono": "🙈",
+      "texto": "Doble ciego",
+      "w": "doble ciego"
+     },
+     {
+      "icono": "🏆",
+      "texto": "Revisiones > testimonios",
+      "w": "revisiones",
+      "marca": "oro"
+     },
+     {
+      "icono": "📉",
+      "texto": "p ≠ prob. de ser cierto",
+      "w": "valor pe",
+      "marca": "mal"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

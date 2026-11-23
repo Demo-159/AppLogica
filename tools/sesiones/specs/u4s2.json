@@ -1,0 +1,385 @@
+{
+ "id": "u4s2",
+ "titulo": "Conjuntos",
+ "icono": "🟣",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a trabajar con conjuntos: colecciones de cosas, y cómo combinarlas.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🟣",
+    "texto": "Conjuntos"
+   },
+   "fondo": "cosmos"
+  },
+  {
+   "voz": "Un conjunto es una colección de elementos, y se escribe entre llaves. A es uno, dos, tres, cuatro. B es tres, cuatro, cinco.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "cruce",
+    "a": {
+     "t": "A",
+     "w": "a es uno",
+     "c": "#1CB0F6"
+    },
+    "b": {
+     "t": "B",
+     "w": "b es tres",
+     "c": "#FFC800"
+    },
+    "puntos": [
+     {
+      "x": 95,
+      "y": 100,
+      "t": "1",
+      "w": "a es uno"
+     },
+     {
+      "x": 105,
+      "y": 140,
+      "t": "2",
+      "w": "a es uno"
+     },
+     {
+      "x": 180,
+      "y": 100,
+      "t": "3",
+      "w": "b es tres"
+     },
+     {
+      "x": 180,
+      "y": 140,
+      "t": "4",
+      "w": "b es tres"
+     },
+     {
+      "x": 262,
+      "y": 120,
+      "t": "5",
+      "w": "cinco"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "La intersección son los elementos que están en los dos a la vez. Se escribe con una U dada vuelta. Aquí es tres y cuatro.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "cruce",
+    "a": {
+     "t": "A",
+     "c": "#1CB0F6"
+    },
+    "b": {
+     "t": "B",
+     "c": "#FFC800"
+    },
+    "sombras": [
+     {
+      "r": "ab",
+      "c": "#58CC02",
+      "w": "en los dos"
+     }
+    ],
+    "puntos": [
+     {
+      "x": 95,
+      "y": 100,
+      "t": "1"
+     },
+     {
+      "x": 105,
+      "y": 140,
+      "t": "2"
+     },
+     {
+      "x": 180,
+      "y": 100,
+      "t": "3"
+     },
+     {
+      "x": 180,
+      "y": 140,
+      "t": "4"
+     },
+     {
+      "x": 262,
+      "y": 120,
+      "t": "5"
+     }
+    ],
+    "sub": "A ∩ B = {3, 4}",
+    "sw": "aquí es"
+   },
+   "q": [
+    "mat-03"
+   ]
+  },
+  {
+   "voz": "La unión junta todo lo que está en uno o en otro, sin repetir: uno, dos, tres, cuatro y cinco. Se escribe con una U.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "cruce",
+    "a": {
+     "t": "A",
+     "c": "#1CB0F6"
+    },
+    "b": {
+     "t": "B",
+     "c": "#FFC800"
+    },
+    "sombras": [
+     {
+      "r": "a",
+      "c": "#CE82FF",
+      "w": "la unión"
+     },
+     {
+      "r": "b",
+      "c": "#CE82FF",
+      "w": "la unión"
+     }
+    ],
+    "puntos": [
+     {
+      "x": 95,
+      "y": 100,
+      "t": "1"
+     },
+     {
+      "x": 105,
+      "y": 140,
+      "t": "2"
+     },
+     {
+      "x": 180,
+      "y": 100,
+      "t": "3"
+     },
+     {
+      "x": 180,
+      "y": 140,
+      "t": "4"
+     },
+     {
+      "x": 262,
+      "y": 120,
+      "t": "5"
+     }
+    ],
+    "sub": "A ∪ B = {1, 2, 3, 4, 5}",
+    "sw": "se escribe con una u"
+   }
+  },
+  {
+   "voz": "A es dos, cuatro, seis, y B es cuatro, seis, ocho. ¿Cuál es la intersección?",
+   "elige": {
+    "pregunta": "A = {2, 4, 6} y B = {4, 6, 8}. ¿Cuánto es A ∩ B?",
+    "opciones": [
+     "{4, 6}",
+     "{2, 4, 6, 8}",
+     "{2, 8}"
+    ],
+    "bien": "Así es: cuatro y seis están en los dos.",
+    "mal": "La intersección es cuatro y seis: los que están en los dos a la vez."
+   }
+  },
+  {
+   "voz": "Esto sirve para contar. En un curso de treinta alumnos, dieciocho juegan fútbol, quince juegan básquetbol, y ocho juegan ambos.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "cruce",
+    "a": {
+     "t": "⚽ Fútbol",
+     "w": "dieciocho",
+     "c": "#58CC02"
+    },
+    "b": {
+     "t": "🏀 Básquet",
+     "w": "quince",
+     "c": "#FFC800"
+    },
+    "puntos": [
+     {
+      "x": 180,
+      "y": 125,
+      "t": "8",
+      "w": "ocho juegan ambos",
+      "s": 28,
+      "c": "#fff"
+     }
+    ],
+    "sub": "30 alumnos en total",
+    "sw": "treinta alumnos"
+   },
+   "q": [
+    "mat-04"
+   ]
+  },
+  {
+   "voz": "Si sumas dieciocho y quince, los ocho que juegan ambos quedan contados dos veces. Hay que restarlos una vez: dieciocho más quince, menos ocho, da veinticinco que juegan algo.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "18",
+      "c": "#58CC02"
+     },
+     "+",
+     {
+      "t": "15",
+      "c": "#FFC800"
+     },
+     "−",
+     {
+      "t": "8",
+      "w": "restarlos una vez"
+     },
+     "=",
+     {
+      "t": "25",
+      "c": "#1CB0F6",
+      "w": "veinticinco"
+     }
+    ],
+    "sub": "Los de «ambos» se contaron dos veces",
+    "sw": "contados dos veces"
+   },
+   "q": [
+    "mat-04"
+   ]
+  },
+  {
+   "voz": "Los que no juegan ninguno son el resto: treinta menos veinticinco, igual cinco.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "cruce",
+    "a": {
+     "t": "⚽ Fútbol",
+     "c": "#58CC02"
+    },
+    "b": {
+     "t": "🏀 Básquet",
+     "c": "#FFC800"
+    },
+    "sombras": [
+     {
+      "r": "fuera",
+      "c": "#FF4B4B",
+      "w": "el resto"
+     }
+    ],
+    "puntos": [
+     {
+      "x": 95,
+      "y": 125,
+      "t": "10"
+     },
+     {
+      "x": 180,
+      "y": 125,
+      "t": "8"
+     },
+     {
+      "x": 265,
+      "y": 125,
+      "t": "7"
+     },
+     {
+      "x": 30,
+      "y": 205,
+      "t": "5",
+      "w": "igual cinco",
+      "s": 30,
+      "c": "#fff"
+     }
+    ],
+    "sub": "30 − 25 = 5",
+    "sw": "treinta menos"
+   },
+   "q": [
+    "mat-04"
+   ]
+  },
+  {
+   "voz": "En un grupo de veinte personas, doce toman té, diez toman café y cinco toman ambos. ¿Cuántas no toman ninguno?",
+   "elige": {
+    "pregunta": "En un grupo de 20, 12 toman té, 10 toman café y 5 toman ambos. ¿Cuántos no toman ninguno?",
+    "opciones": [
+     "3",
+     "0",
+     "8"
+    ],
+    "bien": "Así es: doce más diez menos cinco son diecisiete, y veinte menos diecisiete, tres.",
+    "mal": "Son tres: doce más diez menos cinco da diecisiete, y veinte menos diecisiete, tres."
+   }
+  },
+  {
+   "voz": "Último: si todo elemento de A está en B, se dice que A está incluido en B. Si además todo elemento de B está en A, los dos tienen exactamente los mismos elementos: A es igual a B.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "A ⊆ B",
+      "c": "#1CB0F6",
+      "w": "a está incluido en b"
+     },
+     "y",
+     {
+      "t": "B ⊆ A",
+      "c": "#FFC800",
+      "w": "todo elemento de b está en a"
+     },
+     "⇒",
+     {
+      "t": "A = B",
+      "c": "#58CC02",
+      "w": "a es igual a b"
+     }
+    ]
+   },
+   "q": [
+    "mat-13"
+   ]
+  },
+  {
+   "voz": "Si A está incluido en B, y B está incluido en A, ¿qué se concluye?",
+   "elige": {
+    "pregunta": "Si A ⊆ B y B ⊆ A, entonces…",
+    "opciones": [
+     "A = B",
+     "A y B no tienen nada en común",
+     "B está vacío"
+    ],
+    "bien": "Así es: tienen exactamente los mismos elementos.",
+    "mal": "Se concluye que A es igual a B: cada uno está dentro del otro."
+   }
+  },
+  {
+   "voz": "En resumen: la intersección es lo común, la unión es todo junto, y para contar dos grupos, se suman y se resta lo que tienen en común.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "∩",
+      "texto": "Intersección: lo común",
+      "w": "intersección",
+      "marca": "bien"
+     },
+     {
+      "icono": "∪",
+      "texto": "Unión: todo junto",
+      "w": "la unión"
+     },
+     {
+      "icono": "➖",
+      "texto": "Suma y resta lo común",
+      "w": "se resta",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

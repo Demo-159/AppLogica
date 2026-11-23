@@ -1,0 +1,190 @@
+{
+ "id": "u2s3",
+ "titulo": "Válido no es verdadero",
+ "icono": "⚖️",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a separar dos ideas que se confunden: que un argumento sea válido, y que su conclusión sea verdadera.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "⚖️",
+    "texto": "Válido no es lo mismo que verdadero"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Un argumento es válido cuando es imposible que las premisas sean verdaderas y la conclusión falsa. Si aceptas las premisas, la conclusión te queda obligada.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "⚖️",
+    "titulo": "Argumento válido",
+    "texto": "Imposible: premisas verdaderas y conclusión falsa"
+   },
+   "q": [
+    "cond-12"
+   ]
+  },
+  {
+   "voz": "La validez depende de la forma, no del tema. Por eso, un argumento con premisas falsas puede ser válido: si todos los peces vuelan, y Nemo es un pez, entonces Nemo vuela.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🐟",
+      "t": "Todos los peces vuelan",
+      "w": "todos los peces vuelan"
+     },
+     {
+      "icono": "🐠",
+      "t": "Nemo es un pez",
+      "w": "nemo es un pez"
+     },
+     {
+      "icono": "🪽",
+      "t": "Nemo vuela",
+      "w": "entonces nemo vuela",
+      "c": "#FFC800"
+     }
+    ],
+    "sub": "Válido: la forma es correcta",
+    "sw": "depende de la forma"
+   },
+   "q": [
+    "cond-12"
+   ]
+  },
+  {
+   "voz": "Y un argumento con todo verdadero puede ser inválido. Si algo es una planta, necesita agua. Las rosas necesitan agua. Por lo tanto, las rosas son plantas.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🌱",
+      "t": "Si es planta → necesita agua",
+      "w": "si algo es una planta"
+     },
+     {
+      "icono": "🌹",
+      "t": "Las rosas necesitan agua",
+      "w": "las rosas necesitan"
+     },
+     {
+      "icono": "🌹",
+      "t": "Las rosas son plantas",
+      "w": "por lo tanto",
+      "c": "#FFC800"
+     }
+    ]
+   },
+   "q": [
+    "cond-11"
+   ]
+  },
+  {
+   "voz": "La conclusión es verdadera, pero no se sigue de las premisas. Es afirmar el consecuente: los perros también necesitan agua, y no son plantas.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "✅",
+      "titulo": "Conclusión verdadera",
+      "marca": "bien",
+      "w": "es verdadera"
+     },
+     {
+      "icono": "❌",
+      "titulo": "Pero no se sigue",
+      "texto": "Inválido",
+      "marca": "mal",
+      "w": "no se sigue"
+     }
+    ]
+   },
+   "q": [
+    "cond-11"
+   ]
+  },
+  {
+   "voz": "Cuando un argumento es válido y además sus premisas son verdaderas, se dice que es sólido. Esa es la meta.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "📐",
+      "texto": "Válido: buena forma",
+      "w": "válido",
+      "marca": "oro"
+     },
+     {
+      "icono": "✅",
+      "texto": "Premisas verdaderas",
+      "w": "premisas son verdaderas",
+      "marca": "bien"
+     },
+     {
+      "icono": "🏆",
+      "texto": "Sólido: las dos cosas",
+      "w": "sólido",
+      "marca": "bien"
+     }
+    ]
+   },
+   "q": [
+    "cond-11",
+    "cond-12"
+   ]
+  },
+  {
+   "voz": "Si algo es un metal, se calienta al sol. El hierro se calienta al sol. Por lo tanto, el hierro es un metal. ¿Cómo es este argumento?",
+   "elige": {
+    "pregunta": "«Si algo es un metal, se calienta al sol. El hierro se calienta al sol. Por lo tanto, el hierro es un metal.»",
+    "opciones": [
+     "Inválido, aunque la conclusión sea verdadera",
+     "Válido, porque la conclusión es verdadera",
+     "Válido y sólido"
+    ],
+    "bien": "Así es: el hierro es un metal, pero eso no se sigue de las premisas.",
+    "mal": "Es inválido: afirma el consecuente. Que la conclusión sea verdadera no lo hace válido."
+   }
+  },
+  {
+   "voz": "¿Qué significa que un argumento sea válido?",
+   "elige": {
+    "pregunta": "¿Qué significa que un argumento sea VÁLIDO?",
+    "opciones": [
+     "Que es imposible que las premisas sean verdaderas y la conclusión falsa",
+     "Que sus premisas son verdaderas",
+     "Que su conclusión es verdadera"
+    ],
+    "bien": "Así es: la validez es una cuestión de forma.",
+    "mal": "Válido significa que es imposible que las premisas sean verdaderas y la conclusión falsa."
+   }
+  },
+  {
+   "voz": "En resumen: válido habla de la forma. Verdadero habla de los hechos. Y sólido es válido con premisas verdaderas.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "📐",
+      "texto": "Válido: la forma",
+      "w": "válido habla",
+      "marca": "oro"
+     },
+     {
+      "icono": "🌍",
+      "texto": "Verdadero: los hechos",
+      "w": "verdadero habla"
+     },
+     {
+      "icono": "🏆",
+      "texto": "Sólido: ambas",
+      "w": "sólido",
+      "marca": "bien"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,244 @@
+{
+ "id": "u3s1",
+ "titulo": "Todos, algunos, ninguno",
+ "icono": "⭕",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a razonar con palabras como «todos», «algunos» y «ninguno», dibujándolas con círculos.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "⭕",
+    "texto": "Todos, algunos, ninguno"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "«Todos los gatos son mamíferos» se dibuja así: el círculo de los gatos queda dentro del de los mamíferos.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "Gatos",
+     "w": "gatos",
+     "c": "#FFC800"
+    },
+    "b": {
+     "t": "Mamíferos",
+     "w": "mamíferos",
+     "c": "#1CB0F6"
+    },
+    "titulo": "Todos los A son B",
+    "tw": "todos los gatos"
+   }
+  },
+  {
+   "voz": "«Ningún pez es mamífero»: dos círculos separados, sin nada en común.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "aparte",
+    "a": {
+     "t": "Peces",
+     "w": "pez",
+     "c": "#1CB0F6"
+    },
+    "b": {
+     "t": "Mamíferos",
+     "w": "mamífero",
+     "c": "#FFC800"
+    },
+    "titulo": "Ningún A es B",
+    "tw": "ningún pez"
+   }
+  },
+  {
+   "voz": "«Algunos estudiantes son deportistas»: dos círculos que se cruzan, y en la parte común hay al menos uno.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "cruce",
+    "a": {
+     "t": "Estudiantes",
+     "w": "estudiantes",
+     "c": "#1CB0F6"
+    },
+    "b": {
+     "t": "Deportistas",
+     "w": "deportistas",
+     "c": "#FFC800"
+    },
+    "puntos": [
+     {
+      "x": 180,
+      "y": 125,
+      "t": "✕",
+      "w": "al menos uno",
+      "s": 24,
+      "c": "#58CC02"
+     }
+    ],
+    "titulo": "Algunos A son B",
+    "tw": "algunos"
+   }
+  },
+  {
+   "voz": "Ahora, encadena. Todos los A son B, y todos los B son C. Si A está dentro de B, y B está dentro de C, entonces A está dentro de C: todos los A son C.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "anidado",
+    "a": {
+     "t": "A",
+     "w": "todos los a son b",
+     "c": "#58CC02"
+    },
+    "b": {
+     "t": "B",
+     "w": "todos los b son c",
+     "c": "#1CB0F6"
+    },
+    "c": {
+     "t": "C",
+     "w": "dentro de c",
+     "c": "#FFC800"
+    },
+    "sub": "Todos los A son C",
+    "sw": "todos los a son c"
+   },
+   "q": [
+    "silo-01"
+   ]
+  },
+  {
+   "voz": "Todas las rosas son flores. Todas las flores son plantas. ¿Qué se sigue?",
+   "elige": {
+    "pregunta": "«Todas las rosas son flores. Todas las flores son plantas». ¿Qué se sigue?",
+    "opciones": [
+     "Todas las rosas son plantas",
+     "Todas las plantas son rosas",
+     "Algunas plantas no son flores"
+    ],
+    "bien": "Así es: un círculo dentro de otro, dentro de otro.",
+    "mal": "Se sigue que todas las rosas son plantas: las rosas quedan dentro de las flores, y las flores dentro de las plantas."
+   }
+  },
+  {
+   "voz": "Con «ninguno» también se encadena. Ningún pez es mamífero, y todos los tiburones son peces. Los tiburones quedan dentro de los peces, lejos de los mamíferos. Ningún tiburón es mamífero.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentroAparte",
+    "a": {
+     "t": "Tiburones",
+     "w": "tiburones",
+     "c": "#CE82FF"
+    },
+    "b": {
+     "t": "Peces",
+     "w": "peces",
+     "c": "#1CB0F6"
+    },
+    "c": {
+     "t": "Mamíferos",
+     "w": "mamíferos",
+     "c": "#FFC800"
+    },
+    "sub": "Ningún tiburón es mamífero",
+    "sw": "ningún tiburón"
+   },
+   "q": [
+    "silo-03"
+   ]
+  },
+  {
+   "voz": "Lo mismo vale aquí: todos los metales conducen electricidad, y ningún plástico la conduce. Los metales están dentro de los conductores, y los plásticos, afuera. Ningún plástico es metal.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentroAparte",
+    "a": {
+     "t": "Metales",
+     "w": "los metales",
+     "c": "#CE82FF"
+    },
+    "b": {
+     "t": "Conductores",
+     "w": "conductores",
+     "c": "#1CB0F6"
+    },
+    "c": {
+     "t": "Plásticos",
+     "w": "plásticos",
+     "c": "#FFC800"
+    },
+    "sub": "Ningún plástico es metal",
+    "sw": "ningún plástico es metal"
+   },
+   "q": [
+    "silo-13"
+   ]
+  },
+  {
+   "voz": "Y con personas. Todos los médicos de esta lista son profesionales, y ningún profesional de la lista llega tarde. Laura es médica de la lista: no llega tarde.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "👩‍⚕️",
+      "t": "Laura es médica",
+      "w": "laura es médica"
+     },
+     {
+      "icono": "💼",
+      "t": "→ es profesional",
+      "w": "son profesionales"
+     },
+     {
+      "icono": "⏰",
+      "t": "→ no llega tarde",
+      "w": "no llega tarde.",
+      "c": "#58CC02"
+     }
+    ]
+   },
+   "q": [
+    "silo-10"
+   ]
+  },
+  {
+   "voz": "Ningún insecto tiene ocho patas. Todas las hormigas son insectos. ¿Qué se sigue?",
+   "elige": {
+    "pregunta": "«Ningún insecto tiene ocho patas. Todas las hormigas son insectos». ¿Qué se sigue?",
+    "opciones": [
+     "Ninguna hormiga tiene ocho patas",
+     "Algunas hormigas tienen ocho patas",
+     "No se puede concluir nada"
+    ],
+    "bien": "Así es: las hormigas están dentro de los insectos, lejos de lo que tiene ocho patas.",
+    "mal": "Ninguna hormiga tiene ocho patas: están dentro de los insectos, y ningún insecto las tiene."
+   }
+  },
+  {
+   "voz": "En resumen: «todos» es un círculo dentro de otro, «ninguno» son círculos separados, y «algunos», círculos que se cruzan.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "⭕",
+      "texto": "Todos: uno dentro de otro",
+      "w": "todos",
+      "marca": "bien"
+     },
+     {
+      "icono": "⚪",
+      "texto": "Ninguno: separados",
+      "w": "ninguno",
+      "marca": "mal"
+     },
+     {
+      "icono": "🔵",
+      "texto": "Algunos: se cruzan",
+      "w": "algunos",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

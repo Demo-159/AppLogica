@@ -1,0 +1,195 @@
+{
+ "id": "u9s2",
+ "titulo": "Falsas opciones y falsas causas",
+ "icono": "🔀",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a reconocer falacias que inventan opciones, consecuencias o causas.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔀",
+    "texto": "Falsas opciones y falsas causas"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "«O apoyas esta ley tal como está, o estás a favor de la delincuencia». Presenta solo dos opciones cuando hay más: apoyar otra ley, o mejorar esta. Es un falso dilema.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "✅",
+      "texto": "Apoyar la ley",
+      "w": "o apoyas",
+      "marca": "oro"
+     },
+     {
+      "icono": "😈",
+      "texto": "Estar a favor del delito",
+      "w": "delincuencia",
+      "marca": "mal"
+     },
+     {
+      "icono": "🛠️",
+      "texto": "¡Mejorarla! (y más)",
+      "w": "mejorar esta",
+      "marca": "bien"
+     }
+    ],
+    "titulo": "Falso dilema",
+    "tw": "falso dilema"
+   },
+   "q": [
+    "fal-03"
+   ]
+  },
+  {
+   "voz": "«Si permitimos celulares en clase, nadie estudiará, todos reprobarán, y nadie conseguirá trabajo». Encadena consecuencias cada vez más graves, sin probarlas. Es una pendiente resbaladiza.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "📱",
+      "t": "Celulares en clase",
+      "w": "celulares"
+     },
+     {
+      "icono": "😴",
+      "t": "Nadie estudia",
+      "w": "nadie estudiará"
+     },
+     {
+      "icono": "💼",
+      "t": "Nadie tendrá trabajo",
+      "w": "nadie conseguirá trabajo",
+      "c": "#FF4B4B"
+     }
+    ],
+    "sub": "Pendiente resbaladiza",
+    "sw": "pendiente resbaladiza"
+   },
+   "q": [
+    "fal-04"
+   ]
+  },
+  {
+   "voz": "Si subimos el pasaje diez pesos, mañana lo subirán mil, y nadie podrá viajar. ¿Qué falacia es?",
+   "elige": {
+    "pregunta": "«Si subimos el pasaje diez pesos, mañana lo subirán mil y nadie podrá viajar». ¿Qué falacia es?",
+    "opciones": [
+     "Pendiente resbaladiza",
+     "Falso dilema",
+     "Pista falsa"
+    ],
+    "bien": "Así es: encadena consecuencias sin probarlas.",
+    "mal": "Es una pendiente resbaladiza: encadena consecuencias cada vez más graves, sin probarlas."
+   }
+  },
+  {
+   "voz": "«Desde que uso esta pulsera magnética, gano más partidos». Que algo pase después no prueba que pase por eso. Se llama post hoc, del latín «después de esto, por lo tanto, a causa de esto».",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "📿",
+      "t": "Uso la pulsera",
+      "w": "uso esta pulsera"
+     },
+     {
+      "icono": "🏆",
+      "t": "Gano más",
+      "w": "gano más",
+      "c": "#FFC800"
+     }
+    ],
+    "sub": "Post hoc: después ≠ por eso",
+    "sw": "no prueba",
+    "rota": [
+     1
+    ]
+   },
+   "q": [
+    "fal-07"
+   ]
+  },
+  {
+   "voz": "«Conocí a dos turistas groseros de ese país: allí todos son maleducados». Sacar una regla general de muy pocos casos es una generalización apresurada.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "2 casos",
+      "w": "dos turistas"
+     },
+     "→",
+     {
+      "t": "«todos»",
+      "c": "#FF4B4B",
+      "w": "todos son maleducados"
+     }
+    ],
+    "titulo": "Generalización apresurada",
+    "tw": "generalización apresurada"
+   },
+   "q": [
+    "fal-11"
+   ]
+  },
+  {
+   "voz": "Desde que cambié de champú, me va mejor en el trabajo. ¿Qué falacia es?",
+   "elige": {
+    "pregunta": "«Desde que cambié de champú, me va mejor en el trabajo». ¿Qué falacia es?",
+    "opciones": [
+     "Post hoc",
+     "Generalización apresurada",
+     "Falso dilema"
+    ],
+    "bien": "Así es: después no significa por eso.",
+    "mal": "Es post hoc: que pase después no prueba que pase por eso."
+   }
+  },
+  {
+   "voz": "Probé dos restaurantes de ese barrio y eran malos: todos los de ahí son malos. ¿Qué falacia es?",
+   "elige": {
+    "pregunta": "«Probé dos restaurantes de ese barrio y eran malos: todos los de ahí son malos». ¿Qué falacia es?",
+    "opciones": [
+     "Generalización apresurada",
+     "Post hoc",
+     "Pendiente resbaladiza"
+    ],
+    "bien": "Así es: dos casos son muy pocos.",
+    "mal": "Es una generalización apresurada: dos casos no bastan para hablar de todos."
+   }
+  },
+  {
+   "voz": "En resumen: el falso dilema esconde opciones. La pendiente resbaladiza inventa consecuencias. El post hoc confunde «después» con «por eso». Y la generalización apresurada usa muy pocos casos.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔀",
+      "texto": "Falso dilema",
+      "w": "falso dilema"
+     },
+     {
+      "icono": "🛝",
+      "texto": "Pendiente resbaladiza",
+      "w": "pendiente resbaladiza"
+     },
+     {
+      "icono": "⏭️",
+      "texto": "Post hoc",
+      "w": "post hoc"
+     },
+     {
+      "icono": "🏃",
+      "texto": "Generalización apresurada",
+      "w": "generalización apresurada"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

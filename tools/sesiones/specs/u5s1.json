@@ -1,0 +1,261 @@
+{
+ "id": "u5s1",
+ "titulo": "Porcentajes que engañan",
+ "icono": "%",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver por qué los porcentajes engañan tan seguido, y cómo calcularlos bien.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "💯",
+    "texto": "Porcentajes que engañan"
+   },
+   "fondo": "oficina"
+  },
+  {
+   "voz": "Un producto de mil pesos sube un veinte por ciento: queda en mil doscientos.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "$1.000"
+     },
+     {
+      "t": "$1.200",
+      "w": "mil doscientos",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "+20%",
+      "w": "sube"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "Luego baja un veinte por ciento. Pero ese veinte por ciento se calcula sobre mil doscientos: son doscientos cuarenta. Queda en novecientos sesenta, un cuatro por ciento más barato que al principio.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "$1.000"
+     },
+     {
+      "t": "$1.200"
+     },
+     {
+      "t": "$960",
+      "w": "novecientos sesenta",
+      "c": "#FF4B4B"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "+20%"
+     },
+     {
+      "t": "−20% (−$240)",
+      "w": "doscientos cuarenta"
+     }
+    ],
+    "sub": "4% más barato que al principio",
+    "sw": "cuatro por ciento"
+   },
+   "q": [
+    "num-01"
+   ]
+  },
+  {
+   "voz": "Un precio baja un cincuenta por ciento y luego sube un cincuenta por ciento. ¿Cómo queda?",
+   "elige": {
+    "pregunta": "Un precio baja 50% y luego sube 50%. Respecto del original, ¿cómo queda?",
+    "opciones": [
+     "25% más barato",
+     "Igual",
+     "25% más caro"
+    ],
+    "bien": "Así es: de cien baja a cincuenta, y sube a setenta y cinco.",
+    "mal": "Queda un veinticinco por ciento más barato: de cien baja a cincuenta, y el cincuenta por ciento de cincuenta es veinticinco."
+   }
+  },
+  {
+   "voz": "Otra confusión: los puntos porcentuales. Si el desempleo pasa de diez a doce por ciento, subió dos puntos porcentuales.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Antes",
+      "valor": 10,
+      "color": "#1CB0F6",
+      "texto": "10%",
+      "w": "de diez"
+     },
+     {
+      "label": "Ahora",
+      "valor": 12,
+      "color": "#FFC800",
+      "texto": "12%",
+      "w": "a doce"
+     }
+    ],
+    "max": 14,
+    "sub": "+2 puntos porcentuales"
+   },
+   "q": [
+    "num-03"
+   ]
+  },
+  {
+   "voz": "Pero, comparado con diez, dos es un veinte por ciento más. Se dice que subió un veinte por ciento relativo. Son dos formas distintas de medir el mismo cambio.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "📏",
+      "titulo": "+2 puntos",
+      "texto": "Diferencia directa",
+      "w": "dos formas"
+     },
+     {
+      "icono": "📈",
+      "titulo": "+20% relativo",
+      "texto": "2 de 10 = 20%",
+      "marca": "bien",
+      "w": "veinte por ciento relativo"
+     }
+    ]
+   },
+   "q": [
+    "num-03"
+   ]
+  },
+  {
+   "voz": "Esto se usa para impresionar. Un remedio baja el riesgo de dos de cada mil personas a una de cada mil. Se anuncia: «reduce el riesgo un cincuenta por ciento». Es cierto, pero en términos absolutos, solo una persona de cada mil se beneficia.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "📢",
+      "titulo": "−50%",
+      "texto": "Riesgo relativo",
+      "w": "se anuncia"
+     },
+     {
+      "icono": "🧍",
+      "titulo": "1 de cada 1.000",
+      "texto": "Reducción absoluta: 0,1 puntos",
+      "marca": "bien",
+      "w": "términos absolutos"
+     }
+    ]
+   },
+   "q": [
+    "num-04"
+   ]
+  },
+  {
+   "voz": "Un riesgo baja de cuatro en mil a dos en mil. ¿Cuál es la reducción absoluta?",
+   "elige": {
+    "pregunta": "Un riesgo baja de 4 en 1.000 a 2 en 1.000. ¿Cuál es la reducción ABSOLUTA?",
+    "opciones": [
+     "2 de cada 1.000",
+     "50%",
+     "2%"
+    ],
+    "bien": "Así es: dos de cada mil, aunque en relativo sea un cincuenta por ciento.",
+    "mal": "La reducción absoluta es de dos de cada mil. El cincuenta por ciento es la reducción relativa."
+   }
+  },
+  {
+   "voz": "Las ofertas también confunden. «Lleve tres, pague dos»: te llevas tres y pagas dos. Te regalan una de cada tres: un tercio, cerca de un treinta y tres por ciento de descuento por unidad.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "🛍️"
+     },
+     {
+      "t": "🛍️"
+     },
+     {
+      "t": "🎁",
+      "w": "te regalan una",
+      "c": "#58CC02"
+     }
+    ],
+    "sub": "1 de 3 gratis ≈ 33% de descuento",
+    "sw": "un tercio"
+   },
+   "q": [
+    "num-10"
+   ]
+  },
+  {
+   "voz": "Y al revés: tras un descuento del veinticinco por ciento, pagas seiscientos. Pagaste el setenta y cinco por ciento del precio. Si el setenta y cinco por ciento es seiscientos, el cien por ciento es ochocientos.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Pagaste",
+      "valor": 75,
+      "color": "#1CB0F6",
+      "texto": "75% = $600",
+      "w": "setenta y cinco por ciento del precio"
+     },
+     {
+      "label": "Original",
+      "valor": 100,
+      "color": "#FFC800",
+      "texto": "100% = $800",
+      "w": "ochocientos"
+     }
+    ],
+    "max": 100
+   },
+   "q": [
+    "num-11"
+   ]
+  },
+  {
+   "voz": "Tras un descuento del veinte por ciento pagas ochocientos pesos. ¿Cuál era el precio original?",
+   "elige": {
+    "pregunta": "Tras un descuento del 20% pagas $800. ¿Cuál era el precio original?",
+    "opciones": [
+     "$1.000",
+     "$960",
+     "$900"
+    ],
+    "bien": "Así es: ochocientos es el ochenta por ciento de mil.",
+    "mal": "Era mil pesos: pagaste el ochenta por ciento, y el ochenta por ciento de mil es ochocientos."
+   }
+  },
+  {
+   "voz": "En resumen: un porcentaje depende de sobre qué se calcula. Distingue puntos porcentuales de cambio relativo. Y desconfía de los anuncios con porcentajes grandes.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🎯",
+      "texto": "¿Sobre qué se calcula?",
+      "w": "sobre qué se calcula",
+      "marca": "oro"
+     },
+     {
+      "icono": "📏",
+      "texto": "Puntos ≠ relativo",
+      "w": "puntos porcentuales"
+     },
+     {
+      "icono": "📢",
+      "texto": "Ojo con los anuncios",
+      "w": "desconfía",
+      "marca": "mal"
+     }
+    ]
+   }
+  }
+ ]
+}

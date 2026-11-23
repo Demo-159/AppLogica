@@ -1,0 +1,274 @@
+{
+ "id": "u6s2",
+ "titulo": "Series con truco",
+ "icono": "🎩",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a resolver series que esconden un truco.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🎩",
+    "texto": "Series con truco"
+   },
+   "fondo": "cosmos"
+  },
+  {
+   "voz": "Algunas series no siguen una cuenta, sino un tipo de número. Dos, tres, cinco, siete, once: son los números primos, los que solo se dividen por uno y por sí mismos. Sigue el trece.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "2"
+     },
+     {
+      "t": "3"
+     },
+     {
+      "t": "5"
+     },
+     {
+      "t": "7"
+     },
+     {
+      "t": "11"
+     },
+     {
+      "t": "13",
+      "w": "sigue el trece",
+      "c": "#FFC800"
+     }
+    ],
+    "titulo": "Números primos",
+    "tw": "primos",
+    "sub": "Solo se dividen por 1 y por sí mismos",
+    "sw": "solo se dividen"
+   },
+   "q": [
+    "pat-03"
+   ]
+  },
+  {
+   "voz": "Otras multiplican por un número que va creciendo. Uno, dos, seis, veinticuatro, ciento veinte: por dos, por tres, por cuatro, por cinco. Sigue por seis: setecientos veinte.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "1"
+     },
+     {
+      "t": "2"
+     },
+     {
+      "t": "6"
+     },
+     {
+      "t": "24"
+     },
+     {
+      "t": "120"
+     },
+     {
+      "t": "720",
+      "w": "setecientos veinte",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "×2",
+      "w": "por dos"
+     },
+     {
+      "t": "×3",
+      "w": "por tres"
+     },
+     {
+      "t": "×4",
+      "w": "por cuatro"
+     },
+     {
+      "t": "×5",
+      "w": "por cinco"
+     },
+     {
+      "t": "×6",
+      "w": "por seis"
+     }
+    ]
+   },
+   "q": [
+    "pat-08"
+   ]
+  },
+  {
+   "voz": "¿Qué número sigue? Uno, uno, dos, seis, veinticuatro…",
+   "elige": {
+    "pregunta": "¿Qué número sigue? 1, 1, 2, 6, 24, …",
+    "opciones": [
+     "120",
+     "48",
+     "96"
+    ],
+    "bien": "Así es: por uno, por dos, por tres, por cuatro, y ahora por cinco.",
+    "mal": "Sigue ciento veinte: multiplica por un número que crece, y ahora toca por cinco."
+   }
+  },
+  {
+   "voz": "Algunas alternan dos reglas. Cinco, diez, ocho, dieciséis, catorce: por dos, menos dos, por dos, menos dos. Ahora toca por dos: veintiocho.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "5"
+     },
+     {
+      "t": "10"
+     },
+     {
+      "t": "8"
+     },
+     {
+      "t": "16"
+     },
+     {
+      "t": "14"
+     },
+     {
+      "t": "28",
+      "w": "veintiocho",
+      "c": "#FFC800"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "×2",
+      "w": "por dos"
+     },
+     {
+      "t": "−2",
+      "w": "menos dos"
+     },
+     {
+      "t": "×2",
+      "w": "por dos, menos"
+     },
+     {
+      "t": "−2",
+      "w": "por dos, menos dos"
+     },
+     {
+      "t": "×2",
+      "w": "toca por dos"
+     }
+    ]
+   },
+   "q": [
+    "pat-10"
+   ]
+  },
+  {
+   "voz": "¿Qué número sigue? Tres, seis, cuatro, ocho, seis…",
+   "elige": {
+    "pregunta": "¿Qué número sigue? 3, 6, 4, 8, 6, …",
+    "opciones": [
+     "12",
+     "10",
+     "4"
+    ],
+    "bien": "Así es: por dos, menos dos, y ahora por dos.",
+    "mal": "Sigue doce: alterna por dos y menos dos, y ahora toca por dos."
+   }
+  },
+  {
+   "voz": "Y en tablas, mira cada fila. Fila uno: dos, cuatro, ocho. Fila dos: tres, seis, doce. En cada fila, cada número es el doble del anterior. En la fila tres: cinco, diez, y luego veinte.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "",
+     "1.º",
+     "2.º",
+     "3.º"
+    ],
+    "filas": [
+     {
+      "c": [
+       "Fila 1",
+       "2",
+       "4",
+       "8"
+      ],
+      "w": "fila uno"
+     },
+     {
+      "c": [
+       "Fila 2",
+       "3",
+       "6",
+       "12"
+      ],
+      "w": "fila dos"
+     },
+     {
+      "c": [
+       "Fila 3",
+       "5",
+       "10",
+       "20"
+      ],
+      "w": "y luego veinte",
+      "marca": "oro"
+     }
+    ],
+    "sub": "Cada fila: × 2",
+    "sw": "el doble"
+   },
+   "q": [
+    "pat-13"
+   ]
+  },
+  {
+   "voz": "Fila uno: uno, tres, nueve. Fila dos: dos, seis, dieciocho. Fila tres: cuatro, doce, ¿y?",
+   "elige": {
+    "pregunta": "Fila 1: 1, 3, 9. Fila 2: 2, 6, 18. Fila 3: 4, 12, ?",
+    "opciones": [
+     "36",
+     "16",
+     "24"
+    ],
+    "bien": "Así es: en cada fila se multiplica por tres.",
+    "mal": "Es treinta y seis: en cada fila se multiplica por tres."
+   }
+  },
+  {
+   "voz": "En resumen: piensa en tipos de números, como los primos. Mira si el multiplicador crece, si se alternan dos reglas, o qué se repite en cada fila.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔎",
+      "texto": "Primos",
+      "w": "primos"
+     },
+     {
+      "icono": "📈",
+      "texto": "Multiplicador que crece",
+      "w": "crece"
+     },
+     {
+      "icono": "🔀",
+      "texto": "Dos reglas alternadas",
+      "w": "se alternan"
+     },
+     {
+      "icono": "🧮",
+      "texto": "Regla por fila",
+      "w": "cada fila",
+      "marca": "oro"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

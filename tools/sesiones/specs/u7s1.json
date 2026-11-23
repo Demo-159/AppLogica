@@ -1,0 +1,305 @@
+{
+ "id": "u7s1",
+ "titulo": "Contar casos",
+ "icono": "🎲",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a calcular probabilidades contando casos.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🎲",
+    "texto": "Contar casos"
+   },
+   "fondo": "casino"
+  },
+  {
+   "voz": "Si todos los casos son igual de probables, la probabilidad es: casos favorables, dividido por casos posibles. Con un dado, sacar un seis es uno de seis.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "casos favorables",
+      "c": "#58CC02",
+      "w": "casos favorables"
+     },
+     "÷",
+     {
+      "t": "casos posibles",
+      "c": "#1CB0F6",
+      "w": "casos posibles"
+     },
+     "·",
+     {
+      "t": "🎲 6 → 1/6",
+      "c": "#FFC800",
+      "w": "uno de seis"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "Con dos dados hay treinta y seis combinaciones: seis resultados del primero, por seis del segundo.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 36,
+    "unidad": "combinaciones",
+    "sub": "6 × 6",
+    "icono": "🎲🎲"
+   },
+   "q": [
+    "prob-04"
+   ]
+  },
+  {
+   "voz": "¿Cuántas suman siete? Uno y seis, dos y cinco, tres y cuatro, cuatro y tres, cinco y dos, seis y uno: seis combinaciones. Seis de treinta y seis: un sexto.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "texto": "1 + 6",
+      "w": "uno y seis"
+     },
+     {
+      "texto": "2 + 5",
+      "w": "dos y cinco"
+     },
+     {
+      "texto": "3 + 4",
+      "w": "tres y cuatro"
+     },
+     {
+      "texto": "4 + 3",
+      "w": "cuatro y tres"
+     },
+     {
+      "texto": "5 + 2",
+      "w": "cinco y dos"
+     },
+     {
+      "texto": "6 + 1",
+      "w": "seis y uno"
+     }
+    ],
+    "sub": "6 de 36 = 1/6",
+    "sw": "un sexto",
+    "cols": 3
+   },
+   "q": [
+    "prob-04"
+   ]
+  },
+  {
+   "voz": "Con dos dados, ¿cuál es la probabilidad de que sumen doce?",
+   "elige": {
+    "pregunta": "Lanzas dos dados. ¿Cuál es la probabilidad de que sumen 12?",
+    "opciones": [
+     "1/36",
+     "1/12",
+     "1/6"
+    ],
+    "bien": "Así es: solo seis y seis, una de treinta y seis.",
+    "mal": "Es uno de treinta y seis: solo sirve seis y seis."
+   }
+  },
+  {
+   "voz": "Ahora: al menos una. Lanzas una moneda dos veces. Los casos son cara y cara, cara y sello, sello y cara, sello y sello. Tres de los cuatro tienen al menos una cara: tres cuartos.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🪙",
+      "texto": "Cara · Cara",
+      "w": "cara y cara",
+      "marca": "bien"
+     },
+     {
+      "icono": "🪙",
+      "texto": "Cara · Sello",
+      "w": "cara y sello",
+      "marca": "bien"
+     },
+     {
+      "icono": "🪙",
+      "texto": "Sello · Cara",
+      "w": "sello y cara",
+      "marca": "bien"
+     },
+     {
+      "icono": "⚪",
+      "texto": "Sello · Sello",
+      "w": "sello y sello",
+      "marca": "mal"
+     }
+    ],
+    "sub": "3 de 4 → 3/4",
+    "sw": "tres cuartos",
+    "cols": 2
+   },
+   "q": [
+    "prob-05"
+   ]
+  },
+  {
+   "voz": "Un atajo: la probabilidad de al menos una cara es uno, menos la de ninguna. Ninguna cara es sello y sello: un cuarto. Uno menos un cuarto: tres cuartos.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "al menos una",
+      "c": "#58CC02",
+      "w": "al menos una cara"
+     },
+     "=",
+     {
+      "t": "1 − ninguna",
+      "c": "#FFC800",
+      "w": "uno, menos"
+     },
+     "=",
+     {
+      "t": "1 − ¼ = ¾",
+      "c": "#1CB0F6",
+      "w": "uno menos un cuarto"
+     }
+    ]
+   },
+   "q": [
+    "prob-05"
+   ]
+  },
+  {
+   "voz": "Para dos cosas independientes que deben pasar juntas, las probabilidades se multiplican. Cara en la moneda es un medio. Un seis en el dado es un sexto. Las dos: un medio por un sexto, un doceavo.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "🪙 ½",
+      "c": "#1CB0F6",
+      "w": "un medio"
+     },
+     "×",
+     {
+      "t": "🎲 ⅙",
+      "c": "#FFC800",
+      "w": "un sexto"
+     },
+     "=",
+     {
+      "t": "1/12",
+      "c": "#58CC02",
+      "w": "un doceavo"
+     }
+    ],
+    "titulo": "Independientes y juntas: se multiplican",
+    "tw": "se multiplican"
+   },
+   "q": [
+    "prob-09"
+   ]
+  },
+  {
+   "voz": "Lanzas dos monedas. ¿Cuál es la probabilidad de sacar dos caras?",
+   "elige": {
+    "pregunta": "Lanzas dos monedas. ¿Probabilidad de dos caras?",
+    "opciones": [
+     "1/4",
+     "1/2",
+     "1/3"
+    ],
+    "bien": "Así es: un medio por un medio.",
+    "mal": "Es un cuarto: un medio por un medio."
+   }
+  },
+  {
+   "voz": "Cuidado con lo que ya sabes. En las familias con dos hijos, los casos son: niño y niño, niño y niña, niña y niño, niña y niña. Si sabes que hay al menos una hija, se descarta niño y niño.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "👦👦",
+      "texto": "niño · niño",
+      "w": "se descarta",
+      "marca": "mal"
+     },
+     {
+      "icono": "👦👧",
+      "texto": "niño · niña",
+      "w": "niño y niña"
+     },
+     {
+      "icono": "👧👦",
+      "texto": "niña · niño",
+      "w": "niña y niño"
+     },
+     {
+      "icono": "👧👧",
+      "texto": "niña · niña",
+      "w": "niña y niña",
+      "marca": "oro"
+     }
+    ],
+    "cols": 2
+   },
+   "q": [
+    "prob-11"
+   ]
+  },
+  {
+   "voz": "Quedan tres casos igual de probables, y solo uno tiene dos hijas. La probabilidad es un tercio.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 3,
+    "unidad": "casos posibles",
+    "sub": "Solo 1 con dos hijas → 1/3",
+    "icono": "👧👧"
+   },
+   "q": [
+    "prob-11"
+   ]
+  },
+  {
+   "voz": "Lanzas dos monedas y te dicen que salió al menos un sello. ¿Cuál es la probabilidad de que ambas sean sello?",
+   "elige": {
+    "pregunta": "Lanzas 2 monedas y te dicen que salió al menos un sello. ¿Probabilidad de que ambas sean sello?",
+    "opciones": [
+     "1/3",
+     "1/2",
+     "1/4"
+    ],
+    "bien": "Así es: quedan tres casos, y solo uno es sello y sello.",
+    "mal": "Es un tercio: se descarta cara y cara, quedan tres casos, y solo uno tiene dos sellos."
+   }
+  },
+  {
+   "voz": "En resumen: cuenta los casos igual de probables. Para «al menos uno», usa uno menos ninguno. Para cosas independientes juntas, multiplica. Y descarta lo que ya sabes que no pasó.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔢",
+      "texto": "Cuenta casos",
+      "w": "cuenta"
+     },
+     {
+      "icono": "☝️",
+      "texto": "1 − ninguno",
+      "w": "uno menos ninguno"
+     },
+     {
+      "icono": "✖️",
+      "texto": "Juntas: multiplica",
+      "w": "multiplica"
+     },
+     {
+      "icono": "🗑️",
+      "texto": "Descarta lo imposible",
+      "w": "descarta",
+      "marca": "oro"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

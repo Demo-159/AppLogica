@@ -1,0 +1,283 @@
+{
+ "id": "u3s3",
+ "titulo": "Conclusiones que no se siguen",
+ "icono": "🧩",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a detectar conclusiones que parecen seguirse, pero no se siguen.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🧩",
+    "texto": "Conclusiones que no se siguen"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Algunos médicos son músicos. Algunos músicos son zurdos. ¿Algunos médicos son zurdos? Parece que sí, pero dibújalo.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "Algunos médicos son músicos",
+      "w": "algunos médicos"
+     },
+     {
+      "t": "Algunos músicos son zurdos",
+      "w": "algunos músicos"
+     },
+     {
+      "t": "¿Algunos médicos son zurdos?",
+      "c": "#FFC800",
+      "w": "parece que sí"
+     }
+    ]
+   },
+   "q": [
+    "silo-02"
+   ]
+  },
+  {
+   "voz": "Los médicos músicos pueden ser unos, y los músicos zurdos, otros distintos. Puede que ningún médico sea zurdo. No se sigue.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "tres",
+    "a": {
+     "t": "Médicos",
+     "w": "médicos",
+     "c": "#1CB0F6"
+    },
+    "b": {
+     "t": "Zurdos",
+     "w": "zurdos",
+     "c": "#FF4B4B"
+    },
+    "c": {
+     "t": "Músicos",
+     "w": "músicos",
+     "c": "#FFC800"
+    },
+    "puntos": [
+     {
+      "x": 150,
+      "y": 140,
+      "t": "✕",
+      "w": "médicos músicos",
+      "s": 22,
+      "c": "#1CB0F6"
+     },
+     {
+      "x": 212,
+      "y": 140,
+      "t": "✕",
+      "w": "músicos zurdos",
+      "s": 22,
+      "c": "#FF4B4B"
+     }
+    ],
+    "sub": "Ningún médico es zurdo: ¡posible!",
+    "sw": "no se sigue"
+   },
+   "q": [
+    "silo-02"
+   ]
+  },
+  {
+   "voz": "Lo mismo con: todos los gatos son animales, y algunos animales son negros. Los animales negros pueden ser solo cuervos y panteras, fuera de los gatos. No se sigue que algunos gatos sean negros.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "Gatos",
+     "w": "gatos",
+     "c": "#FFC800"
+    },
+    "b": {
+     "t": "Animales",
+     "w": "animales",
+     "c": "#1CB0F6"
+    },
+    "puntos": [
+     {
+      "x": 110,
+      "y": 85,
+      "t": "🐦‍⬛",
+      "w": "cuervos",
+      "s": 22
+     },
+     {
+      "x": 250,
+      "y": 85,
+      "t": "🐆",
+      "w": "panteras",
+      "s": 22
+     }
+    ],
+    "sub": "No se sigue",
+    "sw": "no se sigue"
+   },
+   "q": [
+    "silo-04"
+   ]
+  },
+  {
+   "voz": "Algunas frutas son rojas. Algunas cosas rojas son autos. ¿Se sigue que algunas frutas son autos?",
+   "elige": {
+    "pregunta": "«Algunas frutas son rojas. Algunas cosas rojas son autos». ¿Algunas frutas son autos?",
+    "opciones": [
+     "No se sigue",
+     "Sí, se sigue",
+     "Sí, todas"
+    ],
+    "bien": "Así es: las frutas rojas y los autos rojos son cosas distintas.",
+    "mal": "No se sigue: las frutas rojas pueden ser unas, y los autos rojos, otros."
+   }
+  },
+  {
+   "voz": "Otra trampa: todo lo que tiene motor necesita mantención. Las bicicletas necesitan mantención. ¿Entonces tienen motor? No se sigue.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🛵",
+      "t": "Lo que tiene motor → mantención",
+      "w": "tiene motor"
+     },
+     {
+      "icono": "🚲",
+      "t": "Las bicicletas → mantención",
+      "w": "las bicicletas"
+     },
+     {
+      "icono": "❓",
+      "t": "¿Las bicicletas tienen motor?",
+      "w": "no se sigue",
+      "c": "#FF4B4B"
+     }
+    ]
+   },
+   "q": [
+    "silo-05"
+   ]
+  },
+  {
+   "voz": "Las cosas con motor están dentro del círculo de lo que necesita mantención. Las bicicletas también están en ese círculo grande, pero eso no las mete en el de los motores.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "Con motor",
+     "w": "con motor",
+     "c": "#FFC800"
+    },
+    "b": {
+     "t": "Necesita mantención",
+     "w": "necesita mantención",
+     "c": "#1CB0F6"
+    },
+    "puntos": [
+     {
+      "x": 110,
+      "y": 170,
+      "t": "🚲",
+      "w": "bicicletas",
+      "s": 30
+     }
+    ]
+   },
+   "q": [
+    "silo-05"
+   ]
+  },
+  {
+   "voz": "La palabra que se repite en las dos premisas se llama término medio. Aquí es «necesita mantención», y no conecta nada: las dos premisas solo dicen que motores y bicicletas están dentro de ese círculo grande, y ahí cabe de todo.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     "motor →",
+     {
+      "t": "mantención",
+      "c": "#1CB0F6",
+      "w": "término medio"
+     },
+     "← bicicletas"
+    ],
+    "titulo": "Término medio",
+    "tw": "se repite",
+    "sub": "No conecta las premisas",
+    "sw": "no conecta nada"
+   },
+   "q": [
+    "silo-05"
+   ]
+  },
+  {
+   "voz": "Ahora uno que sí se sigue. Algunos estudiantes no son puntuales, y todos los delegados son puntuales. Esos estudiantes impuntuales no pueden ser delegados. Entonces, algunos estudiantes no son delegados.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "Delegados",
+     "w": "delegados",
+     "c": "#58CC02"
+    },
+    "b": {
+     "t": "Puntuales",
+     "w": "puntuales",
+     "c": "#1CB0F6"
+    },
+    "puntos": [
+     {
+      "x": 330,
+      "y": 40,
+      "t": "🧑‍🎓",
+      "w": "estudiantes impuntuales",
+      "s": 26
+     }
+    ],
+    "sub": "Algunos estudiantes no son delegados",
+    "sw": "entonces, algunos"
+   },
+   "q": [
+    "silo-09"
+   ]
+  },
+  {
+   "voz": "Algunos libros no tienen tapas duras. Todos los diccionarios tienen tapas duras. ¿Qué se sigue?",
+   "elige": {
+    "pregunta": "«Algunos libros no tienen tapas duras. Todos los diccionarios tienen tapas duras». ¿Qué se sigue?",
+    "opciones": [
+     "Algunos libros no son diccionarios",
+     "Ningún libro es diccionario",
+     "Algunos diccionarios no son libros"
+    ],
+    "bien": "Así es: esos libros sin tapas duras no pueden ser diccionarios.",
+    "mal": "Se sigue que algunos libros no son diccionarios: los que no tienen tapas duras."
+   }
+  },
+  {
+   "voz": "En resumen: dibuja los círculos. Si puedes dibujar las premisas sin que se cumpla la conclusión, la conclusión no se sigue.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "✏️",
+      "texto": "Dibuja las premisas",
+      "w": "dibuja"
+     },
+     {
+      "icono": "🔍",
+      "texto": "Busca un caso que falle",
+      "w": "sin que se cumpla"
+     },
+     {
+      "icono": "🚫",
+      "texto": "Si existe, no se sigue",
+      "w": "no se sigue",
+      "marca": "mal"
+     }
+    ]
+   }
+  }
+ ]
+}

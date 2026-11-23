@@ -6,56 +6,263 @@
  "pasos": [
   {
    "voz": "En esta sesión vas a ver cuándo una frase del tipo «si pasa esto, entonces pasa esto otro» es verdadera, y cuándo es falsa.",
-   "escena": {"tipo": "titulo", "icono": "🤝", "texto": "El condicional: una promesa"},
-   "fondo": "liso"
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🤝",
+    "texto": "El condicional: una promesa"
+   },
+   "fondo": "aula"
   },
   {
    "voz": "Imagina que una amiga te hace una promesa: si apruebas el examen, te invito a comer.",
-   "escena": {"tipo": "anim", "id": "u1-promesa"}
+   "escena": {
+    "tipo": "anim",
+    "id": "u1-promesa"
+   }
   },
   {
    "voz": "La frase tiene dos partes. Primero, la condición: que apruebes. Después, lo prometido: que te invite a comer.",
-   "escena": {"tipo": "anim", "id": "u1-partes"}
+   "escena": {
+    "tipo": "anim",
+    "id": "u1-partes"
+   }
   },
   {
    "voz": "Primer caso: apruebas, y tu amiga te invita a comer. Cumplió su promesa.",
-   "escena": {"tipo": "anim", "id": "u1-caso1"}
+   "escena": {
+    "tipo": "anim",
+    "id": "u1-caso1"
+   }
   },
   {
    "voz": "Segundo caso: apruebas, pero tu amiga no te invita. Rompió la promesa. Es el único caso en que la frase es falsa.",
-   "escena": {"tipo": "anim", "id": "u1-caso2"}
+   "escena": {
+    "tipo": "anim",
+    "id": "u1-caso2"
+   }
   },
   {
    "voz": "¿Y si repruebas? La promesa no decía nada sobre ese caso. Te invite o no te invite, no la rompió.",
-   "escena": {"tipo": "anim", "id": "u1-caso34"}
+   "escena": {
+    "tipo": "anim",
+    "id": "u1-caso34"
+   }
   },
   {
    "voz": "¿En qué caso tu amiga rompe la promesa?",
    "elige": {
     "pregunta": "«Si apruebas, te invito a comer». ¿En qué caso tu amiga rompe la promesa?",
-    "opciones": ["Apruebas y no te invita", "Repruebas y te invita igual", "Repruebas y no te invita"],
+    "opciones": [
+     "Apruebas y no te invita",
+     "Repruebas y te invita igual",
+     "Repruebas y no te invita"
+    ],
     "bien": "Así es: solo la rompe si apruebas y no te invita.",
     "mal": "La rompe solo si apruebas y no te invita. Si repruebas, la promesa no dice nada."
-   },
-   "repite": [4, 5]
+   }
   },
   {
    "voz": "En resumen: una promesa condicional solo es falsa cuando se cumple la condición y no se cumple lo prometido.",
-   "escena": {"tipo": "anim", "id": "u1-tabla"}
+   "escena": {
+    "tipo": "anim",
+    "id": "u1-tabla"
+   }
   },
   {
    "voz": "Cuidado con una trampa: si tu amiga te invita a comer, eso no prueba que aprobaste. Pudo invitarte por tu cumpleaños.",
-   "escena": {"tipo": "anim", "id": "u1-trampa"}
+   "escena": {
+    "tipo": "anim",
+    "id": "u1-trampa"
+   }
   },
   {
    "voz": "Tu amiga te invitó a comer. ¿Qué puedes concluir sobre el examen?",
    "elige": {
     "pregunta": "Tu amiga te invitó a comer. Sobre el examen, puedes concluir que…",
-    "opciones": ["No se puede saber si aprobaste", "Aprobaste", "Reprobaste"],
+    "opciones": [
+     "No se puede saber si aprobaste",
+     "Aprobaste",
+     "Reprobaste"
+    ],
     "bien": "Así es: pudo invitarte por otro motivo.",
     "mal": "No se puede saber. Pudo invitarte por otro motivo, como tu cumpleaños."
+   }
+  },
+  {
+   "voz": "En lógica, a la condición se le llama pe y a lo prometido, cu. La frase se escribe pe, flecha, cu, y se lee: si pe, entonces cu.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p",
+      "c": "#1CB0F6",
+      "w": "pe"
+     },
+     {
+      "t": "→",
+      "w": "flecha"
+     },
+     {
+      "t": "q",
+      "c": "#FFC800",
+      "w": "cu."
+     }
+    ],
+    "sub": "«si p, entonces q»",
+    "sw": "se lee"
+   }
+  },
+  {
+   "voz": "Igual que la promesa, pe flecha cu solo es falso en un caso: cuando pe es verdadero y cu es falso. En los otros tres casos es verdadero.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "p",
+     "q",
+     "p → q"
+    ],
+    "filas": [
+     {
+      "c": [
+       "V",
+       "V",
+       "V"
+      ],
+      "w": "otros tres"
+     },
+     {
+      "c": [
+       "V",
+       "F",
+       "F"
+      ],
+      "marca": "mal",
+      "w": "un caso"
+     },
+     {
+      "c": [
+       "F",
+       "V",
+       "V"
+      ],
+      "w": "otros tres"
+     },
+     {
+      "c": [
+       "F",
+       "F",
+       "V"
+      ],
+      "w": "otros tres"
+     }
+    ]
    },
-   "repite": [8]
+   "q": [
+    "prop-05"
+   ]
+  },
+  {
+   "voz": "¿Cuándo es falso pe flecha cu?",
+   "elige": {
+    "pregunta": "¿En qué caso es FALSO «p → q»?",
+    "opciones": [
+     "p verdadero y q falso",
+     "p falso y q verdadero",
+     "p falso y q falso"
+    ],
+    "bien": "Así es: solo cuando se cumple la condición y no lo prometido.",
+    "mal": "Solo es falso cuando pe es verdadero y cu es falso."
+   }
+  },
+  {
+   "voz": "Ahora, ¿cómo se niega una promesa? Negarla es decir que se rompió. Y solo se rompe de una forma: apruebas, y no te invita.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🤝",
+      "titulo": "La promesa",
+      "texto": "Si apruebas, te invito",
+      "w": "cómo se niega"
+     },
+     {
+      "icono": "💔",
+      "titulo": "Su negación",
+      "texto": "Apruebas y NO te invito",
+      "marca": "mal",
+      "w": "se rompió"
+     }
+    ]
+   },
+   "q": [
+    "prop-02"
+   ]
+  },
+  {
+   "voz": "Fíjate: la negación de una promesa no es otra promesa. No lleva «si». Es una frase con «y»: pasa la condición, y no pasa lo prometido.",
+   "escena": {
+    "tipo": "frase",
+    "titulo": "La negación de «si p, entonces q»",
+    "partes": [
+     {
+      "t": "p",
+      "c": "#1CB0F6",
+      "w": "pasa la condición"
+     },
+     {
+      "t": "y",
+      "w": "y no pasa"
+     },
+     {
+      "t": "no q",
+      "c": "#FF4B4B",
+      "w": "no pasa lo prometido"
+     }
+    ],
+    "sub": "Sin «si»: es una frase con «y»",
+    "sw": "No lleva"
+   },
+   "q": [
+    "prop-02"
+   ]
+  },
+  {
+   "voz": "¿Cuál es la negación de: si entrenas, ganas?",
+   "elige": {
+    "pregunta": "¿Cuál es la negación de «Si entrenas, ganas»?",
+    "opciones": [
+     "Entrenas y no ganas",
+     "Si no entrenas, no ganas",
+     "Si entrenas, no ganas"
+    ],
+    "bien": "Así es: entrenas, y no ganas. Es una frase con «y».",
+    "mal": "La negación es: entrenas y no ganas. Pasa la condición y no pasa lo prometido."
+   }
+  },
+  {
+   "voz": "En resumen: si pe, entonces cu, solo es falso cuando pe pasa y cu no pasa. Y su negación es justo ese caso: pe, y no cu.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🤝",
+      "texto": "p → q",
+      "w": "si pe"
+     },
+     {
+      "icono": "❌",
+      "texto": "Falso solo con p V y q F",
+      "marca": "mal",
+      "w": "solo es falso"
+     },
+     {
+      "icono": "🔁",
+      "texto": "Negación: p y no q",
+      "marca": "oro",
+      "w": "su negación"
+     }
+    ]
+   }
   }
  ]
 }

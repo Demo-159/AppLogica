@@ -1,0 +1,211 @@
+{
+ "id": "u3s2",
+ "titulo": "Dar vuelta las frases",
+ "icono": "🔃",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver qué frases se pueden dar vuelta sin cambiar su significado.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔃",
+    "texto": "Dar vuelta las frases"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Ningún reptil es mamífero. Los dos círculos están separados. Si no se tocan, tampoco ningún mamífero es reptil. «Ninguno» se puede dar vuelta.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "aparte",
+    "a": {
+     "t": "Reptiles",
+     "w": "reptil",
+     "c": "#58CC02"
+    },
+    "b": {
+     "t": "Mamíferos",
+     "w": "mamífero",
+     "c": "#FFC800"
+    },
+    "sub": "Ningún mamífero es reptil",
+    "sw": "tampoco ningún mamífero"
+   },
+   "q": [
+    "silo-07"
+   ]
+  },
+  {
+   "voz": "Con «algunos» pasa lo mismo: si algunos estudiantes son deportistas, entonces algunos deportistas son estudiantes. Es la misma parte común.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "cruce",
+    "a": {
+     "t": "Estudiantes",
+     "w": "algunos estudiantes",
+     "c": "#1CB0F6"
+    },
+    "b": {
+     "t": "Deportistas",
+     "w": "deportistas",
+     "c": "#FFC800"
+    },
+    "sombras": [
+     {
+      "r": "ab",
+      "c": "#FFC800",
+      "w": "la misma parte común"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "Pero «todos» no se puede dar vuelta. Todos los cuadrados son rectángulos, pero no todos los rectángulos son cuadrados: hay rectángulos alargados.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "⬛ Cuadrados",
+     "w": "todos los cuadrados",
+     "c": "#FFC800"
+    },
+    "b": {
+     "t": "Rectángulos",
+     "w": "rectángulos",
+     "c": "#1CB0F6"
+    },
+    "puntos": [
+     {
+      "x": 180,
+      "y": 40,
+      "t": "▬",
+      "w": "alargados",
+      "s": 30,
+      "c": "#1CB0F6"
+     }
+    ],
+    "sub": "No se puede dar vuelta",
+    "sw": "no se puede dar vuelta"
+   },
+   "q": [
+    "silo-08"
+   ]
+  },
+  {
+   "voz": "Ningún triángulo tiene cuatro lados. ¿Qué otra frase también es verdadera?",
+   "elige": {
+    "pregunta": "Si «Ningún triángulo tiene cuatro lados» es verdadero, ¿qué otra frase también lo es?",
+    "opciones": [
+     "Nada que tenga cuatro lados es un triángulo",
+     "Todo lo que tiene cuatro lados es un triángulo",
+     "Algunos triángulos tienen cuatro lados"
+    ],
+    "bien": "Así es: «ninguno» se puede dar vuelta.",
+    "mal": "Es «nada que tenga cuatro lados es un triángulo»: «ninguno» se puede dar vuelta."
+   }
+  },
+  {
+   "voz": "Todos los perros son animales. ¿Se puede decir que todos los animales son perros?",
+   "elige": {
+    "pregunta": "Si «Todos los perros son animales» es verdadero, ¿«Todos los animales son perros» también lo es?",
+    "opciones": [
+     "No necesariamente",
+     "Sí, siempre",
+     "Sí, porque se puede dar vuelta"
+    ],
+    "bien": "Así es: «todos» no se puede dar vuelta.",
+    "mal": "No: «todos» no se puede dar vuelta. Hay animales que no son perros."
+   }
+  },
+  {
+   "voz": "Otra trampa: «algunos» no significa «algunos no». Si te dicen que algunos estudiantes son deportistas, ¿sabes si algunos no lo son? No. Podrían serlo todos.",
+   "escena": {
+    "tipo": "venn",
+    "rel": "dentro",
+    "a": {
+     "t": "Estudiantes",
+     "w": "podrían serlo todos",
+     "c": "#1CB0F6"
+    },
+    "b": {
+     "t": "Deportistas",
+     "w": "deportistas",
+     "c": "#FFC800"
+    },
+    "titulo": "¿Y si todos lo son?",
+    "tw": "podrían serlo todos"
+   },
+   "q": [
+    "silo-12"
+   ]
+  },
+  {
+   "voz": "En lógica, «algunos» significa al menos uno. Puede ser uno, varios o todos. Así que «algunos no son deportistas» podría ser verdadero o falso.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "☝️",
+      "texto": "Uno",
+      "w": "puede ser uno"
+     },
+     {
+      "icono": "🔢",
+      "texto": "Varios",
+      "w": "varios"
+     },
+     {
+      "icono": "💯",
+      "texto": "Todos",
+      "w": "o todos",
+      "marca": "oro"
+     }
+    ],
+    "titulo": "«Algunos» = al menos uno",
+    "tw": "al menos uno"
+   },
+   "q": [
+    "silo-12"
+   ]
+  },
+  {
+   "voz": "Algunos de mis amigos son chilenos. ¿Qué sabes de: algunos de mis amigos no son chilenos?",
+   "elige": {
+    "pregunta": "«Algunos de mis amigos son chilenos». ¿Qué sabes de «Algunos de mis amigos NO son chilenos»?",
+    "opciones": [
+     "Que podría ser verdadero o falso",
+     "Que es verdadero",
+     "Que es falso"
+    ],
+    "bien": "Así es: quizás todos tus amigos son chilenos.",
+    "mal": "Podría ser verdadero o falso: «algunos» no dice nada de los demás. Quizás todos son chilenos."
+   }
+  },
+  {
+   "voz": "En resumen: «ninguno» y «algunos» se pueden dar vuelta; «todos», no. Y «algunos» significa al menos uno, que pueden ser todos.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔃",
+      "texto": "Ninguno y algunos: sí",
+      "w": "se pueden dar vuelta",
+      "marca": "bien"
+     },
+     {
+      "icono": "🚫",
+      "texto": "Todos: no",
+      "w": "todos», no",
+      "marca": "mal"
+     },
+     {
+      "icono": "💯",
+      "texto": "Algunos: al menos uno",
+      "w": "al menos uno",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

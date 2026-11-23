@@ -1,0 +1,238 @@
+{
+ "id": "u11s3",
+ "titulo": "Tipos de razonamiento",
+ "icono": "🧭",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a distinguir razonamientos deductivos e inductivos, y a revisar palabras dobles y analogías.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🧭",
+    "texto": "Tipos de razonamiento"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "Un razonamiento deductivo, si es válido, garantiza su conclusión. Uno inductivo va de casos observados a una regla general, y solo la hace probable.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "📐",
+      "titulo": "Deductivo",
+      "texto": "Garantiza",
+      "marca": "bien",
+      "w": "deductivo"
+     },
+     {
+      "icono": "🔭",
+      "titulo": "Inductivo",
+      "texto": "Hace probable",
+      "w": "inductivo"
+     }
+    ]
+   },
+   "q": [
+    "arg-06"
+   ]
+  },
+  {
+   "voz": "«Todos los cuervos observados hasta hoy son negros, así que el próximo será negro». Es inductivo: es razonable, pero no seguro.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "🐦‍⬛"
+     },
+     {
+      "t": "🐦‍⬛"
+     },
+     {
+      "t": "🐦‍⬛"
+     },
+     {
+      "t": "🐦‍⬛"
+     },
+     {
+      "t": "?",
+      "w": "el próximo",
+      "c": "#FFC800"
+     }
+    ],
+    "sub": "Inductivo: probable, no seguro",
+    "sw": "es inductivo"
+   },
+   "q": [
+    "arg-06"
+   ]
+  },
+  {
+   "voz": "El sol ha salido todos los días, así que mañana saldrá. ¿Qué tipo de razonamiento es?",
+   "elige": {
+    "pregunta": "«El sol ha salido todos los días, así que mañana saldrá». ¿Qué tipo de razonamiento es?",
+    "opciones": [
+     "Inductivo",
+     "Deductivo",
+     "Circular"
+    ],
+    "bien": "Así es: va de casos observados a lo que vendrá.",
+    "mal": "Es inductivo: va de casos observados a una conclusión probable."
+   }
+  },
+  {
+   "voz": "Cuidado con las palabras que cambian de significado. «Toda ley tiene un legislador. La gravedad es una ley. Entonces, la gravedad tiene un legislador».",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "⚖️",
+      "t": "Toda ley tiene legislador",
+      "w": "toda ley"
+     },
+     {
+      "icono": "🍎",
+      "t": "La gravedad es una ley",
+      "w": "la gravedad es una ley"
+     },
+     {
+      "icono": "❓",
+      "t": "La gravedad tiene legislador",
+      "w": "entonces",
+      "c": "#FF4B4B"
+     }
+    ]
+   },
+   "q": [
+    "arg-12"
+   ]
+  },
+  {
+   "voz": "En la primera premisa, «ley» es una norma que alguien dicta. En la segunda, es una regularidad de la naturaleza. Usar una palabra con dos significados se llama equívoco.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "⚖️",
+      "titulo": "Ley = norma",
+      "texto": "La dicta alguien",
+      "w": "una norma"
+     },
+     {
+      "icono": "🍎",
+      "titulo": "Ley = regularidad",
+      "texto": "De la naturaleza",
+      "w": "regularidad"
+     }
+    ]
+   },
+   "q": [
+    "arg-12"
+   ]
+  },
+  {
+   "voz": "El banco está junto al río. Me senté en un banco. Por lo tanto, me senté junto al río. ¿Qué problema hay?",
+   "elige": {
+    "pregunta": "«El banco está junto al río. Me senté en un banco. Por lo tanto, me senté junto al río». ¿Qué problema hay?",
+    "opciones": [
+     "Usa «banco» con dos significados",
+     "Es un razonamiento inductivo",
+     "Ninguno: es válido"
+    ],
+    "bien": "Así es: es un equívoco.",
+    "mal": "Es un equívoco: «banco» significa cosas distintas en cada premisa."
+   }
+  },
+  {
+   "voz": "Las analogías comparan dos cosas. «Un país es como una familia: si una familia no debe gastar más de lo que gana, el Estado tampoco».",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🏠",
+      "titulo": "Familia",
+      "w": "una familia"
+     },
+     {
+      "icono": "🏛️",
+      "titulo": "Estado",
+      "w": "el estado"
+     }
+    ]
+   },
+   "q": [
+    "arg-14"
+   ]
+  },
+  {
+   "voz": "Para evaluarla, mira si las semejanzas importantes pesan más que las diferencias importantes. Por ejemplo, un Estado emite su moneda y puede endeudarse a muy largo plazo; una familia, no.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "⚖️",
+      "texto": "Semejanzas relevantes",
+      "w": "semejanzas"
+     },
+     {
+      "icono": "⚖️",
+      "texto": "vs. diferencias relevantes",
+      "w": "diferencias importantes"
+     },
+     {
+      "icono": "🏛️",
+      "texto": "El Estado emite moneda",
+      "w": "emite su moneda",
+      "marca": "oro"
+     }
+    ]
+   },
+   "q": [
+    "arg-14"
+   ]
+  },
+  {
+   "voz": "¿Cómo se evalúa mejor una analogía?",
+   "elige": {
+    "pregunta": "¿Cómo se evalúa mejor una analogía?",
+    "opciones": [
+     "Comparando las semejanzas y diferencias relevantes",
+     "Viendo si es fácil de entender",
+     "Viendo quién la dice"
+    ],
+    "bien": "Así es: importa si las diferencias relevantes la rompen.",
+    "mal": "Se evalúa comparando sus semejanzas y diferencias relevantes."
+   }
+  },
+  {
+   "voz": "En resumen: la deducción garantiza y la inducción hace probable. Revisa que cada palabra signifique lo mismo en todo el argumento. Y pesa semejanzas y diferencias en cada analogía.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "📐",
+      "texto": "Deducción garantiza",
+      "w": "garantiza"
+     },
+     {
+      "icono": "🔭",
+      "texto": "Inducción: probable",
+      "w": "probable"
+     },
+     {
+      "icono": "🔤",
+      "texto": "Ojo con el equívoco",
+      "w": "cada palabra"
+     },
+     {
+      "icono": "⚖️",
+      "texto": "Pesa la analogía",
+      "w": "analogía",
+      "marca": "oro"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

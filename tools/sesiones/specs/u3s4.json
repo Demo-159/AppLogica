@@ -1,0 +1,180 @@
+{
+ "id": "u3s4",
+ "titulo": "Forma y orden",
+ "icono": "📏",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver que un razonamiento puede ser correcto con datos falsos, y vas a ordenar personas usando comparaciones.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "📏",
+    "texto": "Forma y orden"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Todos los mamíferos pueden volar. Las ballenas son mamíferos. Por lo tanto, las ballenas pueden volar.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🦇",
+      "t": "Todos los mamíferos vuelan",
+      "w": "todos los mamíferos"
+     },
+     {
+      "icono": "🐋",
+      "t": "Las ballenas son mamíferos",
+      "w": "las ballenas son"
+     },
+     {
+      "icono": "🪽",
+      "t": "Las ballenas vuelan",
+      "w": "por lo tanto",
+      "c": "#FFC800"
+     }
+    ]
+   },
+   "q": [
+    "silo-06"
+   ]
+  },
+  {
+   "voz": "La forma es correcta: si la primera premisa fuera cierta, la conclusión sería obligada. Es válido. Pero esa premisa es falsa, así que no es sólido.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "📐",
+      "titulo": "Válido",
+      "texto": "La forma es correcta",
+      "marca": "bien",
+      "w": "es válido"
+     },
+     {
+      "icono": "❌",
+      "titulo": "No es sólido",
+      "texto": "Una premisa es falsa",
+      "marca": "mal",
+      "w": "no es sólido"
+     }
+    ]
+   },
+   "q": [
+    "silo-06"
+   ]
+  },
+  {
+   "voz": "Ojo con el sesgo de creencia: tendemos a juzgar un argumento por si nos gusta su conclusión. Hay que mirar la forma.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "👀",
+    "titulo": "Sesgo de creencia",
+    "texto": "Juzga la forma, no si te gusta la conclusión"
+   }
+  },
+  {
+   "voz": "Todos los peces hablan. Nemo es un pez. Por lo tanto, Nemo habla. ¿Cómo es?",
+   "elige": {
+    "pregunta": "«Todos los peces hablan. Nemo es un pez. Por lo tanto, Nemo habla». ¿Cómo lo evalúas?",
+    "opciones": [
+     "Válido, pero no sólido",
+     "Inválido",
+     "Válido y sólido"
+    ],
+    "bien": "Así es: la forma es correcta, pero una premisa es falsa.",
+    "mal": "Es válido, pero no sólido: la forma es correcta y la primera premisa es falsa."
+   }
+  },
+  {
+   "voz": "Ahora, ordenar. Ana es más alta que Beto. Beto es más alto que Carla. Dani es más baja que Carla.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "👩",
+      "texto": "Ana > Beto",
+      "w": "ana es más alta"
+     },
+     {
+      "icono": "👨",
+      "texto": "Beto > Carla",
+      "w": "beto es más alto"
+     },
+     {
+      "icono": "👧",
+      "texto": "Dani < Carla",
+      "w": "dani es más baja"
+     }
+    ]
+   },
+   "q": [
+    "silo-11"
+   ]
+  },
+  {
+   "voz": "Ponlos en una fila, del más alto al más bajo: Ana, Beto, Carla, Dani. La más baja es Dani, y la segunda más baja es Carla.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "Ana",
+      "w": "ana, beto"
+     },
+     {
+      "t": "Beto",
+      "w": "ana, beto"
+     },
+     {
+      "t": "Carla",
+      "w": "carla, dani",
+      "c": "#FFC800"
+     },
+     {
+      "t": "Dani",
+      "w": "carla, dani"
+     }
+    ],
+    "sub": "Del más alto al más bajo",
+    "sw": "ponlos en una fila"
+   },
+   "q": [
+    "silo-11"
+   ]
+  },
+  {
+   "voz": "Pía corre más rápido que Tomás. Tomás corre más rápido que Lucas. ¿Quién es el más lento?",
+   "elige": {
+    "pregunta": "Pía corre más rápido que Tomás. Tomás corre más rápido que Lucas. ¿Quién es el más lento?",
+    "opciones": [
+     "Lucas",
+     "Tomás",
+     "Pía"
+    ],
+    "bien": "Así es: el orden es Pía, Tomás, Lucas.",
+    "mal": "El más lento es Lucas: el orden es Pía, Tomás y Lucas."
+   }
+  },
+  {
+   "voz": "En resumen: la validez depende de la forma, aunque los datos sean falsos. Y para comparar, ordena todo en una sola fila.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "📐",
+      "texto": "La forma manda",
+      "w": "la forma",
+      "marca": "oro"
+     },
+     {
+      "icono": "📏",
+      "texto": "Ordena en una fila",
+      "w": "una sola fila",
+      "marca": "bien"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -28,8 +28,17 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
-      - name: Validar contenido
+      - name: Validar contenido (cada pregunta se enseña en una sesión con tutor)
         run: npm test
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compilar las sesiones con tutor (voz con edge-tts)
+        run: |
+          pip install edge-tts
+          npm run sesiones
 
       - name: Copiar la app web al proyecto Android
         run: npm run android:sync

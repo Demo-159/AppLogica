@@ -1,0 +1,224 @@
+{
+ "id": "u11s4",
+ "titulo": "Evaluar afirmaciones",
+ "icono": "🔎",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a aprender herramientas para evaluar afirmaciones: quién debe probar, qué se puede poner a prueba, y en qué fuentes confiar.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔎",
+    "texto": "Evaluar afirmaciones"
+   },
+   "fondo": "lab"
+  },
+  {
+   "voz": "Quien hace una afirmación debe probarla. Si Pedro dice que tiene un dragón invisible en el garaje, no te toca a ti demostrar que no existe. Esto se llama carga de la prueba.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🐉",
+      "titulo": "Pedro afirma",
+      "texto": "Él debe probarlo",
+      "marca": "bien",
+      "w": "pedro dice"
+     },
+     {
+      "icono": "🤷",
+      "titulo": "Tú dudas",
+      "texto": "No te toca probar",
+      "w": "no te toca a ti"
+     }
+    ]
+   },
+   "q": [
+    "arg-09"
+   ]
+  },
+  {
+   "voz": "Alguien afirma que un cristal cura el insomnio. ¿Quién debe probarlo?",
+   "elige": {
+    "pregunta": "Alguien afirma que un cristal cura el insomnio. ¿Quién tiene la carga de la prueba?",
+    "opciones": [
+     "Quien lo afirma",
+     "Quien duda",
+     "Nadie"
+    ],
+    "bien": "Así es: quien afirma, prueba.",
+    "mal": "Debe probarlo quien lo afirma."
+   }
+  },
+  {
+   "voz": "Una buena afirmación científica es falsable: se puede imaginar una observación que la demostraría falsa. «Todos los metales se dilatan al calentarse»: bastaría un metal que no se dilate.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "«Todos los metales se dilatan»",
+      "c": "#58CC02",
+      "w": "todos los metales"
+     },
+     "←",
+     {
+      "t": "un metal que no se dilate",
+      "c": "#FFC800",
+      "w": "bastaría"
+     }
+    ],
+    "titulo": "Falsable",
+    "tw": "falsable"
+   },
+   "q": [
+    "arg-11"
+   ]
+  },
+  {
+   "voz": "En cambio, «todo pasa por algo», o «hay fuerzas que nunca se pueden detectar», no se pueden poner a prueba con ninguna observación.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔮",
+      "texto": "«Todo pasa por algo»",
+      "w": "todo pasa por algo",
+      "marca": "mal"
+     },
+     {
+      "icono": "👻",
+      "texto": "«Fuerzas indetectables»",
+      "w": "nunca se pueden detectar",
+      "marca": "mal"
+     }
+    ],
+    "sub": "No falsables",
+    "sw": "no se pueden poner a prueba"
+   },
+   "q": [
+    "arg-11"
+   ]
+  },
+  {
+   "voz": "¿Cuál de estas afirmaciones es falsable?",
+   "elige": {
+    "pregunta": "¿Cuál es falsable (se podría demostrar falsa con una observación)?",
+    "opciones": [
+     "«El agua hierve a 100 °C a nivel del mar»",
+     "«Todo pasa por algo»",
+     "«Hay seres invisibles que no dejan rastro»"
+    ],
+    "bien": "Así es: bastaría medir agua que hierva a otra temperatura.",
+    "mal": "La falsable es la del agua: bastaría una medición que diera otra temperatura."
+   }
+  },
+  {
+   "voz": "La navaja de Occam: si dos explicaciones dan cuenta igual de bien de algo, conviene preferir, de forma provisional, la que necesita menos supuestos.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🪒",
+      "titulo": "2 supuestos",
+      "texto": "Preferir",
+      "marca": "bien",
+      "w": "menos supuestos"
+     },
+     {
+      "icono": "🧩",
+      "titulo": "7 supuestos",
+      "texto": "Explica igual",
+      "w": "igual de bien"
+     }
+    ]
+   },
+   "q": [
+    "arg-10"
+   ]
+  },
+  {
+   "voz": "Una explicación usa tres supuestos y otra ocho, y las dos explican igual de bien. ¿Qué recomienda la navaja de Occam?",
+   "elige": {
+    "pregunta": "Una explicación usa 3 supuestos y otra 8; las dos explican igual de bien. ¿Qué recomienda la navaja de Occam?",
+    "opciones": [
+     "Preferir provisionalmente la de 3",
+     "Preferir la de 8, por ser más completa",
+     "Rechazar ambas"
+    ],
+    "bien": "Así es: la de menos supuestos.",
+    "mal": "Recomienda preferir provisionalmente la de menos supuestos: la de tres."
+   }
+  },
+  {
+   "voz": "Por último, las fuentes. Para saber si una vacuna es segura, lo más confiable es una revisión sistemática en una revista científica con revisión por pares. Un video viral o un testimonio valen mucho menos.",
+   "escena": {
+    "tipo": "lista",
+    "items": [
+     {
+      "icono": "🏆",
+      "texto": "Revisión sistemática con revisión por pares",
+      "w": "revisión sistemática"
+     },
+     {
+      "icono": "📺",
+      "texto": "Video viral",
+      "w": "video viral"
+     },
+     {
+      "icono": "💬",
+      "texto": "Testimonio de un conocido",
+      "w": "testimonio"
+     }
+    ],
+    "titulo": "Confiabilidad",
+    "tw": "lo más confiable"
+   },
+   "q": [
+    "arg-08"
+   ]
+  },
+  {
+   "voz": "¿Qué fuente es más confiable sobre un medicamento?",
+   "elige": {
+    "pregunta": "¿Qué fuente es más confiable sobre la seguridad de un medicamento?",
+    "opciones": [
+     "Una revisión sistemática con revisión por pares",
+     "Un video viral de un médico",
+     "Una página que vende el producto"
+    ],
+    "bien": "Así es: resume muchos estudios revisados por expertos.",
+    "mal": "La más confiable es una revisión sistemática con revisión por pares."
+   }
+  },
+  {
+   "voz": "En resumen: quien afirma, prueba. Prefiere afirmaciones falsables y explicaciones con menos supuestos. Y confía más en las revisiones científicas que en videos o testimonios.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🐉",
+      "texto": "Quien afirma, prueba",
+      "w": "quien afirma"
+     },
+     {
+      "icono": "🧪",
+      "texto": "Falsable",
+      "w": "falsables"
+     },
+     {
+      "icono": "🪒",
+      "texto": "Menos supuestos",
+      "w": "menos supuestos"
+     },
+     {
+      "icono": "🏆",
+      "texto": "Revisiones científicas",
+      "w": "revisiones",
+      "marca": "oro"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

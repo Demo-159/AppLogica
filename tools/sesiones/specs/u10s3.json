@@ -1,0 +1,207 @@
+{
+ "id": "u10s3",
+ "titulo": "Ver lo que queremos ver",
+ "icono": "🔍",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a conocer sesgos que nos hacen ver el mundo como queremos verlo.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🔍",
+    "texto": "Ver lo que queremos ver"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "El sesgo de confirmación: buscar solo lo que confirma lo que ya creemos, y descartar lo demás.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🔍",
+    "titulo": "Sesgo de confirmación",
+    "texto": "Buscar solo lo que confirma lo que ya crees"
+   },
+   "q": [
+    "ses-05"
+   ]
+  },
+  {
+   "voz": "Sofía cree que un político es corrupto. Solo lee noticias que lo critican, y descarta las otras como propaganda. Así, nunca podrá descubrir si se equivoca.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "📰",
+      "titulo": "Lo critican",
+      "texto": "Las lee",
+      "marca": "bien",
+      "w": "solo lee noticias"
+     },
+     {
+      "icono": "🗑️",
+      "titulo": "Lo defienden",
+      "texto": "«Propaganda»",
+      "marca": "mal",
+      "w": "descarta las otras"
+     }
+    ]
+   },
+   "q": [
+    "ses-05"
+   ]
+  },
+  {
+   "voz": "El sesgo retrospectivo: después de que algo pasa, creemos que era obvio. Tras una elección, muchos dicen «era obvio quién ganaría», aunque antes estaban indecisos.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🤷",
+      "titulo": "Antes",
+      "texto": "Indecisos",
+      "w": "antes estaban indecisos"
+     },
+     {
+      "icono": "😎",
+      "titulo": "Después",
+      "texto": "«¡Era obvio!»",
+      "marca": "mal",
+      "w": "era obvio"
+     }
+    ]
+   },
+   "q": [
+    "ses-09"
+   ]
+  },
+  {
+   "voz": "Tras perder un partido, un hincha dice: yo sabía que íbamos a perder. Pero había apostado a que ganaban. ¿Qué sesgo es?",
+   "elige": {
+    "pregunta": "Tras perder un partido, un hincha dice «yo sabía que íbamos a perder», aunque había apostado a que ganaban. ¿Qué sesgo es?",
+    "opciones": [
+     "Sesgo retrospectivo",
+     "Sesgo de confirmación",
+     "Anclaje"
+    ],
+    "bien": "Así es: después de que pasa, parece obvio.",
+    "mal": "Es el sesgo retrospectivo: después de que pasa, parece que era obvio."
+   }
+  },
+  {
+   "voz": "El error fundamental de atribución: explicamos lo que hacen otros por cómo son, y olvidamos sus circunstancias. Un conductor te adelanta bruscamente, y piensas: qué persona más agresiva. Podría ir a una emergencia.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "😠",
+      "titulo": "«Es agresivo»",
+      "texto": "Cómo es",
+      "w": "qué persona más agresiva"
+     },
+     {
+      "icono": "🚑",
+      "titulo": "¿Una emergencia?",
+      "texto": "Sus circunstancias",
+      "marca": "bien",
+      "w": "una emergencia"
+     }
+    ]
+   },
+   "q": [
+    "ses-10"
+   ]
+  },
+  {
+   "voz": "Un compañero llega tarde, y piensas: es un irresponsable. Pero hubo un accidente en su ruta. ¿Qué sesgo es?",
+   "elige": {
+    "pregunta": "Un compañero llega tarde y piensas «es un irresponsable», sin saber que hubo un accidente en su ruta. ¿Qué sesgo es?",
+    "opciones": [
+     "Error fundamental de atribución",
+     "Sesgo retrospectivo",
+     "Heurística de disponibilidad"
+    ],
+    "bien": "Así es: culpas a la persona y olvidas la circunstancia.",
+    "mal": "Es el error fundamental de atribución: culpas a la persona y olvidas sus circunstancias."
+   }
+  },
+  {
+   "voz": "El costo hundido: seguir con algo solo porque ya invertimos en ello. Pagaste ocho mil pesos por una película que te aburre. Ese dinero ya se gastó, te quedes o no.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🎬",
+    "titulo": "Costo hundido",
+    "texto": "Lo ya pagado no se recupera, te quedes o no"
+   },
+   "q": [
+    "ses-07"
+   ]
+  },
+  {
+   "voz": "Lo racional es decidir según lo que viene: ¿disfrutarás más quedándote, o saliendo? Lo ya pagado no debería pesar en la decisión.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "💸",
+      "titulo": "Lo ya pagado",
+      "texto": "No cuenta",
+      "marca": "mal",
+      "w": "lo ya pagado"
+     },
+     {
+      "icono": "🔮",
+      "titulo": "Lo que viene",
+      "texto": "Esto decide",
+      "marca": "bien",
+      "w": "lo que viene"
+     }
+    ]
+   },
+   "q": [
+    "ses-07"
+   ]
+  },
+  {
+   "voz": "Llevas dos horas en una fila que ya no te sirve. ¿Qué es lo más racional?",
+   "elige": {
+    "pregunta": "Llevas 2 horas en una fila para algo que ya no te sirve. ¿Qué es lo más racional?",
+    "opciones": [
+     "Decidir según lo que ganas desde ahora",
+     "Quedarte para no perder las 2 horas",
+     "Esperar siempre hasta el final"
+    ],
+    "bien": "Así es: esas dos horas no vuelven, te quedes o no.",
+    "mal": "Lo racional es decidir según lo que ganas desde ahora: las dos horas ya no vuelven."
+   }
+  },
+  {
+   "voz": "En resumen: busca también lo que contradice tus ideas. Recuerda que el resultado no era obvio antes. Piensa en las circunstancias de los demás. Y no dejes que lo ya gastado decida por ti.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔍",
+      "texto": "Confirmación",
+      "w": "contradice"
+     },
+     {
+      "icono": "⏪",
+      "texto": "Retrospectivo",
+      "w": "no era obvio"
+     },
+     {
+      "icono": "🚑",
+      "texto": "Atribución",
+      "w": "circunstancias"
+     },
+     {
+      "icono": "💸",
+      "texto": "Costo hundido",
+      "w": "ya gastado"
+     }
+    ],
+    "cols": 2
+   }
+  }
+ ]
+}

@@ -1,0 +1,172 @@
+{
+ "id": "u8s4",
+ "titulo": "Números que confunden",
+ "icono": "📊",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver cómo un gráfico, o una suma de grupos, puede contar una historia falsa.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "📊",
+    "texto": "Números que confunden"
+   },
+   "fondo": "oficina"
+  },
+  {
+   "voz": "Mira este gráfico: dos barras, noventa y ocho y cien. Si el eje empieza en noventa y siete, una barra parece el triple de la otra.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Ventas A",
+      "valor": 1,
+      "color": "#1CB0F6",
+      "texto": "98",
+      "w": "noventa y ocho"
+     },
+     {
+      "label": "Ventas B",
+      "valor": 3,
+      "color": "#FFC800",
+      "texto": "100",
+      "w": "cien"
+     }
+    ],
+    "max": 3,
+    "sub": "Eje desde 97: ¡parece el triple!"
+   },
+   "q": [
+    "est-13"
+   ]
+  },
+  {
+   "voz": "Si el eje empieza en cero, se ve la verdad: son casi iguales. Cortar el eje exagera las diferencias pequeñas.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Ventas A",
+      "valor": 98,
+      "color": "#1CB0F6",
+      "texto": "98"
+     },
+     {
+      "label": "Ventas B",
+      "valor": 100,
+      "color": "#FFC800",
+      "texto": "100",
+      "w": "casi iguales"
+     }
+    ],
+    "max": 100,
+    "sub": "Eje desde 0: casi iguales"
+   },
+   "q": [
+    "est-13"
+   ]
+  },
+  {
+   "voz": "Un gráfico muestra cincuenta y cincuenta y dos, con el eje desde cuarenta y nueve. ¿Qué efecto tiene?",
+   "elige": {
+    "pregunta": "Un gráfico muestra 50 y 52, pero su eje empieza en 49. ¿Qué efecto tiene?",
+    "opciones": [
+     "Exagera una diferencia pequeña",
+     "Muestra los datos con más precisión",
+     "Oculta la diferencia"
+    ],
+    "bien": "Así es: cortar el eje agranda las diferencias.",
+    "mal": "Exagera una diferencia pequeña: con el eje cortado, cincuenta y dos parece el triple de cincuenta."
+   }
+  },
+  {
+   "voz": "La paradoja de Simpson: un tratamiento puede ganar en cada grupo por separado, y perder al juntar todo.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "🔀",
+    "titulo": "Paradoja de Simpson",
+    "texto": "Gana en cada grupo, pierde en el total"
+   },
+   "q": [
+    "est-07"
+   ]
+  },
+  {
+   "voz": "Pasa cuando los grupos tienen tamaños muy distintos. Este ejemplo es real: el tratamiento A se usó sobre todo en casos graves. Gana en casos leves y en graves, pero al juntar todo, parece peor.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "",
+     "A",
+     "B"
+    ],
+    "filas": [
+     {
+      "c": [
+       "Leves",
+       "93%",
+       "87%"
+      ],
+      "w": "casos leves",
+      "marca": "bien"
+     },
+     {
+      "c": [
+       "Graves",
+       "73%",
+       "69%"
+      ],
+      "w": "en graves",
+      "marca": "bien"
+     },
+     {
+      "c": [
+       "Total",
+       "78%",
+       "83%"
+      ],
+      "w": "al juntar todo",
+      "marca": "mal"
+     }
+    ],
+    "sub": "A se usó sobre todo en casos graves",
+    "sw": "sobre todo en casos graves"
+   },
+   "q": [
+    "est-07"
+   ]
+  },
+  {
+   "voz": "A es mejor que B en jóvenes y en adultos, pero peor al juntar a todos. ¿Es posible?",
+   "elige": {
+    "pregunta": "A es mejor que B en jóvenes y en adultos, pero peor al juntar a todos. ¿Es posible?",
+    "opciones": [
+     "Sí: es la paradoja de Simpson",
+     "No: es imposible",
+     "Solo si hay un error en los datos"
+    ],
+    "bien": "Así es: pasa cuando los grupos tienen tamaños muy distintos.",
+    "mal": "Sí, es posible: es la paradoja de Simpson."
+   }
+  },
+  {
+   "voz": "En resumen: revisa dónde empieza el eje de un gráfico. Y antes de comparar totales, mira qué pasa dentro de cada grupo.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "📏",
+      "texto": "¿Dónde empieza el eje?",
+      "w": "el eje",
+      "marca": "oro"
+     },
+     {
+      "icono": "🔀",
+      "texto": "Mira cada grupo",
+      "w": "cada grupo"
+     }
+    ]
+   }
+  }
+ ]
+}

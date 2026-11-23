@@ -1,0 +1,264 @@
+{
+ "id": "u1s4",
+ "titulo": "Solo si y a menos que",
+ "icono": "🗝️",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a traducir frases del día a día, como «solo si» y «a menos que», al «si, entonces».",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🗝️",
+    "texto": "«Solo si» y «a menos que»"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Lee esto: puedes entrar solo si tienes entrada. ¿Qué asegura? Que todos los que entran tienen entrada.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     "Entras",
+     {
+      "t": "solo si",
+      "c": "#FFC800",
+      "w": "solo si"
+     },
+     "tienes entrada 🎟️"
+    ],
+    "sub": "Todos los que entran tienen entrada",
+    "sw": "todos los que entran"
+   },
+   "q": [
+    "prop-06"
+   ]
+  },
+  {
+   "voz": "Pero no asegura que todos los que tienen entrada entren. Alguien puede tener entrada y quedarse en casa.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🎟️🚪",
+      "titulo": "Entra con entrada",
+      "texto": "Posible",
+      "marca": "bien",
+      "w": "tienen entrada entren"
+     },
+     {
+      "icono": "🎟️🏠",
+      "titulo": "Tiene entrada y no entra",
+      "texto": "También posible",
+      "marca": "bien",
+      "w": "quedarse en casa"
+     }
+    ]
+   },
+   "q": [
+    "prop-06"
+   ]
+  },
+  {
+   "voz": "Por eso, pe solo si cu se traduce como: si pe, entonces cu. Lo que va después del «solo si» queda a la derecha de la flecha.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p solo si q",
+      "w": "pe solo si cu"
+     },
+     "≡",
+     {
+      "t": "p → q",
+      "c": "#FFC800",
+      "w": "si pe, entonces cu"
+     }
+    ],
+    "sub": "«Si entras, tienes entrada»",
+    "sw": "a la derecha"
+   },
+   "q": [
+    "prop-06"
+   ]
+  },
+  {
+   "voz": "Puedes manejar solo si tienes licencia. ¿Qué frase es equivalente?",
+   "elige": {
+    "pregunta": "«Puedes manejar solo si tienes licencia». ¿Qué es equivalente?",
+    "opciones": [
+     "Si manejas, tienes licencia",
+     "Si tienes licencia, manejas",
+     "Si no manejas, no tienes licencia"
+    ],
+    "bien": "Así es: lo que va después del «solo si» queda a la derecha de la flecha.",
+    "mal": "Es: si manejas, tienes licencia. Tener licencia no obliga a manejar."
+   }
+  },
+  {
+   "voz": "Lo mismo pasa con la palabra «necesaria». Ser mayor de dieciocho años es necesario para votar: sin eso, no se vota. Entonces, si alguien vota, es mayor de dieciocho.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🗳️",
+      "t": "Vota",
+      "w": "si alguien vota"
+     },
+     {
+      "icono": "🧑",
+      "t": "Es mayor de 18",
+      "w": "es mayor de dieciocho.",
+      "c": "#58CC02"
+     }
+    ],
+    "sub": "«Necesario» va a la derecha de la flecha",
+    "sw": "necesario"
+   },
+   "q": [
+    "prop-07"
+   ]
+  },
+  {
+   "voz": "Ojo: necesario no es suficiente. Ser mayor de dieciocho no basta para votar; también hay que estar inscrito, por ejemplo. Por eso no se puede decir que todo mayor de dieciocho vota.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🔑",
+      "titulo": "Necesario",
+      "texto": "Sin eso, no hay",
+      "w": "necesario no"
+     },
+     {
+      "icono": "🏁",
+      "titulo": "Suficiente",
+      "texto": "Con eso, basta",
+      "marca": "mal",
+      "w": "suficiente"
+     }
+    ]
+   },
+   "q": [
+    "prop-07"
+   ]
+  },
+  {
+   "voz": "Una condición suficiente, en cambio, basta por sí sola. En si pe, entonces cu: pe es suficiente para cu, y cu es necesaria para pe.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p",
+      "c": "#1CB0F6",
+      "w": "suficiente para cu"
+     },
+     "→",
+     {
+      "t": "q",
+      "c": "#FFC800",
+      "w": "necesaria para pe"
+     }
+    ],
+    "sub": "p basta · q no puede faltar",
+    "sw": "basta por sí sola"
+   },
+   "q": [
+    "prop-07"
+   ]
+  },
+  {
+   "voz": "Tener pasaporte es necesario para viajar a ese país. ¿Qué se deduce?",
+   "elige": {
+    "pregunta": "«Tener pasaporte es necesario para viajar a ese país». ¿Qué se deduce?",
+    "opciones": [
+     "Si alguien viaja, tiene pasaporte",
+     "Si alguien tiene pasaporte, viaja",
+     "Si alguien no viaja, no tiene pasaporte"
+    ],
+    "bien": "Así es: lo necesario va a la derecha de la flecha.",
+    "mal": "Se deduce: si alguien viaja, tiene pasaporte. Tener pasaporte no obliga a viajar."
+   }
+  },
+  {
+   "voz": "Ahora: «a menos que». A menos que estudies, reprobarás. Significa: si no estudias, reprobarás.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "A menos que estudies",
+      "w": "a menos que estudies"
+     },
+     "≡",
+     {
+      "t": "Si NO estudias → reprobarás",
+      "c": "#FFC800",
+      "w": "si no estudias"
+     }
+    ],
+    "titulo": "«A menos que»",
+    "tw": "a menos que"
+   }
+  },
+  {
+   "voz": "¿Y si estudias? La frase no lo dice. No promete que vayas a aprobar; solo advierte qué pasa si no estudias.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "📚",
+      "titulo": "Si estudias…",
+      "texto": "La frase no dice nada",
+      "w": "si estudias"
+     },
+     {
+      "icono": "😴",
+      "titulo": "Si no estudias…",
+      "texto": "Reprobarás",
+      "marca": "mal",
+      "w": "si no estudias"
+     }
+    ]
+   },
+   "q": [
+    "prop-11"
+   ]
+  },
+  {
+   "voz": "A menos que llegues temprano, perderás el bus. ¿A qué equivale?",
+   "elige": {
+    "pregunta": "«A menos que llegues temprano, perderás el bus». Equivale a…",
+    "opciones": [
+     "Si no llegas temprano, perderás el bus",
+     "Si llegas temprano, alcanzarás el bus",
+     "Llegar temprano garantiza alcanzar el bus"
+    ],
+    "bien": "Así es: «a menos que» es «si no».",
+    "mal": "Equivale a: si no llegas temprano, perderás el bus. No promete nada si llegas temprano."
+   }
+  },
+  {
+   "voz": "En resumen: «pe solo si cu» es «si pe, entonces cu». Lo necesario va a la derecha de la flecha. Y «a menos que» significa «si no».",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🗝️",
+      "texto": "p solo si q = p → q",
+      "w": "solo si"
+     },
+     {
+      "icono": "➡️",
+      "texto": "Necesario: a la derecha",
+      "w": "necesario"
+     },
+     {
+      "icono": "🚫",
+      "texto": "A menos que = si no",
+      "w": "a menos que",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

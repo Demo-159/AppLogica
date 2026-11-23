@@ -1,0 +1,260 @@
+{
+ "id": "u10s1",
+ "titulo": "Pensar rápido, pensar despacio",
+ "icono": "🐢",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a ver cómo la intuición nos hace equivocar en problemas fáciles, y cómo evitarlo.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🐢",
+    "texto": "Pensar rápido, pensar despacio"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "Tenemos dos formas de pensar. Una rápida, automática e intuitiva. Y otra lenta, que calcula con cuidado. La rápida casi siempre ayuda, pero a veces se equivoca.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "⚡",
+      "titulo": "Rápida",
+      "texto": "Intuitiva",
+      "w": "una rápida"
+     },
+     {
+      "icono": "🐢",
+      "titulo": "Lenta",
+      "texto": "Calcula con cuidado",
+      "marca": "bien",
+      "w": "otra lenta"
+     }
+    ]
+   }
+  },
+  {
+   "voz": "Un bate y una pelota cuestan mil cien pesos. El bate cuesta mil más que la pelota. La intuición dice que la pelota cuesta cien. Pero entonces el bate costaría mil cien, y el total, mil doscientos.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "⚾",
+      "texto": "Pelota: ¿$100?",
+      "w": "cuesta cien",
+      "marca": "mal"
+     },
+     {
+      "icono": "🏏",
+      "texto": "Bate: $1.100",
+      "w": "el bate costaría"
+     },
+     {
+      "icono": "🧮",
+      "texto": "Total: $1.200 ✗",
+      "w": "mil doscientos",
+      "marca": "mal"
+     }
+    ]
+   },
+   "q": [
+    "ses-01"
+   ]
+  },
+  {
+   "voz": "Hazlo despacio. Si la pelota cuesta cincuenta, el bate cuesta mil cincuenta. Juntos, mil cien. La pelota cuesta cincuenta.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "⚾",
+      "texto": "Pelota: $50",
+      "w": "cuesta cincuenta",
+      "marca": "bien"
+     },
+     {
+      "icono": "🏏",
+      "texto": "Bate: $1.050",
+      "w": "mil cincuenta"
+     },
+     {
+      "icono": "🧮",
+      "texto": "Total: $1.100 ✓",
+      "w": "juntos",
+      "marca": "bien"
+     }
+    ]
+   },
+   "q": [
+    "ses-01"
+   ]
+  },
+  {
+   "voz": "Un cuaderno y un lápiz cuestan mil doscientos pesos. El cuaderno cuesta mil más que el lápiz. ¿Cuánto cuesta el lápiz?",
+   "elige": {
+    "pregunta": "Un cuaderno y un lápiz cuestan $1.200. El cuaderno cuesta $1.000 más que el lápiz. ¿Cuánto cuesta el lápiz?",
+    "opciones": [
+     "$100",
+     "$200",
+     "$150"
+    ],
+    "bien": "Así es: cien y mil cien suman mil doscientos.",
+    "mal": "El lápiz cuesta cien: el cuaderno, mil cien, y juntos suman mil doscientos."
+   }
+  },
+  {
+   "voz": "Si cinco máquinas hacen cinco piezas en cinco minutos, cada máquina hace una pieza en cinco minutos. Cien máquinas hacen cien piezas en los mismos cinco minutos.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "1 máquina",
+      "w": "cada máquina"
+     },
+     "→",
+     {
+      "t": "1 pieza",
+      "c": "#1CB0F6",
+      "w": "una pieza"
+     },
+     "→",
+     {
+      "t": "5 minutos",
+      "c": "#58CC02",
+      "w": "los mismos cinco minutos"
+     }
+    ]
+   },
+   "q": [
+    "ses-02"
+   ]
+  },
+  {
+   "voz": "Una mancha de nenúfares duplica su tamaño cada día, y cubre el lago en cuarenta y ocho días. ¿La mitad? No es veinticuatro: un día antes de cubrirlo todo, cubría la mitad. El día cuarenta y siete.",
+   "escena": {
+    "tipo": "serie",
+    "items": [
+     {
+      "t": "½",
+      "w": "cubría la mitad"
+     },
+     {
+      "t": "lleno",
+      "w": "cuarenta y ocho días",
+      "c": "#58CC02"
+     }
+    ],
+    "saltos": [
+     {
+      "t": "×2",
+      "w": "un día antes"
+     }
+    ],
+    "sub": "Día 47 → día 48",
+    "sw": "cuarenta y siete"
+   },
+   "q": [
+    "ses-03"
+   ]
+  },
+  {
+   "voz": "Si tres gatos cazan tres ratones en tres minutos, ¿cuánto tardan seis gatos en cazar seis ratones?",
+   "elige": {
+    "pregunta": "Si 3 gatos cazan 3 ratones en 3 minutos, ¿cuánto tardan 6 gatos en cazar 6 ratones?",
+    "opciones": [
+     "3 minutos",
+     "6 minutos",
+     "1 minuto"
+    ],
+    "bien": "Así es: cada gato caza un ratón en tres minutos.",
+    "mal": "Tardan tres minutos: cada gato caza un ratón en tres minutos."
+   }
+  },
+  {
+   "voz": "Lee con cuidado. Un granjero tenía quince ovejas, y se le murieron todas menos ocho. ¿Cuántas le quedan? «Todas menos ocho» murieron: le quedan ocho.",
+   "escena": {
+    "tipo": "iconos",
+    "n": 15,
+    "icono": "🐑",
+    "marcar": 8,
+    "icono2": "🪦",
+    "sub": "«Todas menos ocho»: quedan 8"
+   },
+   "q": [
+    "ses-12"
+   ]
+  },
+  {
+   "voz": "Juan es el décimo quinto más alto, y también el décimo quinto más bajo de su curso. Hay catorce por encima de él, catorce por debajo, y Juan: veintinueve alumnos.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "14 más altos",
+      "c": "#1CB0F6",
+      "w": "catorce por encima"
+     },
+     "+",
+     {
+      "t": "Juan",
+      "c": "#FFC800",
+      "w": "y juan"
+     },
+     "+",
+     {
+      "t": "14 más bajos",
+      "c": "#1CB0F6",
+      "w": "catorce por debajo"
+     },
+     "=",
+     {
+      "t": "29",
+      "c": "#58CC02",
+      "w": "veintinueve"
+     }
+    ]
+   },
+   "q": [
+    "ses-11"
+   ]
+  },
+  {
+   "voz": "Ana es la quinta más alta y la quinta más baja de su grupo. ¿Cuántas personas hay?",
+   "elige": {
+    "pregunta": "Ana es la 5.ª más alta y también la 5.ª más baja de su grupo. ¿Cuántas personas hay?",
+    "opciones": [
+     "9",
+     "10",
+     "11"
+    ],
+    "bien": "Así es: cuatro arriba, cuatro abajo, y Ana.",
+    "mal": "Hay nueve: cuatro por encima, cuatro por debajo, y Ana."
+   }
+  },
+  {
+   "voz": "En resumen: cuando una respuesta salta a la mente muy rápido, revísala despacio. Haz la cuenta, y lee cada palabra.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "⚡",
+      "texto": "¿Salió muy rápido?",
+      "w": "muy rápido",
+      "marca": "oro"
+     },
+     {
+      "icono": "🐢",
+      "texto": "Revisa despacio",
+      "w": "revísala"
+     },
+     {
+      "icono": "📖",
+      "texto": "Lee cada palabra",
+      "w": "lee cada palabra"
+     }
+    ]
+   }
+  }
+ ]
+}

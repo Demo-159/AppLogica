@@ -1,0 +1,280 @@
+{
+ "id": "u1s5",
+ "titulo": "Deducir paso a paso",
+ "icono": "🕵️",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a usar todo lo aprendido para resolver acertijos lógicos, paso a paso.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🕵️",
+    "texto": "Deducir paso a paso"
+   },
+   "fondo": "biblioteca"
+  },
+  {
+   "voz": "Imagina una isla con dos tipos de personas. Los caballeros siempre dicen la verdad. Los bribones siempre mienten.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🛡️",
+      "texto": "Caballero: siempre dice la verdad",
+      "w": "caballeros",
+      "marca": "bien"
+     },
+     {
+      "icono": "🎭",
+      "texto": "Bribón: siempre miente",
+      "w": "bribones",
+      "marca": "mal"
+     }
+    ]
+   },
+   "q": [
+    "prop-13"
+   ],
+   "fondo": "cosmos"
+  },
+  {
+   "voz": "Alguien llamado A dice: «B y yo somos bribones». ¿Qué es A?",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "A dice:",
+      "w": "alguien llamado"
+     },
+     {
+      "t": "«B y yo somos bribones»",
+      "c": "#FFC800",
+      "w": "somos bribones"
+     }
+    ]
+   },
+   "q": [
+    "prop-13"
+   ]
+  },
+  {
+   "voz": "Prueba suponer que A es caballero. Entonces lo que dice sería verdad, y A sería bribón. Imposible: no puede ser las dos cosas. Así que A es bribón.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🛡️",
+      "t": "Si A fuera caballero…",
+      "w": "suponer"
+     },
+     {
+      "icono": "🎭",
+      "t": "…diría la verdad: sería bribón",
+      "w": "sería bribón"
+     },
+     {
+      "icono": "🎭",
+      "t": "A es bribón",
+      "w": "así que a es bribón",
+      "c": "#FF4B4B"
+     }
+    ],
+    "rota": [
+     2
+    ],
+    "fw": [
+     null,
+     null,
+     "imposible"
+    ]
+   },
+   "q": [
+    "prop-13"
+   ]
+  },
+  {
+   "voz": "Como A es bribón, su frase es falsa. La frase decía: A es bribón y B es bribón. Es una frase con «y»: para que sea falsa, basta que falle una parte.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "A es bribón",
+      "c": "#FF4B4B",
+      "w": "a es bribón y"
+     },
+     "∧",
+     {
+      "t": "B es bribón",
+      "c": "#FF4B4B",
+      "w": "b es bribón"
+     }
+    ],
+    "sub": "Falsa: falla al menos una parte",
+    "sw": "basta que falle"
+   },
+   "q": [
+    "prop-13"
+   ]
+  },
+  {
+   "voz": "La parte de A sí se cumple: A es bribón. Entonces la que falla es la de B. B no es bribón: B es caballero.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🎭",
+      "texto": "A: bribón",
+      "w": "la parte de a",
+      "marca": "mal"
+     },
+     {
+      "icono": "🛡️",
+      "texto": "B: caballero",
+      "w": "b es caballero",
+      "marca": "bien"
+     }
+    ]
+   },
+   "q": [
+    "prop-13"
+   ]
+  },
+  {
+   "voz": "En la isla, A dice: «Soy caballero, y dos más dos es cinco». ¿Qué es A?",
+   "elige": {
+    "pregunta": "A dice: «Soy caballero y 2 + 2 = 5». ¿Qué es A?",
+    "opciones": [
+     "Bribón",
+     "Caballero",
+     "No se puede saber"
+    ],
+    "bien": "Así es: un caballero no diría algo falso, y dos más dos no es cinco.",
+    "mal": "A es bribón: la frase tiene una parte falsa, y un caballero nunca diría algo falso."
+   }
+  },
+  {
+   "voz": "Otro tipo de acertijo: deducir valores. Sabes que «si pe, entonces cu» es verdadero, y que «si cu, entonces erre» es falso.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "✅",
+      "texto": "p → q es verdadero",
+      "w": "es verdadero",
+      "marca": "bien"
+     },
+     {
+      "icono": "❌",
+      "texto": "q → r es falso",
+      "w": "es falso",
+      "marca": "mal"
+     }
+    ]
+   },
+   "q": [
+    "prop-14"
+   ],
+   "fondo": "aula"
+  },
+  {
+   "voz": "Empieza por lo falso, porque da más información. Un «si, entonces» solo es falso de una forma: la primera parte verdadera y la segunda falsa. Entonces cu es verdadero, y erre es falso.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "q",
+     "r",
+     "q → r"
+    ],
+    "filas": [
+     {
+      "c": [
+       "V",
+       "F",
+       "F"
+      ],
+      "w": "solo es falso",
+      "marca": "mal"
+     }
+    ],
+    "sub": "q = V y r = F",
+    "sw": "entonces cu"
+   },
+   "q": [
+    "prop-14"
+   ]
+  },
+  {
+   "voz": "¿Y pe? Como cu es verdadero, la flecha de pe a cu es verdadera tanto si pe es verdadero como si es falso. Así que pe puede ser cualquiera.",
+   "escena": {
+    "tipo": "tabla",
+    "cols": [
+     "p",
+     "q",
+     "p → q"
+    ],
+    "filas": [
+     {
+      "c": [
+       "V",
+       "V",
+       "V"
+      ],
+      "w": "si pe es verdadero",
+      "marca": "bien"
+     },
+     {
+      "c": [
+       "F",
+       "V",
+       "V"
+      ],
+      "w": "como si es falso",
+      "marca": "bien"
+     }
+    ],
+    "sub": "p puede ser cualquiera",
+    "sw": "puede ser cualquiera"
+   },
+   "q": [
+    "prop-14"
+   ]
+  },
+  {
+   "voz": "Si pe entonces cu es falso, ¿qué sabes con certeza?",
+   "elige": {
+    "pregunta": "«p → q» es falso. ¿Qué sabes con certeza?",
+    "opciones": [
+     "p es verdadero y q es falso",
+     "p es falso y q es verdadero",
+     "Ambos son falsos"
+    ],
+    "bien": "Así es: es la única forma de que sea falso.",
+    "mal": "Si es falso, pe es verdadero y cu es falso: es la única forma."
+   }
+  },
+  {
+   "voz": "En resumen: para resolver acertijos, supón un caso y busca contradicciones. Y empieza por lo que es falso: dice mucho.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🤔",
+      "texto": "Supón un caso",
+      "w": "supón"
+     },
+     {
+      "icono": "💥",
+      "texto": "Busca contradicciones",
+      "w": "contradicciones"
+     },
+     {
+      "icono": "❌",
+      "texto": "Empieza por lo falso",
+      "w": "empieza por lo que es falso",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

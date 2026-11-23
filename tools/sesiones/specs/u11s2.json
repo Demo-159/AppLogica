@@ -1,0 +1,200 @@
+{
+ "id": "u11s2",
+ "titulo": "Fortalecer y debilitar",
+ "icono": "💪",
+ "minutos": 2,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a aprender qué datos fortalecen o debilitan una conclusión.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "💪",
+    "texto": "Fortalecer y debilitar"
+   },
+   "fondo": "oficina"
+  },
+  {
+   "voz": "Las ventas subieron un quince por ciento después de una campaña publicitaria. ¿La campaña funcionó? Para saberlo, hay que comparar con lo que habría pasado sin campaña.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "📈",
+    "titulo": "+15% tras la campaña",
+    "texto": "¿Y sin campaña, cuánto habrían subido?"
+   },
+   "q": [
+    "arg-03"
+   ]
+  },
+  {
+   "voz": "Si en las ciudades sin campaña las ventas también subieron un quince por ciento, la campaña no explica nada. Ese dato debilita la conclusión.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Con campaña",
+      "valor": 15,
+      "color": "#1CB0F6",
+      "texto": "+15%"
+     },
+     {
+      "label": "Sin campaña",
+      "valor": 15,
+      "color": "#FFC800",
+      "texto": "+15%",
+      "w": "sin campaña"
+     }
+    ],
+    "max": 20,
+    "sub": "Igual sin campaña: debilita"
+   },
+   "q": [
+    "arg-03"
+   ]
+  },
+  {
+   "voz": "Para fortalecer una conclusión sobre causas, lo mejor es un experimento. Los estudiantes que desayunan rinden más. Si se les da desayuno al azar a unos y no a otros, y los primeros rinden más, el desayuno sí parece la causa.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🎲",
+      "t": "Desayuno al azar",
+      "w": "al azar",
+      "c": "#FFC800"
+     },
+     {
+      "icono": "📝",
+      "t": "Rinden más",
+      "w": "rinden más"
+     },
+     {
+      "icono": "💪",
+      "t": "Fortalece la causa",
+      "w": "fortalecer",
+      "c": "#58CC02"
+     }
+    ]
+   },
+   "q": [
+    "arg-04"
+   ]
+  },
+  {
+   "voz": "En cambio, si los que desayunan suelen tener familias con más recursos, eso debilita la conclusión: los recursos podrían explicar el rendimiento.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "💰",
+      "t": "Más recursos",
+      "w": "más recursos",
+      "c": "#FFC800"
+     },
+     {
+      "icono": "🥐",
+      "t": "Desayunan",
+      "w": "desayunan"
+     },
+     {
+      "icono": "📝",
+      "t": "Rinden más",
+      "w": "el rendimiento"
+     }
+    ],
+    "sub": "Otra explicación: debilita",
+    "sw": "debilita"
+   },
+   "q": [
+    "arg-04"
+   ]
+  },
+  {
+   "voz": "Quienes usan casco tienen menos lesiones graves, así que el casco protege. ¿Qué lo fortalece más?",
+   "elige": {
+    "pregunta": "«Quienes usan casco tienen menos lesiones graves; por lo tanto, el casco protege». ¿Qué lo FORTALECE más?",
+    "opciones": [
+     "Pruebas de choque controladas muestran que el casco reduce los golpes",
+     "Los cascos son caros",
+     "Muchos famosos usan casco"
+    ],
+    "bien": "Así es: una prueba controlada aísla la causa.",
+    "mal": "Lo fortalecen las pruebas controladas: aíslan el efecto del casco."
+   }
+  },
+  {
+   "voz": "A veces falta un dato de comparación. «El ochenta por ciento de los accidentes involucra a conductores sobrios: manejar sobrio es más peligroso». No se puede saber sin conocer qué porcentaje de los conductores en la vía están sobrios.",
+   "escena": {
+    "tipo": "tarjeta",
+    "icono": "❓",
+    "titulo": "¿Qué falta?",
+    "texto": "El % de conductores sobrios en la vía"
+   },
+   "q": [
+    "arg-13"
+   ]
+  },
+  {
+   "voz": "Si el noventa y cinco por ciento de los conductores están sobrios, y causan solo el ochenta por ciento de los accidentes, los ebrios causan mucho más de lo que les toca.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Sobrios en la vía",
+      "valor": 95,
+      "color": "#1CB0F6",
+      "texto": "95%",
+      "w": "noventa y cinco"
+     },
+     {
+      "label": "Sobrios en accidentes",
+      "valor": 80,
+      "color": "#FFC800",
+      "texto": "80%",
+      "w": "ochenta por ciento"
+     }
+    ],
+    "max": 100
+   },
+   "q": [
+    "arg-13"
+   ]
+  },
+  {
+   "voz": "El setenta por ciento de los ciclistas accidentados usaba casco. ¿Qué dato necesitas para evaluarlo?",
+   "elige": {
+    "pregunta": "«El 70% de los ciclistas accidentados usaba casco». ¿Qué dato necesitas para evaluarlo?",
+    "opciones": [
+     "Qué porcentaje de todos los ciclistas usa casco",
+     "Cuántos accidentes hay al año",
+     "El color de los cascos"
+    ],
+    "bien": "Así es: hay que comparar con todos los ciclistas.",
+    "mal": "Necesitas saber qué porcentaje de todos los ciclistas usa casco, para comparar."
+   }
+  },
+  {
+   "voz": "En resumen: compara con un grupo sin la causa, busca otras explicaciones, y pregunta siempre por el dato de comparación.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "⚖️",
+      "texto": "Grupo de comparación",
+      "w": "compara"
+     },
+     {
+      "icono": "🔀",
+      "texto": "Otras explicaciones",
+      "w": "otras explicaciones"
+     },
+     {
+      "icono": "❓",
+      "texto": "¿Comparado con qué?",
+      "w": "dato de comparación",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

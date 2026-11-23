@@ -1,0 +1,302 @@
+{
+ "id": "u2s1",
+ "titulo": "Dos formas que nunca fallan",
+ "icono": "✅",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a conocer dos formas de razonar con «si, entonces» que nunca fallan.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "✅",
+    "texto": "Dos formas que nunca fallan"
+   },
+   "fondo": "aula"
+  },
+  {
+   "voz": "Regla: si el motor se recalienta, se enciende la luz roja. Dato: el motor se recalentó. Conclusión: la luz roja se encendió.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "📜",
+      "t": "Si se recalienta → luz roja",
+      "w": "regla"
+     },
+     {
+      "icono": "🔥",
+      "t": "Se recalentó",
+      "w": "dato"
+     },
+     {
+      "icono": "🔴",
+      "t": "La luz roja se encendió",
+      "w": "conclusión",
+      "c": "#58CC02"
+     }
+    ]
+   },
+   "q": [
+    "cond-01"
+   ]
+  },
+  {
+   "voz": "Esta forma se llama modus ponens: tienes la regla, se cumple la condición, y concluyes lo que sigue.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p → q",
+      "w": "tienes la regla"
+     },
+     {
+      "t": "p",
+      "c": "#1CB0F6",
+      "w": "se cumple la condición"
+     },
+     "∴",
+     {
+      "t": "q",
+      "c": "#58CC02",
+      "w": "concluyes"
+     }
+    ],
+    "titulo": "Modus ponens",
+    "tw": "modus ponens",
+    "sub": "«∴» se lee «por lo tanto»",
+    "sw": "concluyes"
+   },
+   "q": [
+    "cond-01"
+   ]
+  },
+  {
+   "voz": "Si suena la alarma, evacuamos. Sonó la alarma. ¿Qué se concluye?",
+   "elige": {
+    "pregunta": "«Si suena la alarma, evacuamos». Sonó la alarma. ¿Qué se concluye?",
+    "opciones": [
+     "Evacuamos",
+     "No evacuamos",
+     "No se puede concluir nada"
+    ],
+    "bien": "Así es: es modus ponens.",
+    "mal": "Se concluye que evacuamos: se cumple la condición, así que se cumple lo que sigue."
+   }
+  },
+  {
+   "voz": "La segunda forma va hacia atrás. Regla: si es un perro, es un mamífero. Dato: Rex no es un mamífero. Entonces, Rex no puede ser un perro.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "📜",
+      "t": "Si es perro → es mamífero",
+      "w": "regla"
+     },
+     {
+      "icono": "🦎",
+      "t": "Rex NO es mamífero",
+      "w": "dato"
+     },
+     {
+      "icono": "🚫",
+      "t": "Rex NO es un perro",
+      "w": "no puede ser un perro",
+      "c": "#58CC02"
+     }
+    ]
+   },
+   "q": [
+    "cond-02"
+   ]
+  },
+  {
+   "voz": "Si fuera perro, sería mamífero, y no lo es. Esta forma se llama modus tollens: si no se cumple lo que sigue, tampoco se cumplió la condición.",
+   "escena": {
+    "tipo": "frase",
+    "partes": [
+     {
+      "t": "p → q",
+      "w": "si fuera perro"
+     },
+     {
+      "t": "¬q",
+      "c": "#FF4B4B",
+      "w": "y no lo es"
+     },
+     "∴",
+     {
+      "t": "¬p",
+      "c": "#58CC02",
+      "w": "tampoco se cumplió"
+     }
+    ],
+    "titulo": "Modus tollens",
+    "tw": "modus tollens"
+   },
+   "q": [
+    "cond-02"
+   ]
+  },
+  {
+   "voz": "Si hay corriente, la lámpara enciende. La lámpara no enciende. ¿Qué se concluye?",
+   "elige": {
+    "pregunta": "«Si hay corriente, la lámpara enciende». La lámpara no enciende. ¿Qué se concluye?",
+    "opciones": [
+     "No hay corriente",
+     "Hay corriente",
+     "No se puede concluir nada"
+    ],
+    "bien": "Así es: es modus tollens.",
+    "mal": "Se concluye que no hay corriente: si no se cumple lo que sigue, tampoco se cumplió la condición."
+   }
+  },
+  {
+   "voz": "Las reglas se pueden encadenar. Si A, entonces B. Si B, entonces C. Entonces, si A, entonces C. Como fichas de dominó: la primera hace caer a la última.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🅰️",
+      "t": "A",
+      "w": "si a, entonces b"
+     },
+     {
+      "icono": "🅱️",
+      "t": "B",
+      "w": "si b, entonces c"
+     },
+     {
+      "icono": "©️",
+      "t": "C",
+      "w": "entonces, si a",
+      "c": "#58CC02"
+     }
+    ],
+    "sub": "A → B y B → C, entonces A → C",
+    "sw": "dominó"
+   },
+   "q": [
+    "cond-07"
+   ]
+  },
+  {
+   "voz": "La cadena también funciona hacia atrás. Si el sospechoso estuvo en la escena, hay huellas. Si hay huellas, el laboratorio las detecta. Y el laboratorio no detectó nada.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🕵️",
+      "t": "Estuvo en la escena",
+      "w": "estuvo en la escena"
+     },
+     {
+      "icono": "🖐️",
+      "t": "Hay huellas",
+      "w": "hay huellas"
+     },
+     {
+      "icono": "🔬",
+      "t": "El laboratorio las detecta",
+      "w": "las detecta"
+     }
+    ]
+   },
+   "q": [
+    "cond-13"
+   ],
+   "fondo": "lab"
+  },
+  {
+   "voz": "Sin detección, no hay huellas. Y sin huellas, el sospechoso no estuvo. Es modus tollens, dos veces.",
+   "escena": {
+    "tipo": "cadena",
+    "items": [
+     {
+      "icono": "🔬",
+      "t": "No detectó",
+      "w": "sin detección",
+      "c": "#FF4B4B"
+     },
+     {
+      "icono": "🖐️",
+      "t": "No hay huellas",
+      "w": "no hay huellas",
+      "c": "#FF4B4B"
+     },
+     {
+      "icono": "🕵️",
+      "t": "No estuvo en la escena",
+      "w": "no estuvo",
+      "c": "#58CC02"
+     }
+    ],
+    "flecha": "↓"
+   },
+   "q": [
+    "cond-13"
+   ]
+  },
+  {
+   "voz": "Último caso: dos caminos. Si apruebo, viajo. Si repruebo, trabajo. Y seguro apruebo o repruebo. Entonces, seguro viajo o trabajo: no sé cuál, pero uno de los dos.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "✈️",
+      "titulo": "Apruebo → viajo",
+      "w": "si apruebo"
+     },
+     {
+      "icono": "💼",
+      "titulo": "Repruebo → trabajo",
+      "w": "si repruebo"
+     }
+    ]
+   },
+   "q": [
+    "cond-09"
+   ],
+   "fondo": "aula"
+  },
+  {
+   "voz": "Si llueve, voy al cine. Si no llueve, voy a la playa. ¿Qué es seguro?",
+   "elige": {
+    "pregunta": "«Si llueve, voy al cine. Si no llueve, voy a la playa». ¿Qué es seguro?",
+    "opciones": [
+     "Iré al cine o a la playa",
+     "Iré al cine",
+     "Iré al cine y a la playa"
+    ],
+    "bien": "Así es: llueve o no llueve, así que uno de los dos caminos se cumple.",
+    "mal": "Es seguro que irás al cine o a la playa: llueva o no, uno de los dos caminos se cumple."
+   }
+  },
+  {
+   "voz": "En resumen: modus ponens va hacia adelante, modus tollens va hacia atrás, y las reglas se pueden encadenar.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "➡️",
+      "texto": "Modus ponens: p, entonces q",
+      "w": "modus ponens",
+      "marca": "bien"
+     },
+     {
+      "icono": "⬅️",
+      "texto": "Modus tollens: no q, entonces no p",
+      "w": "modus tollens",
+      "marca": "bien"
+     },
+     {
+      "icono": "⛓️",
+      "texto": "Encadenar reglas",
+      "w": "encadenar",
+      "marca": "oro"
+     }
+    ]
+   }
+  }
+ ]
+}

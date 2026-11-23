@@ -1,0 +1,249 @@
+{
+ "id": "u7s3",
+ "titulo": "Pensar con frecuencias",
+ "icono": "🧮",
+ "minutos": 3,
+ "pasos": [
+  {
+   "voz": "En esta sesión vas a resolver problemas de probabilidad difíciles imaginando personas reales en lugar de porcentajes.",
+   "escena": {
+    "tipo": "titulo",
+    "icono": "🧮",
+    "texto": "Pensar con frecuencias"
+   },
+   "fondo": "lab"
+  },
+  {
+   "voz": "Ojo: no es lo mismo la probabilidad de dar positivo si estás enfermo, que la probabilidad de estar enfermo si diste positivo.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🧪",
+      "titulo": "Positivo si enfermo",
+      "w": "dar positivo si"
+     },
+     {
+      "icono": "🤒",
+      "titulo": "Enfermo si positivo",
+      "texto": "¡Otra pregunta!",
+      "marca": "mal",
+      "w": "estar enfermo si"
+     }
+    ]
+   },
+   "q": [
+    "prob-13"
+   ]
+  },
+  {
+   "voz": "Por ejemplo: casi todos los conductores ebrios que causan un accidente dan positivo en el control. Eso no significa que casi todos los que dan positivo hayan causado un accidente. Son preguntas distintas.",
+   "escena": {
+    "tipo": "vs",
+    "items": [
+     {
+      "icono": "🚗💥",
+      "titulo": "De los que chocan…",
+      "texto": "casi todos dan positivo",
+      "marca": "bien",
+      "w": "casi todos los conductores"
+     },
+     {
+      "icono": "🧪",
+      "titulo": "De los positivos…",
+      "texto": "muy pocos chocaron",
+      "marca": "mal",
+      "w": "casi todos los que dan positivo"
+     }
+    ]
+   },
+   "q": [
+    "prob-13"
+   ]
+  },
+  {
+   "voz": "Para no confundirse, piensa en personas. Imagina mil mujeres. El uno por ciento tiene cáncer de mama: diez mujeres.",
+   "escena": {
+    "tipo": "iconos",
+    "n": 100,
+    "icono": "👩",
+    "marcar": 1,
+    "icono2": "🧍",
+    "sub": "Cada figura = 10 mujeres · 10 con cáncer"
+   },
+   "q": [
+    "prob-01"
+   ]
+  },
+  {
+   "voz": "La mamografía detecta el noventa por ciento de los casos: nueve de esas diez dan positivo.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 9,
+    "unidad": "positivos verdaderos",
+    "sub": "90% de 10",
+    "icono": "✅"
+   },
+   "q": [
+    "prob-01"
+   ]
+  },
+  {
+   "voz": "Pero también da positivo en el nueve por ciento de las sanas. De las novecientas noventa sanas, unas ochenta y nueve dan positivo.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 89,
+    "unidad": "positivos falsos",
+    "sub": "9% de 990",
+    "icono": "⚠️"
+   },
+   "q": [
+    "prob-01"
+   ]
+  },
+  {
+   "voz": "En total, unas noventa y ocho dan positivo, y solo nueve tienen cáncer. Nueve de noventa y ocho: cerca de un nueve por ciento.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Con cáncer",
+      "valor": 9,
+      "color": "#FF4B4B",
+      "texto": "9",
+      "w": "solo nueve"
+     },
+     {
+      "label": "Sanas",
+      "valor": 89,
+      "color": "#1CB0F6",
+      "texto": "89",
+      "w": "noventa y ocho"
+     }
+    ],
+    "max": 98,
+    "sub": "9 de 98 positivos ≈ 9%"
+   },
+   "q": [
+    "prob-01"
+   ]
+  },
+  {
+   "voz": "¿Por qué la mayoría de los positivos son falsos?",
+   "elige": {
+    "pregunta": "En el ejemplo de la mamografía, ¿por qué la mayoría de los positivos son falsos?",
+    "opciones": [
+     "Porque hay muchas más mujeres sanas que enfermas",
+     "Porque la prueba casi nunca detecta el cáncer",
+     "Porque los positivos siempre son falsos"
+    ],
+    "bien": "Así es: un porcentaje pequeño de muchas sanas supera a las pocas enfermas.",
+    "mal": "Porque hay muchas más sanas: el nueve por ciento de novecientas noventa es más que nueve."
+   }
+  },
+  {
+   "voz": "Lo mismo con los taxis. El ochenta y cinco por ciento son verdes, y el quince por ciento, azules. Un testigo, que acierta el ochenta por ciento de las veces, dice que el taxi del accidente era azul.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🚕",
+      "texto": "85% verdes",
+      "w": "verdes"
+     },
+     {
+      "icono": "🚙",
+      "texto": "15% azules",
+      "w": "azules"
+     },
+     {
+      "icono": "👁️",
+      "texto": "Testigo: acierta 80%",
+      "w": "acierta el ochenta",
+      "marca": "oro"
+     }
+    ]
+   },
+   "q": [
+    "prob-08"
+   ]
+  },
+  {
+   "voz": "Piensa en cien taxis: quince azules y ochenta y cinco verdes. El testigo diría «azul» en doce de los quince azules. Y también en diecisiete de los verdes, al equivocarse.",
+   "escena": {
+    "tipo": "barras",
+    "items": [
+     {
+      "label": "Azules",
+      "valor": 12,
+      "color": "#1CB0F6",
+      "texto": "12",
+      "w": "doce de los quince"
+     },
+     {
+      "label": "Verdes",
+      "valor": 17,
+      "color": "#58CC02",
+      "texto": "17",
+      "w": "diecisiete"
+     }
+    ],
+    "max": 29,
+    "sub": "Veces que dice «azul»"
+   },
+   "q": [
+    "prob-08"
+   ]
+  },
+  {
+   "voz": "Dice «azul» veintinueve veces, y acierta doce. Doce de veintinueve: cerca de un cuarenta y uno por ciento.",
+   "escena": {
+    "tipo": "cifra",
+    "valor": 41,
+    "unidad": "%",
+    "sub": "12 de 29",
+    "icono": "🚙"
+   },
+   "q": [
+    "prob-08"
+   ]
+  },
+  {
+   "voz": "En el caso de los taxis, ¿por qué la probabilidad es mucho menor que ochenta por ciento?",
+   "elige": {
+    "pregunta": "En el caso de los taxis, ¿por qué la probabilidad es mucho menor que 80%?",
+    "opciones": [
+     "Porque los taxis azules son pocos",
+     "Porque el testigo miente",
+     "Porque hay pocos taxis verdes"
+    ],
+    "bien": "Así es: los errores con tantos taxis verdes pesan mucho.",
+    "mal": "Porque los azules son pocos: los errores del testigo con los muchos taxis verdes pesan mucho."
+   }
+  },
+  {
+   "voz": "En resumen: no confundas «positivo si enfermo» con «enfermo si positivo». Imagina mil personas, y cuenta cuántas caen en cada grupo.",
+   "escena": {
+    "tipo": "fichas",
+    "items": [
+     {
+      "icono": "🔀",
+      "texto": "No inviertas la pregunta",
+      "w": "no confundas"
+     },
+     {
+      "icono": "👥",
+      "texto": "Imagina mil personas",
+      "w": "mil personas",
+      "marca": "oro"
+     },
+     {
+      "icono": "🧮",
+      "texto": "Cuenta cada grupo",
+      "w": "cuenta"
+     }
+    ]
+   }
+  }
+ ]
+}
