@@ -51,6 +51,48 @@ for (const m of L.modulos) {
 }
 if (total < 35) fallo(`Se necesitan al menos 35 preguntas para el simulacro (hay ${total})`);
 
+// 2b. Ruta: cada módulo aparece en exactamente una etapa
+const enEtapas = (L.etapas || []).flatMap((e) => e.mods);
+for (const m of L.modulos) {
+  const veces = enEtapas.filter((x) => x === m.id).length;
+  if (veces !== 1) fallo(`El módulo ${m.id} aparece ${veces} veces en las etapas de la ruta (debe ser 1)`);
+}
+for (const id of enEtapas) if (!L.modulos.some((m) => m.id === id)) fallo(`La ruta usa un módulo inexistente: ${id}`);
+
+// 2c. Guiones del tutor
+let pasosTutor = 0;
+for (const m of L.modulos) {
+  const g = (L.tutor || {})[m.id];
+  if (!g) {
+    fallo(`Falta la sesión con tutor del módulo ${m.id}`);
+    continue;
+  }
+  if (!g.length || g[g.length - 1].t !== "fin") fallo(`tutor ${m.id}: debe terminar con un paso "fin"`);
+  if (!g.some((x) => x.t === "preg")) fallo(`tutor ${m.id}: necesita al menos una pregunta`);
+  g.forEach((x, k) => {
+    pasosTutor++;
+    const donde = `tutor ${m.id} paso ${k + 1}`;
+    if (x.t === "msg" && !(x.x && x.x.length > 10)) fallo(`${donde}: mensaje vacío`);
+    else if (x.t === "ej") {
+      if (!x.x || !Array.isArray(x.pasos) || x.pasos.length < 2) fallo(`${donde}: el ejemplo necesita enunciado y al menos 2 pasos`);
+    } else if (x.t === "preg") {
+      if (!Array.isArray(x.o) || x.o.length < 2) fallo(`${donde}: faltan opciones`);
+      else {
+        if (!Number.isInteger(x.a) || x.a < 0 || x.a >= x.o.length) fallo(`${donde}: respuesta correcta fuera de rango`);
+        x.o.forEach((_, i) => {
+          if (i !== x.a && !(x.fb && x.fb[i])) fallo(`${donde}: falta la retroalimentación para la opción ${i}`);
+        });
+        if (x.fb && x.fb[x.a]) fallo(`${donde}: la opción correcta no debe tener retroalimentación de error`);
+      }
+      if (!x.pista || !x.ok) fallo(`${donde}: faltan la pista o la explicación final`);
+    } else if (x.t === "explica") {
+      if (!x.x || !x.modelo) fallo(`${donde}: faltan la consigna o la respuesta modelo`);
+    } else if (x.t === "fin") {
+      if (!Array.isArray(x.puntos) || !x.puntos.length) fallo(`${donde}: el resumen está vacío`);
+    } else if (!["msg", "ej", "preg", "explica", "fin"].includes(x.t)) fallo(`${donde}: tipo desconocido "${x.t}"`);
+  });
+}
+
 // 3. Repetición espaciada
 const require = createRequire(import.meta.url);
 const SRS = require(path.join(raiz, "js/srs.js"));
@@ -82,4 +124,4 @@ if (errores.length) {
   console.error(`✗ ${errores.length} problema(s):\n - ` + errores.join("\n - "));
   process.exit(1);
 }
-console.log(`✓ ${L.modulos.length} módulos, ${total} preguntas, repetición espaciada y caché sin conexión correctos.`);
+console.log(`✓ ${L.modulos.length} módulos, ${total} preguntas, ${L.etapas.length} etapas, ${pasosTutor} pasos de tutor; repetición espaciada y caché sin conexión correctos.`);

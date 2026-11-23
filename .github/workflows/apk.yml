@@ -1,0 +1,62 @@
+# Compila el APK de Android y lo publica como Release descargable.
+# Se ejecuta con cada push y también se puede lanzar a mano desde la pestaña Actions.
+name: Compilar APK
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Validar contenido
+        run: npm test
+
+      - name: Copiar la app web al proyecto Android
+        run: npm run android:sync
+
+      - name: Compilar APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug -PversionCode=${{ github.run_number }} --no-daemon
+          cp app/build/outputs/apk/debug/app-debug.apk ../Razona.apk
+
+      - name: Guardar APK como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: Razona-apk
+          path: Razona.apk
+
+      - name: Publicar Release con el APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.run_number }}
+          name: Razona APK (compilación ${{ github.run_number }})
+          target_commitish: ${{ github.sha }}
+          make_latest: true
+          body: |
+            Descarga **Razona.apk** e instálalo en tu teléfono Android
+            (tendrás que permitir “instalar apps de fuentes desconocidas”).
+
+            Rama: `${{ github.ref_name }}` · commit `${{ github.sha }}`
+          files: Razona.apk

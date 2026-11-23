@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Razona</string>
+    <string name="title_activity_main">Razona</string>
+    <string name="package_name">app.razona.logica</string>
+    <string name="custom_url_scheme">app.razona.logica</string>
+</resources>

@@ -5,6 +5,16 @@
   "description": "App para entrenar lógica, razonamiento matemático y pensamiento crítico.",
   "scripts": {
     "test": "node tests/validar.mjs",
-    "start": "python3 -m http.server 8080"
+    "start": "python3 -m http.server 8080",
+    "build:web": "node scripts/copiar-web.mjs",
+    "android:sync": "npm run build:web && npx cap sync android",
+    "android:apk": "npm run android:sync && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/core": "^8.6.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.2"
   }
 }

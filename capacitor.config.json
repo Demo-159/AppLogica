@@ -1,0 +1,8 @@
+{
+  "appId": "app.razona.logica",
+  "appName": "Razona",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#f6f7fb"
+  }
+}

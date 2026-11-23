@@ -166,3 +166,13 @@ LOGICA.modulos = [
     ]
   }
 ];
+
+// La ruta: etapas formadas por unidades (módulos). Cada unidad tiene una sesión
+// con tutor, lecciones de ~5 preguntas y un repaso; cada etapa termina con un
+// repaso general que hay que aprobar para avanzar.
+LOGICA.etapas = [
+  { id: "e1", nombre: "Fundamentos de lógica", mods: ["prop", "cond", "silo"] },
+  { id: "e2", nombre: "Matemática y patrones", mods: ["mat", "num", "pat"] },
+  { id: "e3", nombre: "Incertidumbre y evidencia", mods: ["prob", "est"] },
+  { id: "e4", nombre: "Pensamiento crítico", mods: ["fal", "ses", "arg"] }
+];
