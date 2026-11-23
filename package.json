@@ -1,0 +1,10 @@
+{
+  "name": "razona",
+  "version": "1.0.0",
+  "private": true,
+  "description": "App para entrenar lógica, razonamiento matemático y pensamiento crítico.",
+  "scripts": {
+    "test": "node tests/validar.mjs",
+    "start": "python3 -m http.server 8080"
+  }
+}
