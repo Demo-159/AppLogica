@@ -35,13 +35,17 @@ App para entrenar **lógica, lógica matemática, razonamiento numérico, probab
 
 **Honestidad:** la evidencia indica que los minijuegos de “entrenamiento cerebral” casi no se transfieren a la inteligencia general (Simons et al., 2016; Melby-Lervåg et al., 2016; Sala y Gobet, 2017). Por eso Razona enseña directamente las habilidades de razonamiento que quieres usar, y no promete subir tu CI. La lista completa de referencias está en la sección *Ciencia* de la app.
 
-## Descargar el APK (Android)
+## Instalar en Android
 
-Cada push compila el APK automáticamente en GitHub Actions (`.github/workflows/apk.yml`) y lo publica en la pestaña **Releases** del repositorio con el nombre `Razona.apk`. También queda como artefacto de cada ejecución en la pestaña **Actions**.
+1. Descarga [`release/Razona-1.0.apk`](release/Razona-1.0.apk) en tu teléfono Android (7.0 o superior).
+2. Ábrelo y permite "Instalar apps desconocidas" si te lo pide.
 
-Para instalarlo: descarga `Razona.apk` en el teléfono, ábrelo y permite “instalar apps de fuentes desconocidas”.
+> El APK está firmado con una clave fija de depuración (`android/app/firma/razona.keystore`, contraseña `android`),
+> igual que Ruta B: así cada versión nueva se instala encima de la anterior sin borrar el progreso.
+> Para publicar en Google Play hay que firmar con una clave propia guardada fuera del repositorio.
 
-> Es un APK de depuración (firmado con una clave de prueba), ideal para instalarlo y probarlo. Para publicarlo en Google Play hay que generar un **AAB firmado** con una clave propia (`./gradlew bundleRelease` y la configuración de firma en `android/app/build.gradle`).
+La unidad 1 ya tiene su **sesión con tutor animada** (voz y escenas que se animan al ritmo de la voz, hechas con el
+motor de Ruta B en `tools/sesiones`). Las demás unidades todavía usan la sesión con tutor en formato chat.
 
 ### Compilar el APK en tu computador
 
@@ -49,7 +53,9 @@ Necesitas Node 22+, JDK 21 y Android Studio (o el SDK de Android con `ANDROID_HO
 
 ```bash
 npm install
-npm run android:apk        # genera android/app/build/outputs/apk/debug/app-debug.apk
+python3 tools/sesiones/build.py u1s1   # sesiones animadas (necesita edge-tts y ffmpeg)
+npm run android:sync
+cd android && ./gradlew assembleRelease   # APK en android/app/build/outputs/apk/release/
 # o bien abre el proyecto en Android Studio:
 npx cap open android
 ```

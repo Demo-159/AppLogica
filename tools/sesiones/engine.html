@@ -300,7 +300,7 @@ function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.rando
 // En la demo web abre index.html#practica=<id>; en Android, interceptar esa URL.
 async function fin(){await ponerEscena(null);const w=await swap(`<div style="font-size:76px;animation:pop .6s">🏆</div><h2 style="margin:0">¡Sesión completa!</h2><div class="sub">Ahora practica lo que acabas de aprender</div>`);
  w.style.position='relative';sfx('fin');burst(w,['🎉','⭐','✨','💡']);
- foot.innerHTML=`<button class="btn g" onclick="location.replace('index.html#practica=${S.id}')">Practicar lo aprendido</button><button class="btn" style="background:none;box-shadow:none;border:2px solid var(--line);color:var(--muted)" onclick="location.replace('index.html')">Volver al mapa</button>`}
+ foot.innerHTML=`<button class="btn g" onclick="location.replace('index.html#practica=${S.id}')">Practicar lo aprendido</button><button class="btn" style="background:none;box-shadow:none;border:2px solid var(--line);color:var(--muted)" onclick="location.replace('index.html')">Volver a la ruta</button>`}
 // ---------- bucle principal ----------
 const FONDO=(()=>{let f=S.pasos.find(p=>p.fondo)?.fondo||'ciudad';return S.pasos.map(p=>f=p.fondo||f)})();
 async function run(){const P=S.pasos;
@@ -315,6 +315,6 @@ $('sic').textContent=S.icono||'📘';$('stitle').textContent=S.titulo;$('ssub').
 // En la app Android lo hace MainActivity; aquí, la API Wake Lock del navegador cuando existe.
 let wake=null;async function despierta(){try{if('wakeLock' in navigator&&document.visibilityState==='visible'&&!wake){wake=await navigator.wakeLock.request('screen');wake.addEventListener('release',()=>{wake=null})}}catch(_){}}
 document.addEventListener('visibilitychange',despierta);
-$('go').onclick=()=>{despierta();try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}
+$('go').onclick=()=>{despierta();try{window.RazonaAndroid&&RazonaAndroid.encendida(true)}catch(_){}try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}
  const st=$('start');st.style.opacity=0;setTimeout(()=>st.remove(),500);audio.play().catch(()=>{});run()};
 </script></body></html>

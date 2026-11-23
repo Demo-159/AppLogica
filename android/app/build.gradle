@@ -16,8 +16,22 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    // Clave fija (contraseñas de depuración, como Ruta B): así cada APK se instala encima del
+    // anterior sin borrar el progreso. Para Google Play, firmar con una clave propia fuera del repositorio.
+    signingConfigs {
+        fija {
+            storeFile file("firma/razona.keystore")
+            storePassword "android"
+            keyAlias "razona"
+            keyPassword "android"
+        }
+    }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.fija
+        }
         release {
+            signingConfig signingConfigs.fija
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

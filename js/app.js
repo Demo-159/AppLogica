@@ -26,7 +26,10 @@
       const qs = (LOGICA.preguntas[mid] || []).slice().sort((a, b) => a.d - b.d || (a.id < b.id ? -1 : 1));
       const nLec = Math.max(1, Math.ceil(qs.length / 5));
       if (LOGICA.tutor && LOGICA.tutor[mid])
-        RUTA.push({ id: mid + "-tutor", tipo: "tutor", etapa: et.id, mid, titulo: "Sesión con tutor", desc: "Ada te explica los conceptos de " + m.nombre.toLowerCase() + " paso a paso, con ejemplos resueltos y pistas." });
+        RUTA.push({ id: mid + "-tutor", tipo: "tutor", etapa: et.id, mid, titulo: "Sesión con tutor",
+          desc: (LOGICA.sesionesAnimadas || {})[mid]
+            ? "Una explicación animada con voz, como un video interactivo, con preguntas en el camino. Activa el sonido 🔊."
+            : "Ada te explica los conceptos de " + m.nombre.toLowerCase() + " paso a paso, con ejemplos resueltos y pistas." });
       for (let k = 0; k < nLec; k++) {
         const ids = qs.slice(Math.round((k * qs.length) / nLec), Math.round(((k + 1) * qs.length) / nLec)).map((p) => p.id);
         RUTA.push({ id: mid + "-l" + (k + 1), tipo: "leccion", etapa: et.id, mid, titulo: "Lección " + (k + 1), desc: ids.length + " preguntas. Las que falles se repiten al final de la lección.", ids, pasa: Math.ceil(ids.length * 0.6) });
@@ -252,7 +255,14 @@
     },
     nodo(n) {
       const extra = { nodo: n.id, pasa: n.pasa, reintentos: true };
-      if (n.tipo === "tutor") return go("#/tutor/" + n.mid);
+      if (n.tipo === "tutor") {
+        const anim = (LOGICA.sesionesAnimadas || {})[n.mid];
+        if (anim) {
+          location.href = anim + ".html"; // sesión animada con voz (tools/sesiones)
+          return;
+        }
+        return go("#/tutor/" + n.mid);
+      }
       if (n.tipo === "leccion") return nuevaSesion("leccion", n.ids.slice(), MOD[n.mid].nombre + " · " + n.titulo, extra);
       if (n.tipo === "repaso") {
         const ids = ordenarPorPrioridad(LOGICA.preguntas[n.mid] || []).slice(0, n.n).map((p) => p.id);
@@ -978,6 +988,19 @@
   }
   function render() {
     clearInterval(reloj);
+    // Al terminar una sesión animada, el motor vuelve con #practica=<id>: se marca la sesión como
+    // hecha y empieza la primera lección de esa unidad.
+    const vuelta = (location.hash.match(/^#practica=(\w+)/) || [])[1];
+    if (vuelta) {
+      const mid = Object.keys(LOGICA.sesionesAnimadas || {}).find((k) => LOGICA.sesionesAnimadas[k] === vuelta);
+      history.replaceState(null, "", "#/");
+      if (mid && NODO[mid + "-tutor"]) {
+        completarNodo(mid + "-tutor", 1);
+        guardar();
+        const sig = RUTA[NODO[mid + "-tutor"].i + 1];
+        if (sig) return iniciar.nodo(sig);
+      }
+    }
     const h = location.hash || "#/";
     const [ruta, arg] = h.replace(/^#\/?/, "").split("/");
     let html = null;
@@ -1191,6 +1214,9 @@
   });
 
   window.addEventListener("hashchange", render);
+  try {
+    if (window.RazonaAndroid) window.RazonaAndroid.encendida(false); // fuera de las sesiones, la pantalla se apaga normal
+  } catch (e) {}
   aplicarTema();
   render();
 })();

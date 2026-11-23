@@ -1,11 +1,11 @@
 // Service worker: la app funciona sin conexión.
 // Al cambiar cualquier archivo, sube VERSION para que los usuarios reciban la actualización.
-const VERSION = "razona-v2";
+const VERSION = "razona-v3";
 const ARCHIVOS = [
   "./", "index.html", "css/app.css", "js/app.js", "js/srs.js",
   "js/data/modulos.js", "js/data/prop.js", "js/data/cond.js", "js/data/silo.js", "js/data/mat.js",
   "js/data/num.js", "js/data/prob.js", "js/data/est.js", "js/data/fal.js", "js/data/ses.js",
-  "js/data/arg.js", "js/data/pat.js", "js/data/tutor.js",
+  "js/data/arg.js", "js/data/pat.js", "js/data/tutor.js", "js/data/sesiones.js",
   "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png"
 ];
 
